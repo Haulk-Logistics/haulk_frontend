@@ -1,2 +1,1 @@
-# haulk_frontend
-Haulk Logistics Website
+# HAULK LOGISTICS FRONTEND
