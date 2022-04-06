@@ -1,7 +1,10 @@
 html{
     box-sizing: border-box;
-    font-size: 100%;
+    font-size: 62.5%;
+    font-family: gordita;
 }
+
+
 
 *, *::before, *::after{
     box-sizing: inherit;
@@ -39,4 +42,11 @@ html{
     --info-links: #60A5FA;
     --warning: #FBBF24;
     --error: #F87171;
+
+    /*Other colours*/
+    --ink-color: #252A31;
+    --text-color: #202223;
+    --ink-lighter-color: #697D95;
+    --cloud-normal:#EFF2F5;
+    --cloud-darker:#BAC7D5;
   }
