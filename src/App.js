@@ -15,42 +15,40 @@ function App() {
     <div className="App">
       {modalDisplay && <Modal closeModal={closeModal} />}
 
-      <Form
-      element = {[
-        {
-        id:"name" ,
-        labelname:'Icon Field label' ,
-        placeholder:'Value ' 
-        },
-        {
-        id:"name" ,
-        labelname:'Icon Field label' ,
-        placeholder:'Value ' 
-        },
-        {
-          type:'password' ,
-        id:"name" ,
-        labelname:'Icon Field label' ,
-        placeholder:'Value ' 
-        },
-        {
-          type:'email' ,
-        id:"name" ,
-        labelname:'Icon Field label' ,
-        placeholder:'Value ' 
-        },
+  
+      <Form element={ [{
+        labelname:'First name',
+        type: "text",
+        name: "Firstname",
+        id: "fname",
+        placeholder: "Enter  Firstname",
+        errorText: "",
+      },
+      {
+        labelname:'Last name',
+        type: "text",
+        name: "Lastname",
+        id: "lname",
+        placeholder: "Enter Lastname",
+      },
+      {
+        labelname:'Email',
+        type: "email",
+        name: "Email",
+        id: "email",
+        placeholder: "chidera@gmail.com",
+      },
 
-      ]}
-      />
-
-      <InputwithIcon 
-      type='password' 
-      id="name" 
-      labelname='Icon Field label' 
-      placeholder='Value ' 
-      message='This is my first toolp message' 
-      />
-
+      {
+        labelname:'Password',
+        type: "password",
+        name: "Password",
+        id: "password",
+        placeholder: "password",
+      },
+      
+    
+    ]}/>
     </div>
   );
 }
