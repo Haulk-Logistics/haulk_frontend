@@ -21,22 +21,28 @@ function App() {
         type: "text",
         name: "Firstname",
         id: "fname",
+        value:'',
         placeholder: "Enter  Firstname",
         errorText: "",
+       
       },
       {
         labelname:'Last name',
         type: "text",
         name: "Lastname",
         id: "lname",
+        value:'',
         placeholder: "Enter Lastname",
+   
       },
       {
         labelname:'Email',
         type: "email",
         name: "Email",
         id: "email",
+        value:'',
         placeholder: "chidera@gmail.com",
+      
       },
 
       {
@@ -44,7 +50,9 @@ function App() {
         type: "password",
         name: "Password",
         id: "password",
+        value:'',
         placeholder: "password",
+       
       },
       
     
