@@ -1,16 +1,20 @@
 import './App.css';
-import { useState } from 'react';
-import Button from './Components/buttons/Button';
-
-
+import React, { useState } from "react";
+import {BrowerRouter, Routes, Route, BrowserRouter} from "react-router-dom";
+import LandingPage from "./Pages/LandingPage";
 
 function App() {
   
 
   return (
-    <div className="App">
-
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Routes>
+          <Route path = "/" element = {<LandingPage/>} exact/>
+        </Routes>
+      </div>
+    </BrowserRouter>
+    
   );
 
 }
