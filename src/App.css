@@ -1,5 +1,5 @@
 .App{
   height: 100vh;
-  background-color: var(--primary-80);
+  background-color: var(--primary-80); /*This is not the actual bg-color for our work, I just used this as a placeholder.*/
 }
 
