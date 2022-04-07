@@ -1,15 +1,18 @@
-import React from 'react';
-import styles from './Modal.module.css';
+//Reusable component for Modal 
 
+import React, {useState} from 'react';
+import styles from './Modal.module.css';
+import {FiX} from "react-icons/fi";
 
 const Modal = (props) => {
     
-
     return (
         <div className = {styles.modal}>
             <div className = {`${styles['modal-heading']}`}>
                 <h3 className = {`${styles['modal-heading-text']}`}>Request Quotation</h3>
-                <button className = {`${styles['modal-heading-cancel']}`} onClick = {props.closeModal}>x</button>
+                <button className = {`${styles['modal-heading-cancel']}`} onClick = {props.closeModal}>
+                    <FiX/>
+                </button>
             </div>
             <div className = {`${styles['modal-main']}`}>
                 <div className = {`${styles['modal-content']}`}>
@@ -22,7 +25,7 @@ const Modal = (props) => {
                 </div>
                 <div className = {`${styles['modal-content']}`}>
                     <p>Container Size</p>
-                    <p>50 Tons</p>
+                    <p>50 Tonnes</p>
                 </div>
                 <div className = {styles.divider}></div>
                 <div className = {`${styles['modal-content']}`}>
