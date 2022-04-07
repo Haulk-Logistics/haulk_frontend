@@ -27,7 +27,11 @@
     height: 2.5rem;
 }
 
-.modal-heading-cancel:hover{
+.modal-heading-cancel > *{
+    font-size: 2rem;
+}
+
+.modal-heading-cancel:hover > *{
     color: var(--error);
 }
 
@@ -44,6 +48,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-weight: 400;
 }
 
 .modal-content > p:first-child{
@@ -52,6 +57,16 @@
 
 .modal-content > p:last-child{
     color: var(--primary-main);
+}
+
+.modal-content:last-of-type > p:first-child{
+    color: var(--text-black);
+    font-weight: 600;
+}
+
+.modal-content:last-of-type > P:last-child{
+    color: var(--accent-main);
+    letter-spacing: 2px;
 }
 
 .divider{
@@ -93,4 +108,12 @@
 
 .modal-footing-button:hover:last-of-type{
     background-color: var(--accent-main);
+}
+
+@media only screen and (max-width: 23.4375rem){
+    /* Media Query rules for styles below 375px */
+    .modal{
+        width: 75%;
+        padding: 2.5rem 1.5rem;
+    }
 }
