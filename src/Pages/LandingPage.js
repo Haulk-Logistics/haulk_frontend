@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import LandingPageNavbar from "../Components/LandingPageNavbar/LandingPageNavbar";
 import IntroSection from "../Components/IntroSection/IntroSection";
 

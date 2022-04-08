@@ -3,6 +3,10 @@ html {
   font-size: 100%;
 }
 
+html,body{
+  height: 100%;
+}
+
 *,
 *::before,
 *::after {
@@ -49,6 +53,8 @@ html {
    --ink-lighter-color: #697D95;
    --cloud-normal:#EFF2F5;
    --cloud-darker:#BAC7D5;
+   --cloud-lighter:  #FAFAFA;
+
 }
 
 @font-face {
