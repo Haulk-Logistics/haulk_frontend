@@ -11,6 +11,8 @@ const InputDefault = ({
   placeholder,
   error,
   disabled,
+  width,
+  ...rest
 }) => {
   return (
     <div className={error ? Inputstyle.error : Inputstyle.default}>
@@ -22,6 +24,8 @@ const InputDefault = ({
         required
         placeholder={placeholder}
         disabled={disabled}
+        style={{ width: `${width}` }}
+        {...rest}
       />
       {error && <p>{`*${error}`}</p>}
     </div>
@@ -37,6 +41,8 @@ const InputwithIcon = ({
   placeholder,
   disabled,
   error,
+  width,
+  ...rest
 }) => {
   const [state, setState] = useState("");
 
@@ -51,14 +57,15 @@ const InputwithIcon = ({
           required
           placeholder={placeholder}
           disabled={disabled}
+          style={{ width: `${width}` }}
+          {...rest}
         />
         <button
           className={Inputstyle.Icon}
           disabled={disabled}
           onClick={() => (state === "" ? setState("text") : setState(""))}
         >
-          {" "}
-          {state ? <AiFillEyeInvisible /> : <AiFillEye />}{" "}
+          {state ? <AiFillEyeInvisible /> : <AiFillEye />}
         </button>
       </div>
       {error && <p>{`*${error}`}</p>}

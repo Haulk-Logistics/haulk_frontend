@@ -1,10 +1,10 @@
 input{
-    width: 30.2rem;
-    height: 4.4rem;
-    margin-top: 1rem;
+    width: 100%;
+    height: 2.5rem;
+    margin-top: .5rem;
     border: none;
     padding-left: .5rem;
-    font-size: 1.5rem;
+    font-size: 1rem;
     border-radius: .5rem;
     color: var(--text-color);
     background-color:  var(--white);
@@ -31,10 +31,10 @@ input:disabled, .Icon:disabled{
 
  label{
     color: var(--ink-color);
-    font-size: 1.6rem;
+    font-size: 14px;
     font-weight: 500;
     display: flex;
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 .default{
@@ -53,13 +53,10 @@ input:disabled, .Icon:disabled{
 
 
 .Icon{
-    width: 4rem;
-    height: 4rem;
     margin-left: -6rem;
-    font-size: 1.6rem;
+    font-size: 1rem;
     background: transparent;
-    border: none;
-    align-content: center;
+    border: none; 
 }
 
 .error input, .error input:hover{
