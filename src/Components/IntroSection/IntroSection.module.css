@@ -72,3 +72,27 @@
     background: transparent;
     border: 1px solid var(--white);
 }
+
+@media only screen and (max-width: 23.4375rem){
+    .introSection{
+        padding: 0 1.2rem;
+    }
+
+    .introSection-main{
+        width: 100%;
+    }
+
+    .introSection-buttons-container{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .introSection-buttons-container > *{
+        width: 90%;
+        height: 3.5rem;
+    }
+
+    .introSection-buttons-container > button:first-of-type{
+        margin-bottom: 2.5rem;
+    }
+}
