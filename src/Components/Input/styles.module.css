@@ -61,3 +61,18 @@ input:disabled, .Icon:disabled{
     border: none;
     align-content: center;
 }
+
+.error input, .error input:hover{
+    border: 1px solid var(  --error);
+}
+
+.error p {
+    color: var(--error);
+}
+
+.error input:focus{
+    border: 1px solid var(  --error);
+    color: var(--text-color);
+    outline: none;
+    box-shadow: -2px -2px 0px #FAEAEA, -2px 2px 0px #FAEAEA, 2px -2px 0px #FAEAEA, 2px 2px 0px #FAEAEA;
+}

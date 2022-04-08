@@ -1,44 +1,69 @@
 import React, { useState } from "react";
 import Inputstyle from "./styles.module.css";
-import { AiFillEyeInvisible , AiFillEye} from "react-icons/ai";
-import { Tooltip } from "../tooltip";
-
-
-
-
-
+import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 
 //  plain input field  for email, or text
-const InputDefault = ({ labelname, id, type, name, placeholder, value, disabled}) => {
-    
-    
+const InputDefault = ({
+  labelname,
+  id,
+  type,
+  name,
+  placeholder,
+  error,
+  disabled,
+}) => {
   return (
-    <div className={Inputstyle.default}>
+    <div className={error ? Inputstyle.error : Inputstyle.default}>
       <label htmlFor={id}>{labelname}</label>
-      <input type={type} id={id} name={name} required  placeholder={placeholder} disabled={disabled} />
+      <input
+        type={type}
+        id={id}
+        name={name}
+        required
+        placeholder={placeholder}
+        disabled={disabled}
+      />
+      {error && <p>{`*${error}`}</p>}
     </div>
   );
 };
 
 //  Input field  with eyeIcon suitable for password
-const InputwithIcon = ({ labelname, type, id, name, placeholder ,value,disabled,message }) => {
-        const [state,setState] = useState('')
-      
+const InputwithIcon = ({
+  labelname,
+  type,
+  id,
+  name,
+  placeholder,
+  disabled,
+  error,
+}) => {
+  const [state, setState] = useState("");
+
   return (
-    <div className={Inputstyle.default}>
-      <label htmlFor={id} >
-            {labelname}
-       </label>
+    <div className={error ? Inputstyle.error : Inputstyle.default}>
+      <label htmlFor={id}>{labelname}</label>
       <div>
-      <input type={state ? state : type } id={id} value={value} name={name} required placeholder={placeholder} disabled={disabled}  />
-      <button  className={Inputstyle.Icon} disabled={disabled}  onClick={ () => state == '' ? setState('text'): setState('')} > { state ? <AiFillEyeInvisible /> :  <AiFillEye />} </button>
+        <input
+          type={state ? state : type}
+          id={id}
+          name={name}
+          required
+          placeholder={placeholder}
+          disabled={disabled}
+        />
+        <button
+          className={Inputstyle.Icon}
+          disabled={disabled}
+          onClick={() => (state === "" ? setState("text") : setState(""))}
+        >
+          {" "}
+          {state ? <AiFillEyeInvisible /> : <AiFillEye />}{" "}
+        </button>
       </div>
-      <p> *password must be atleast 8 characters long</p>
+      {error && <p>{`*${error}`}</p>}
     </div>
   );
 };
-
-
-
 
 export { InputDefault, InputwithIcon };
