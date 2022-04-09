@@ -2,23 +2,23 @@ import './App.css';
 import Modal from './Utils/Modal/Modal';
 import { useState } from 'react';
 import Button from './Components/buttons/Button';
-
+import Card from './Components/cards/Card';
 
 function App() {
-  const [modalDisplay, setModalDisplay] = useState(true);
+	const [modalDisplay, setModalDisplay] = useState(true);
 
-  const closeModal = () => {
-    setModalDisplay(false)
-  }
+	const closeModal = () => {
+		setModalDisplay(false);
+	};
 
-  return (
-    <div className="App">
-      {modalDisplay && <Modal closeModal = {closeModal}/>}
+	return (
+		<div className='App'>
+			{modalDisplay && <Modal closeModal={closeModal} />}
 
-      <Button />
-    </div>
-  );
-
+			<Button />
+			<Card />
+		</div>
+	);
 }
 
 export default App;

@@ -1,0 +1,527 @@
+* {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 90rem;
+}
+
+
+
+/* Landing Page - Home Section */
+
+.card {
+  max-width: 81rem;
+  margin: 0rem 4.5rem;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6.6875rem;
+}
+
+.cardInfo {
+  max-width: 34.5625rem;
+  max-height: 23.5rem;
+}
+
+.cardInfo h2 {
+  font-size: 3rem;
+}
+
+.cardInfo  p {
+  font-size: 1rem;
+  margin-top: 2.1875rem;
+}
+
+.trkImg {
+  max-width: 34.5625rem;
+  max-height: 23.5rem;
+}
+
+.cardBtn {
+  margin: 4.5rem 0rem;
+  width: 18.8125rem;
+  height: 2.8125rem;
+  text-align: center;
+  justify-content: center;
+  background-color: var(--primary-main);
+  color: var(--white);
+  border: none;
+  border-radius: 0.25rem;
+}
+
+
+
+/* Services Section */
+
+.srvc {
+  width: 81rem;
+  margin: 0 4.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.srvcInfo {
+  max-width: 25.75rem;
+  height: 21.5rem;
+  margin: 0;
+  background-color: rgba(22, 146, 173, 0.05);
+  justify-content: center;
+  align-items: center;
+  border-radius: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.srvcInfo h4 {
+  text-align: center;
+}
+
+.srvcInfo p {
+  width: 16.8125rem;
+  text-align: center;
+  margin: 1.25rem 0rem;
+}
+
+.icon {
+  text-align: center;
+  margin: 3.9375rem 0rem;
+}
+
+
+
+/* Testimonial Section */
+
+.testimonial {
+  max-width: 71.125rem;
+  max-height: 29rem;
+  display: flex;
+  justify-content: space-between;  
+  margin: 0 11.625rem;
+}
+
+.testInfo {
+  width: 29.1875rem;
+  height: 13.1875rem;
+  border-radius: 1.25rem;
+  background-color: rgba(22, 146, 173, 0.05);
+  margin: 0rem 2.4375rem;
+  margin-top: 14.5rem;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.testimonial span {
+  font-weight: 600;
+  margin-top: 9.625rem;
+  margin-right: 2.375rem;
+  margin-bottom: 1.75rem;
+  width: 5.3125rem;
+}
+
+.avatar {
+  margin-left: 2.4375rem;
+}
+
+
+
+/* Order Cards Section */
+.orderCards {
+  max-width: 64.0625rem;
+  background-color: rgba(22, 146, 173, 0.05);
+  height: 26rem;
+  margin: 1rem auto;
+}
+
+.idSum {
+  display: flex;
+}
+
+.idCard {
+  width: 20.75rem;
+  max-height: 10.3125rem;
+  margin: 1rem;
+  margin-right: 3.4375rem;
+  background-color: var(--white);
+  border-radius: 0.625rem;
+}
+
+.idNo {
+  display: flex;
+}
+
+.idStatus {
+  width: 5.25rem;
+  height: 1.25rem;
+  border-radius: 0.625rem;
+  font-size: 0.75rem;
+  text-align: center;
+  padding: 0.125rem 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.caption {
+  font-size: 0.75rem;
+}
+
+.trnstPoint1, .trnstPoint2 {
+  display: flex;
+}
+
+.trnstLine {
+  width: 0.4rem;
+  height: 2.25rem;
+  margin-left: 5.56rem;
+}
+
+.activeOrders {
+  width: 61.9375rem;
+  height: 11.625rem;
+  background-color: var(--white);
+  border-radius: 0.625rem;
+  margin-top: 3.875rem;
+}
+
+.titleStatus {
+  display: inline-flex;
+  margin-left: 1rem;
+  margin-top: 1.0625rem;
+}
+
+.idStatus2 {
+  position: absolute;
+  margin-left: 54.3125rem;
+  width: 5.25rem;
+  height: 1.25rem;
+  border-radius: 0.625rem;
+  font-size: 0.75rem;
+  text-align: center;
+  padding: 0.125rem 0.5rem;
+}
+
+.idDetails {
+  display: flex;
+  margin-top: 2.4375rem;
+}
+
+.idNo2 {
+  margin-left:1rem;
+}
+
+.activeTrnstPoints {
+  width: 22rem;
+}
+
+.trnstDate2 {
+  margin: 0 3rem;
+}
+
+.trnstLine2 {
+  margin-left: 8rem;
+}
+
+.coNum h6, .reqDate h6 {
+  padding-bottom: 0.6875rem;
+}
+
+
+
+/* Summary Cards Section */
+
+.sumCard {
+  max-width: 59.0625rem;
+  height: 12rem;
+  display: flex;
+  background-color: rgba(22, 146, 173, 0.05);
+  align-items: center;
+}
+
+.sumCard h5 {
+  font-size: 1.25rem;
+}
+
+.sumCard p {
+  font-size: 1rem;
+}
+
+.pendnOrders {
+  width: 20rem;
+  height: 8.5625rem;
+  display: flex;
+  align-items: center;
+  background-color: var(--white);
+  border-radius: 0.625rem;
+}
+
+.pendnOrderSum{
+  font-weight: 500;
+  margin-left: -2.5rem;
+}
+
+.totalTripSum {
+  font-weight: 500;
+  margin-left: -5rem;
+}
+
+.totalTrips {
+  display: flex;
+  width: 29.5rem;
+  height: 8.5625rem;
+  background-color: var(--white);
+  border-radius: 0.625rem;
+  align-items: center;
+  margin-left: 1.875rem;
+}
+
+.tripSumInfo {
+  display: flex;
+}
+
+.tripSumInfo p {
+  margin-top: 1rem;
+  margin-left: 2.125rem;
+}
+
+
+
+/* Selection Cards Section */
+
+.selectCardDetail {
+  max-width: 50rem;
+  height: 10rem;
+  background-color: rgba(22, 146, 173, 0.05);
+  display: flex;
+  margin-top: 1rem;
+  align-items: center;
+}
+
+.selectCard {
+  max-width: 30rem;
+  height: 7.625rem;
+  background-color: var(--white);
+  border-radius: 0.8125rem;
+  display: flex;
+  align-items: center;
+  margin-left: 2rem;
+}
+
+.selectCardInfo {
+  margin-left: 1rem;
+}
+
+.selectCard input {
+  margin: 1rem;
+  background-color: var(--accent-main);
+}
+
+
+
+/* Landing Page - Subscription Section */
+
+.subContainer {
+  display: flex;
+  margin: 0;
+  gap: 0;
+}
+
+.subInfo {
+  background-color: var(--accent-main);
+  width: 43.9375rem;
+  height: 31.875rem;
+}
+
+.subMsg {
+  color: var(--white);
+  max-width: 31.4375rem;
+  align-items: center;
+  margin-top: 9.125rem;
+}
+
+.subMsg h3 {
+  font-size: 2.25rem;
+  font-weight: 500;
+  width: 31.4375rem;
+}
+
+.subMsg p {
+  margin: 0.5rem 0rem;
+}
+
+.subInput {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.subInput input {
+  width: 27.8125rem;
+  height: 2.75rem;
+  padding-left: 0.75rem;
+  margin: auto 0;
+}
+
+button.iconBtn {
+  width: 3.6875rem;
+  height: 2.125rem;
+  background-color: var(--accent-main);
+  border: none;
+  position: absolute;
+  margin-top: 0.3125rem;
+  margin-left: 23.6875rem;
+}
+
+@media screen and (max-width: 1000px) {
+  .card {
+    display: flex;
+    flex-direction: column-reverse !important;
+    max-width: 62.5rem;
+    justify-content: center;
+  }
+
+  .cardInfo {
+    width: 20.5rem;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .cardInfo h2 {
+    width: 17.125rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-top: 2rem;
+  }
+  
+  .cardInfo p {
+    width: 20.1875rem;
+    margin-top: 1rem;
+  }
+  
+  button.cardBtn {
+    margin-top: 1rem;
+  }
+
+  .cardInfo, .trkImg, .cardBtn {
+    width: 20.1875rem;
+    justify-content: center;
+  }
+
+  .srvc, .testimonial, .subContainer {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .testimonial {
+    margin-left: 18%;
+    width: 20.4375rem;
+  }
+
+  .srvc {
+    width: 20.5rem;
+    height: 20.125rem;
+    margin-top: 10rem;
+    justify-content: center;
+  }
+
+  .webSrvc p {
+    text-align: center;
+  }
+  
+}
+
+@media screen and (min-width: 540px) and (max-width: 900px) {
+  .cardInfo {
+    margin: 0% 25%;
+  }
+}
+
+@media screen and (min-width: 375px) and (max-width: 539px) {
+  .cardInfo {
+    margin: 0% 40%;
+  }
+}
+
+@media screen and (max-width: 360px)  {
+  .cardInfo {
+    margin: 0% 50%;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .cardInfo {
+    margin: 0% 75%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .card {
+    width: 58rem;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6.6875rem;
+  }
+
+  .cardInfo {
+    padding: 0 2.5rem;
+  }
+
+  .cardInfo h2 {
+    font-size: 2.25rem;
+  }
+
+  .cardInfo p {
+    margin-top: 1rem;
+  }
+
+  .cardBtn {
+    margin: 1rem 0rem;
+  }
+
+  .srvc {
+    width: 81rem;
+    margin: 0 38%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .testimonial {
+    margin-left: 16rem;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .card {
+    max-width: 75rem;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6.6875rem;
+    margin-left: 15rem;
+  }
+  .cardInfo {
+    padding: 0 2.5rem;
+  }
+
+  .cardInfo h2 {
+    font-size: 2.25rem;
+  }
+  
+  .cardInfo p {
+    margin-top: 1rem;
+  }
+  
+  .cardBtn {
+    margin: 2rem 0rem;
+  }
+
+  .srvc {
+    width: 81rem;
+    margin: 0 15rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .subContainer {
+    width: 90rem;
+  }
+
+  .subInfo {
+    width: 50rem;
+  }
+}

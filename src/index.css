@@ -80,3 +80,11 @@ p {
 		font-size: 0.875rem;
 	}
 }
+
+
+/* Card for Landing Page */
+.cardContainer {
+	/* border: 1px solid red; */
+	/* max-width: 100vw !important; */
+	max-width: 90rem;
+}
