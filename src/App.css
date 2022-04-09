@@ -1,7 +1,5 @@
 .App{
   height: 100vh;
-  background-color: var(--primary-80);
-  border: 1px solid yellow;
 }
 
 .cardContainer {

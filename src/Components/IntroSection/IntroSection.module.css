@@ -1,0 +1,98 @@
+.introSection{
+    width: 100vw;
+    height: 90vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(37, 56, 60, 0.6);
+}
+
+.introSection-main{
+    width: 50%;
+    margin: 0 auto;
+}
+
+.introSection-main > *{
+    margin-bottom: 1.5rem;
+}
+
+.introSection-main > h1{
+    color: var(--white);
+    font-size: 3.5rem;
+    font-weight: 500;
+    line-height: 120%;
+}
+
+.introSection-main > p{
+    width: 70%;
+    color: var(--white);
+    font-size: 1.25rem;
+    font-weight: 100;
+    line-height: 28px;
+    letter-spacing: 0.15px;
+    margin: 0 auto;
+    margin-bottom: 1.5rem;
+}
+
+.introSection-buttons-container{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.introSection-buttons-container > *{
+    cursor: pointer;
+    width: 13rem;
+    height: 2.5rem;
+    border: none;
+    border-radius: 4px;
+}
+
+.introSection-buttons-container > button:first-of-type{
+    color: var(--white);
+    background: transparent;
+    border: 1px solid var(--white);
+}
+
+.introSection-buttons-container > button:nth-of-type(2){
+    background: var(--white);
+    color: var(--primary-main);
+}
+
+.introSection-buttons-container > button:first-of-type:hover{
+    background: var(--white);
+    color: var(--primary-main);
+}
+
+.introSection-buttons-container > button:nth-of-type(2):hover{
+    color: var(--white);
+    background: transparent;
+    border: 1px solid var(--white);
+}
+
+@media only screen and (max-width: 23.4375rem){
+    .introSection{
+        padding: 0 1.2rem;
+    }
+
+    .introSection-main{
+        width: 100%;
+    }
+
+    .introSection-buttons-container{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .introSection-buttons-container > *{
+        width: 90%;
+        height: 3.5rem;
+    }
+
+    .introSection-buttons-container > button:first-of-type{
+        margin-bottom: 2.5rem;
+    }
+}

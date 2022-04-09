@@ -1,24 +1,24 @@
 import './App.css';
-import Modal from './Utils/Modal/Modal';
-import { useState } from 'react';
-import Button from './Components/buttons/Button';
-import Card from './Components/cards/Card';
+import React, { useState } from "react";
+import {BrowerRouter, Routes, Route, BrowserRouter} from "react-router-dom";
+import LandingPage from "./Pages/LandingPage";
 
 function App() {
-	const [modalDisplay, setModalDisplay] = useState(true);
+  
 
-	const closeModal = () => {
-		setModalDisplay(false);
-	};
+  return (
+    <BrowserRouter>
+      <div className="App">
+        <Routes>
+          <Route path = "/" element = {<LandingPage/>} exact/>
+        </Routes>
+      </div>
+    </BrowserRouter>
+    
+  );
 
-	return (
-		<div className='App'>
-			{modalDisplay && <Modal closeModal={closeModal} />}
+			
 
-			<Button />
-			<Card />
-		</div>
-	);
 }
 
 export default App;
