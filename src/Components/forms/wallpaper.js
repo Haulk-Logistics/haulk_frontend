@@ -5,7 +5,7 @@ import imgstyle from "./style.module.css";
 const Wallpaper = () => {
   return (
     <section className={imgstyle.imgsection}>
-      <img src={hlkwallpaper} />
+      <img src={hlkwallpaper} alt="Move with ease ...." />
     </section>
   );
 };

@@ -1,6 +1,6 @@
 import React from "react";
-import Signup from "../../Components/signup";
-import Wallpaper from "../../Components/signup/wallpaper";
+import Signup from "../../Components/forms/signup";
+import Wallpaper from "../../Components/forms/wallpaper";
 import signupstyle from "./styles.module.css";
 
 const SignupPage = () => {

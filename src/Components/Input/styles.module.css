@@ -60,10 +60,11 @@
 }
 
 .error input, .error input:hover{
-    border: 1px solid var(  --error);
+    border: 1px solid var(--error  );
+    box-shadow: -2px -2px 0 var(--error-shadow),-2px 2px 0 var(--error-shadow),2px -2px 0 var(--error-shadow),2px 2px 0 var(--error-shadow);
 }
 
-.error p {
+.error p, .err {
     color: var(--error);
 }
 
@@ -71,5 +72,5 @@
     border: 1px solid var(  --error);
     color: var(--text-color);
     outline: none;
-    box-shadow: -2px -2px 0px #FAEAEA, -2px 2px 0px #FAEAEA, 2px -2px 0px #FAEAEA, 2px 2px 0px #FAEAEA;
+    box-shadow: -2px -2px 0px var(--error-shadow), -2px 2px 0px var(--error-shadow), 2px -2px 0px var(--error-shadow), 2px 2px 0px var(--error-shadow);
 }

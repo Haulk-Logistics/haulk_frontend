@@ -1,0 +1,126 @@
+.imgsection{
+    width: 100%;
+    height: 100%;
+}
+
+.imgsection img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.formsection{
+    width: 100%; 
+    height: 100%;
+    padding: 2rem 5rem;
+    color: var(--text-color);
+    overflow-y: scroll;
+}
+
+.logo{
+    display: none;
+}
+
+.header h3{
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin: 1rem 0;
+    color: var(--text-colo);
+}
+
+.header p{
+    margin: 1rem 0;
+    font-size: .9rem;
+
+}
+
+.usersection{
+    background-color: var(--cloud-lighter);
+    padding: 1rem 2rem;
+    border-radius: .3rem;
+}
+
+.usersection button{
+    height: 2.5rem;
+    width: 50%;
+    border-radius: .2rem;
+    border: none;
+    background: none;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--text-color);
+
+   
+}
+
+.usersection button:focus{
+    background: var(--white);
+    color: var(--accent-main);
+    outline: none;
+}
+
+.agree{
+    margin: 1rem 0;
+    margin-right: .5rem ;
+}
+
+.button{
+    width: 100%;
+    height: 2.5rem;
+    border-radius: .3rem;
+    border: none;
+    background: var(--primary-main);
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+
+}
+
+.button:hover{
+    background: var(--accent-main);
+}
+
+.haveaccount{
+   text-align: center;
+}
+
+.span{
+    color: var(--info-links);
+}
+
+.error{
+    font-size: .8rem;
+    color: var(--error);
+    font-weight: 500;
+    margin: .3rem .2rem;
+}
+
+@media screen and (max-width:640px){
+    .imgsection{
+        display: none;
+    }
+
+    .formsection{
+     padding: 2rem ;
+
+    }
+    .header{
+        text-align: center;
+    }
+
+    .header h3{
+      font-size: 1.5em;
+    }
+
+    .header p{
+        font-size: .8rem;
+      }
+
+    .logo{
+        display: block;
+        margin: 2rem auto;
+        margin-top: 3rem;
+    }
+
+}
