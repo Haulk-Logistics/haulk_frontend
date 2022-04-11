@@ -1,0 +1,74 @@
+import React from "react";
+import { useForm } from "react-hook-form";
+import { InputDefault, InputwithIcon } from "../Input";
+import Button from "./button";
+import Formheader from "./formheader";
+import formstyle from "./style.module.css";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+
+const schema = yup.object().shape({
+  npassword: yup
+    .string()
+    .required("password is required.")
+    .min(8, "Password should be atleast 8 characters long.")
+    .matches(
+      /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,100}$/,
+      "Password must contain uppercase,lowercase,number and special character."
+    ),
+  re_password: yup
+    .string()
+    .required("Re-type password is required.")
+    .oneOf([yup.ref("npassword")], "Passwords does not match."),
+});
+
+const Resetpassword = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    mode: "onTouched",
+    resolver: yupResolver(schema),
+  });
+
+  return (
+    <div className={formstyle.formsection}>
+      <Formheader
+        head="Reset Password"
+        paragraph="New password must be different from previously used password."
+      />
+      <form onSubmit={handleSubmit()}>
+        <InputwithIcon
+          labelname="Password"
+          id="npassword"
+          type="password"
+          placeholder="Enter Password "
+          name="npassword"
+          register={register}
+          error={errors.password}
+        />
+        {errors.npassword && (
+          <p className={formstyle.error}>{errors.npassword.message}</p>
+        )}
+
+        <InputwithIcon
+          labelname="Re-enter Password"
+          name="re_password"
+          id="rpassword"
+          type="password"
+          register={register}
+          placeholder="Re-enter Password"
+          error={errors.re_password}
+        />
+        {errors.re_password && (
+          <p className={formstyle.error}>{errors.re_password.message}</p>
+        )}
+
+        <Button name="Submit" />
+      </form>
+    </div>
+  );
+};
+
+export default Resetpassword;

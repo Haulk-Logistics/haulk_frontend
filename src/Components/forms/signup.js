@@ -150,7 +150,11 @@ const Signup = (props) => {
       </form>
 
       <p className={formstyle.haveaccount}>
-        Already have an account? <span className={formstyle.span}> Login</span>
+        Already have an account?{" "}
+        <Link to="/login" className={formstyle.link}>
+          {" "}
+          Login
+        </Link>
       </p>
     </section>
   );

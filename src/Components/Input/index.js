@@ -88,7 +88,6 @@ const InputwithIcon = ({
   error,
   width,
   register,
-  required,
   pattern,
   minlength,
   ...rest

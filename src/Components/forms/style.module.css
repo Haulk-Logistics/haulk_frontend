@@ -56,6 +56,11 @@
 
 }
 
+/* Login form */
+.utils{
+    display: flex;
+    margin-top: auto;
+}
 .step1,.step2,.step3{
     display: block;
     width: 100%;
@@ -149,6 +154,12 @@
 }
 
 
+.link{
+    color: var(--accent-main);
+    text-decoration: none;
+    cursor: pointer;
+    margin-left: auto;
+}
 
 @media screen and (max-width:640px){
     .imgsection{
