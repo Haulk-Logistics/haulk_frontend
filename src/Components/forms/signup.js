@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import Formheader from "./formheader";
 import { connect } from "react-redux";
 import haulklogo from "../../Assets/logo/MobileLogo.svg";
+import { Link } from "react-router-dom";
 
 const Signup = (props) => {
   // handle form events
