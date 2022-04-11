@@ -92,13 +92,13 @@ Steps To Create a Pull Request:
 
 - Work on that branch and do what your issue ticket tells you to do
 
-- Once you are done, create a pull request from that branch to the development branch.
+- Once you are done, create a pull request from that branch to the development branch. Any PR to production / staging branch will be rejected.
 
 link to video : 
 
 ----------------------------------------------------------
 
-## DEVELOPEMENT RULES / GUIDELINES WRITING SERVER CODES
+## DEVELOPEMENT RULES / GUIDELINES WRITING FRONT END CODES
 
 ### 01. Comment your code very well
 
