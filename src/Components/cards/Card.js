@@ -1,19 +1,23 @@
 import React from 'react';
 import {
 	CardOne,
-	CardTwo,
 	OrderCards,
+	SelectionCards,
 	ServiceCards,
-	ServiceCards2,
+	SubscribeCards,
+	SummaryCard,
 	Testimonials,
-	Testimonials2,
-} from './cardIndex';
-import truckImg from './Rectangle 10.svg';
-import deliveryLady from './Rectangle 22.svg';
+} from './CardIndex';
+import deliveryLady from './svg/Rectangle 10.svg';
+import truckImg from './svg/Rectangle 22.svg';
+import truckIcon from './svg/Group 237.svg';
+import avatar from './svg/Ellipse 38.svg';
+import subscribeImg1 from './svg/Rectangle 748.svg';
+import btnIcon from './svg/direct-right.svg';
 
 const Card = () => {
 	return (
-		<div>
+		<div className='cardContainer'>
 			<CardOne
 				heading='Reliable. Fast. Efficient'
 				paragraph='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -23,7 +27,7 @@ const Card = () => {
 							dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 							incididunt ut labore et dolore magna aliqua.'
 				buttonName='Button Name'
-				image={truckImg}
+				image={deliveryLady}
 			/>
 			<CardOne
 				heading='Reliable. Fast. Efficient'
@@ -36,40 +40,21 @@ const Card = () => {
 				buttonName='Button Name'
 				image={truckImg}
 				reverse
-			/>
-
-			<CardTwo
-				heading='Reliable. Fast. Efficient'
-				paragraph='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-					eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem
-					ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua.'
-				buttonName='Button Name'
-				image={deliveryLady}
+				dark
+				white
+				border
 			/>
 
 			<ServiceCards
 				heading='Prompt Delivery'
 				paragraph='Lorem ipsum dolor sit amet, consectetur adipiscing elit, '
-				// image={imgIcon}
-			/>
-
-			<ServiceCards2
-				heading='Prompt Delivery'
-				paragraph='Lorem ipsum dolor sit amet, consectetur adipiscing elit, '
-				// image={imgIcon}
+				image={truckIcon}
 			/>
 
 			<Testimonials
-				heading='Prompt Delivery'
+				name='~ Amadi'
 				paragraph='Lorem ipsum dolor sit amet, consectetur adipiscing elit, '
-				// image={imgIcon}
-			/>
-
-			<Testimonials2
-				heading='Prompt Delivery'
-				paragraph='Lorem ipsum dolor sit amet, consectetur adipiscing elit, '
-				// image={imgIcon}
+				image={avatar}
 			/>
 
 			<OrderCards
@@ -81,6 +66,26 @@ const Card = () => {
 				location='831 Heather Parkway, Enugu.'
 				cargoOwnerNum='0903 354 6898'
 			/>
+
+			<SummaryCard
+				heading='Pending Orders'
+				paragraph='Lorem ipsum dolor '
+				numSummary='10'
+				image={truckIcon}
+			/>
+
+			<SelectionCards
+				label='Transfer'
+				caption='Lorem ipsum dolor sit amet, consectetur adipiscing elit,'
+			/>
+
+			<SubscribeCards
+				heading='Want to know more about our services?'
+				paragraph='Subcribe to our Newsletter'
+				btnIcon={btnIcon}
+				image={subscribeImg1}
+			/>
+
 		</div>
 	);
 };
