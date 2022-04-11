@@ -31,10 +31,10 @@ html {
 
   /*Accent Colours*/
   --accent-main: #1692ad;
-  --accent-80: #3fa3b9;
-  --accent-60: #69b3c4;
-  --accent-40: #92c3ce;
-  --accent-20: #bbd4da;
+  --accent-80: #44A8BE;
+  --accent-60: #73BDCE;
+  --accent-40: #A2D3DE;
+  --accent-20: #D0E9EF;
 
   /*Status Colours*/
   --success: #34d399;
@@ -106,13 +106,6 @@ html {
   font-style: normal;
 }
 
-
-/* Card for Landing Page */
-.cardContainer {
-	/* border: 1px solid red; */
-	/* max-width: 100vw !important; */
-	max-width: 90rem;
-}
 @font-face {
   src: url(../src/Assets/gordita-cufonfonts-webfont/Gordita\ Bold\ Italic.woff);
   font-family: "Gordita", sans-serif;
@@ -136,6 +129,31 @@ html {
 
 body {
   font-family: "Gordita", sans-serif;
+}
+
+h1{
+  font-size: 3.5rem;
+}
+
+h2{
+  font-size: 3rem;
+}
+
+h3{
+  font-size: 2.25rem;
+}
+
+h4{
+  font-size: 1.5rem;
+}
+
+h5{
+  font-size: 1.25rem;
+}
+
+p{
+  font-size: 1rem;
+  font-weight: 400;
 }
 
 @media only screen and (max-width: 23.4375rem) {

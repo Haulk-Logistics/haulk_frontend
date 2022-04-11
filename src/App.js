@@ -10,7 +10,7 @@ function App() {
         <Routes>
           <Route path = "/" element = {<LandingPage/>} exact/>
         </Routes>
-
+        
       </div>
     </BrowserRouter>
   );

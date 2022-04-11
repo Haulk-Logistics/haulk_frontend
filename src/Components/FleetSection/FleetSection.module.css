@@ -1,0 +1,17 @@
+.fleet{
+    width: 100vw;
+}
+
+.fleet > h2, .fleet > p{
+    text-align: center;
+}
+
+.fleet > h2{
+    color: var(--text-black);
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.fleet > p{
+    color: var(--primary-40);
+}
