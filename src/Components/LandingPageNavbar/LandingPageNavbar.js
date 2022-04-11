@@ -2,10 +2,10 @@
 
 import React, { useState } from "react";
 import styles from "./LandingPageNavbar.module.css";
-import WebLogo from "../../Assets/WebLogo.svg";
-import MobileLogo from "../../Assets/MobileLogo.svg";
-import HamburgerIcon from "../../Assets/HamburgerIcon.svg";
-import CancelIcon from "../../Assets/CancelIcon.svg";
+import WebLogo from "../../Assets/Icons/WebLogo.svg";
+import MobileLogo from "../../Assets/Icons/MobileLogo.svg";
+import HamburgerIcon from "../../Assets/Icons/HamburgerIcon.svg";
+import CancelIcon from "../../Assets/Icons/CancelIcon.svg";
 
 const LandingPageNavbar = (props) => {
     const link = '#';
