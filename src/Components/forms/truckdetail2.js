@@ -1,7 +1,7 @@
 import React from "react";
 import { Upload } from "../Input";
 import Formheader from "./formheader";
-import step3 from "../../Assets/images/step3.svg";
+import step3 from "../../Assets/Images/step3.svg";
 import { useForm } from "react-hook-form";
 import formstyle from "./style.module.css";
 import { connect } from "react-redux";

@@ -4,9 +4,9 @@ import { MdPeopleAlt } from "react-icons/md";
 import { FaTruck } from "react-icons/fa";
 import { connect } from "react-redux";
 import { usertype } from "../../Actions/status";
-import step1 from "../../Assets/images/step1.svg";
-import step2 from "../../Assets/images/step2.svg";
-import step3 from "../../Assets/images/step3.svg";
+import step1 from "../../Assets/Images/step1.svg";
+import step2 from "../../Assets/Images/step2.svg";
+import step3 from "../../Assets/Images/step3.svg";
 
 const Selectuser = (props) => {
   return (

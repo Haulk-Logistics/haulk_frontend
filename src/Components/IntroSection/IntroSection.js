@@ -3,10 +3,10 @@
 import React from "react";
 import BackgroundSlider from "react-background-slider";
 import styles from "./IntroSection.module.css";
-import image1 from "../../Assets/images/image1.jpg";
-import image2 from "../../Assets/images/image2.jpg";
-import image3 from "../../Assets/images/image3.jpg";
-import image4 from "../../Assets/images/image4.jpg";
+import image1 from "../../Assets/Images/bgImage1.jpg";
+import image2 from "../../Assets/Images/bgImage2.jpg";
+import image3 from "../../Assets/Images/bgImage3.jpg";
+import image4 from "../../Assets/Images/bgImage4.jpg";
 
 const IntroSection = (props) => {
   return (
@@ -23,12 +23,20 @@ const IntroSection = (props) => {
         </div>
       </div>
       <BackgroundSlider
-        // Custom NPM package for the background images feature
+        // Custom NPM package for the background images
         images={[image1, image2, image3, image4]}
         duration={8}
         transition={3}
       />
     </div>
+    //   </div>
+    //   <BackgroundSlider
+    //     // Custom NPM package for the background images feature
+    //     images={[image1, image2, image3, image4]}
+    //     duration={8}
+    //     transition={3}
+    //   />
+    // </div>
   );
 };
 

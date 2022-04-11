@@ -1,7 +1,7 @@
 import React from "react";
 import { Dropdown, Inputcharacter, Upload } from "../Input";
 import Formheader from "./formheader";
-import step2 from "../../Assets/images/step2.svg";
+import step2 from "../../Assets/Images/step2.svg";
 import { useForm } from "react-hook-form";
 import formstyle from "./style.module.css";
 import { connect } from "react-redux";
