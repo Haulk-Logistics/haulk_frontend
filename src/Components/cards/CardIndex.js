@@ -1,190 +1,293 @@
-// import React from 'react';
-// import truckImg from './Rectangle 10.svg';
-// import deliveryLady from './Rectangle 22.svg';
-// import circle from './Ellipse 6.svg';
+import React from 'react';
+import cardStyle from './CardIndex.module.css';
+import deliveryPoints from '../../Assets/svg/Frame 2489.svg';
 
-const CardOne = ({ heading, paragraph, buttonName, image, reverse }) => {
+
+
+// LANDING - HOME PAGE SECTION
+
+const CardOne = ({
+	heading,
+	paragraph,
+	buttonName,
+	image,
+	reverse,
+	dark,
+	white,
+	border,
+}) => {
 	return (
 		<div
-			className='webView'
+			className={cardStyle.card}
 			style={{
 				display: 'flex',
 				justifyContent: 'space-between',
 				flexDirection: `${reverse ? 'row-reverse' : 'row'}`,
 			}}>
-			<div>
+			<div className={cardStyle.cardInfo}>
 				<h2>{heading}</h2>
 				<p>{paragraph}</p>
-				<button>{buttonName}</button>
+				<button
+					className={cardStyle.cardBtn}
+					style={{
+						backgroundColor: `${dark ? '#ffffff' : '#25373B'}`,
+						color: `${white ? '#25373B' : '#ffffff'}`,
+						border: `${border ? '1px solid #25373B' : 'none'}`,
+					}}>
+					{buttonName}
+				</button>
 			</div>
-			<div className='trkIimg'>
-				{' '}
-				<img src={image} alt='truck-img' />
+			<div className={cardStyle.trkIimg}>
+				<img src={image} alt='img' />
 			</div>
 		</div>
 	);
 };
 
-const CardTwo = ({ heading, paragraph, buttonName, image }) => {
-	return (
-		<div className='mobView'>
-			<div className='dlvryLady'>
-				<img src={image} alt='delivery-lady' />
-			</div>
-			<div>
-				<h4>{heading}</h4>
-				<p>{paragraph}</p>
-			</div>
-			<button>{buttonName}</button>
-		</div>
-	);
-};
+
+
+// SERVICE CARDS SECTION
 
 const ServiceCards = ({ heading, paragraph, image }) => {
 	return (
-		<div className='webSrvc'>
-			<div className='icon'>
-				<img src={image} alt='icon' />
+		<div className={cardStyle.srvc}>
+			<div className={cardStyle.srvcInfo}>
+				<div className={cardStyle.icon}>
+					<img src={image} alt='icon' />
+				</div>
+				<h4>{heading}</h4>
+				<p>{paragraph}</p>
 			</div>
-			<h4>{heading}</h4>
-			<p>{paragraph}</p>
 		</div>
 	);
 };
 
-const ServiceCards2 = ({ heading, paragraph, image }) => {
+
+
+// TESTIMONIALS SECTION
+
+const Testimonials = ({ name, paragraph, image }) => {
 	return (
-		<div className='mobSrvc'>
-			<div className='icon'>
-				<img src={image} alt='icon' />
+		<div className={cardStyle.testimonial}>
+			<div className={cardStyle.testInfo}>
+				<div className={cardStyle.avatar}>
+					<img src={image} alt='avatar' />
+				</div>
+				<p>{paragraph}</p>
+				<span>
+					<br />
+					{name}
+				</span>
 			</div>
-			<h4>{heading}</h4>
-			<p>{paragraph}</p>
 		</div>
 	);
 };
 
-const Testimonials = ({ heading, paragraph, image }) => {
-	return (
-		<div className='webTest'>
-			<div className='avatar'>
-				<img src={image} alt='avatar' />
-			</div>
-			<h4>{heading}</h4>
-			<p>{paragraph}</p>
-		</div>
-	);
-};
 
-const Testimonials2 = ({ heading, paragraph, image }) => {
-	return (
-		<div className='mobView'>
-			<div className='avatar'>
-				<img src={image} alt='avatar' />
-			</div>
-			<h4>{heading}</h4>
-			<p>{paragraph}</p>
-		</div>
-	);
-};
 
-const OrderCards = ({ name, heading, caption, status, date, location, cargoOwnerNum }) => {
-	return (
-		<div>
-			<main>
-				<div className='idCard'>
-					<div className='idNo'>
-						<h5>{heading}</h5>
-						<span className='caption'>{caption}</span>
-					</div>
-					<span className='idStatus' style={{ backgroundColor: '#FED3D1' }}>
-						{status}
-					</span>
+// ORDER CARDS SECTION
 
-					<div className='trnstPoints'>
-						<div className='trnstPoint1'>
-							<span className='trnstDate'>{date} </span>
-							<div className='trnstCircle'></div>
-							<span className='locatn'>{location}</span>
+const OrderCards = ({
+	name,
+	heading,
+	caption,
+	status,
+	date,
+	location,
+	cargoOwnerNum,
+}) => {
+	return (
+		<div className={cardStyle.orderCards}>
+			<div className={cardStyle.idSum}>
+				<div className={cardStyle.idCard}>
+					<div className={cardStyle.idNo}>
+						<div>
+							<h5>{heading}</h5>
+							<span className={cardStyle.caption}>{caption}</span>
 						</div>
-						<div className='trnstPoint2'>
-							<span className='trnstDate'>{date} </span>
-							<div className='trnstCircle'></div>
-							<span className='locatn'>{location}</span>
+						<div
+							className={cardStyle.idStatus}
+							style={{ backgroundColor: '#FED3D1' }}>
+							{status}
+						</div>
+					</div>
+
+
+					{/* Delivery Points Section */}
+
+					<div className={cardStyle.trnstPoints}>
+						<div className={cardStyle.trnstPoint1}>
+							<span className={cardStyle.trnstDate}>{date} </span>
+
+							<span className={cardStyle.locatn}>{location}</span>
+						</div>
+						<div className={cardStyle.trnstLine}>
+							<img src={deliveryPoints} alt='delivery-points' />
+						</div>
+						<div className={cardStyle.trnstPoint2}>
+							<span className={cardStyle.trnstDate}>{date} </span>
+
+							<span className={cardStyle.locatn}>{location}</span>
 						</div>
 					</div>
 				</div>
+			</div>
 
-				<div className='activeOrders'>
+
+			{/* Active Orders Section */}
+
+			<div className={cardStyle.activeOrders}>
+				<div className={cardStyle.titleStatus}>
 					<h5>{name}</h5>
-					<div className='idNo'>
-						<h5>{heading}</h5>
-						<span className='caption'>{caption}</span>
+					<div
+						className={cardStyle.idStatus2}
+						style={{ backgroundColor: '#A4E8F2' }}>
+						{(status = 'In Transit')}
 					</div>
-					<div className='trnstPoints'></div>
-					<div className='coNum'>{cargoOwnerNum}</div>
-					<div className='reqDate'>{date}</div>
 				</div>
-			</main>
+
+				<div className={cardStyle.idDetails}>
+					<div className={cardStyle.idNo2}>
+						<h5>{heading}</h5>
+						<span className={cardStyle.caption}>{caption}</span>
+					</div>
+					
+					<div className={cardStyle.activeTrnstPoints}>
+						<div className={cardStyle.activeTrnstPoint1}>
+							<span className={cardStyle.trnstDate2}>{date} </span>
+							<span className={cardStyle.locatn}>{location}</span>
+						</div>
+
+						<div className={cardStyle.trnstLine2}>
+							<img src={deliveryPoints} alt='delivery-points' />
+						</div>
+
+						<div className={cardStyle.activeTrnstPoint2}>
+							<span className={cardStyle.trnstDate2}>{date} </span>
+							<span className={cardStyle.locatn}>{location}</span>
+						</div>
+					</div>
+
+					<div className={cardStyle.coNum}>
+						<h6>Cargo Owner Number:</h6>
+						<span>{cargoOwnerNum}</span>
+					</div>
+
+					<div className={cardStyle.reqDate}>
+						<h6>Request Date</h6>
+						<span>{date}</span>
+					</div>
+				</div>
+			</div>
 		</div>
 	);
 };
 
-const SummaryCard = () => {
+
+
+// SUMMARY CARDS SECTION
+
+const SummaryCard = ({ heading, paragraph, numSummary, image }) => {
 	return (
-		<div>
-			<div className='pendnOrders'>
-				{/* <img src={imgsvg} /> */}
-				<p>Pending Orders</p>
-				<h3>10</h3>
+		<div className={cardStyle.sumCard}>
+			
+			{/* Pending Orders Section */}
+			<div className={cardStyle.pendnOrders}>
+				<div
+					className={cardStyle.sumIcon}
+					style={{ width: '3rem', height: '3rem' }}>
+					<img src={image} alt='icon' />
+				</div>
+				<div className={cardStyle.pendnOrderSum}>
+					<h5>{heading}</h5>
+					<h3>{numSummary}</h3>
+				</div>
 			</div>
 
-			<div className='totalTrips'>
-				{/* <img src={imgsvg} /> */}
-				<p>Total Trips</p>
-				<h3>10</h3>
+			{/* Total Trips Section */}
+			<div className={cardStyle.totalTrips}>
+				<div
+					className={cardStyle.sumIcon}
+					style={{ width: '3rem', height: '3rem' }}>
+					<img src={image} alt='icon' />
+				</div>
+				<div className={cardStyle.totalTripSum}>
+					<h5>{heading='Total Trips'}</h5>
+					<div className={cardStyle.tripSumInfo}>
+						<h3>{numSummary}</h3>
+						<p>{paragraph}</p>
+					</div>
+				</div>
 			</div>
 		</div>
 	);
 };
 
-const SelectionCards = () => {
+
+
+// SELECTION CARDS SECTION
+
+const SelectionCards = ({ label, caption }) => {
 	return (
-		<div>
-			<div className='selectCard'>
-				<input type='radio' id='transfer'>
-					<label for='transfer'>Transfer</label>
+		<div className={cardStyle.selectCardDetail}>
+			<div className={cardStyle.selectCard}>
+				<input type='radio' id='transfer' />
+				<div className={cardStyle.selectCardInfo}>
+					<label htmlFor='transfer'>
+						<h5>{label}</h5>
+					</label>
 					<br />
-					<span className='caption'>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit,{' '}
-					</span>
-				</input>
+					<span className={cardStyle.caption}>{caption}</span>
+				</div>
 			</div>
 
-			<div>
-				<input type='radio' id='transfer'>
-					<label for='transfer'>Transfer</label>
+			<div className={cardStyle.selectCard}>
+				<input type='radio' id='transfer' />
+				<div className={cardStyle.selectCardInfo}>
+					<label htmlFor='transfer'>
+						<h5>{label}</h5>
+					</label>
 					<br />
-					<span className='caption'>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit,{' '}
-					</span>
-				</input>
+					<span className={cardStyle.caption}>{caption}</span>
+				</div>
 			</div>
 		</div>
 	);
 };
 
-const SubscribeCards = () => {
-	return <div></div>;
+
+
+// SUBSCRIBE CARDS SECTION
+
+const SubscribeCards = ({ heading, paragraph, btnIcon, image }) => {
+	return (
+		<div className={cardStyle.subContainer}>
+			<div className={cardStyle.subInfo}>
+				<div className={cardStyle.subMsg}>
+					<h3>{heading}</h3>
+					<p>{paragraph}</p>
+					<div className={cardStyle.subInput}>
+						{' '}
+						<input type='text' placeholder='Email Address' />
+						<button className={cardStyle.iconBtn}>
+							<img src={btnIcon} alt='icon' />
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<div className={cardStyle.subImg}>
+				<img src={image} alt='img' />
+			</div>
+		</div>
+	);
 };
+
 
 export {
 	CardOne,
-	CardTwo,
 	ServiceCards,
-	ServiceCards2,
 	Testimonials,
-	Testimonials2,
 	OrderCards,
 	SummaryCard,
 	SelectionCards,

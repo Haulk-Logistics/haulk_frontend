@@ -106,6 +106,13 @@ html {
   font-style: normal;
 }
 
+
+/* Card for Landing Page */
+.cardContainer {
+	/* border: 1px solid red; */
+	/* max-width: 100vw !important; */
+	max-width: 90rem;
+}
 @font-face {
   src: url(../src/Assets/gordita-cufonfonts-webfont/Gordita\ Bold\ Italic.woff);
   font-family: "Gordita", sans-serif;
