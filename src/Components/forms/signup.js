@@ -5,6 +5,7 @@ import { InputDefault, InputwithIcon, Phonenumberinput } from "../Input";
 import { useForm } from "react-hook-form";
 import Formheader from "./formheader";
 import { connect } from "react-redux";
+import haulklogo from "../../Assets/logo/MobileLogo.svg";
 
 const Signup = (props) => {
   // handle form events
@@ -35,9 +36,14 @@ const Signup = (props) => {
 
   return (
     <section className={formstyle.formsection}>
+      <img src={haulklogo} alt="HAULK LOGO" className={formstyle.logo} />
       <Formheader
         head="Create An Account"
-        paragraph="Fill in personal information to register."
+        paragraph={
+          props.usertype === "truck_driver"
+            ? "Fill in personal information to continue registration. "
+            : "Fill in personal information to register."
+        }
       />
       <Selectuser />
       <form onSubmit={handleSubmit(onsubmit)}>

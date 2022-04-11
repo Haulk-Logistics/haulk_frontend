@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Inputstyle from "./styles.module.css";
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 
-//  plain input field  for email, or text
+//  input field  for email, or text ensure to pass
 const InputDefault = ({
   labelname,
   id,
@@ -38,6 +38,39 @@ const InputDefault = ({
             }`,
           },
           maxLength: { value: maxlength, message: "Maximum length is 20" },
+        })}
+      />
+    </div>
+  );
+};
+
+// Input without pattern
+const Inputcharacter = ({
+  labelname,
+  id,
+  type,
+  name,
+  placeholder,
+  disabled,
+  width,
+  error,
+  register,
+  errname,
+}) => {
+  return (
+    <div className={error ? Inputstyle.error : Inputstyle.default}>
+      <label htmlFor={id}>{labelname}</label>
+      <input
+        className={Inputstyle.input}
+        type={type}
+        id={id}
+        errname={errname}
+        name={name}
+        placeholder={placeholder}
+        disabled={disabled}
+        style={{ width: `${width}` }}
+        {...register(name, {
+          required: `${errname} is required`,
         })}
       />
     </div>
@@ -100,7 +133,7 @@ const InputwithIcon = ({
   );
 };
 
-//  plain input field  for phonenumber
+//  input field  for phonenumber
 const Phonenumberinput = ({
   labelname,
   id,
@@ -140,4 +173,79 @@ const Phonenumberinput = ({
   );
 };
 
-export { InputDefault, InputwithIcon, Phonenumberinput };
+// Drop down input field
+const Dropdown = ({
+  labelname,
+  id,
+  name,
+  disabled,
+  error,
+  register,
+  option,
+}) => {
+  return (
+    <div className={error ? Inputstyle.error : Inputstyle.default}>
+      <label htmlFor={id}>{labelname}</label>
+      <select
+        className={Inputstyle.input}
+        id={id}
+        name={name}
+        disabled={disabled}
+        {...register(name, {
+          required: ` Select an option`,
+        })}
+      >
+        {option.map(({ value, optionlabel }, index) => {
+          return (
+            <option value={value} key={index}>
+              {optionlabel}
+            </option>
+          );
+        })}
+      </select>
+    </div>
+  );
+};
+
+// Upload file input field
+const Upload = ({
+  labelname,
+  id,
+  name,
+  disabled,
+  error,
+  register,
+  filename,
+  accept,
+}) => {
+  return (
+    <div className={error ? Inputstyle.error : Inputstyle.default}>
+      <label htmlFor={id}>{labelname}</label>
+      <div className={Inputstyle.uploading}>
+        <label htmlFor={id}>{filename ? `${filename}` : "browse"}</label>
+      </div>
+
+      <input
+        className={Inputstyle.uploadinput}
+        type="file"
+        onChange={console.log("y")}
+        id={id}
+        name={name}
+        disabled={disabled}
+        accept={accept}
+        {...register(name, {
+          required: ` Select an option`,
+        })}
+      />
+    </div>
+  );
+};
+
+export {
+  InputDefault,
+  InputwithIcon,
+  Phonenumberinput,
+  Dropdown,
+  Upload,
+  Inputcharacter,
+};
