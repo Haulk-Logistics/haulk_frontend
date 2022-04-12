@@ -5,6 +5,7 @@ import ServicesSection from "../Components/ServicesSection/ServicesSection";
 import FleetSection from "../Components/FleetSection/FleetSection";
 import TestimonialSection from "../Components/TestimonialSection/TestimonialSection";
 import Footer from "../Components/Footer/Footer";
+import Subscribe from "../Components/SubscribeSection/Subscribe";
 
 const LandingPage = () => {
 
@@ -16,6 +17,7 @@ const LandingPage = () => {
             <ServicesSection/>
             <FleetSection/>
             <TestimonialSection/>
+            <Subscribe/>
             <Footer/>
         </div>
     );

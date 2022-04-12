@@ -1,0 +1,60 @@
+/* Landing Page - Subscription Section */
+
+.subContainer {
+  display: flex;
+  margin: 0;
+  gap: 0;
+}
+
+.subInfo {
+  background-color: var(--accent-main);
+  width: 43.9375rem;
+  height: 31.875rem;
+}
+
+.subMsg {
+  color: var(--white);
+  max-width: 31.4375rem;
+  align-items: center;
+  margin-top: 9.125rem;
+}
+
+.subMsg h3 {
+  font-size: 2.25rem;
+  font-weight: 500;
+  width: 31.4375rem;
+}
+
+.subMsg p {
+  margin: 0.5rem 0rem;
+}
+
+.subInput {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.subInput input {
+  width: 27.8125rem;
+  height: 2.75rem;
+  padding-left: 0.75rem;
+  margin: auto 0;
+}
+
+button.btnIcon {
+  width: 3.6875rem;
+  height: 2.125rem;
+  background-color: var(--accent-main);
+  border: none;
+  position: absolute;
+  margin-top: 0.3125rem;
+  margin-left: 23.6875rem;
+}
+
+@media screen and (max-width: 1000px) {
+  .subContainer {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
