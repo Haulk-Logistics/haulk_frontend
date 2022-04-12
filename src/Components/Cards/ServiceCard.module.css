@@ -21,12 +21,8 @@
     border-radius: 50%;
 }
 
-.serviceCard-heading{
-
-}
-
-.serviceCard-text{
-    
+.serviceCard-heading h4{
+    font-weight: 500;
 }
 
 .serviceCard-text > p{

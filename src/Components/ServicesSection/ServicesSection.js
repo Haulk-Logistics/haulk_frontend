@@ -71,7 +71,7 @@ const ServicesSection = () => {
                     <div className = {`${styles['description-text']}`}>
                         <h2>Earn as a Transporter</h2>
                         <p>
-                            You can add your truck to our fleet and get more market visibility, better paying customers and jobs. Free access to truck maintenance facilities like discounts and insurance. Opportunity to work with the best in the industry and earn a steady income with your truck.
+                            You can add your truck to our fleet and get more market visibility, better paying customers and jobs. Free access to truck maintenance facilities like discounts and insurance. Opportunity to work with the best in the industry and earn a steady income with your truck. Registration is easy and can be done from your place of comfort anywhere in the world.
                         </p>
                         <button>Register Truck</button>
                     </div>
