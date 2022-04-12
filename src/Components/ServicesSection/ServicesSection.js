@@ -1,6 +1,6 @@
 //The second section of the Landing Page
 
-import React, {useState} from "react";
+import React from "react";
 import styles from "./ServicesSection.module.css";
 import ServiceCard from "../Cards/ServiceCard";
 import haulageIcon from "../../Assets/Icons/haulageIcon.svg";
@@ -11,6 +11,8 @@ import image2 from "../../Assets/Images/image2.jpg";
 
 
 const ServicesSection = () => {
+
+    //Properties to be passed into the services cards
     const properties = [
         {
             image: haulageIcon,
@@ -23,7 +25,7 @@ const ServicesSection = () => {
         }, {
             image: experienceIcon,
             heading: 'Experience',
-            text: 'We have a team of seasoned professionals taking care of your goods every step of its way.'
+            text: 'We provide a seamless experience at every step of the way.'
         }
     ];
 
@@ -32,7 +34,7 @@ const ServicesSection = () => {
             <h2>Our Services</h2>
             <p>What we have to offer</p>
             <div className = {styles.servicesCards}>
-                {/* Container for services Card */}
+                {/* Container for the services card */}
                 <ServiceCard
                     image = {properties[0].image}
                     heading = {properties[0].heading}
@@ -71,7 +73,7 @@ const ServicesSection = () => {
                         <p>
                             You can add your truck to our fleet and get more market visibility, better paying customers and jobs. Free access to truck maintenance facilities like discounts and insurance. Opportunity to work with the best in the industry and earn a steady income with your truck.
                         </p>
-                        <button>Resgister Truck</button>
+                        <button>Register Truck</button>
                     </div>
                 </div>
             </div>
