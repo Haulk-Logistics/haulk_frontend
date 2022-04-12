@@ -3,8 +3,8 @@ import style from './Subscribe.module.css';
 import subscribeImg from '../../Assets/svg/subscribeImage.svg';
 import buttonIcon from '../../Assets/Icons/buttonIcon.svg';
 
-const Subscribe = (props) => {
-  return (
+const Subscribe = () => {
+	return (
 		<div className={style.subContainer}>
 			<div className={style.subInfo}>
 				<div className={style.subMsg}>
@@ -14,17 +14,17 @@ const Subscribe = (props) => {
 						{' '}
 						<input type='text' placeholder='Email Address' />
 						<button type='submit' className={style.btnIcon}>
-							<img src={(props.btnIcon = { buttonIcon })} alt='icon' />
+							<img src={buttonIcon} alt='icon' />
 						</button>
 					</div>
 				</div>
 			</div>
 
 			<div className={style.subImg}>
-				<img src={(props.image = { subscribeImg })} alt='img' />
+				<img src={subscribeImg} alt='img' />
 			</div>
 		</div>
 	);
-}
+};
 
 export default Subscribe;
