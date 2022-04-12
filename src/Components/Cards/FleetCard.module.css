@@ -1,0 +1,31 @@
+.truckCard{
+    position: relative;
+}
+
+.truck-img{
+    width: 100%;
+    height: auto;
+}
+
+.truck-img > img{
+    width: 100%;
+    height: auto;
+    object-fit: fill;
+}
+
+.truck-type{
+    width: 60%;
+    height: 3.75rem;
+    background: #1692AD8F;
+    position: absolute;
+    bottom: .3rem;
+    right: 0;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+}
+
+.truck-type > p{
+    color: var(--white);
+    margin-left: 1rem;
+}
