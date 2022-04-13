@@ -1,6 +1,7 @@
 //Reusable Component for the Landing Page's Navbar
 
 import React, { useState } from "react";
+import {Link} from "react-router-dom";
 import styles from "./LandingPageNavbar.module.css";
 import WebLogo from "../../Assets/Icons/webLogo.svg";
 import MobileLogo from "../../Assets/Icons/mobileLogo.svg";
@@ -26,9 +27,9 @@ const LandingPageNavbar = (props) => {
             </div>
             <div className = {`${styles['navbar-centre']} ${active ? styles.closeNav : null}`}>
                 <div className = {`${styles['navbar-links']}`}>
-                    <a href={link}>Home</a>
-                    <a href={link}>Resources</a>
-                    <a href={link}>About</a>
+                    <Link to = "/">Home</Link>
+                    <Link to = "resources">Resources</Link>
+                    <Link to = "">About</Link>
                 </div>
                 <div className = {`${styles['navbar-buttons']}`}>
                     <button className = {`${styles['navbar-CTA']}`}>Login</button>

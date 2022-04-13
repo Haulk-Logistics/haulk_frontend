@@ -129,6 +129,8 @@ html {
 
 body {
   font-family: "Gordita", sans-serif;
+  /* height: 100%;
+  overflow: hidden; */
 }
 
 h1{

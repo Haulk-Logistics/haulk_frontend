@@ -1,6 +1,6 @@
 .fleet{
     width: 100vw;
-    padding: 3rem 4.5rem;
+    padding: 2rem 4.5rem;
 }
 
 .fleet > h2, .fleet > p{
@@ -24,6 +24,15 @@
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: auto;
     gap: 20px;
+}
+
+.fleet-grid > *{
+    cursor: pointer;
+    transition: .8s;
+}
+
+.fleet-grid > *:hover{
+    transform: scale(1.03);
 }
 
 .fleet-grid > :first-child{
