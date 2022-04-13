@@ -2,30 +2,54 @@ import React from "react";
 import formstyle from "./style.module.css";
 import { MdPeopleAlt } from "react-icons/md";
 import { FaTruck } from "react-icons/fa";
-import { connect } from "react-redux";
+import { connect, useSelector } from "react-redux";
 import { usertype } from "../../Actions/status";
+import Steps from "../Stepper/stepper";
 
 const Selectuser = (props) => {
-  return (
-    <div className={formstyle.usersection}>
-      {/*Cargo owner button*/}
-      <button
-        autoFocus
-        className={formstyle.usersectionbutton}
-        onClick={() => props.dispatch(usertype("cargo_owner"))}
-      >
-        <MdPeopleAlt /> <span>Cargo Owner</span>
-      </button>
+  const user = useSelector((state) => state.status);
 
-      {/*Truck driver button*/}
-      <button
-        className={formstyle.usersectionbutton}
-        onClick={(e) => {
-          props.dispatch(usertype("truck_driver"));
-        }}
+  return (
+    <div>
+      <div className={formstyle.usersection}>
+        {/*Cargo owner button*/}
+        <button
+          autoFocus={user === "cargoowner" ? true : false}
+          className={
+            props.usertype === "cargoowner"
+              ? formstyle.focus
+              : formstyle.usersectionbutton
+          }
+          onClick={() => props.dispatch(usertype("cargoowner"))}
+        >
+          <MdPeopleAlt /> <span>Cargo Owner</span>
+        </button>
+
+        {/*Truck driver button*/}
+        <button
+          autoFocus={user === "truckdriver" ? true : false}
+          className={
+            props.usertype === "truckdriver"
+              ? formstyle.focus
+              : formstyle.usersectionbutton
+          }
+          onClick={(e) => {
+            props.dispatch(usertype("truckdriver"));
+          }}
+        >
+          <FaTruck /> <span>Truck Driver</span>
+        </button>
+      </div>
+      <div
+        style={{ margin: "1rem 0" }}
+        className={
+          props.usertype === "truckdriver"
+            ? formstyle.step1
+            : formstyle.hidestep
+        }
       >
-        <FaTruck /> <span>Truck Driver</span>
-      </button>
+        <Steps />
+      </div>
     </div>
   );
 };

@@ -40,10 +40,15 @@ const LandingPageNavbar = (props) => {
           <a href={link}>About</a>
         </div>
         <div className={`${styles["navbar-buttons"]}`}>
-          <button className={`${styles["navbar-CTA"]}`}>Login</button>
           <button
             className={`${styles["navbar-CTA"]}`}
-            onClick={() => navigate("/hksignup")}
+            onClick={() => navigate("/login")}
+          >
+            Login
+          </button>
+          <button
+            className={`${styles["navbar-CTA"]}`}
+            onClick={() => navigate("/signup")}
           >
             Create Account
           </button>
