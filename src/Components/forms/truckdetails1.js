@@ -1,13 +1,14 @@
 import React from "react";
 import { Dropdown, Inputcharacter, Upload } from "../Input";
 import Formheader from "./formheader";
-import step2 from "../../Assets/images/step2.svg";
+import step2 from "../../Assets/Images/step2.svg";
 import { useForm } from "react-hook-form";
 import formstyle from "./style.module.css";
-import { connect } from "react-redux";
+import { connect, useDispatch } from "react-redux";
 import { truckdetails } from "../../Actions/truckdetail";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { formstep } from "../../Actions/stepper";
 
 const schema = yup.object().shape({
   vehicle_licence: yup
@@ -40,13 +41,17 @@ const Truckdetails = (props) => {
     resolver: yupResolver(schema),
   });
 
+  const dispatch = useDispatch();
+
   const onsubmit = (data) => {
     props.dispatch(truckdetails(data));
+    dispatch(formstep(2));
   };
 
   return (
     <div className={formstyle.truckform}>
       <Formheader
+        hide="true"
         head="Register Truck"
         paragraph="Fill in truck information to continue registration."
       />

@@ -1,20 +1,19 @@
 import React from "react";
-import { connect } from "react-redux";
+import { connect, useSelector } from "react-redux";
+
 import Formnav from "../../Components/forms/formnav";
 import Truckdetailcont from "../../Components/forms/truckdetail2";
 import Truckdetails from "../../Components/forms/truckdetails1";
 import regstyle from "./style.module.css";
 
 const RegisterTruck = (props) => {
+  const stepnumber = useSelector((state) => state.step);
+
   return (
     <div>
       <Formnav />
       <div className={regstyle.reg}>
-        {Object.keys(props.truckdetails).length < 1 ? (
-          <Truckdetails />
-        ) : (
-          <Truckdetailcont />
-        )}
+        {stepnumber === 1 ? <Truckdetails /> : <Truckdetailcont />}
       </div>
     </div>
   );

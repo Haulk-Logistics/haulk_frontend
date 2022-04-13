@@ -1,7 +1,6 @@
 import React from "react";
 import { Upload } from "../Input";
 import Formheader from "./formheader";
-import step3 from "../../Assets/images/step3.svg";
 import { useForm } from "react-hook-form";
 import formstyle from "./style.module.css";
 import { connect } from "react-redux";
@@ -53,10 +52,10 @@ const Truckdetailcont = (props) => {
   return (
     <div className={formstyle.truckform}>
       <Formheader
+        hide="true"
         head="Register Truck"
         paragraph="Fill in truck information to continue registration."
       />
-      <img src={step3} alt="STEP 2" className={formstyle.step2} />
       <form onSubmit={handleSubmit(onsubmit)}>
         <Upload
           labelname="Driver's Licence"

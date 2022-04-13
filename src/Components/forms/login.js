@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { InputDefault, InputwithIcon } from "../Input";
 import Button from "./button";
 import Formheader from "./formheader";
 import loginstyle from "./style.module.css";
+import axios from "axios";
+import { useDispatch } from "react-redux";
+
+const Login_URL = "https://haulk.herokuapp.com/api/auth/signin";
 
 const Loginform = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const dispatch = useDispatch();
+
   const {
     register,
     handleSubmit,
@@ -15,13 +22,44 @@ const Loginform = () => {
     mode: "onTouched",
   });
 
+  const onsubmit = async (data) => {
+    setIsLoading(false);
+    await axios
+      .post(Login_URL, data)
+      .then((res) => {
+        setIsLoading(true);
+        // const userToken = res.data.token
+        //     localStorage.setItem('haulk-app-auth',JSON.stringify(userToken));
+        dispatch({
+          type: "success",
+          payload: {
+            title: "Successful!",
+            message: res.response.data.message,
+          },
+        });
+        console.log(res);
+      })
+      .catch((error) => {
+        setIsLoading(true);
+        dispatch({
+          type: "error",
+          payload: {
+            title: "Error!",
+            message: error.response.data.message,
+          },
+        });
+        console.log(error);
+      });
+  };
+
   return (
     <div className={loginstyle.formsection} style={{ paddingTop: "6rem" }}>
       <Formheader
         head="Login to your Account"
         paragraph=" Kindly fill in login details to continue."
       />
-      <form>
+
+      <form onSubmit={handleSubmit(onsubmit)}>
         <InputDefault
           labelname="Email Address"
           type="email"
@@ -67,12 +105,12 @@ const Loginform = () => {
             Forgot Password?
           </Link>
         </div>
-        <Button name="Log In" />
+        <Button name="Log In" status={isLoading} />
       </form>
       <p>
         Don't have an Account?
         <Link
-          to="/hksignup"
+          to="/signup"
           className={loginstyle.link}
           style={{ paddingLeft: ".2rem" }}
         >

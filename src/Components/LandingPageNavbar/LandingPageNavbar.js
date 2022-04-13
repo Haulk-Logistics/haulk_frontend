@@ -48,7 +48,7 @@ const LandingPageNavbar = (props) => {
           </button>
           <button
             className={`${styles["navbar-CTA"]}`}
-            onClick={() => navigate("/hksignup")}
+            onClick={() => navigate("/signup")}
           >
             Create Account
           </button>

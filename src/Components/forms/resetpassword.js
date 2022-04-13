@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { InputDefault, InputwithIcon } from "../Input";
+import { InputwithIcon } from "../Input";
 import Button from "./button";
 import Formheader from "./formheader";
 import formstyle from "./style.module.css";
@@ -23,6 +23,7 @@ const schema = yup.object().shape({
 });
 
 const Resetpassword = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const {
     register,
     handleSubmit,
@@ -32,13 +33,17 @@ const Resetpassword = () => {
     resolver: yupResolver(schema),
   });
 
+  const onsubmit = (data) => {
+    setIsLoading(false);
+  };
+
   return (
     <div className={formstyle.formsection}>
       <Formheader
         head="Reset Password"
         paragraph="New password must be different from previously used password."
       />
-      <form onSubmit={handleSubmit()}>
+      <form onSubmit={handleSubmit(onsubmit)}>
         <InputwithIcon
           labelname="Password"
           id="npassword"
@@ -65,7 +70,7 @@ const Resetpassword = () => {
           <p className={formstyle.error}>{errors.re_password.message}</p>
         )}
 
-        <Button name="Submit" />
+        <Button name="Submit" status={isLoading} />
       </form>
     </div>
   );

@@ -7,8 +7,22 @@ import image1 from "../../Assets/Images/bgImage1.jpg";
 import image2 from "../../Assets/Images/bgImage2.jpg";
 import image3 from "../../Assets/Images/bgImage3.jpg";
 import image4 from "../../Assets/Images/bgImage4.jpg";
-
+import { useNavigate } from "react-router";
+import { useDispatch } from "react-redux";
+import { usertype } from "../../Actions/status";
 const IntroSection = (props) => {
+  // useSelector connects us to the redux store
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  // handleRegisterTruck takes you to truck driver signup
+  const handleRegisterTruck = () => {
+    // The dispatch changes the status of user to be truck driver automatically when they get to signup page
+    dispatch(usertype("truckdriver"));
+    navigate("/signup");
+  };
+
   return (
     <div className={styles.introSection}>
       <div className={`${styles["introSection-main"]}`}>
@@ -18,8 +32,14 @@ const IntroSection = (props) => {
           and government agencies.
         </p>
         <div className={`${styles["introSection-buttons-container"]}`}>
-          <button>Register Truck</button>
-          <button>Book a Truck</button>
+          <button onClick={handleRegisterTruck}>Register Truck</button>
+          <button
+            onClick={() => {
+              navigate("/login");
+            }}
+          >
+            Book a Truck
+          </button>
         </div>
       </div>
       <BackgroundSlider

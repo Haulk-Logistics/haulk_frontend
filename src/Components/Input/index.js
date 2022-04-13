@@ -28,7 +28,7 @@ const InputDefault = ({
         disabled={disabled}
         style={{ width: `${width}` }}
         {...register(name, {
-          required: `${name} is required`,
+          required: `${labelname} is required`,
           pattern: {
             value: pattern,
             message: ` ${
@@ -107,7 +107,7 @@ const InputwithIcon = ({
           disabled={disabled}
           style={{ width: `${width}` }}
           {...register(name, {
-            required: `${name} is required`,
+            required: `${labelname} is required`,
             pattern: {
               value: pattern,
               message:
@@ -121,11 +121,14 @@ const InputwithIcon = ({
           {...rest}
         />
         <button
+          type="button"
           className={Inputstyle.Icon}
           disabled={disabled}
-          onClick={() => (state === "" ? setState("text") : setState(""))}
+          onClick={() => {
+            state === "" ? setState("text") : setState("");
+          }}
         >
-          {state ? <AiFillEyeInvisible /> : <AiFillEye />}
+          {state ? <AiFillEye /> : <AiFillEyeInvisible />}
         </button>
       </div>
     </div>
@@ -160,7 +163,7 @@ const Phonenumberinput = ({
         disabled={disabled}
         style={{ width: `${width}` }}
         {...register(name, {
-          required: `${name} is required`,
+          required: `${labelname} is required`,
           pattern: { value: pattern, message: "Numbers only" },
           minLength: {
             value: minlength,

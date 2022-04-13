@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { InputDefault } from "../Input";
 import Button from "./button";
-import Formerror from "./error";
 import Formheader from "./formheader";
 import formstyle from "./style.module.css";
 
 const Forgotpassword = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const {
     register,
     handleSubmit,
@@ -15,13 +15,16 @@ const Forgotpassword = () => {
     mode: "onTouched",
   });
 
+  const onsubmit = (data) => {
+    setIsLoading(false);
+  };
   return (
     <div className={formstyle.formsection}>
       <Formheader
         head="Forgot Password"
         paragraph="Don't worry it happens. Please enter the Email Address associated with your account."
       />
-      <form>
+      <form onSubmit={handleSubmit(onsubmit)}>
         <InputDefault
           labelname="Email Address"
           name="email"
@@ -34,7 +37,7 @@ const Forgotpassword = () => {
         {errors.email && (
           <p className={formstyle.error}>{errors.email.message}</p>
         )}
-        <Button name="Submit" />
+        <Button name="Submit" status={isLoading} />
       </form>
     </div>
   );

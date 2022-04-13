@@ -83,6 +83,7 @@
     box-sizing: border-box;
     margin-bottom: 2rem;
     background-color: var(--white);
+    z-index: 1;
 }
 
 /* User section */
