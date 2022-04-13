@@ -11,6 +11,10 @@ html {
   padding: 0;
 }
 
+* {
+  transition: 0.3s all ease-in-out;
+}
+
 :root {
   /*Colour Variables*/
   /*Primary Colour*/
@@ -31,10 +35,10 @@ html {
 
   /*Accent Colours*/
   --accent-main: #1692ad;
-  --accent-80: #44A8BE;
-  --accent-60: #73BDCE;
-  --accent-40: #A2D3DE;
-  --accent-20: #ECF6F8;
+  --accent-80: #44a8be;
+  --accent-60: #73bdce;
+  --accent-40: #a2d3de;
+  --accent-20: #ecf6f8;
 
   /*Status Colours*/
   --success: #34d399;
@@ -133,27 +137,27 @@ body {
   overflow: hidden; */
 }
 
-h1{
+h1 {
   font-size: 3.5rem;
 }
 
-h2{
+h2 {
   font-size: 3rem;
 }
 
-h3{
+h3 {
   font-size: 2.25rem;
 }
 
-h4{
+h4 {
   font-size: 1.5rem;
 }
 
-h5{
+h5 {
   font-size: 1.25rem;
 }
 
-p{
+p {
   font-size: 1rem;
   font-weight: 400;
 }
@@ -164,4 +168,3 @@ p{
     font-size: 75%;
   }
 }
-

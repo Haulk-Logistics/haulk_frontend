@@ -1,3 +1,5 @@
+/* Landing Page - Subscription Section */
+
 import React from 'react';
 import style from './Subscribe.module.css';
 import subscribeImage from "../../Assets/Images/subscribeImage.jpg";

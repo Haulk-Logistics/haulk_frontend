@@ -1,14 +1,7 @@
-.App{
+.App {
   height: 100vh;
 }
 
-.cardContainer {
-  /* border: 1px solid red; */
-  max-width: 100vw !important;
-}
-
-@media screen and (max-width: 1000px) {
-  .cardContainer {
-    flex-direction: column;
-  }
+.activeNav {
+  color: var(--accent-main) !important;
 }

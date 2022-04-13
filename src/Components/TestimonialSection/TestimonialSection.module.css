@@ -1,6 +1,6 @@
 .testimonial{
     width: 100vw;
-    padding: 3rem;
+    padding: 5rem 9.4rem;
 }
 
 .testimonial > h2, .testimonial > p{
@@ -10,8 +10,29 @@
 .testimonial > h2{
     color: var(--text-black);
     font-weight: 500;
+    margin-bottom: .5rem;
 }
 
 .testimonial > p{
     color: var(--primary-40);
+    margin-bottom: 1.5rem;
+}
+
+.testimonialGrid{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 2.5rem;
+}
+
+@media only screen and (max-width: 23.4375rem){
+    .testimonial{
+        padding: 1.5rem 1.5rem;
+    }
+
+    .testimonialGrid{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+    }
 }

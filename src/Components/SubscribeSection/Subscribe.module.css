@@ -94,4 +94,14 @@
   .subInfo, .subImg{
     width: 100%;
   }
+
+  .subscribeBtn{
+    margin-top: .3rem;
+    margin-left: 18rem;
+  }
+
+  .subscribeBtn > img{
+    width: 2.4rem;
+    height: 2rem;
+  }
 }

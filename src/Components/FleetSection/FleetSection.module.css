@@ -61,6 +61,10 @@
 }
 
 @media only screen and (max-width: 23.4375rem){
+    .fleet{
+        padding: 2rem 1.8rem;
+    }
+
     .fleet-grid{
         display: grid;
         grid-template-columns: 1fr;
