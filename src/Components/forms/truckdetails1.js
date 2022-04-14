@@ -189,7 +189,7 @@ const Truckdetails = (props) => {
           </p>
         )}
         {/*  Submit button*/}
-        <button className={formstyle.button}>Next</button>
+        <button className={formstyle.button}>Save & Next</button>
       </form>
     </div>
   );

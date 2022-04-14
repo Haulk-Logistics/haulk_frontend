@@ -1,6 +1,6 @@
 import React from "react";
 import headerstyle from "./style.module.css";
-import haulklogo from "../../Assets/logo/MobileLogo.svg";
+import haulklogo from "../../Asset/logo/MobileLogo.svg";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 

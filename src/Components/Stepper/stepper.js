@@ -12,19 +12,19 @@ const Steps = () => {
       <div className={vpage >= 0 ? stepper.activeline : stepper.line}></div>
       <button
         type="button"
-        className={vpage >= 1 ? stepper.active : stepper.circle}
+        className={vpage >= 0 ? stepper.active : stepper.circle}
         onClick={() => {
           dispatch(formstep(0));
         }}
       >
         1
       </button>
-      <div className={vpage >= 2 ? stepper.activeline : stepper.line}></div>
-      <div className={vpage >= 2 ? stepper.activeline : stepper.line}></div>
+      <div className={vpage >= 1 ? stepper.activeline : stepper.line}></div>
+      <div className={vpage >= 1 ? stepper.activeline : stepper.line}></div>
       <button
         type="button"
         disabled={vpage < 1 ? true : false}
-        className={vpage >= 2 ? stepper.active : stepper.circle}
+        className={vpage >= 1 ? stepper.active : stepper.circle}
         onClick={() => {
           dispatch(formstep(1));
         }}
@@ -36,7 +36,7 @@ const Steps = () => {
       <button
         type="button"
         disabled={vpage < 2 ? true : false}
-        className={vpage >= 3 ? stepper.active : stepper.circle}
+        className={vpage >= 2 ? stepper.active : stepper.circle}
         onClick={() => {
           dispatch(formstep(2));
         }}

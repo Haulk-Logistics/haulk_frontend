@@ -11,7 +11,7 @@ import { truckdetails } from "../../Store/Actions/truckdetail";
 import { formstep } from "../../Store/Actions/stepper";
 import { Pagecontrol } from "../../Store/Actions/pagecontrol";
 
-const Register_URL = "https://haulk.herokuapp.com/api/auth/signup";
+const Register_URL = "https://haulk.herokuapp.com/api/auth/signupCargoOwner";
 
 const Signup = (props) => {
   const [isLoading, setIsLoading] = useState(true);

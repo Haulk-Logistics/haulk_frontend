@@ -1,11 +1,12 @@
 //Reusable Component for the Landing Page's Navbar
 
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import styles from "./LandingPageNavbar.module.css";
-import WebLogo from "../../Assets/logo/WebLogo.svg";
-import MobileLogo from "../../Assets/logo/MobileLogo.svg";
-import HamburgerIcon from "../../Assets/icon/HamburgerIcon.svg";
-import CancelIcon from "../../Assets/icon/CancelIcon.svg";
+import WebLogo from "../../Asset/Icons/webLogo.svg";
+import MobileLogo from "../../Asset/Icons/mobileLogo.svg";
+import HamburgerIcon from "../../Asset/Icons/hamburgerIcon.svg";
+import CancelIcon from "../../Asset/Icons/cancelIcon.svg";
 import { useNavigate } from "react-router";
 
 const LandingPageNavbar = (props) => {
@@ -35,9 +36,9 @@ const LandingPageNavbar = (props) => {
         }`}
       >
         <div className={`${styles["navbar-links"]}`}>
-          <a href={link}>Home</a>
-          <a href={link}>Resources</a>
-          <a href={link}>About</a>
+          <Link to="/">Home</Link>
+          <Link to="/resources">Resources</Link>
+          <Link to="">About</Link>
         </div>
         <div className={`${styles["navbar-buttons"]}`}>
           <button
