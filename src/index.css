@@ -146,6 +146,8 @@ body {
   font-family: "Gordita", sans-serif;
   /* height: 100%;
   overflow: hidden; */
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 h1{
