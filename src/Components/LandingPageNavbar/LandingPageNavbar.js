@@ -3,10 +3,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./LandingPageNavbar.module.css";
-import WebLogo from "../../Assets/Icons/webLogo.svg";
-import MobileLogo from "../../Assets/Icons/mobileLogo.svg";
-import HamburgerIcon from "../../Assets/Icons/hamburgerIcon.svg";
-import CancelIcon from "../../Assets/Icons/cancelIcon.svg";
+import WebLogo from "../../Asset/Icons/webLogo.svg";
+import MobileLogo from "../../Asset/Icons/mobileLogo.svg";
+import HamburgerIcon from "../../Asset/Icons/hamburgerIcon.svg";
+import CancelIcon from "../../Asset/Icons/cancelIcon.svg";
 import { useNavigate } from "react-router";
 
 const LandingPageNavbar = (props) => {

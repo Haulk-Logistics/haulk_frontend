@@ -1,5 +1,5 @@
 import React from "react";
-import hlkwallpaper from "../../Assets/Images/haulk-wallpaper.svg";
+import hlkwallpaper from "../../Asset/Images/haulk-wallpaper.svg";
 import imgstyle from "./style.module.css";
 
 const Wallpaper = () => {
