@@ -37,7 +37,7 @@ const Loginform = () => {
             message: res.data.message,
           },
         });
-        console.log(res);
+        // console.log(res);
       })
       .catch((error) => {
         setIsLoading(true);
@@ -48,7 +48,7 @@ const Loginform = () => {
             message: error.response.data.message,
           },
         });
-        console.log(error);
+        // console.log(error);
       });
   };
 
