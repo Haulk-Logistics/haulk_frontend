@@ -28,13 +28,14 @@ const Loginform = () => {
       .post(Login_URL, data)
       .then((res) => {
         setIsLoading(true);
-        // const userToken = res.data.token
-        //     localStorage.setItem('haulk-app-auth',JSON.stringify(userToken));
+        const userToken = res.data.token;
+        localStorage.setItem("haulk-app-auth", JSON.stringify(userToken));
+        console.log(res.data.message);
         dispatch({
           type: "success",
           payload: {
             title: "Successful!",
-            message: res.response.data.message,
+            message: res.data.message,
           },
         });
         console.log(res);
@@ -48,7 +49,7 @@ const Loginform = () => {
             message: error.response.data.message,
           },
         });
-        console.log(error);
+        // console.log(error);
       });
   };
 

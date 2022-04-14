@@ -1,0 +1,97 @@
+/* Landing Page - Subscription Section */
+
+.subContainer {
+  width: 100vw;
+  display: flex;
+  justify-content: stretch;
+  align-items: stretch;
+}
+
+.subInfo {
+  background-color: var(--accent-main);
+  height: inherit;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.subMsg {
+  color: var(--white);
+  width: 70%;
+  padding: 9.125rem 0 9.5rem 0;
+}
+
+.subMsg > h3 {
+  font-size: 2.25rem;
+  font-weight: 500;
+  line-height: 46px;
+  letter-spacing: -0.5px;
+}
+
+.subMsg > p {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 26px;
+  letter-spacing: 0.15px;
+  margin: 0.5rem 0rem;
+}
+
+.subInput {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.subInput > input {
+  width: 27.8125rem;
+  height: 2.75rem;
+  padding-left: 0.75rem;
+  margin: auto 0;
+  border: 1px solid #BAC7D5;
+  border-radius: 3px;
+}
+
+.subInput > input::placeholder{
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 20px;
+}
+
+.subscribeBtn {
+  width: 3.6875rem;
+  height: 2.125rem;
+  background-color: var(--accent-main);
+  border: none;
+  position: absolute;
+  margin-top: 0.3125rem;
+  margin-left: 23.6875rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.subscribeBtn:hover{
+  transform: translateY(-1px);
+  box-shadow: 0px 1px 2px 2px rgba(0,0,0,0.30);
+}
+
+.subImg{
+  width: 50%;
+  height: auto;
+}
+
+.subImg > img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media only screen and (max-width: 23.4375rem){
+  .subContainer {
+    flex-direction: column;
+  }
+
+  .subInfo, .subImg{
+    width: 100%;
+  }
+}

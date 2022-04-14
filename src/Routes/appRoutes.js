@@ -9,6 +9,8 @@ import Loginpage from "../Pages/Login/login";
 import Resetpasswordpage from "../Pages/Login/resetpassword";
 import RegisterTruck from "../Pages/Registertruck/RegisterTruck";
 import SignupPage from "../Pages/signuppage";
+import ResourcesPage from "../Pages/ResourcesPage";
+import ErrorPage from "../Pages/ErrorPage";
 
 const AppRoutes = () => {
   // useSelector connects us to the redux store
@@ -38,6 +40,8 @@ const AppRoutes = () => {
           />
           <Route exact path="/resetpassword" element={<Resetpasswordpage />} />
           <Route exact path="/adminlogin" element={<Adminlogin />} />
+          <Route path="resources" element={<ResourcesPage />} />
+          <Route path="" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>
     </Fragment>

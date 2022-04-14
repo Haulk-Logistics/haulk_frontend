@@ -51,9 +51,11 @@ const Signup = (props) => {
             type: "success",
             payload: {
               title: "Success!",
-              message: res.data.message,
+              message:
+                "Account created successfully. Please check your mail box to verify your account",
             },
           });
+          navigate("/login");
         })
         .catch((err) => {
           setIsLoading(true);
