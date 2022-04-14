@@ -46,12 +46,11 @@ const Signup = (props) => {
         .post(Register_URL, allData)
         .then((res) => {
           setIsLoading(true);
-          console.log(res, "-----then");
           dispatch({
             type: "success",
             payload: {
               title: "Success!",
-              message: res.response.data.message,
+              message: res.data.message,
             },
           });
         })
@@ -72,8 +71,6 @@ const Signup = (props) => {
         });
     }
   };
-
-  console.log(pageno);
   // console.log(props.usertype);
 
   return pageno === 1 ? (
