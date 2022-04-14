@@ -27,7 +27,6 @@ const Loginform = () => {
     await axios
       .post(Login_URL, data)
       .then((res) => {
-        setIsLoading(true);
         const userToken = res.data.token;
         localStorage.setItem("haulk-app-auth", JSON.stringify(userToken));
         dispatch({
@@ -37,19 +36,20 @@ const Loginform = () => {
             message: res.data.message,
           },
         });
-        // console.log(res);
       })
       .catch((error) => {
-        setIsLoading(true);
         dispatch({
           type: "error",
           payload: {
             title: "Error!",
-            message: error.response.data.message,
+            message: error.response
+              ? error.response.data.message
+              : "Network Error",
           },
         });
         // console.log(error);
-      });
+      })
+      .finally(() => setIsLoading(true));
   };
 
   return (
