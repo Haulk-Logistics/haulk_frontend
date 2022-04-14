@@ -43,26 +43,11 @@ const FleetSection = () => {
       <p>Varieties of trucks you could choose from</p>
       <div className={`${styles["fleet-grid"]}`}>
         {/* Container for the fleet cards */}
-        <FleetCard
-          image={properties[0].image}
-          type={properties[0].type}
-        />
-        <FleetCard
-          image={properties[1].image}
-          type={properties[1].type}
-        />
-        <FleetCard
-          image={properties[2].image}
-          type={properties[2].type}
-        />
-        <FleetCard
-          image={properties[3].image}
-          type={properties[3].type}
-        />
-        <FleetCard
-          image={properties[4].image}
-          type={properties[4].type}
-        />
+        <FleetCard image={properties[0].image} type={properties[0].type} />
+        <FleetCard image={properties[1].image} type={properties[1].type} />
+        <FleetCard image={properties[2].image} type={properties[2].type} />
+        <FleetCard image={properties[3].image} type={properties[3].type} />
+        <FleetCard image={properties[4].image} type={properties[4].type} />
       </div>
     </div>
   );
