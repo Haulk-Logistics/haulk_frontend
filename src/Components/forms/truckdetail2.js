@@ -3,31 +3,35 @@ import { Upload } from "../Input";
 import Formheader from "./formheader";
 import { useForm } from "react-hook-form";
 import formstyle from "./style.module.css";
-import { connect } from "react-redux";
-import { truckdetails } from "../../Actions/truckdetail";
+import { connect, useDispatch } from "react-redux";
+import { truckdetails } from "../../Store/Actions/truckdetail";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { Pagecontrol } from "../../Store/Actions/pagecontrol";
+import Selectuser from "./user";
 
 const schema = yup.object().shape({
-  driver_licence: yup
+  driverLicenseImage: yup
     .mixed()
     .test("required", "Drivers licence is requred", (value) => {
       return value && value.length;
     }),
-  tgls: yup
+  transitGoodsLicenseImage: yup
     .mixed()
     .test("required", "Transit goods licence is requred", (value) => {
       return value && value.length;
     }),
-  portpass: yup.mixed().test("required", "Port pass is requred", (value) => {
-    return value && value.length;
-  }),
-  truck_image: yup
+  portPassesImage: yup
+    .mixed()
+    .test("required", "Port pass is requred", (value) => {
+      return value && value.length;
+    }),
+  truckImage: yup
     .mixed()
     .test("required", "Truck image is requred", (value) => {
       return value && value.length;
     }),
-  drivers_img: yup
+  driverImage: yup
     .mixed()
     .test("required", "Drivers image is requred", (value) => {
       return value && value.length;
@@ -45,92 +49,101 @@ const Truckdetailcont = (props) => {
     resolver: yupResolver(schema),
   });
 
+  const dispatch = useDispatch();
+
   const onsubmit = (data) => {
     props.dispatch(truckdetails(data));
+    dispatch(Pagecontrol(3));
+
+    console.log(data);
   };
 
   return (
-    <div className={formstyle.truckform}>
+    <div className={formstyle.formsection}>
       <Formheader
-        hide="true"
         head="Register Truck"
         paragraph="Fill in truck information to continue registration."
       />
+      <Selectuser />
       <form onSubmit={handleSubmit(onsubmit)}>
         <Upload
           labelname="Driver's Licence"
           filename={
-            !watch("driver_licence") || watch("driver_licence").length === 0
+            !watch("driverLicenseImage") ||
+            watch("driverLicenseImage").length === 0
               ? ""
-              : watch("driver_licence")[0].name
+              : watch("driverLicenseImage")[0].name
           }
           id="driverlicence"
-          name="driver_licence"
+          name="driverLicenseImage"
           register={register}
         />
-        {errors.driver_licence && (
-          <p className={formstyle.error}>{errors.driver_licence.message}</p>
+        {errors.driverLicenseImage && (
+          <p className={formstyle.error}>{errors.driverLicenseImage.message}</p>
         )}
 
         <Upload
           labelname="Transit goods licence (TGLs)"
           filename={
-            !watch("tgls") || watch("tgls").length === 0
+            !watch("transitGoodsLicenseImage") ||
+            watch("transitGoodsLicenseImage").length === 0
               ? ""
-              : watch("tgls")[0].name
+              : watch("transitGoodsLicenseImage")[0].name
           }
           id="tgl"
-          name="tgls"
+          name="transitGoodsLicenseImage"
           register={register}
         />
-        {errors.tgls && (
-          <p className={formstyle.error}>{errors.tgls.message}</p>
+        {errors.transitGoodsLicenseImage && (
+          <p className={formstyle.error}>
+            {errors.transitGoodsLicenseImage.message}
+          </p>
         )}
 
         <Upload
           labelname="Port Pass"
           filename={
-            !watch("portpass") || watch("portpass").length === 0
+            !watch("portPassesImage") || watch("portPassesImage").length === 0
               ? ""
-              : watch("portpass")[0].name
+              : watch("portPassesImage")[0].name
           }
-          id="portpass"
-          name="portpass"
+          id="portPassesImage"
+          name="portPassesImage"
           register={register}
         />
-        {errors.portpasses && (
-          <p className={formstyle.error}>{errors.portpasses.message}</p>
+        {errors.portPassesImage && (
+          <p className={formstyle.error}>{errors.portPassesImage.message}</p>
         )}
 
         <Upload
           labelname="Truck Image"
           filename={
-            !watch("truck_image") || watch("truck_image").length === 0
+            !watch("truckImage") || watch("truckImage").length === 0
               ? ""
-              : watch("truck_image")[0].name
+              : watch("truckImage")[0].name
           }
           id="truckimage"
-          name="truck_image"
+          name="truckImage"
           register={register}
         />
-        {errors.truck_image && (
-          <p className={formstyle.error}>{errors.truck_image.message}</p>
+        {errors.truckImage && (
+          <p className={formstyle.error}>{errors.truckImage.message}</p>
         )}
 
         <Upload
           labelname="Driver's Image"
           filename={
-            !watch("drivers_img") || watch("drivers_img").length === 0
+            !watch("driverImage") || watch("driverImage").length === 0
               ? ""
-              : watch("drivers_img")[0].name
+              : watch("driverImage")[0].name
           }
-          id="drivers_img"
-          name="drivers_img"
+          id="driverImage"
+          name="driverImage"
           accept="/image"
           register={register}
         />
-        {errors.drivers_img && (
-          <p className={formstyle.error}>{errors.drivers_img.message}</p>
+        {errors.driverImage && (
+          <p className={formstyle.error}>{errors.driverImage.message}</p>
         )}
 
         {/*  Submit button*/}

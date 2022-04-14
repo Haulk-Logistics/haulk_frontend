@@ -53,7 +53,7 @@ const Loginform = () => {
   };
 
   return (
-    <div className={loginstyle.formsection} style={{ paddingTop: "6rem" }}>
+    <div className={loginstyle.login} style={{ paddingTop: "3rem" }}>
       <Formheader
         head="Login to your Account"
         paragraph=" Kindly fill in login details to continue."
