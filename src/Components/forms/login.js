@@ -8,9 +8,10 @@ import loginstyle from "./style.module.css";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 
-const Login_URL = "https://haulk.herokuapp.com/api/auth/signin";
-
-const Loginform = () => {
+const Loginform = ({ user }) => {
+  const Login_URL = user
+    ? "https://haulk.herokuapp.com/admin/auth/signin"
+    : "https://haulk.herokuapp.com/api/auth/signin";
   const [isLoading, setIsLoading] = useState(true);
   const dispatch = useDispatch();
 
