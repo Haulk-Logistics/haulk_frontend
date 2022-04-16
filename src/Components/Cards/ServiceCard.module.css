@@ -1,0 +1,31 @@
+.serviceCard{
+    width: 25.5rem;
+    height: 22.5rem;
+    background-color: var(--accent-20);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3.5rem;
+    text-align: center;
+}
+
+.serviceCard-circle{
+    background-color: var(--accent-main);
+    width: 6.25rem;
+    height: 6.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.serviceCard-heading h4{
+    font-weight: 500;
+}
+
+.serviceCard-text > p{
+    font-weight: 200;
+    line-height: 25.92px;
+}
