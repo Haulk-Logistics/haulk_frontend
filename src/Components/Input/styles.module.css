@@ -20,17 +20,19 @@
    width: 100%;
    height: 4rem;
    display: flex;
-   border: 1px dotted var(--primary-40) ;
-   background-color: var(--primary-20);
+   border: 1px dashed var(--cloud-darker) ;
+   background-color: #F5F5F5;
    justify-content: center;
    margin-top: .5rem;
    text-align: center;
    position: relative;
+  
 }
 
 .uploading label{
-    color: var(--accent-main);
+    color: var(--info-links);
     text-decoration: underline;
+    cursor: pointer;
 }
 
 .uploadinput{
@@ -80,12 +82,26 @@
 
 }
 
+.eye{
+    width: 2rem;
+    height: 2rem;
+   
+   margin-left: auto ;
+   margin-top: -2.3rem;
+   margin-right: .7rem;
+   
+}
 
 .Icon{
-    margin-left: -3rem;
-    font-size: 1rem;
+  
+   /* margin-top: rem; */
+   height: 1rem;
+   padding: .3rem;
+    font-size: 1.5rem;
     background: transparent;
     border: none; 
+    color: #62666A;
+    z-index: 1000;
 }
 
 .error input,.error select, .error input:hover,.error select:hover{

@@ -2,14 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import ConfigureStore from "./Store/configureStore";
-import AppRoutes from "./Routes/appRoutes";
 import { Provider } from "react-redux";
+import App from "./App";
 
 const store = ConfigureStore();
 
 const haulk = (
   <Provider store={store}>
-    <AppRoutes />
+    <App />
   </Provider>
 );
 

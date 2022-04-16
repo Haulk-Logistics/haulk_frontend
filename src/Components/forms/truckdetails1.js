@@ -1,28 +1,33 @@
 import React from "react";
 import { Dropdown, Inputcharacter, Upload } from "../Input";
 import Formheader from "./formheader";
-import step2 from "../../Assets/Images/step2.svg";
 import { useForm } from "react-hook-form";
 import formstyle from "./style.module.css";
-import { connect } from "react-redux";
-import { truckdetails } from "../../Actions/truckdetail";
+import { connect, useDispatch, useSelector } from "react-redux";
+import { truckdetails } from "../../Store/Actions/truckdetail";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { formstep } from "../../Store/Actions/stepper";
+import { Pagecontrol } from "../../Store/Actions/pagecontrol";
+import Selectuser from "./user";
 
 const schema = yup.object().shape({
-  vehicle_licence: yup
+  truckType: yup.string().required("Truck type is required"),
+  truckSize: yup.string().required("Truck Size is required"),
+  licencePlateNumber: yup.string().required("Plate number is required"),
+  vehicleLicenseImage: yup
     .mixed()
     .test("required", "Vehicle licence/registration is required", (value) => {
       return value && value.length;
     }),
 
-  cofroadworthiness: yup
+  certificateOfRoadWorthinessImage: yup
     .mixed()
     .test("required", "Certificate of road worthiness is required", (value) => {
       return value && value.length;
     }),
 
-  cofinsurance: yup
+  certificateOfInsuranceImage: yup
     .mixed()
     .test("required", "Certificate of insurance is required", (value) => {
       return value && value.length;
@@ -30,6 +35,11 @@ const schema = yup.object().shape({
 });
 
 const Truckdetails = (props) => {
+  const dispatch = useDispatch();
+  const details = useSelector((state) => state.truck);
+  const page = useSelector((state) => state.page);
+  const step = useSelector((state) => state.step);
+
   const {
     register,
     handleSubmit,
@@ -38,25 +48,39 @@ const Truckdetails = (props) => {
   } = useForm({
     mode: "onTouched",
     resolver: yupResolver(schema),
+    defaultValues: page >= 2 && {
+      truckType: `${details.truckType}`,
+      truckSize: `${details.truckSize}`,
+      licencePlateNumber: `${details.phoneNumber}`,
+      vehicleLicenseImage: `${details.vehicleLicenseImage}`,
+      certificateOfRoadWorthinessImage: `${details.certificateOfRoadWorthinessImage[0].name}`,
+      certificateOfInsuranceImage: `${details.certificateOfInsuranceImage}`,
+    },
   });
 
-  const onsubmit = (data) => {
-    props.dispatch(truckdetails(data));
+  const onsubmit = async (data) => {
+    console.log(details);
+    dispatch(truckdetails(data));
+    dispatch(formstep(2));
+    dispatch(Pagecontrol(2));
+
+    console.log(page);
+    console.log(step);
   };
 
   return (
-    <div className={formstyle.truckform}>
+    <div className={formstyle.formsection}>
       <Formheader
         head="Register Truck"
         paragraph="Fill in truck information to continue registration."
       />
-      <img src={step2} alt="STEP 2" className={formstyle.step2} />
+      <Selectuser />
       <form onSubmit={handleSubmit(onsubmit)}>
         <Dropdown
           labelname="Truck Type"
           id="trucktype"
-          name="trucktype"
-          error={errors.trucktype}
+          name="truckType"
+          error={errors.truckType}
           register={register}
           option={[
             { value: "", optionlabel: "Select" },
@@ -66,15 +90,15 @@ const Truckdetails = (props) => {
             { value: "Flatbed", optionlabel: "Flatbed" },
           ]}
         />
-        {errors.trucktype && (
-          <p className={formstyle.error}>{errors.trucktype.message}</p>
+        {errors.truckType && (
+          <p className={formstyle.error}>{errors.truckType.message}</p>
         )}
 
         <Dropdown
           labelname="Truck Size"
           id="trucksize"
-          name="trucksize"
-          error={errors.trucksize}
+          name="truckSize"
+          error={errors.truckSize}
           register={register}
           option={[
             { value: "", optionlabel: "Select" },
@@ -90,69 +114,79 @@ const Truckdetails = (props) => {
             { value: "51ft5a", optionlabel: "51-Foot, Five-Axle Truck" },
           ]}
         />
-        {errors.trucksize && (
-          <p className={formstyle.error}>{errors.trucksize.message}</p>
+        {errors.truckSize && (
+          <p className={formstyle.error}>{errors.truckSize.message}</p>
         )}
 
         <Inputcharacter
           labelname="License Plate Number"
           id="plateno"
           type="text"
-          name="platenumber"
+          name="licencePlateNumber"
           errname="Plate Number"
           placeholder="Enter License Plate Number"
-          error={errors.platenumber}
+          error={errors.licencePlateNumber}
           register={register}
         />
-        {errors.platenumber && (
-          <p className={formstyle.error}>{errors.platenumber.message}</p>
+
+        {errors.licencePlateNumber && (
+          <p className={formstyle.error}>{errors.licencePlateNumber.message}</p>
         )}
 
         <Upload
           labelname="Vehicle Licence/Registration"
           filename={
-            !watch("vehicle_licence") || watch("vehicle_licence").length === 0
+            !watch("vehicleLicenseImage") ||
+            watch("vehicleLicenseImage").length === 0
               ? ""
-              : watch("vehicle_licence")[0].name
+              : watch("vehicleLicenseImage")[0].name
           }
           id="vehlicence"
-          name="vehicle_licence"
+          name="vehicleLicenseImage"
           register={register}
         />
-        {errors.vehicle_licence && (
-          <p className={formstyle.error}>{errors.vehicle_licence.message}</p>
+
+        {errors.vehicleLicenseImage && (
+          <p className={formstyle.error}>
+            {errors.vehicleLicenseImage.message}
+          </p>
         )}
         <Upload
           labelname="Certificate of Road Worthiness"
           filename={
-            !watch("cofroadworthiness") ||
-            watch("cofroadworthiness").length === 0
+            !watch("certificateOfRoadWorthinessImage") ||
+            watch("certificateOfRoadWorthinessImage").length === 0
               ? ""
-              : watch("cofroadworthiness")[0].name
+              : watch("certificateOfRoadWorthinessImage")[0].name
           }
           id="crw"
-          name="cofroadworthiness"
+          name="certificateOfRoadWorthinessImage"
           register={register}
         />
-        {errors.cofroadworthiness && (
-          <p className={formstyle.error}>{errors.cofroadworthiness.message}</p>
+        {errors.certificateOfRoadWorthinessImage && (
+          <p className={formstyle.error}>
+            {errors.certificateOfRoadWorthinessImage.message}
+          </p>
         )}
         <Upload
           labelname="Certificate of Insurance"
           filename={
-            !watch("cofinsurance") || watch("cofinsurance").length === 0
+            !watch("certificateOfInsuranceImage") ||
+            watch("certificateOfInsuranceImage").length === 0
               ? ""
-              : watch("cofinsurance")[0].name
+              : watch("certificateOfInsuranceImage")[0].name
           }
           id="ci"
-          name="cofinsurance"
+          name="certificateOfInsuranceImage"
           register={register}
         />
-        {errors.cofinsurance && (
-          <p className={formstyle.error}>{errors.cofinsurance.message}</p>
+        {errors.certificateOfInsuranceImage && (
+          <p className={formstyle.error}>
+            {errors.certificateOfInsuranceImage.message}
+          </p>
         )}
         {/*  Submit button*/}
-        <button className={formstyle.button}>Next</button>
+        <button className={formstyle.button}>Save & Next</button>
       </form>
     </div>
   );

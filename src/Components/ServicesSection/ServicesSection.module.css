@@ -1,0 +1,154 @@
+.services{
+    width: 100vw;
+    padding: 0 3rem;
+}
+
+.services > h2, .services > p{
+    text-align: center;
+}
+
+.services > h2{
+    color: var(--text-black);
+    font-weight: 500;
+    margin: 3rem 0 1rem 0;
+}
+
+.services > p{
+    color: var(--primary-40);
+}
+
+.servicesCards{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 3rem 0;
+}
+
+.servicesDescription{
+    padding: 0 1.8rem;
+}
+
+.servicesDescription-one, .servicesDescription-two{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    margin-bottom: 6.5rem;
+}
+
+.servicesDescription-one > div, .servicesDescription-two > div{
+    width: 45%;
+    height: auto;
+}
+
+.servicesDescription-one h2, .servicesDescription-two h2{
+    font-weight: 500;
+}
+
+.description-image > img{
+    max-width: 100%;
+    height: auto;
+}
+
+.description-text{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.description-text > p{
+    font-size: 1rem;
+    font-weight: 200;
+    width: 90%;
+    line-height: 170%;
+}
+
+.description-text > button{
+    height: 2.85rem;
+    width: 18rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.servicesDescription-one button{
+    background-color: var(--primary-main);
+    color: var(--white);
+    transition: .2s;
+}
+
+.servicesDescription-two button{
+    background: transparent;
+    border: 1px solid var(--primary-main);
+    color: var(--primary-main);
+    transition: .2s;
+}
+
+.servicesDescription-one button:hover{
+    background: var(--accent-main);
+}
+
+.servicesDescription-two button:hover{
+    border: 1px solid var(--accent-main);
+    color: var(--accent-main);
+}
+
+@media only screen and (max-width: 23.4375rem){
+    .servicesCards{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 2rem 0;
+    }
+
+    .servicesDescription{
+        padding: 0;
+    }
+
+    .servicesDescription-one, .servicesDescription-two{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .servicesDescription-one > div, .servicesDescription-two > div{
+        width: 100%;
+        height: auto;
+    }
+
+    .servicesDescription-one h2, .servicesDescription-two h2{
+        font-size: 1.5rem;
+        margin-bottom: 1.3rem;
+    }
+
+    .servicesDescription-one > .description-image{
+        order: -1;
+    }
+
+    .description-image{
+        margin-bottom: 1.5rem;
+    }
+
+    .description-text{
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .description-text > h2{
+        text-align: left;
+    }
+
+    .description-text > p{
+        width: 100%;
+        margin-bottom: 1.3rem;
+        text-align: left;
+    }
+
+    .description-text > button{
+        width: 100%;
+        margin-bottom: 1.3rem;
+    }
+}

@@ -94,8 +94,6 @@ Steps To Create a Pull Request:
 
 - Once you are done, create a pull request from that branch to the development branch. Any PR to production / staging branch will be rejected.
 
-link to video : 
-
 ----------------------------------------------------------
 
 ## DEVELOPEMENT RULES / GUIDELINES WRITING FRONT END CODES

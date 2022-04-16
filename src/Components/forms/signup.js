@@ -1,42 +1,85 @@
-import React from "react";
+import React, { useState } from "react";
 import formstyle from "./style.module.css";
 import Selectuser from "./user";
 import { InputDefault, InputwithIcon, Phonenumberinput } from "../Input";
 import { useForm } from "react-hook-form";
 import Formheader from "./formheader";
-import { connect } from "react-redux";
-import haulklogo from "../../Assets/logo/MobileLogo.svg";
+import { connect, useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import axios from "axios";
+import { truckdetails } from "../../Store/Actions/truckdetail";
+import { formstep } from "../../Store/Actions/stepper";
+import { Pagecontrol } from "../../Store/Actions/pagecontrol";
+
+const Register_URL = "https://haulk.herokuapp.com/api/auth/signupCargoOwner";
 
 const Signup = (props) => {
-  // handle form events
+  const [isLoading, setIsLoading] = useState(true);
+  const usertype = useSelector((state) => state.status);
+  const details = useSelector((state) => state.truck);
+  const page = useSelector((state) => state.page);
+  const dispatch = useDispatch();
 
+  // handle form events
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm({
     mode: "onTouched",
+    defaultValues: page >= 1 && {
+      firstName: `${details.firstName}`,
+      lastName: `${details.lastName}`,
+      phoneNumber: `${details.phoneNumber}`,
+      email: `${details.email}`,
+      password: `${details.password}`,
+    },
   });
 
-  const onsubmit = (data) => {
-    switch (props.usertype) {
-      case "cargo_owner":
-        alert("hello cargo owner");
-        break;
-      case "truck_driver":
-        alert("hello truck driver");
-        break;
-      default:
-        alert(JSON.stringify(data));
-        break;
+  // handle onsubmit
+  const onsubmit = async (data) => {
+    setIsLoading(false);
+    const allData = { ...data, role: props.usertype };
+
+    // If user is a truck driver
+    if (usertype === "truckdriver") {
+      dispatch(formstep(1));
+      dispatch(Pagecontrol(1));
+      dispatch(truckdetails(allData));
+    }
+
+    // If user is a cargo owner
+    else {
+      await axios
+        .post(Register_URL, allData)
+        .then((res) => {
+          dispatch({
+            type: "success",
+            payload: {
+              title: "Success!",
+              message: res.data.message,
+            },
+          });
+        })
+        .catch((err) => {
+          dispatch({
+            type: "error",
+            payload: {
+              title: "Error!",
+              message: err.response
+                ? err.response.data.statusCode === 409
+                  ? err.response.data.message
+                  : "Phone number is invalid"
+                : "Network error",
+            },
+          });
+        })
+        .finally(() => setIsLoading(true));
     }
   };
 
-  console.log(props.usertype);
-
   return (
     <section className={formstyle.formsection}>
-      <img src={haulklogo} alt="HAULK LOGO" className={formstyle.logo} />
       <Formheader
         head="Create An Account"
         paragraph={
@@ -52,14 +95,14 @@ const Signup = (props) => {
           labelname="First Name"
           type="text"
           placeholder="Enter  first name"
-          name="Firstname"
+          name="firstName"
           register={register}
           pattern={/^[A-Za-z]+$/i}
           maxlength={parseInt("20")}
-          error={errors.Firstname}
+          error={errors.firstName}
         />
-        {errors.Firstname && (
-          <p className={formstyle.error}>{errors.Firstname.message}</p>
+        {errors.firstName && (
+          <p className={formstyle.error}>{errors.firstName.message}</p>
         )}
 
         {/*  Last name section*/}
@@ -67,14 +110,14 @@ const Signup = (props) => {
           labelname="Last Name"
           type="text"
           placeholder="Enter Last Name "
-          name="Lastname"
+          name="lastName"
           register={register}
           pattern={/^[A-Za-z]+$/i}
           maxlength={parseInt("20")}
-          error={errors.Lastname}
+          error={errors.lastName}
         />
-        {errors.Lastname && (
-          <p className={formstyle.error}>{errors.Lastname.message}</p>
+        {errors.lastName && (
+          <p className={formstyle.error}>{errors.lastName.message}</p>
         )}
 
         {/*  Phone number section*/}
@@ -82,16 +125,14 @@ const Signup = (props) => {
           labelname="Phone Number"
           type="text"
           placeholder="Phone Number "
-          name="Phonenumber"
+          name="phoneNumber"
           register={register}
           required
           pattern={/^[0-9]+$/i}
-          maxlength={parseInt("11")}
-          minlength={parseInt("9")}
-          error={errors.Phonenumber}
+          error={errors.phoneNumber}
         />
-        {errors.Phonenumber && (
-          <p className={formstyle.error}>{errors.Phonenumber.message}</p>
+        {errors.phoneNumber && (
+          <p className={formstyle.error}>{errors.phoneNumber.message}</p>
         )}
 
         {/*  Email section*/}
@@ -99,16 +140,17 @@ const Signup = (props) => {
           labelname="Email Address"
           type="email"
           placeholder="Enter Email Address "
-          name="Email"
+          name="email"
+          value={details.email}
           register={register}
           required
           pattern={
             /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
           }
-          error={errors.Email}
+          error={errors.email}
         />
-        {errors.Email && (
-          <p className={formstyle.error}>{errors.Email.message}</p>
+        {errors.email && (
+          <p className={formstyle.error}>{errors.email.message}</p>
         )}
 
         {/*  Password section*/}
@@ -116,16 +158,17 @@ const Signup = (props) => {
           labelname="Password"
           type="password"
           placeholder="Enter Password "
-          name="Password"
+          name="password"
+          value={details.password}
           register={register}
           pattern={
             /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,100}$/
           }
           minlength={parseInt("8")}
-          error={errors.Password}
+          error={errors.password}
         />
-        {errors.Password && (
-          <p className={formstyle.error}>{errors.Password.message}</p>
+        {errors.password && (
+          <p className={formstyle.error}>{errors.password.message}</p>
         )}
 
         {/*  Accept terms and condition section*/}
@@ -146,11 +189,20 @@ const Signup = (props) => {
         )}
 
         {/*  Submit button*/}
-        <button className={formstyle.button}>Register</button>
+        <button className={formstyle.button}>
+          {usertype === "truckdriver"
+            ? "Save & Next"
+            : isLoading
+            ? "Register"
+            : "Loading...."}
+        </button>
       </form>
-
       <p className={formstyle.haveaccount}>
-        Already have an account? <span className={formstyle.span}> Login</span>
+        Already have an account?{" "}
+        <Link to="/login" className={formstyle.link}>
+          {" "}
+          Login
+        </Link>
       </p>
     </section>
   );

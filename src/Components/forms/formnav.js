@@ -1,5 +1,5 @@
 import React from "react";
-import haulklogo from "../../Assets/logo/MobileLogo.svg";
+import haulklogo from "../../Asset/logo/MobileLogo.svg";
 import navstyle from "./style.module.css";
 
 const Formnav = () => {
