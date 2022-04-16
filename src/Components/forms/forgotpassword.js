@@ -18,10 +18,9 @@ const Forgotpassword = () => {
   });
   const dispatch = useDispatch();
 
-  const Reset_URL =
-    "https://haulk.herokuapp.com/api/auth/sendResetPasswordEmail";
-
   const onsubmit = async (data) => {
+    const Reset_URL =
+      "https://haulk.herokuapp.com/api/auth/sendResetPasswordEmail";
     setIsLoading(true);
     await axios
       .post(Reset_URL, data)
