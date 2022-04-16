@@ -8,16 +8,19 @@ import signupstyle from "./styles.module.css";
 
 const SignupPage = () => {
   const pageno = useSelector((state) => state.step);
+  const usertype = useSelector((state) => state.status);
 
   return (
     <div className={signupstyle.render}>
       <Wallpaper />
       {pageno === 0 ? (
         <Signup />
-      ) : pageno === 1 ? (
+      ) : pageno === 1 && usertype === "truckdriver" ? (
         <Truckdetails1 />
-      ) : (
+      ) : pageno === 2 && usertype === "truckdriver" ? (
         <Truckdetail2 />
+      ) : (
+        <Signup />
       )}
     </div>
   );

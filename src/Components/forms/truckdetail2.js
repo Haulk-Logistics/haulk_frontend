@@ -9,6 +9,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { Pagecontrol } from "../../Store/Actions/pagecontrol";
 import Selectuser from "./user";
 import axios from "axios";
+import { useNavigate } from "react-router";
 
 const schema = yup.object().shape({
   driverLicenseImage: yup
@@ -50,62 +51,66 @@ const Truckdetailcont = (props) => {
   });
   const [isLoading, setIsLoading] = useState(false);
   const detail = useSelector((state) => state.truck);
+  const usertype = useSelector((state) => state.status);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const onsubmit = async () => {
-    setIsLoading(true);
-    dispatch(Pagecontrol(3));
-    // console.log(storedData);
-    const DriverReg_Url =
-      "https://haulk.herokuapp.com/api/auth/signupTruckDriver";
+    if (usertype === "truckdriver") {
+      setIsLoading(true);
+      dispatch(Pagecontrol(3));
+      const DriverReg_Url =
+        "https://haulk.herokuapp.com/api/auth/signupTruckDriver";
 
-    const formdata = new FormData(document.getElementById("submitform"));
+      const formdata = new FormData(document.getElementById("submitform"));
 
-    // Fetching all data in store to append to form data
-    formdata.append("firstName", detail.firstName);
-    formdata.append("lastName", detail.lastName);
-    formdata.append("email", detail.email);
-    formdata.append("phoneNumber", detail.phoneNumber);
-    formdata.append("password", detail.password);
-    formdata.append("role", detail.role);
-    formdata.append("truckType", detail.truckType);
-    formdata.append("truckSize", detail.truckSize);
-    formdata.append("licencePlateNumber", detail.licencePlateNumber);
-    formdata.append("vehicleLicenseImage", detail.vehicleLicenseImage[0]);
-    formdata.append(
-      "certificateOfInsuranceImage",
-      detail.certificateOfInsuranceImage[0]
-    );
-    formdata.append(
-      "certificateOfRoadWorthinessImage",
-      detail.certificateOfRoadWorthinessImage[0]
-    );
+      // Fetching all data in store to append to form data
+      formdata.append("firstName", detail.firstName);
+      formdata.append("lastName", detail.lastName);
+      formdata.append("email", detail.email);
+      formdata.append("phoneNumber", detail.phoneNumber);
+      formdata.append("password", detail.password);
+      formdata.append("role", detail.role);
+      formdata.append("truckType", detail.truckType);
+      formdata.append("truckSize", detail.truckSize);
+      formdata.append("licencePlateNumber", detail.licencePlateNumber);
+      formdata.append("vehicleLicenseImage", detail.vehicleLicenseImage[0]);
+      formdata.append(
+        "certificateOfInsuranceImage",
+        detail.certificateOfInsuranceImage[0]
+      );
+      formdata.append(
+        "certificateOfRoadWorthinessImage",
+        detail.certificateOfRoadWorthinessImage[0]
+      );
 
-    await axios
-      .post(DriverReg_Url, formdata)
-      .then((res) =>
-        dispatch({
-          type: "success",
-          payload: {
-            title: "Success!",
-            message: res.data.message,
-          },
+      await axios
+        .post(DriverReg_Url, formdata)
+        .then((res) => {
+          navigate("/login");
+          dispatch({
+            type: "success",
+            payload: {
+              title: "Success!",
+              message: res.data.message,
+            },
+          });
         })
-      )
-      .catch((error) =>
-        dispatch({
-          type: "error",
-          payload: {
-            title: "Error!",
-            message: error.response
-              ? error.response.data.statusCode === 409
-                ? error.response.data.message
-                : "Phone number is invalid"
-              : "Network error",
-          },
-        })
-      )
-      .finally(() => setIsLoading(false));
+        .catch((error) =>
+          dispatch({
+            type: "error",
+            payload: {
+              title: "Error!",
+              message: error.response
+                ? error.response.data.statusCode === 409
+                  ? error.response.data.message
+                  : "Phone number is invalid"
+                : "Network error",
+            },
+          })
+        )
+        .finally(() => setIsLoading(false));
+    }
   };
 
   return (

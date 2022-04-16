@@ -38,7 +38,7 @@ const Truckdetails = (props) => {
   const dispatch = useDispatch();
   const details = useSelector((state) => state.truck);
   const page = useSelector((state) => state.page);
-  const step = useSelector((state) => state.step);
+  const usertype = useSelector((state) => state.status);
 
   const {
     register,
@@ -59,13 +59,12 @@ const Truckdetails = (props) => {
   });
 
   const onsubmit = async (data) => {
-    console.log(details);
-    dispatch(truckdetails(data));
-    dispatch(formstep(2));
-    dispatch(Pagecontrol(2));
-
-    console.log(page);
-    console.log(step);
+    if (usertype === "truckdriver") {
+      console.log(details);
+      dispatch(truckdetails(data));
+      dispatch(formstep(2));
+      dispatch(Pagecontrol(2));
+    }
   };
 
   return (

@@ -10,6 +10,7 @@ import axios from "axios";
 import { truckdetails } from "../../Store/Actions/truckdetail";
 import { formstep } from "../../Store/Actions/stepper";
 import { Pagecontrol } from "../../Store/Actions/pagecontrol";
+import { useNavigate } from "react-router";
 
 const Register_URL = "https://haulk.herokuapp.com/api/auth/signupCargoOwner";
 
@@ -19,6 +20,7 @@ const Signup = (props) => {
   const details = useSelector((state) => state.truck);
   const page = useSelector((state) => state.page);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   // handle form events
   const {
@@ -53,6 +55,7 @@ const Signup = (props) => {
       await axios
         .post(Register_URL, allData)
         .then((res) => {
+          navigate("/login");
           dispatch({
             type: "success",
             payload: {
