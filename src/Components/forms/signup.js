@@ -17,6 +17,7 @@ const Signup = (props) => {
   const [isLoading, setIsLoading] = useState(true);
   const usertype = useSelector((state) => state.status);
   const details = useSelector((state) => state.truck);
+  const page = useSelector((state) => state.page);
   const dispatch = useDispatch();
 
   // handle form events
@@ -26,6 +27,13 @@ const Signup = (props) => {
     formState: { errors },
   } = useForm({
     mode: "onTouched",
+    defaultValues: page >= 1 && {
+      firstName: `${details.firstName}`,
+      lastName: `${details.lastName}`,
+      phoneNumber: `${details.phoneNumber}`,
+      email: `${details.email}`,
+      password: `${details.password}`,
+    },
   });
 
   // handle onsubmit
@@ -90,7 +98,6 @@ const Signup = (props) => {
           name="firstName"
           register={register}
           pattern={/^[A-Za-z]+$/i}
-          value={details.firstName}
           maxlength={parseInt("20")}
           error={errors.firstName}
         />
@@ -104,7 +111,6 @@ const Signup = (props) => {
           type="text"
           placeholder="Enter Last Name "
           name="lastName"
-          value={details.lastName}
           register={register}
           pattern={/^[A-Za-z]+$/i}
           maxlength={parseInt("20")}
@@ -120,12 +126,9 @@ const Signup = (props) => {
           type="text"
           placeholder="Phone Number "
           name="phoneNumber"
-          value={details.phoneNumber}
           register={register}
           required
           pattern={/^[0-9]+$/i}
-          // maxlength={parseInt("15")}
-          // minlength={parseInt("9")}
           error={errors.phoneNumber}
         />
         {errors.phoneNumber && (

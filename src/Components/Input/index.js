@@ -7,7 +7,6 @@ const InputDefault = ({
   labelname,
   id,
   type,
-  value,
   name,
   placeholder,
   disabled,
@@ -21,7 +20,6 @@ const InputDefault = ({
     <div className={error ? Inputstyle.error : Inputstyle.default}>
       <label htmlFor={id}>{labelname}</label>
       <input
-        value={value}
         className={Inputstyle.input}
         type={type}
         id={id}
@@ -227,20 +225,15 @@ const Upload = ({
   name,
   disabled,
   error,
-  value,
   register,
   filename,
-  accept,
 }) => {
   return (
     <div className={error ? Inputstyle.error : Inputstyle.default}>
       <label htmlFor={id}>{labelname}</label>
       <div className={Inputstyle.uploading}>
-        <label htmlFor={id}>
-          {value ? value : filename ? `${filename}` : "browse"}
-        </label>
+        <label htmlFor={id}>{filename ? `${filename}` : "Upload Image"}</label>
       </div>
-
       <input
         className={Inputstyle.uploadinput}
         type="file"

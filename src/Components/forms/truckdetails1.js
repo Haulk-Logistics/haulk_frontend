@@ -14,8 +14,8 @@ import Selectuser from "./user";
 const schema = yup.object().shape({
   truckType: yup.string().required("Truck type is required"),
   truckSize: yup.string().required("Truck Size is required"),
-  licensePlateNumber: yup.string().required("Plate number is required"),
-  vehicleLicenceImage: yup
+  licencePlateNumber: yup.string().required("Plate number is required"),
+  vehicleLicenseImage: yup
     .mixed()
     .test("required", "Vehicle licence/registration is required", (value) => {
       return value && value.length;
@@ -35,6 +35,11 @@ const schema = yup.object().shape({
 });
 
 const Truckdetails = (props) => {
+  const dispatch = useDispatch();
+  const details = useSelector((state) => state.truck);
+  const page = useSelector((state) => state.page);
+  const step = useSelector((state) => state.step);
+
   const {
     register,
     handleSubmit,
@@ -43,19 +48,24 @@ const Truckdetails = (props) => {
   } = useForm({
     mode: "onTouched",
     resolver: yupResolver(schema),
+    defaultValues: page >= 2 && {
+      truckType: `${details.truckType}`,
+      truckSize: `${details.truckSize}`,
+      licencePlateNumber: `${details.phoneNumber}`,
+      vehicleLicenseImage: `${details.vehicleLicenseImage}`,
+      certificateOfRoadWorthinessImage: `${details.certificateOfRoadWorthinessImage[0].name}`,
+      certificateOfInsuranceImage: `${details.certificateOfInsuranceImage}`,
+    },
   });
 
-  const dispatch = useDispatch();
-  const details = useSelector((state) => state.truck);
-  console.log(
-    details.vehicleLicenceImage && details.vehicleLicenceImage[0].name
-  );
-
-  const onsubmit = (data) => {
-    console.log(data);
+  const onsubmit = async (data) => {
+    console.log(details);
     dispatch(truckdetails(data));
     dispatch(formstep(2));
     dispatch(Pagecontrol(2));
+
+    console.log(page);
+    console.log(step);
   };
 
   return (
@@ -70,7 +80,6 @@ const Truckdetails = (props) => {
           labelname="Truck Type"
           id="trucktype"
           name="truckType"
-          value={details.truckType}
           error={errors.truckType}
           register={register}
           option={[
@@ -88,7 +97,6 @@ const Truckdetails = (props) => {
         <Dropdown
           labelname="Truck Size"
           id="trucksize"
-          value={details.truckSize}
           name="truckSize"
           error={errors.truckSize}
           register={register}
@@ -114,44 +122,37 @@ const Truckdetails = (props) => {
           labelname="License Plate Number"
           id="plateno"
           type="text"
-          value={details.licensePlateNumber}
-          name="licensePlateNumber"
+          name="licencePlateNumber"
           errname="Plate Number"
           placeholder="Enter License Plate Number"
-          error={errors.licensePlateNumber}
+          error={errors.licencePlateNumber}
           register={register}
         />
-        {errors.licensePlateNumber && (
-          <p className={formstyle.error}>{errors.licensePlateNumber.message}</p>
+
+        {errors.licencePlateNumber && (
+          <p className={formstyle.error}>{errors.licencePlateNumber.message}</p>
         )}
 
         <Upload
           labelname="Vehicle Licence/Registration"
-          // value={details.vehicleLicenceImage[0].name}
-          value={
-            details.vehicleLicenceImage && details.vehicleLicenceImage[0].name
-          }
           filename={
-            !watch("vehicleLicenceImage") ||
-            watch("vehicleLicenceImage").length === 0
+            !watch("vehicleLicenseImage") ||
+            watch("vehicleLicenseImage").length === 0
               ? ""
-              : watch("vehicleLicenceImage")[0].name
+              : watch("vehicleLicenseImage")[0].name
           }
           id="vehlicence"
-          name="vehicleLicenceImage"
+          name="vehicleLicenseImage"
           register={register}
         />
-        {errors.vehicleLicenceImage && (
+
+        {errors.vehicleLicenseImage && (
           <p className={formstyle.error}>
-            {errors.vehicleLicenceImage.message}
+            {errors.vehicleLicenseImage.message}
           </p>
         )}
         <Upload
           labelname="Certificate of Road Worthiness"
-          value={
-            details.certificateOfRoadWorthinessImage &&
-            details.certificateOfRoadWorthinessImage[0].name
-          }
           filename={
             !watch("certificateOfRoadWorthinessImage") ||
             watch("certificateOfRoadWorthinessImage").length === 0
@@ -169,10 +170,6 @@ const Truckdetails = (props) => {
         )}
         <Upload
           labelname="Certificate of Insurance"
-          value={
-            details.certificateOfInsuranceImage &&
-            details.certificateOfInsuranceImage[0].name
-          }
           filename={
             !watch("certificateOfInsuranceImage") ||
             watch("certificateOfInsuranceImage").length === 0
