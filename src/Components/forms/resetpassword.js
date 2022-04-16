@@ -38,11 +38,11 @@ const Resetpassword = () => {
   });
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const Reset_URL = "https://haulk.herokuapp.com/api/auth/resetPassword/";
 
   // Onsubmit
   const onsubmit = async (data) => {
     setIsLoading(true);
+    const Reset_URL = "https://haulk.herokuapp.com/api/auth/resetPassword/";
 
     await axios
       .post(Reset_URL, data, {
