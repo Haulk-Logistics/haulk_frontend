@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { InputwithIcon } from "../Input";
 import Button from "./button";
@@ -6,9 +6,12 @@ import Formheader from "./formheader";
 import formstyle from "./style.module.css";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import axios from "axios";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router";
 
 const schema = yup.object().shape({
-  npassword: yup
+  newPassword: yup
     .string()
     .required("password is required.")
     .min(8, "Password should be atleast 8 characters long.")
@@ -16,14 +19,15 @@ const schema = yup.object().shape({
       /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,100}$/,
       "Password must contain uppercase,lowercase,number and special character."
     ),
-  re_password: yup
+  confirmPassword: yup
     .string()
     .required("Re-type password is required.")
-    .oneOf([yup.ref("npassword")], "Passwords does not match."),
+    .oneOf([yup.ref("newPassword")], "Passwords does not match."),
 });
 
 const Resetpassword = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+  const [token, setToken] = useState();
   const {
     register,
     handleSubmit,
@@ -32,16 +36,54 @@ const Resetpassword = () => {
     mode: "onTouched",
     resolver: yupResolver(schema),
   });
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const Reset_URL = "https://haulk.herokuapp.com/api/auth/resetPassword/";
 
-  const onsubmit = (data) => {
-    setIsLoading(false);
+  // Onsubmit
+  const onsubmit = async (data) => {
+    setIsLoading(true);
+
+    await axios
+      .post(Reset_URL, data, {
+        headers: {
+          // ContentType: "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((res) => {
+        navigate("/login");
+        console.log(res);
+        dispatch({
+          type: "success",
+          payload: {
+            title: "Success!",
+            message: res.data.message,
+          },
+        });
+      })
+      .catch((error) => {
+        dispatch({
+          type: "error",
+          payload: {
+            title: "Error!",
+            message: error.response
+              ? error.response.data.message
+              : "Network error",
+          },
+        });
+      })
+      .finally(() => setIsLoading(false));
+  };
+
+  useEffect(() => {
     const params = new Proxy(new URLSearchParams(window.location.search), {
       get: (searchParams, prop) => searchParams.get(prop),
     });
-    // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
-    let value = params.token; // "some_value"
-    console.log(value);
-  };
+    // Get the value of "some_key" in eg "https://example.com/?t=some_value"
+    let value = params.t; // "some_value"
+    setToken(value);
+  });
 
   return (
     <div className={formstyle.formsection}>
@@ -52,30 +94,29 @@ const Resetpassword = () => {
       <form onSubmit={handleSubmit(onsubmit)}>
         <InputwithIcon
           labelname="Password"
-          id="npassword"
+          id="newPassword"
           type="password"
           placeholder="Enter Password "
-          name="npassword"
+          name="newPassword"
           register={register}
           error={errors.password}
         />
-        {errors.npassword && (
-          <p className={formstyle.error}>{errors.npassword.message}</p>
+        {errors.newPassword && (
+          <p className={formstyle.error}>{errors.newPassword.message}</p>
         )}
 
         <InputwithIcon
           labelname="Re-enter Password"
-          name="re_password"
+          name="confirmPassword"
           id="rpassword"
           type="password"
           register={register}
           placeholder="Re-enter Password"
-          error={errors.re_password}
+          error={errors.confirmPassword}
         />
-        {errors.re_password && (
-          <p className={formstyle.error}>{errors.re_password.message}</p>
+        {errors.confirmPassword && (
+          <p className={formstyle.error}>{errors.confirmPassword.message}</p>
         )}
-
         <Button name="Submit" status={isLoading} />
       </form>
     </div>

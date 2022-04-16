@@ -8,7 +8,7 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 
 const Forgotpassword = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const {
     register,
     handleSubmit,
@@ -22,11 +22,10 @@ const Forgotpassword = () => {
     "https://haulk.herokuapp.com/api/auth/sendResetPasswordEmail";
 
   const onsubmit = async (data) => {
-    setIsLoading(false);
+    setIsLoading(true);
     await axios
       .post(Reset_URL, data)
       .then((res) => {
-        setIsLoading(true);
         dispatch({
           type: "success",
           payload: {
@@ -37,15 +36,15 @@ const Forgotpassword = () => {
         console.log(res);
       })
       .catch((error) => {
-        setIsLoading(true);
         dispatch({
           type: "error",
           payload: {
             title: "Error!",
-            message: error.response.data.message,
+            message: error ? error.response.data.message : "Network Error",
           },
         });
-      });
+      })
+      .finally(() => setIsLoading(false));
   };
 
   return (

@@ -12,7 +12,7 @@ const Loginform = ({ user }) => {
   const Login_URL = user
     ? "https://haulk.herokuapp.com/admin/auth/signin"
     : "https://haulk.herokuapp.com/api/auth/signin";
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const dispatch = useDispatch();
 
   const {
@@ -24,7 +24,7 @@ const Loginform = ({ user }) => {
   });
 
   const onsubmit = async (data) => {
-    setIsLoading(false);
+    setIsLoading(true);
     await axios
       .post(Login_URL, data)
       .then((res) => {
@@ -50,7 +50,7 @@ const Loginform = ({ user }) => {
         });
         // console.log(error);
       })
-      .finally(() => setIsLoading(true));
+      .finally(() => setIsLoading(false));
   };
 
   return (

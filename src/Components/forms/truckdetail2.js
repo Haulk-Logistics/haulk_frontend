@@ -1,14 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Upload } from "../Input";
 import Formheader from "./formheader";
 import { useForm } from "react-hook-form";
 import formstyle from "./style.module.css";
-import { connect, useDispatch } from "react-redux";
-import { truckdetails } from "../../Store/Actions/truckdetail";
+import { connect, useDispatch, useSelector } from "react-redux";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Pagecontrol } from "../../Store/Actions/pagecontrol";
 import Selectuser from "./user";
+import axios from "axios";
+import { useNavigate } from "react-router";
 
 const schema = yup.object().shape({
   driverLicenseImage: yup
@@ -48,14 +49,68 @@ const Truckdetailcont = (props) => {
     mode: "onTouched",
     resolver: yupResolver(schema),
   });
-
+  const [isLoading, setIsLoading] = useState(false);
+  const detail = useSelector((state) => state.truck);
+  const usertype = useSelector((state) => state.status);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const onsubmit = (data) => {
-    props.dispatch(truckdetails(data));
-    dispatch(Pagecontrol(3));
+  const onsubmit = async () => {
+    if (usertype === "truckdriver") {
+      setIsLoading(true);
+      dispatch(Pagecontrol(3));
+      const DriverReg_Url =
+        "https://haulk.herokuapp.com/api/auth/signupTruckDriver";
 
-    console.log(data);
+      const formdata = new FormData(document.getElementById("submitform"));
+
+      // Fetching all data in store to append to form data
+      formdata.append("firstName", detail.firstName);
+      formdata.append("lastName", detail.lastName);
+      formdata.append("email", detail.email);
+      formdata.append("phoneNumber", detail.phoneNumber);
+      formdata.append("password", detail.password);
+      formdata.append("role", detail.role);
+      formdata.append("truckType", detail.truckType);
+      formdata.append("truckSize", detail.truckSize);
+      formdata.append("licencePlateNumber", detail.licencePlateNumber);
+      formdata.append("vehicleLicenseImage", detail.vehicleLicenseImage[0]);
+      formdata.append(
+        "certificateOfInsuranceImage",
+        detail.certificateOfInsuranceImage[0]
+      );
+      formdata.append(
+        "certificateOfRoadWorthinessImage",
+        detail.certificateOfRoadWorthinessImage[0]
+      );
+
+      await axios
+        .post(DriverReg_Url, formdata)
+        .then((res) => {
+          navigate("/login");
+          dispatch({
+            type: "success",
+            payload: {
+              title: "Success!",
+              message: res.data.message,
+            },
+          });
+        })
+        .catch((error) =>
+          dispatch({
+            type: "error",
+            payload: {
+              title: "Error!",
+              message: error.response
+                ? error.response.data.statusCode === 409
+                  ? error.response.data.message
+                  : "Phone number is invalid"
+                : "Network error",
+            },
+          })
+        )
+        .finally(() => setIsLoading(false));
+    }
   };
 
   return (
@@ -65,7 +120,8 @@ const Truckdetailcont = (props) => {
         paragraph="Fill in truck information to continue registration."
       />
       <Selectuser />
-      <form onSubmit={handleSubmit(onsubmit)}>
+      <form onSubmit={handleSubmit(onsubmit)} id="submitform">
+        {}
         <Upload
           labelname="Driver's Licence"
           filename={
@@ -122,7 +178,7 @@ const Truckdetailcont = (props) => {
               ? ""
               : watch("truckImage")[0].name
           }
-          id="truckimage"
+          id="truckImage"
           name="truckImage"
           register={register}
         />
@@ -147,7 +203,9 @@ const Truckdetailcont = (props) => {
         )}
 
         {/*  Submit button*/}
-        <button className={formstyle.button}>Finish</button>
+        <button className={formstyle.button}>
+          {isLoading ? "Loading...." : "Finish"}
+        </button>
       </form>
     </div>
   );
