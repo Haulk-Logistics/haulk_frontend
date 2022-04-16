@@ -8,10 +8,11 @@ import loginstyle from "./style.module.css";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 
-const Login_URL = "https://haulk.herokuapp.com/api/auth/signin";
-
-const Loginform = () => {
-  const [isLoading, setIsLoading] = useState(true);
+const Loginform = ({ user }) => {
+  const Login_URL = user
+    ? "https://haulk.herokuapp.com/admin/auth/signin"
+    : "https://haulk.herokuapp.com/api/auth/signin";
+  const [isLoading, setIsLoading] = useState(false);
   const dispatch = useDispatch();
 
   const {
@@ -23,14 +24,12 @@ const Loginform = () => {
   });
 
   const onsubmit = async (data) => {
-    setIsLoading(false);
+    setIsLoading(true);
     await axios
       .post(Login_URL, data)
       .then((res) => {
-        setIsLoading(true);
         const userToken = res.data.token;
         localStorage.setItem("haulk-app-auth", JSON.stringify(userToken));
-        console.log(res.data.message);
         dispatch({
           type: "success",
           payload: {
@@ -38,23 +37,24 @@ const Loginform = () => {
             message: res.data.message,
           },
         });
-        console.log(res);
       })
       .catch((error) => {
-        setIsLoading(true);
         dispatch({
           type: "error",
           payload: {
             title: "Error!",
-            message: error.response.data.message,
+            message: error.response
+              ? error.response.data.message
+              : "Network Error",
           },
         });
         // console.log(error);
-      });
+      })
+      .finally(() => setIsLoading(false));
   };
 
   return (
-    <div className={loginstyle.formsection} style={{ paddingTop: "6rem" }}>
+    <div className={loginstyle.login} style={{ paddingTop: "3rem" }}>
       <Formheader
         head="Login to your Account"
         paragraph=" Kindly fill in login details to continue."

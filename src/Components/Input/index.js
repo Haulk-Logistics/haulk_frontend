@@ -48,6 +48,7 @@ const InputDefault = ({
 const Inputcharacter = ({
   labelname,
   id,
+  value,
   type,
   name,
   placeholder,
@@ -61,6 +62,7 @@ const Inputcharacter = ({
     <div className={error ? Inputstyle.error : Inputstyle.default}>
       <label htmlFor={id}>{labelname}</label>
       <input
+        value={value}
         className={Inputstyle.input}
         type={type}
         id={id}
@@ -82,6 +84,7 @@ const InputwithIcon = ({
   labelname,
   type,
   id,
+  value,
   name,
   placeholder,
   disabled,
@@ -102,6 +105,7 @@ const InputwithIcon = ({
           className={Inputstyle.input}
           type={state ? state : type}
           id={id}
+          value={value}
           name={name}
           placeholder={placeholder}
           disabled={disabled}
@@ -120,16 +124,18 @@ const InputwithIcon = ({
           })}
           {...rest}
         />
-        <button
-          type="button"
-          className={Inputstyle.Icon}
-          disabled={disabled}
-          onClick={() => {
-            state === "" ? setState("text") : setState("");
-          }}
-        >
-          {state ? <AiFillEye /> : <AiFillEyeInvisible />}
-        </button>
+        <div className={Inputstyle.eye}>
+          <button
+            type="button"
+            className={Inputstyle.Icon}
+            disabled={disabled}
+            onClick={() => {
+              state === "" ? setState("text") : setState("");
+            }}
+          >
+            {state ? <AiFillEye /> : <AiFillEyeInvisible />}
+          </button>
+        </div>
       </div>
     </div>
   );
@@ -141,6 +147,7 @@ const Phonenumberinput = ({
   id,
   type,
   name,
+  value,
   placeholder,
   error,
   disabled,
@@ -148,7 +155,6 @@ const Phonenumberinput = ({
   register,
   pattern,
   minlength,
-  maxlength,
 }) => {
   return (
     <div className={error ? Inputstyle.error : Inputstyle.default}>
@@ -157,6 +163,7 @@ const Phonenumberinput = ({
         className={Inputstyle.input}
         type={type}
         id={id}
+        value={value}
         maxLength="11"
         name={name}
         placeholder={placeholder}
@@ -178,6 +185,7 @@ const Phonenumberinput = ({
 // Drop down input field
 const Dropdown = ({
   labelname,
+  value,
   id,
   name,
   disabled,
@@ -191,6 +199,7 @@ const Dropdown = ({
       <select
         className={Inputstyle.input}
         id={id}
+        value={value}
         name={name}
         disabled={disabled}
         {...register(name, {
@@ -218,23 +227,20 @@ const Upload = ({
   error,
   register,
   filename,
-  accept,
 }) => {
   return (
     <div className={error ? Inputstyle.error : Inputstyle.default}>
       <label htmlFor={id}>{labelname}</label>
       <div className={Inputstyle.uploading}>
-        <label htmlFor={id}>{filename ? `${filename}` : "browse"}</label>
+        <label htmlFor={id}>{filename ? `${filename}` : "Upload Image"}</label>
       </div>
-
       <input
         className={Inputstyle.uploadinput}
         type="file"
-        onChange={console.log("y")}
         id={id}
         name={name}
         disabled={disabled}
-        accept={accept}
+        accept="/image"
         {...register(name, {
           required: ` Select an option`,
         })}

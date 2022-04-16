@@ -4,9 +4,11 @@ import { InputDefault } from "../Input";
 import Button from "./button";
 import Formheader from "./formheader";
 import formstyle from "./style.module.css";
+import axios from "axios";
+import { useDispatch } from "react-redux";
 
 const Forgotpassword = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const {
     register,
     handleSubmit,
@@ -14,10 +16,36 @@ const Forgotpassword = () => {
   } = useForm({
     mode: "onTouched",
   });
+  const dispatch = useDispatch();
 
-  const onsubmit = (data) => {
-    setIsLoading(false);
+  const onsubmit = async (data) => {
+    const Reset_URL =
+      "https://haulk.herokuapp.com/api/auth/sendResetPasswordEmail";
+    setIsLoading(true);
+    await axios
+      .post(Reset_URL, data)
+      .then((res) => {
+        dispatch({
+          type: "success",
+          payload: {
+            title: "Successful!",
+            message: res.data.message,
+          },
+        });
+        console.log(res);
+      })
+      .catch((error) => {
+        dispatch({
+          type: "error",
+          payload: {
+            title: "Error!",
+            message: error ? error.response.data.message : "Network Error",
+          },
+        });
+      })
+      .finally(() => setIsLoading(false));
   };
+
   return (
     <div className={formstyle.formsection}>
       <Formheader

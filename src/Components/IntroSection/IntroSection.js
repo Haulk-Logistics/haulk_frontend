@@ -7,10 +7,10 @@ import image1 from "../../Asset/Images/bgImage1.jpg";
 import image2 from "../../Asset/Images/bgImage2.jpg";
 import image3 from "../../Asset/Images/bgImage3.jpg";
 import image4 from "../../Asset/Images/bgImage4.jpg";
-
 import { useNavigate } from "react-router";
 import { useDispatch } from "react-redux";
-import { usertype } from "../../Actions/status";
+import { usertype } from "../../Store/Actions/status";
+
 const IntroSection = (props) => {
   // useSelector connects us to the redux store
 
