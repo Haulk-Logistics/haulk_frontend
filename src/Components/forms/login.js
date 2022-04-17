@@ -89,7 +89,7 @@ const Loginform = ({ user }) => {
           <p className={loginstyle.error}>{errors.password.message}</p>
         )}
         <div className={loginstyle.utils}>
-          <div>
+          <div style={{ marginTop: "-1.1rem" }}>
             <input
               className={loginstyle.agree}
               type="checkbox"
@@ -101,7 +101,7 @@ const Loginform = ({ user }) => {
           <Link
             to="/forgotpassword"
             className={loginstyle.link}
-            style={{ marginTop: ".7rem" }}
+            style={{ marginTop: ".55rem" }}
           >
             Forgot Password?
           </Link>
