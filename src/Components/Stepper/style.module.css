@@ -49,7 +49,7 @@
 
 @media screen and (max-width:640px) {
     .line,.activeline{
-        width: 3rem;
+        width: 2rem;
     }
 }
 
