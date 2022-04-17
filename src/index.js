@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import UserDashboard from './Components/UserDashboard/UserDashboard';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    {/* <App /> */}
+    <UserDashboard />
   </React.StrictMode>,
   document.getElementById('root')
 );

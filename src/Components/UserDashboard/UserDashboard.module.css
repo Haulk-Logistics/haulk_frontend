@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 90rem;
+  height: auto;
+}
+
+body {
+  background-color: #e5e5e5;
+}
+
+.dashboardContainer {
+  display: flex;
+  justify-content: space-between;
+  background-color: #e5e5e5;
+}
+
+.userMenu {
+  width: 15rem !important;
+  background-color: var(--white) !important;
+}
+
+.userMenu img {
+  margin-bottom: 4.4225rem;
+  margin-top: 3.1875rem;
+  margin-left: 2rem;
+}
+
+.userMenuList {
+  text-align: end;
+}
+
+.userMenuList1 {
+  background-color: var(--accent-main);
+  color: var(--white);
+}
+
+.userMenuList, .userMenuList1 {
+  width: 13rem;
+  height: 3rem;
+  margin-left: 2rem;
+  margin-bottom: 2.375rem;
+  padding-right: 1.8125rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.0625rem;
+}
+
+.userMenuList1 img {
+  margin: 0.75rem;
+  margin-right: 3rem;
+}
+
+.userMenuList img {
+  margin: 0.75rem;
+  margin-right: 2rem;
+}
+
+.userMenuList:last-child {
+  margin-top: 31.25rem;
+  margin-left: 1rem;
+}
+
+.userDetails {
+  width: 65rem;
+  margin-right: 3rem !important;
+  margin-top: 1rem;
+}
+
+header.userHeader {
+  display: flex;
+  background-color: var(--white) !important;
+  width: 67.1875rem;
+  border-radius: 1.25rem;
+  justify-content: flex-end;
+  padding: 1.5rem 4.125rem;
+}
+
+.userDetails img {
+  margin-right: 1rem;
+}
+
+.caption {
+  font-size: 0.625rem;
+  font-weight: 500;
+}
+
+.userTitle p {
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+.userInfo {
+  margin-left: 2.8125rem;
+}
+
+.welcome {
+  margin-top: 3.125rem;
+  margin-bottom: 1.9375rem;
+}
+
+.userName {
+  color: var(--accent-main);
+}
+
+.userOrders {
+  display: flex;
+}
+
+.order {
+  width: 20.125rem;
+  height: 8.6875rem;
+  background-color: #ffffff;
+  margin-right: 2rem;
+  padding: 1.5rem;
+  border-radius: 0.625rem;
+  display: flex;
+}
+
+.order h5 {
+  font-weight: 500;
+}
+
+.order span {
+  font-weight: 500;
+  font-size: 2.25rem;
+}
+
+.order img {
+  width: 3rem;
+  height: 3rem;
+}
+
+.orderHistory {
+  margin-top: 3.9375rem;
+}
+
+.orderHistoryHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.orderHistoryHeader h4 {
+  font-weight: 500;
+}
+
+.scrollButton {
+  width: 2.25rem;
+  height: 2.25rem;
+  padding-top: 0.15rem;
+  margin-right: 1.8125rem;
+}
+
+.orderHistoryBody {
+  margin-top: 2.0625rem;
+  background-color: #ffffff;
+  text-align: center;
+  padding: 0 20.125rem;
+  padding-top: 8.2513rem;
+  padding-bottom: 6.0938rem;
+  border-radius: 0.625rem;
+}
+
+.orderHistoryInfo {
+  margin-top: 3.6119rem;
+}
+
+.orderHistoryInfo h4{
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
