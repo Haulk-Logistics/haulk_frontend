@@ -41,7 +41,7 @@
   letter-spacing: 0.15px;
 }
 
-@media only screen and (max-width: 23.4375rem){
+@media only screen and (max-width: 40rem){
   .testimonial{
     height: 14.1875rem;
     padding: 1.38rem;

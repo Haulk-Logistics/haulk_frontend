@@ -1,6 +1,7 @@
 //The First section of the landing page
 
 import React from "react";
+import {Link} from "react-router-dom";
 import BackgroundSlider from "react-background-slider";
 import styles from "./IntroSection.module.css";
 import image1 from "../../Assets/Images/bgImage1.jpg";
@@ -19,8 +20,13 @@ const IntroSection = (props) => {
                     Providing end-to-end logistics solutions for Individuals, companies and government agencies.
                 </p>
                 <div className = {`${styles['introSection-buttons-container']}`}>
-                    <button>Register Truck</button>
-                    <button>Book a Truck</button>
+                    <Link to = "/register-truck">
+                        <button className = {styles.registerBtn}>Register Truck</button>
+                    </Link>
+                    <Link to = "/book-truck">
+                        <button className = {styles.bookBtn}>Book a Truck</button>
+                    </Link>
+
                 </div>
             </div>
             <BackgroundSlider

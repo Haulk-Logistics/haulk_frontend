@@ -6,6 +6,7 @@ import truckImage2 from "../../Assets/Images/truckImage2.jpg";
 import truckImage3 from "../../Assets/Images/truckImage3.jpg";
 import truckImage4 from "../../Assets/Images/truckImage4.jpg";
 import truckImage5 from "../../Assets/Images/truckImage5.jpg";
+import truckImage6 from "../../Assets/Images/truckImage6.jpg";
 
 const FleetSection = () => {
   //Props to be passed into the fleet cards
@@ -35,6 +36,11 @@ const FleetSection = () => {
       image: truckImage5,
       type: "Box Trucks",
     },
+    {
+      class: "item6",
+      image: truckImage6,
+      type: "Refrigerated Trucks"
+    }
   ];
 
   return (
@@ -62,6 +68,10 @@ const FleetSection = () => {
         <FleetCard
           image={properties[4].image}
           type={properties[4].type}
+        />
+        <FleetCard
+          image={properties[5].image}
+          type={properties[5].type}
         />
       </div>
     </div>

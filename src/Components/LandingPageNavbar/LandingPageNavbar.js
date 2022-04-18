@@ -9,9 +9,8 @@ import HamburgerIcon from "../../Assets/Icons/hamburgerIcon.svg";
 import CancelIcon from "../../Assets/Icons/cancelIcon.svg";
 
 const LandingPageNavbar = (props) => {
-  const { pathname } = useLocation();
+  const {pathname} = useLocation();
   let name = pathname.split("/")[1];
-  const link = "#";
 
   const [active, setActive] = useState(false);
   const openSideNav = () => {
@@ -21,15 +20,15 @@ const LandingPageNavbar = (props) => {
   return (
     <nav className={styles.navbar}>
       <div className={`${styles["navbar-left"]}`}>
-        <a href={link}>
+        <Link to = "/">
           <picture>
             <source
-              srcset={MobileLogo}
-              media="(max-width: 23.4375rem)"
+              srcSet={MobileLogo}
+              media="(max-width: 40rem)"
             ></source>
             <img src={WebLogo} alt="Haulk's Logo" />
           </picture>
-        </a>
+        </Link>
       </div>
       <div
         className={`${styles["navbar-centre"]} ${

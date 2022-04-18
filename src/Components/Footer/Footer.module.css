@@ -59,7 +59,7 @@
     color: var(--info-links);
 }
 
-@media only screen and (max-width: 23.4375rem){
+@media only screen and (max-width: 40rem){
     .footer{
         padding: 2.47rem 2.56rem 1rem 2.56rem;
     }
