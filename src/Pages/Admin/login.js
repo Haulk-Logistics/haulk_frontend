@@ -8,9 +8,7 @@ const Adminlogin = () => {
     <div>
       <Formnav />
       <div className={loginstyle.container}>
-        <div>
-          <Loginform user="admin" />
-        </div>
+        <Loginform user="admin" />
       </div>
     </div>
   );
