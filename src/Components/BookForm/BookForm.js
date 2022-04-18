@@ -19,17 +19,19 @@ const BookForm = (props) => {
 
   const submitted = async (data) => {
     alert("You are about to submit a form.");
-    const {pickup, drop_off, container, truck_types} = data;
+    const { pickup, drop_off, container, truck_types } = data;
     const source = getLocation(locations, pickup);
     const destination = getLocation(locations, drop_off);
     const locationDetails = {
       latSrc: source.lat,
       longSrc: source.long,
       latDes: destination.lat,
-      longDes: destination.long
+      longDes: destination.long,
     };
-    const {data: {message}} = await getQuotation(locationDetails);
-    setModal(true)
+    const {
+      data: { message },
+    } = await getQuotation(locationDetails);
+    setModal(true);
     setSource(pickup);
     setDestination(drop_off);
     setSize(container);
@@ -39,9 +41,7 @@ const BookForm = (props) => {
 
   const closeModal = () => {
     setModal(false);
-  }
-
-  
+  };
 
   return (
     <div className={modal ? styles.bodyModal : styles.body}>
@@ -49,7 +49,7 @@ const BookForm = (props) => {
         <div className={styles.main}>
           <div className={styles.heading}>
             <h3>Book a Truck</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>Fill the form to get started.</p>
           </div>
           <div className={styles.stepper}></div>
           <form className={styles.form} onSubmit={handleSubmit(submitted)}>
@@ -72,10 +72,7 @@ const BookForm = (props) => {
               </div>
               <div className={styles.row}>
                 <label htmlFor="truck-types">Truck Type</label>
-                <select
-                  name="truck-types"
-                  {...register("truck_types")}
-                >
+                <select name="truck-types" {...register("truck_types")}>
                   <option
                     value=""
                     disabled
@@ -115,10 +112,7 @@ const BookForm = (props) => {
             </fieldset>
             <fieldset className={styles.row}>
               <label htmlFor="drop_off">Drop Off Location</label>
-              <select
-                name="drop_off"
-                {...register("drop_off")}
-              >
+              <select name="drop_off" {...register("drop_off")}>
                 <option
                   value=""
                   disabled
@@ -194,12 +188,12 @@ const BookForm = (props) => {
       )}
       {modal && (
         <QuotationModal
-          closeModal = {closeModal}
-          source = {source}
-          destination = {destination}
-          truck = {truck}
-          size = {size}
-          amount = {amount}
+          closeModal={closeModal}
+          source={source}
+          destination={destination}
+          truck={truck}
+          size={size}
+          amount={amount}
         />
       )}
     </div>
