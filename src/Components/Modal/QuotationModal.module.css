@@ -110,7 +110,7 @@
     background-color: var(--accent-main);
 }
 
-@media only screen and (max-width: 23.4375rem){
+@media only screen and (max-width: 40rem){
     /* Media Query rules for styles below 375px */
     .modal{
         width: 75%;
