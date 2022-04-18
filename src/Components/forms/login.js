@@ -7,6 +7,7 @@ import Formheader from "./formheader";
 import loginstyle from "./style.module.css";
 import axios from "axios";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router";
 
 const Loginform = ({ user }) => {
   const Login_URL = user
@@ -23,6 +24,8 @@ const Loginform = ({ user }) => {
     mode: "onTouched",
   });
 
+  const navigate = useNavigate();
+
   const onsubmit = async (data) => {
     setIsLoading(true);
     await axios
@@ -32,6 +35,16 @@ const Loginform = ({ user }) => {
         localStorage.setItem("haulk-app-auth", JSON.stringify(userToken));
         console.log(res);
         if (res.data.user_details.role === "cargoowner") {
+          navigate("/book-truck");
+        }
+        if (res.data.user_details.role === "truckdriver") {
+          dispatch({
+            type: "success",
+            payload: {
+              title: "Successful!",
+              message: "Your accout is still under review. Check back soon!!",
+            },
+          });
         }
         dispatch({
           type: "success",
@@ -92,26 +105,26 @@ const Loginform = ({ user }) => {
           <p className={loginstyle.error}>{errors.password.message}</p>
         )}
         <div className={loginstyle.utils}>
-          <div style={{ marginTop: "-1.1rem" }}>
+          <div style={{ display: "flex" }}>
             <input
               className={loginstyle.agree}
               type="checkbox"
               name="checkbox"
               {...register("checkbox")}
             />
-            <span>Keep me signed In</span>
+            <p style={{ marginTop: "1rem" }}>Keep me signed In</p>
           </div>
           <Link
             to="/forgotpassword"
             className={loginstyle.link}
-            style={{ marginTop: ".55rem" }}
+            style={{ marginTop: ".9rem" }}
           >
             Forgot Password?
           </Link>
         </div>
         <Button name="Log In" status={isLoading} />
       </form>
-      <p>
+      <p className={loginstyle.haveaccount}>
         Don't have an Account?
         <Link
           to="/signup"

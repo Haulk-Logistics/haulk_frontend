@@ -62,7 +62,6 @@
 .utils{
     display: flex;
     margin-top: auto;
-    
 }
 
 .hidestep{
@@ -114,7 +113,7 @@
 }
 
 .agree{
-    margin: 2rem 0;
+margin-top: .4rem ;
     margin-right: .5rem ;
   
    
@@ -137,7 +136,7 @@
 }
 
 .haveaccount{
-   text-align: center;
+   text-align: left;
 }
 
 .span{
@@ -189,6 +188,9 @@
     .truckform{
         width: 100%;
         padding: 2rem;
+    }
+    .haveaccount{
+        text-align: center;
     }
 
 }
