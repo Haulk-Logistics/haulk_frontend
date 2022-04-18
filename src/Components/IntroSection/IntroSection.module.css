@@ -45,7 +45,7 @@
     margin-top: 3.3rem;
 }
 
-.introSection-buttons-container > *{
+.registerBtn, .bookBtn{
     cursor: pointer;
     width: 13rem;
     height: 2.8rem;
@@ -54,29 +54,29 @@
     transition: all .8s;
 }
 
-.introSection-buttons-container > button:first-of-type{
+.registerBtn{
+    background: transparent;
+    color: var(--white);
+    border: 1px solid var(--white);
+}
+
+.bookBtn{
+    background: var(--white);
+    color: var(--primary-main);
+}
+
+.registerBtn:hover{
+    color: var(--primary-main);
+    background: var(--white);
+}
+
+.bookBtn:hover{
     color: var(--white);
     background: transparent;
     border: 1px solid var(--white);
 }
 
-.introSection-buttons-container > button:nth-of-type(2){
-    background: var(--white);
-    color: var(--primary-main);
-}
-
-.introSection-buttons-container > button:first-of-type:hover{
-    color: var(--primary-main);
-    background: var(--white);
-}
-
-.introSection-buttons-container > button:nth-of-type(2):hover{
-    color: var(--white);
-    background: transparent;
-    border: 1px solid var(--white);
-}
-
-@media only screen and (max-width: 23.4375rem){
+@media only screen and (max-width: 40rem){
     .introSection{
         padding: 0 1.2rem;
     }
@@ -85,17 +85,25 @@
         width: 100%;
     }
 
+    .introSection-main > p{
+        width: 90%;
+    }
+
     .introSection-buttons-container{
         flex-direction: column;
         width: 100%;
     }
 
-    .introSection-buttons-container > *{
-        width: 90%;
+    .introSection-buttons-container a{
+        width: 100vw;
+    }
+
+    .registerBtn, .bookBtn{
+        width: 80%;
         height: 3.5rem;
     }
 
-    .introSection-buttons-container > button:first-of-type{
+    .bookBtn{
         margin-bottom: 1.5rem;
     }
 }

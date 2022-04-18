@@ -1,5 +1,7 @@
-import React from "react";
-import style from "./Subscribe.module.css";
+/* Landing Page - Subscription Section */
+
+import React from 'react';
+import style from './Subscribe.module.css';
 import subscribeImage from "../../Asset/Images/subscribeImage.jpg";
 import subscribeBtn from "../../Asset/Icons/subscribeBtn.svg";
 

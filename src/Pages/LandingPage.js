@@ -8,17 +8,17 @@ import Footer from "../Components/Footer/Footer";
 import Subscribe from "../Components/SubscribeSection/Subscribe";
 
 const LandingPage = () => {
-  return (
-    <div>
-      <LandingPageNavbar />
-      <IntroSection />
-      <ServicesSection />
-      <FleetSection />
-      <TestimonialSection />
-      <Subscribe />
-      <Footer />
-    </div>
-  );
-};
-
+    return (
+        <>
+          <LandingPageNavbar/>
+          <IntroSection/>
+          <ServicesSection/>
+          <FleetSection/>
+          <TestimonialSection/>
+          <Subscribe/>
+          <Footer/>
+        </>
+    );
+}
+ 
 export default LandingPage;

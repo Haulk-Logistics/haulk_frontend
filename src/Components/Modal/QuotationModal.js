@@ -1,6 +1,6 @@
 //Reusable component for Quotation Modal 
 
-import React, {useState} from 'react';
+import React from 'react';
 import styles from './QuotationModal.module.css';
 import {FiX} from "react-icons/fi";
 
@@ -17,7 +17,7 @@ const Modal = (props) => {
             <div className = {`${styles['modal-main']}`}>
                 <div className = {`${styles['modal-content']}`}>
                     <p>Location</p>
-                    <p>{props.location}</p>
+                    <p>{props.source} to {props.destination}</p>
                 </div>
                 <div className = {`${styles['modal-content']}`}>
                     <p>Truck Type</p>
@@ -25,7 +25,7 @@ const Modal = (props) => {
                 </div>
                 <div className = {`${styles['modal-content']}`}>
                     <p>Container Size</p>
-                    <p>{props.size}</p>
+                    <p>{props.size} Tons</p>
                 </div>
                 <div className = {styles.divider}></div>
                 <div className = {`${styles['modal-content']}`}>
