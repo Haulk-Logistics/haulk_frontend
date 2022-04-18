@@ -115,7 +115,7 @@ const InputwithIcon = ({
             pattern: {
               value: pattern,
               message:
-                "Password must contain uppercase,lowercase,number and special character.",
+                "Password must contain atleast one number,special character.",
             },
             minLength: {
               value: minlength,
