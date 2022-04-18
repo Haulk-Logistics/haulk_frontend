@@ -33,11 +33,12 @@ const IntroSection = (props) => {
           and government agencies.
         </p>
         <div className={`${styles["introSection-buttons-container"]}`}>
-          <button onClick={handleRegisterTruck}>Register Truck</button>
+          <button onClick={handleRegisterTruck} className = {styles.registerBtn}>Register Truck</button>
           <button
             onClick={() => {
               navigate("/login");
             }}
+            className = {styles.bookBtn}
           >
             Book a Truck
           </button>
@@ -50,14 +51,6 @@ const IntroSection = (props) => {
         transition={3}
       />
     </div>
-    //       </div>
-    //       <BackgroundSlider
-    //         // Custom NPM package for the background images feature
-    //         images={[image1, image2, image3, image4]}
-    //         duration={8}
-    //         transition={3}
-    //       />
-    //     </div>
   );
 };
 

@@ -4,10 +4,10 @@ import Footer from "../Components/Footer/Footer";
 
 const Resources = () => {
     return (
-        <div>
+        <>
             <LandingPageNavbar/>
             <Footer/>
-        </div>
+        </>
     );
 }
  

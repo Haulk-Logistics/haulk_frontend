@@ -7,6 +7,7 @@ import Formheader from "./formheader";
 import loginstyle from "./style.module.css";
 import axios from "axios";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router";
 
 const Loginform = ({ user }) => {
   const Login_URL = user
@@ -23,6 +24,8 @@ const Loginform = ({ user }) => {
     mode: "onTouched",
   });
 
+const navigate = useNavigate();
+
   const onsubmit = async (data) => {
     setIsLoading(true);
     await axios
@@ -30,6 +33,7 @@ const Loginform = ({ user }) => {
       .then((res) => {
         const userToken = res.data.token;
         localStorage.setItem("haulk-app-auth", JSON.stringify(userToken));
+        navigate("/book-truck")
         dispatch({
           type: "success",
           payload: {
