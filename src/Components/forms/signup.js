@@ -164,9 +164,7 @@ const Signup = (props) => {
           name="password"
           value={details.password}
           register={register}
-          pattern={
-            /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,100}$/
-          }
+          pattern={/^(?=.*\d)(?=.*[a-z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,100}$/}
           minlength={parseInt("8")}
           error={errors.password}
         />

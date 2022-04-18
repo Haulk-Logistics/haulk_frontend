@@ -30,6 +30,7 @@ const Loginform = ({ user }) => {
       .then((res) => {
         const userToken = res.data.token;
         localStorage.setItem("haulk-app-auth", JSON.stringify(userToken));
+        console.log(res);
         dispatch({
           type: "success",
           payload: {
