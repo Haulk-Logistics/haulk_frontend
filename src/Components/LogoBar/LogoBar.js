@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./LogoBar.module.css";
-import WebLogo from "../../Assets/Icons/webLogo.svg";
-import MobileLogo from "../../Assets/Icons/mobileLogo.svg";
+import WebLogo from "../../Asset/Icons/webLogo.svg";
+import MobileLogo from "../../Asset/Icons/mobileLogo.svg";
 
 const LogoBar = () => {
     return (

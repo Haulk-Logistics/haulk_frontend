@@ -10,13 +10,13 @@ import Subscribe from "../Components/SubscribeSection/Subscribe";
 const LandingPage = () => {
     return (
         <>
-            <LandingPageNavbar/>
-            <IntroSection/>
-            <ServicesSection/>
-            <FleetSection/>
-            <TestimonialSection/>
-            <Subscribe/>
-            <Footer/>
+          <LandingPageNavbar/>
+          <IntroSection/>
+          <ServicesSection/>
+          <FleetSection/>
+          <TestimonialSection/>
+          <Subscribe/>
+          <Footer/>
         </>
     );
 }

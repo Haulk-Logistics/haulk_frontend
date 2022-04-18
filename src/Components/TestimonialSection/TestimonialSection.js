@@ -3,10 +3,10 @@
 import React from "react";
 import styles from "./TestimonialSection.module.css";
 import TestimonialCard from "../Cards/TestimonialCard";
-import amadiChisom from "../../Assets/Images/amadiChisom.svg";
-import amaHarvey from "../../Assets/Images/amaHarvey.svg";
-import jubileeEdeh from "../../Assets/Images/jubileeEdeh.svg";
-import edozieOnyeanusi from "../../Assets/Images/edozieOnyeanusi.svg";
+import amadiChisom from "../../Asset/Images/amadiChisom.svg";
+import amaHarvey from "../../Asset/Images/amaHarvey.svg";
+import jubileeEdeh from "../../Asset/Images/jubileeEdeh.svg";
+import edozieOnyeanusi from "../../Asset/Images/edozieOnyeanusi.svg";
 
 const TestimonialSection = () => {
     const properties = [

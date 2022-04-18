@@ -1,6 +1,6 @@
 //Reusable component for Quotation Modal 
 
-import React, {useState} from 'react';
+import React from 'react';
 import styles from './QuotationModal.module.css';
 import {FiX} from "react-icons/fi";
 
