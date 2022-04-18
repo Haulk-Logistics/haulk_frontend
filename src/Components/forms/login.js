@@ -31,6 +31,8 @@ const Loginform = ({ user }) => {
         const userToken = res.data.token;
         localStorage.setItem("haulk-app-auth", JSON.stringify(userToken));
         console.log(res);
+        if (res.data.user_details.role === "cargoowner") {
+        }
         dispatch({
           type: "success",
           payload: {
