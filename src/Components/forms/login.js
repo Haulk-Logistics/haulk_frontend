@@ -33,7 +33,7 @@ const navigate = useNavigate();
       .then((res) => {
         const userToken = res.data.token;
         localStorage.setItem("haulk-app-auth", JSON.stringify(userToken));
-        navigate("/book-truck");
+        navigate("/book-truck")
         dispatch({
           type: "success",
           payload: {
