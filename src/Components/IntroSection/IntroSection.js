@@ -12,8 +12,6 @@ import { useDispatch } from "react-redux";
 import { usertype } from "../../Store/Actions/status";
 
 const IntroSection = (props) => {
-  // useSelector connects us to the redux store
-
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -33,12 +31,14 @@ const IntroSection = (props) => {
           and government agencies.
         </p>
         <div className={`${styles["introSection-buttons-container"]}`}>
-          <button onClick={handleRegisterTruck} className = {styles.registerBtn}>Register Truck</button>
+          <button onClick={handleRegisterTruck} className={styles.registerBtn}>
+            Register Truck
+          </button>
           <button
             onClick={() => {
               navigate("/login");
             }}
-            className = {styles.bookBtn}
+            className={styles.bookBtn}
           >
             Book a Truck
           </button>

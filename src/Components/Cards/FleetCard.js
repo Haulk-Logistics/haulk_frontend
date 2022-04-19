@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./FleetCard.module.css";
 
 const FleetCard = (props) => {
-  console.log(props);
+  // console.log(props);
 
   return (
     <div className={`${styles.truckCard}`}>
