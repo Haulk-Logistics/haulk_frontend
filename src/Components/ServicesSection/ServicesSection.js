@@ -60,7 +60,7 @@ const ServicesSection = () => {
               place already is a smart business move. You can count on us to
               deliver, on time, nearly every time. Furthermore, we have
               contingencies in place in the event that something does go wrong,
-              something many businesses don’t consider. The safety of your
+              something many businesses don't consider. The safety of your
               consignment is on our mind for every second we have it in our
               care.
             </p>
