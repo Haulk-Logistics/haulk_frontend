@@ -2,7 +2,7 @@ import React from "react";
 import LandingPageNavbar from "../Components/LandingPageNavbar/LandingPageNavbar";
 import Footer from "../Components/Footer/Footer";
 
-const Resources = () => {
+const ResourcesPage = () => {
     return (
         <>
             <LandingPageNavbar/>
@@ -11,4 +11,4 @@ const Resources = () => {
     );
 }
  
-export default Resources;
+export default ResourcesPage;

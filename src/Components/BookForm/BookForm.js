@@ -9,7 +9,9 @@ import QuotationModal from "../../Components/Modal/QuotationModal";
 
 const BookForm = (props) => {
   const { register, handleSubmit, watch } = useForm({
-    ownership: null,
+    defaultValues: {
+      ownership: null,
+    },
   });
 
   const [modal, setModal] = useState(false);
@@ -18,7 +20,7 @@ const BookForm = (props) => {
   const [size, setSize] = useState("");
   const [truck, setTruck] = useState("");
   const [amount, setAmount] = useState(0);
-  const {ownership} = watch();
+  const { ownership } = watch();
 
   const submitted = async (data) => {
     const { pickup, drop_off, container, truck_types } = data;
@@ -47,7 +49,7 @@ const BookForm = (props) => {
 
   return (
     <div className={modal ? styles.bodyModal : styles.body}>
-      {!modal && (
+      { (
         <div className={styles.main}>
           <div className={styles.heading}>
             <h3>Book a Truck</h3>
@@ -177,7 +179,9 @@ const BookForm = (props) => {
             <fieldset className={styles.row}>
               <label htmlFor="ownership">Proof of Ownership</label>
               <div className={styles.fileLabel}>
-                    <label htmlFor="ownership">{ownership ? ownership[0].name : "Browse to upload"}</label>
+                <label htmlFor="ownership">
+                  {ownership ? ownership[0].name : "Browse to upload"}
+                </label>
               </div>
               <input
                 className={styles.file}
