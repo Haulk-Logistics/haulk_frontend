@@ -3,31 +3,31 @@
 import React from "react";
 import styles from "./TestimonialSection.module.css";
 import TestimonialCard from "../Cards/TestimonialCard";
-import amadiChisom from "../../Asset/Images/amadiChisom.svg";
-import amaHarvey from "../../Asset/Images/amaHarvey.svg";
-import jubileeEdeh from "../../Asset/Images/jubileeEdeh.svg";
-import edozieOnyeanusi from "../../Asset/Images/edozieOnyeanusi.svg";
+import amadiImg from "../../Asset/Images/amadiImage.webp";
+import amaImg from "../../Asset/Images/amaImage.webp";
+import jubileeImg from "../../Asset/Images/jubileeImage.webp";
+import edozieImg from "../../Asset/Images/edozieImage.webp";
 
 const TestimonialSection = () => {
     const properties = [
         {
-            image: amadiChisom,
+            image: amadiImg,
             text: '“Moving my materials with Haulk may compete comfortably as one of the best decisons I have ever made”.',
             name: '~ Amadi Chisom'
 
         }, 
         {
-            image: jubileeEdeh,
+            image: jubileeImg,
             text: '“I was skeptical at first but omo Haulk na baba”.',
             name: '~ Jubilee Edeh'
         }, 
         {
-            image: amaHarvey,
+            image: amaImg,
             text: '“I think it is the fact that they can deliver anywhere and on time for me”.',
             name: '~ Ama Harvey'
         }, 
         {
-            image: edozieOnyeanusi,
+            image: edozieImg,
             text: '“Everything with Haulk is just easy, them no dey stress me. Just book a truck and you have it delivered."',
             name: '~ Chief Edozie'
         }]

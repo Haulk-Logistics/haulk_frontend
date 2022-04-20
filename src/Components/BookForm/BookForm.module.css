@@ -13,6 +13,7 @@
 .main{
     width: 40%;
     margin: 0 auto;
+    margin-top: 3rem;
 }
 
 .heading > h3{
@@ -68,14 +69,40 @@ label{
     margin-bottom: .5rem;
 }
 
+.select{
+    width: 100%;
+    border: 1px solid #BAC7D5;
+    border-radius: 3px;
+}
+
 select, input{
     height: 2.75rem;
     padding: 6px 12px;
     border-radius: 3px;
     border: 1px solid #BAC7D5;
+    outline: none;
 }
 
-.invalid, ::placeholder{
+select{
+    border: none;
+    border-radius: none;
+    width: 98%;
+    color: #697D95;
+}
+
+.dropdown{
+    width: 96%;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+input[type = "date"]{
+    color: #697D95;
+}
+
+::placeholder{
     color: #697D95;
     font-size: 0.875rem;
     font-weight: 400;

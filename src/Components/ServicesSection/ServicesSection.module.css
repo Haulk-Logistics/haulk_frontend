@@ -22,9 +22,11 @@
     display: flex;
     justify-content: space-evenly;
     padding: 3rem 0;
+    gap: 20px;
 }
 
 .servicesDescription{
+    margin-top: 3rem;
     padding: 0 1.8rem;
 }
 

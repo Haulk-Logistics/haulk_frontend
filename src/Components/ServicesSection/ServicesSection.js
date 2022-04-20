@@ -6,8 +6,8 @@ import ServiceCard from "../Cards/ServiceCard";
 import haulageIcon from "../../Asset/Icons/haulageIcon.svg";
 import promptDeliveryIcon from "../../Asset/Icons/promptDeliveryIcon.svg";
 import experienceIcon from "../../Asset/Icons/experienceIcon.svg";
-import image1 from "../../Asset/Images/image1.jpg";
-import image2 from "../../Asset/Images/image2.jpg";
+import image1 from "../../Asset/Images/serviceImg1.webp";
+import image2 from "../../Asset/Images/serviceImg2.webp";
 
 const ServicesSection = () => {
   //Properties to be passed into the services cards
