@@ -3,10 +3,16 @@ import { AiOutlineClose } from "react-icons/ai";
 import modal from "./Modal.module.css";
 import Modal from "react-modal";
 import envelope from "../../Asset/Images/envelope.svg";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { modalStatus } from "../../Store/Actions/ModalStatus";
 
 const MessageModal = () => {
   const status = useSelector((state) => state.modalStatus);
+  const dispatch = useDispatch();
+
+  const CloseModal = () => {
+    dispatch(modalStatus({ status: false }));
+  };
 
   return (
     <Modal
@@ -22,8 +28,8 @@ const MessageModal = () => {
     >
       <div className={modal.container}>
         <div className={modal.header}>
-          <h5> Mail Sent </h5>
-          <button>
+          <h5 style={{ fontWeight: "500" }}> Mail Sent </h5>
+          <button onClick={CloseModal}>
             <AiOutlineClose />
           </button>
         </div>

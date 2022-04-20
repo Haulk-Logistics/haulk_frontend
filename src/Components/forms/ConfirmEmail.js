@@ -1,7 +1,9 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-// import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router";
+import { modalStatus } from "../../Store/Actions/ModalStatus";
 import { InputDefault } from "../Input";
 import Button from "./button";
 import Formheader from "./formheader";
@@ -9,7 +11,10 @@ import formstyle from "./style.module.css";
 
 const ConfirmEmail = () => {
   const [isLoading, setIsLoading] = useState(false);
-  //   const details = useSelector((state) => state.truckdetails);
+  const details = useSelector((state) => state.truckdetails);
+  console.log(details);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const {
     register,
@@ -18,16 +23,71 @@ const ConfirmEmail = () => {
   } = useForm({
     mode: "onTouched",
   });
-
   const onsubmit = async (data) => {
-    // const Resend_Url = details.role
-    //   ? "/https://haulk.herokuapp.com/api/auth/resendVerificationEmail"
-    //   : "https://haulk.herokuapp.com/api/auth/sendResetPasswordEmail";
     setIsLoading(true);
-    console.log(data);
 
-    await axios.put;
+    if (details.role) {
+      await axios
+        .put(
+          "/https://haulk.herokuapp.com/api/auth/resendVerificationEmail",
+          data
+        )
+        .then((res) => {
+          navigate("/login");
+          dispatch(
+            modalStatus({
+              status: "true",
+              message: res.data.message,
+              link: "/confirmemail",
+            })
+          );
+        })
+        .catch((err) => {
+          dispatch({
+            type: "error",
+            payload: {
+              title: "Error!",
+              message: err.response
+                ? err.response.data.statusCode === 409
+                  ? err.response.data.message
+                  : "Phone number is invalid"
+                : "Network error",
+            },
+          });
+        })
+        .finally(() => setIsLoading(false));
+    } else {
+      await axios
+        .post(
+          "https://haulk.herokuapp.com/api/auth/sendResetPasswordEmail",
+          data
+        )
+        .then((res) => {
+          dispatch(
+            modalStatus({
+              status: "true",
+              message: res.data.message,
+              link: "/confirmemail",
+            })
+          );
+        })
+        .catch((err) => {
+          dispatch({
+            type: "error",
+            payload: {
+              title: "Error!",
+              message: err.response
+                ? err.response.data.statusCode === 409
+                  ? err.response.data.message
+                  : "Phone number is invalid"
+                : "Network error",
+            },
+          });
+        })
+        .finally(() => setIsLoading(false));
+    }
   };
+
   return (
     <div className={formstyle.formsection}>
       <Formheader

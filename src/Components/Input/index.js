@@ -84,7 +84,6 @@ const InputwithIcon = ({
   labelname,
   type,
   id,
-  value,
   name,
   placeholder,
   disabled,
@@ -105,7 +104,6 @@ const InputwithIcon = ({
           className={Inputstyle.input}
           type={state ? state : type}
           id={id}
-          value={value}
           name={name}
           placeholder={placeholder}
           disabled={disabled}
