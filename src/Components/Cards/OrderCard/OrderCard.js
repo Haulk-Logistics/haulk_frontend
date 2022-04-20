@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 import style from './OrderCard.module.css';
-import deliveryPoints from '../../../Assets/Icons/deliveryPoints.svg';
+import deliveryPoints from '../../../Asset/Icons/deliveryPoints.svg';
 
 const OrderCards = (props) => {
 	return (

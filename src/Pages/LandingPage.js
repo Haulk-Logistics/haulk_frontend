@@ -16,7 +16,7 @@ const LandingPage = () => {
             <ServicesSection/>
             <FleetSection/>
             <TestimonialSection/>
-            {/* <Subscribe /> */}
+            <Subscribe />
         </div>
     );
 }

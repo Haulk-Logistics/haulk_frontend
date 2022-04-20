@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 import style from './SummaryCard.module.css';
-import truckIcon from '../../../Assets/Icons/truckIcon.svg';
+import truckIcon from '../../../Asset/Icons/truckIcon.svg';
 
 const SummaryCard = (props) => {
 	return (

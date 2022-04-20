@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './Subscribe.module.css';
-import subscribeImg from '../../Assets/svg/subscribeImage.svg';
-import buttonIcon from '../../Assets/Icons/buttonIcon.svg';
+import subscribeImg from '../../Asset/svg/subscribeImage.svg';
+import buttonIcon from '../../Asset/Icons/buttonIcon.svg';
 
 const Subscribe = () => {
 	return (
