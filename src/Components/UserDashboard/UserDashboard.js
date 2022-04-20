@@ -3,8 +3,9 @@ import style from './UserDashboard.module.css';
 import { FaLessThan, FaGreaterThan } from 'react-icons/fa';
 import { BsGridFill } from 'react-icons/bs';
 import { IoCube, IoGrid, IoNotifications } from 'react-icons/io5';
-import hamburgerIcon from '../../Asset/Icons/hamburgerIcon.svg';
-import cancelIcon from '../../Asset/Icons/cancelIcon.svg';
+import { VscMenu, VscChromeClose } from 'react-icons/vsc';
+// import hamburgerIcon from '../../Asset/Icons/hamburgerIcon.svg';
+// import cancelIcon from '../../Asset/Icons/cancelIcon.svg';
 import webLogo from '../../Asset/Icons/webLogo.svg';
 import mobileLogo from '../../Asset/Icons/mobileLogo.svg';
 import userAvatar from '../../Asset/Icons/userDashboardAvatar.svg';
@@ -20,17 +21,30 @@ import logoutIcon from '../../Asset/Icons/logoutIcon.svg';
 
 const UserDashboard = () => {
 	const [show, setShow] = useState(false);
-	const showSideBar = () => {
+	const toggleSidebarVisibility = () => {
 		setShow(!show);
-	}
+	};
 
 	return (
 		<div className={style.dashboardContainer}>
+			<div
+				className={style.mobileNav}
+				style={{ display: show ? 'flex' : 'none' }}>
+				<ul className={style.mobileNavItems}>
+					<li>Dashboard</li>
+					<li>Truck Request</li>
+					<li>Track Orders</li>
+					<li>Order History</li>
+					<li>Log Out</li>
+				</ul>
+			</div>
+
 			<div className={style.userMenu}>
 				<img src={webLogo} alt='logo' />
 				<div className={style.menuItems}>
 					<button className={style.userMenuList}>
-						<img src={dashboardIcon2} alt='icon' />
+						{/* <img src={dashboardIcon2} alt='icon' /> */}
+						<BsGridFill style={{ transition: 'ease-in-out 0.1s', marginRight: '2rem' }} />
 						Dashboard
 					</button>
 					<button className={style.userMenuList}>
@@ -54,11 +68,15 @@ const UserDashboard = () => {
 			<div className={style.userDetails}>
 				<header className={style.userHeader}>
 					<div className={style.menuBtn}>
-						<button
-							className={style.hamburgerBtn}
-							onClick={() => showSideBar()}>
-							<img src={show ? cancelIcon : hamburgerIcon} alt='menu' />
-						</button>
+						<div
+							className={style.menuIcon}
+							onClick={() => toggleSidebarVisibility()}>
+							{show ? (
+								<VscChromeClose style={{ width: '2rem' }} />
+							) : (
+								<VscMenu style={{ width: '2rem' }} />
+							)}
+						</div>
 						<img src={mobileLogo} alt='menu' />
 					</div>
 					<div className={style.profileHeader}>
