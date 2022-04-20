@@ -2,9 +2,12 @@
         width: 100%;
         display: flex;
         justify-content: center;
-    /* padding: 3rem 5rem;
-    color: var(--text-color);
-    box-sizing: border-box;
-    background: red; */
+        overflow-x: hidden;
+   
 }
 
+@media screen and (max-width:600px){
+    .login{
+        width: 100%;
+    }
+}
