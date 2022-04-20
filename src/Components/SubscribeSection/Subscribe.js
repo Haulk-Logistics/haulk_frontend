@@ -13,11 +13,10 @@ const Subscribe = (props) => {
 					<h3>Want to know more about our services?</h3>
 					<p>Subcribe to our Newsletter</p>
 					<div className={style.subInput}>
-						<input type='text' placeholder='Email Address'>
-							<button type='submit' className={style.subscribeBtn}>
-								<img src={subscribeBtn} alt='' />
-							</button>
-						</input>
+						<input type='text' placeholder='Email Address' />
+						<button type='submit' className={style.subscribeBtn}>
+							<img src={subscribeBtn} alt='' />
+						</button>
 					</div>
 				</div>
 			</div>
