@@ -13,6 +13,7 @@ import ResourcesPage from "../Pages/ResourcesPage";
 import ErrorPage from "../Pages/ErrorPage";
 import ConfirmEmail from "../Pages/ConfirmEmail/ConfirmEmail";
 import BookPage from "../Pages/BookPage";
+import EmailVerified from "../Pages/signuppage/EmailVerified";
 
 const AppRoutes = () => {
   // useSelector connects us to the redux store
@@ -46,6 +47,7 @@ const AppRoutes = () => {
           <Route path="/book-truck" element={<BookPage />} />
           <Route path="" element={<ErrorPage />} />
           <Route exact path="/confirmemail" element={<ConfirmEmail />} />
+          <Route exact path="/verified" element={<EmailVerified />} />
         </Routes>
       </BrowserRouter>
     </Fragment>
