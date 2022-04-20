@@ -33,7 +33,7 @@
     display: flex;
     justify-content: space-between;
     align-items: stretch;
-    margin: 3.5rem 0;
+    margin-bottom: 6.5rem;
 }
 
 .servicesDescription-one > div, .servicesDescription-two > div{
@@ -95,7 +95,7 @@
     color: var(--accent-main);
 }
 
-@media only screen and (max-width: 23.4375rem){
+@media only screen and (max-width: 40rem){
     .servicesCards{
         flex-direction: column;
         justify-content: center;
@@ -135,11 +135,16 @@
         width: 100%;
         text-align: center;
         justify-content: center;
-        align-items: center;
+    }
+
+    .description-text > h2{
+        text-align: left;
     }
 
     .description-text > p{
+        width: 100%;
         margin-bottom: 1.3rem;
+        text-align: left;
     }
 
     .description-text > button{

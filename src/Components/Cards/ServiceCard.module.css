@@ -21,15 +21,17 @@
     border-radius: 50%;
 }
 
-.serviceCard-heading{
-
-}
-
-.serviceCard-text{
-    
+.serviceCard-heading h4{
+    font-weight: 500;
 }
 
 .serviceCard-text > p{
-    font-weight: 200;
+    font-weight: 400;
     line-height: 25.92px;
+}
+
+@media only screen and (max-width: 40rem){
+    .serviceCard{
+        width: 100%;
+    }
 }

@@ -35,6 +35,91 @@
     background-color: var(--accent-main);
 }
 
-@media only screen and (max-width: 23.4375rem){
-    
+/*Success popup  */
+.popup{
+    background:#F6FFF5 ;
+    color: var(--success);
+    padding: .7rem;
+    box-sizing: border-box;
+    border-radius: .3rem ;
+    max-width: 50%;
+    position: absolute;
+    top:3%;
+    right:2rem;
+    z-index: 1;
+}
+
+.popup .header{
+    display: flex;
+}
+
+.popup .header h4{
+    font-weight: 500;
+}
+.popup p{
+   margin-top: .3rem;
+}
+.popup .header button{
+    background: none;
+    border: none;
+    outline: none;
+    margin-left: auto;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--success)
+}
+
+/* Error popup */
+.errpopup{
+    background:#FFF5F7 ;
+    color: var(--error);
+    padding: .7rem;
+    box-sizing: border-box;
+    border-radius: .3rem ;
+    max-width: 50%;
+    position: absolute;
+    top:.5rem;
+    right:2rem;
+    z-index: 1;
+}
+.container {
+    display: flex;
+
+}
+
+.hide{
+    display: none;
+}
+
+.write{
+    width: 100%;
+    padding-left: .5rem;
+}
+
+.errpopup .header{
+    display: flex;
+}
+
+.errpopup .header h4{
+    font-weight: 500;
+}
+.errpopup p{
+   margin-top: .2rem;
+}
+.errpopup .header button{
+    background: none;
+    border: none;
+    outline: none;
+    margin-left: auto;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--error)
+}
+
+
+@media screen and (max-width:640px){
+    .errpopup, .popup{
+        max-width: 100%;
+        left: 1.5rem;
+    }
 }

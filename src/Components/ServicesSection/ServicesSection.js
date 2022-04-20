@@ -60,7 +60,7 @@ const ServicesSection = () => {
 							place already is a smart business move. You can count on us to
 							deliver, on time, nearly every time. Furthermore, we have
 							contingencies in place in the event that something does go wrong,
-							something many businesses don’t consider. The safety of your
+							something many businesses don't consider. The safety of your
 							consignment is on our mind for every second we have it in our
 							care.
 						</p>
@@ -81,7 +81,8 @@ const ServicesSection = () => {
 							visibility, better paying customers and jobs. Free access to truck
 							maintenance facilities like discounts and insurance. Opportunity
 							to work with the best in the industry and earn a steady income
-							with your truck.
+							with your truck. Registration is easy and can be done from your
+							place of comfort anywhere in the world.
 						</p>
 						<button>Register Truck</button>
 					</div>

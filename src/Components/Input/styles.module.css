@@ -1,0 +1,121 @@
+.input{
+    width: 100%;
+    height: 2.5rem;
+    margin-top: .5rem;
+    border: none;
+    padding-left: .5rem;
+    font-size: 1rem;
+    border-radius: .3rem;
+    color: var(--text-color);
+    background-color:  var(--white);
+   
+}
+
+.hide{
+    display:none;
+   ;
+}
+
+.uploading{
+   width: 100%;
+   height: 4rem;
+   display: flex;
+   border: 1px dashed var(--cloud-darker) ;
+   background-color: #F5F5F5;
+   justify-content: center;
+   margin-top: .5rem;
+   text-align: center;
+   position: relative;
+  
+}
+
+.uploading label{
+    color: var(--info-links);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.uploadinput{
+    margin-top: -1rem;
+   opacity: 0;
+}
+
+.input:focus{
+    border: 1px solid var(  --accent-main);
+    color: var(--text-color);
+    outline: none;
+    box-shadow: -2px -2px 0px #E8F4FD, -2px 2px 0px #E8F4FD, 2px -2px 0px #E8F4FD, 2px 2px 0px #E8F4FD
+}
+
+.default input:hover, .default Select:hover {
+    border: 1px solid var(  --accent-main);
+    color: var(--text-color);
+}
+
+.input:disabled, .Icon:disabled{
+    background-color: var(--cloud-normal);
+}
+
+.default select option{
+    height: 1rem;
+}
+
+ label{
+    color: var(--ink-color);
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    margin-top: 1rem;
+}
+
+.default{
+    display:flex;
+    flex-direction: column;
+}
+
+.default p{
+    color: var(--ink-lighter-color);
+}
+
+.default input,.default select{
+    border: 1px solid var(  --primary-20);
+
+}
+
+.eye{
+    width: 2rem;
+    height: 2rem;
+   
+   margin-left: auto ;
+   margin-top: -2.3rem;
+   margin-right: .7rem;
+   
+}
+
+.Icon{
+  
+   /* margin-top: rem; */
+   height: 1rem;
+   padding: .3rem;
+    font-size: 1.5rem;
+    background: transparent;
+    border: none; 
+    color: #62666A;
+    z-index: 1000;
+}
+
+.error input,.error select, .error input:hover,.error select:hover{
+    border: 1px solid var(--error  );
+    box-shadow: -2px -2px 0 var(--error-shadow),-2px 2px 0 var(--error-shadow),2px -2px 0 var(--error-shadow),2px 2px 0 var(--error-shadow);
+}
+
+.error p, .err {
+    color: var(--error);
+}
+
+.error input:focus, .error select:focus{
+    border: 1px solid var(  --error);
+    color: var(--text-color);
+    outline: none;
+    box-shadow: -2px -2px 0px var(--error-shadow), -2px 2px 0px var(--error-shadow), 2px -2px 0px var(--error-shadow), 2px 2px 0px var(--error-shadow);
+}

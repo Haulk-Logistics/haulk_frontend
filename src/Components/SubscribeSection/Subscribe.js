@@ -1,9 +1,11 @@
+/* Landing Page - Subscription Section */
+
 import React from 'react';
 import style from './Subscribe.module.css';
-import subscribeImg from '../../Asset/svg/subscribeImage.svg';
-import buttonIcon from '../../Asset/Icons/buttonIcon.svg';
+import subscribeImage from '../../Asset/Images/subscribeImage.jpg';
+import subscribeBtn from '../../Asset/Icons/subscribeBtn.svg';
 
-const Subscribe = () => {
+const Subscribe = (props) => {
 	return (
 		<div className={style.subContainer}>
 			<div className={style.subInfo}>
@@ -11,17 +13,16 @@ const Subscribe = () => {
 					<h3>Want to know more about our services?</h3>
 					<p>Subcribe to our Newsletter</p>
 					<div className={style.subInput}>
-						{' '}
-						<input type='text' placeholder='Email Address' />
-						<button type='submit' className={style.btnIcon}>
-							<img src={buttonIcon} alt='icon' />
-						</button>
+						<input type='text' placeholder='Email Address'>
+							<button type='submit' className={style.subscribeBtn}>
+								<img src={subscribeBtn} alt='' />
+							</button>
+						</input>
 					</div>
 				</div>
 			</div>
-
 			<div className={style.subImg}>
-				<img src={subscribeImg} alt='img' />
+				<img src={subscribeImage} alt='Subscribe' />
 			</div>
 		</div>
 	);
