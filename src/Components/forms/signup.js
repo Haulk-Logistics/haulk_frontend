@@ -42,6 +42,7 @@ const Signup = (props) => {
 
     // If user is a cargo owner
     else {
+      dispatch(truckdetails(allData));
       await axios
         .post(Register_URL, allData)
         .then((res) => {
