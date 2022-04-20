@@ -3,7 +3,7 @@ import formstyle from "./style.module.css";
 import { MdPeopleAlt } from "react-icons/md";
 import { FaTruck } from "react-icons/fa";
 import { connect, useSelector } from "react-redux";
-import { usertype } from "../../Actions/status";
+import { usertype } from "../../Store/Actions/status";
 import Steps from "../Stepper/stepper";
 
 const Selectuser = (props) => {

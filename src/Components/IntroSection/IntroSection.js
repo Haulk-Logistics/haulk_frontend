@@ -7,13 +7,11 @@ import image1 from "../../Asset/Images/bgImage1.jpg";
 import image2 from "../../Asset/Images/bgImage2.jpg";
 import image3 from "../../Asset/Images/bgImage3.jpg";
 import image4 from "../../Asset/Images/bgImage4.jpg";
-
 import { useNavigate } from "react-router";
 import { useDispatch } from "react-redux";
-import { usertype } from "../../Actions/status";
-const IntroSection = (props) => {
-  // useSelector connects us to the redux store
+import { usertype } from "../../Store/Actions/status";
 
+const IntroSection = (props) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -33,11 +31,14 @@ const IntroSection = (props) => {
           and government agencies.
         </p>
         <div className={`${styles["introSection-buttons-container"]}`}>
-          <button onClick={handleRegisterTruck}>Register Truck</button>
+          <button onClick={handleRegisterTruck} className={styles.registerBtn}>
+            Register Truck
+          </button>
           <button
             onClick={() => {
               navigate("/login");
             }}
+            className={styles.bookBtn}
           >
             Book a Truck
           </button>
@@ -50,14 +51,6 @@ const IntroSection = (props) => {
         transition={3}
       />
     </div>
-    //       </div>
-    //       <BackgroundSlider
-    //         // Custom NPM package for the background images feature
-    //         images={[image1, image2, image3, image4]}
-    //         duration={8}
-    //         transition={3}
-    //       />
-    //     </div>
   );
 };
 

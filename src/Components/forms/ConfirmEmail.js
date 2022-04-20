@@ -1,28 +1,32 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 import { InputDefault } from "../Input";
 import Button from "./button";
 import Formheader from "./formheader";
 import formstyle from "./style.module.css";
 
 const ConfirmEmail = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  const details = useSelector((state) => state.truckdetails);
+  const [isLoading, setIsLoading] = useState(false);
+  //   const details = useSelector((state) => state.truckdetails);
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm({
     mode: "onTouched",
-    defaultValues: {
-      email: `${details.email}`,
-    },
   });
 
-  const onsubmit = (data) => {
-    setIsLoading(false);
+  const onsubmit = async (data) => {
+    // const Resend_Url = details.role
+    //   ? "/https://haulk.herokuapp.com/api/auth/resendVerificationEmail"
+    //   : "https://haulk.herokuapp.com/api/auth/sendResetPasswordEmail";
+    setIsLoading(true);
     console.log(data);
+
+    await axios.put;
   };
   return (
     <div className={formstyle.formsection}>

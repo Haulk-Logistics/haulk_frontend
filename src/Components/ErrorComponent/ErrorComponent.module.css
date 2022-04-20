@@ -35,7 +35,6 @@
     background-color: var(--accent-main);
 }
 
-
 /*Success popup  */
 .popup{
     background:#F6FFF5 ;
@@ -43,7 +42,7 @@
     padding: .7rem;
     box-sizing: border-box;
     border-radius: .3rem ;
-    max-width:50%;
+    max-width: 50%;
     position: absolute;
     top:3%;
     right:2rem;
