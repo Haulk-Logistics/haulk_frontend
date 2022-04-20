@@ -43,7 +43,7 @@ const AppRoutes = () => {
           <Route exact path="/adminlogin" element={<Adminlogin />} />
           <Route path="/resources" element={<ResourcesPage />} />
           <Route path = "/book-truck" element = {<BookPage/>}/>
-          <Route path="" element={<ErrorPage />} />
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>
     </Fragment>

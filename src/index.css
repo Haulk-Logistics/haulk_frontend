@@ -3,8 +3,8 @@ html {
   font-size: 100%;
 }
 
-html,body{
-  height: 100%;
+html, body{
+  height: 100vh;
 }
 
 *,
@@ -52,95 +52,95 @@ html,body{
   --error-shadow: #FAEAEA;
 
 
-   /*Other colours*/
-   --ink-color: #252A31;
-   --text-color: #202223;
-   --ink-lighter-color: #697D95;
-   --cloud-normal:#EFF2F5;
-   --cloud-darker:#BAC7D5;
-   --cloud-lighter:  #FAFAFA;
+  /*Other colours*/
+  --ink-color: #252A31;
+  --text-color: #202223;
+  --ink-lighter-color: #697D95;
+  --cloud-normal:#EFF2F5;
+  --cloud-darker:#BAC7D5;
+  --cloud-lighter:  #FAFAFA;
 
 }
 
 @font-face {
-  src: url(../src/Asset/gordita-cufonfonts-webfont/Gordita\ Regular.woff);
+  src: url(../src/Asset/gordita-cufonfonts-webfont/Gordita-Regular.woff);
   font-family: "Gordita", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  src: url(../src/Asset/gordita-cufonfonts-webfont/Gordita\ Regular\ Italic.woff);
+  src: url(../src/Asset/gordita-cufonfonts-webfont/Gordita-Regular-Italic.woff);
   font-family: "Gordita", sans-serif;
   font-weight: 400;
   font-style: italic;
 }
 
 @font-face {
-  src: url(../src/Asset/gordita-cufonfonts-webfont/Gordita\ Thin.woff);
+  src: url(../src/Asset/gordita-cufonfonts-webfont/Gordita-Thin.woff);
   font-family: "Gordita", sans-serif;
   font-weight: 100;
   font-style: normal;
 }
 
 @font-face {
-  src: url(../src/Asset/gordita-cufonfonts-webfont/Gordita\ Thin\ Italic.woff);
+  src: url(../src/Asset/gordita-cufonfonts-webfont/Gordita-Thin-Italic.woff);
   font-family: "Gordita", sans-serif;
   font-weight: 100;
   font-style: italic;
 }
 
 @font-face {
-  src: url(../src/Asset/gordita-cufonfonts-webfont/Gordita\ Light.woff);
+  src: url(../src/Asset/gordita-cufonfonts-webfont/Gordita-Light.woff);
   font-family: "Gordita", sans-serif;
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
-  src: url(../src/Asset/gordita-cufonfonts-webfont/Gordita\ Light\ Italic.woff);
+  src: url(../src/Asset/gordita-cufonfonts-webfont/Gordita-Light-Italic.woff);
   font-family: "Gordita", sans-serif;
   font-weight: 300;
   font-style: italic;
 }
 
 @font-face {
-  src: url(../src/Asset/gordita-cufonfonts-webfont/Gordita\ Medium.woff);
+  src: url(../src/Asset/gordita-cufonfonts-webfont/Gordita-Medium.woff);
   font-family: "Gordita", sans-serif;
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
-  src: url(../src/Asset/gordita-cufonfonts-webfont/Gordita\ Medium\ Italic.woff);
+  src: url(../src/Asset/gordita-cufonfonts-webfont/Gordita-Medium-Italic.woff);
   font-family: "Gordita", sans-serif;
   font-weight: 500;
   font-style: italic;
 }
 
 @font-face {
-  src: url(../src/Asset/gordita-cufonfonts-webfont/Gordita\ Bold.woff);
+  src: url(../src/Asset/gordita-cufonfonts-webfont/Gordita-Bold.woff);
   font-family: "Gordita", sans-serif;
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
-  src: url(../src/Asset/gordita-cufonfonts-webfont/Gordita\ Bold\ Italic.woff);
+  src: url(../src/Asset/gordita-cufonfonts-webfont/Gordita-Bold-Italic.woff);
   font-family: "Gordita", sans-serif;
   font-weight: 700;
   font-style: italic;
 }
 
 @font-face {
-  src: url(../src/Asset/gordita-cufonfonts-webfont/Gordita\ Black.woff);
+  src: url(../src/Asset/gordita-cufonfonts-webfont/Gordita-Black.woff);
   font-family: "Gordita", sans-serif;
   font-weight: 900;
   font-style: normal;
 }
 
 @font-face {
-  src: url(../src/Asset/gordita-cufonfonts-webfont/Gordita\ Black\ Italic.woff);
+  src: url(../src/Asset/gordita-cufonfonts-webfont/Gordita-Black-Italic.woff);
   font-family: "Gordita", sans-serif;
   font-weight: 900;
   font-style: italic;

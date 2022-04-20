@@ -9,7 +9,7 @@ const Modal = (props) => {
     return (
         <div className = {styles.modal}>
             <div className = {`${styles['modal-heading']}`}>
-                <h3 className = {`${styles['modal-heading-text']}`}>Request Quotation</h3>
+                <h3 className = {`${styles['modal-heading-text']}`}>Quotation</h3>
                 <button className = {`${styles['modal-heading-cancel']}`} onClick = {props.closeModal}>
                     <FiX/>
                 </button>

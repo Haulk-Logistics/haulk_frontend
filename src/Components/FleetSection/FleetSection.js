@@ -1,12 +1,12 @@
 import React from "react";
 import styles from "./FleetSection.module.css";
 import FleetCard from "../Cards/FleetCard";
-import truckImage1 from "../../Asset/Images/truckImage1.jpg";
-import truckImage2 from "../../Asset/Images/truckImage2.jpg";
-import truckImage3 from "../../Asset/Images/truckImage3.jpg";
-import truckImage4 from "../../Asset/Images/truckImage4.jpg";
-import truckImage5 from "../../Asset/Images/truckImage5.jpg";
-import truckImage6 from "../../Asset/Images/truckImage6.jpg";
+import truckImage1 from "../../Asset/Images/truckImg1.webp";
+import truckImage2 from "../../Asset/Images/truckImg2.webp";
+import truckImage3 from "../../Asset/Images/truckImg3.webp";
+import truckImage4 from "../../Asset/Images/truckImg4.webp";
+import truckImage5 from "../../Asset/Images/truckImg5.webp";
+import truckImage6 from "../../Asset/Images/truckImg6.webp";
 
 const FleetSection = () => {
   //Props to be passed into the fleet cards
