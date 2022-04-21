@@ -15,6 +15,7 @@ body {
   justify-content: space-between;
   background-color: #e5e5e5;
   position: relative;
+  width: 100%;
 }
 
 /* DASHBOARD MENU */
@@ -36,36 +37,24 @@ body {
   background-color: var(--white);
 }
 
-.userMenuList li:active {
+.userMenuList li:hover, .userMenuList li:active {
   background-color: var(--accent-main);
-  color: var(--white);
-  /* transition: ease-in-out 0.5s; */
-  /* cursor: pointer;
-  border: none !important;
-  outline: none !important; */
-}
+  color: var(--white) !important;
+  transition: ease-in-out 0.5s;
+  }
 
-/* button {
-  border: none !important;
-  outline: none !important;
-  cursor: pointer;
-} */
-
-.userMenuList li:focus {
+ul.userMenuList li:focus {
   background-color: var(--accent-main) !important;
   color: var(--white) !important;
-  /* transition: ease-in-out 0.5s; */
+  transition: ease-in-out 0.5s;
 }
 
 .userMenuList li {
   width: 100%;
   height: 3rem;
   margin-left: 2rem;
-  margin-right: 2rem;
   margin-bottom: 1.5rem;
-  /* padding-right: 1.8125rem; */
   display: flex;
-  /* flex-direction: column; */
   justify-content: center;
   align-items: center;
   font-size: 1.0625rem;
@@ -79,23 +68,27 @@ body {
   max-width: 13rem;
 }
 
-.sibeBarIcon {
+.sideBarIcon {
   width: 2rem;
   height: 2rem;
   color: #687380;
   margin-right: 2rem;
 }
 
+ul li.sideBarIcon:focus {
+  color: var(--white) !important;
+  transition: ease-in-out 0.5s;
+}
+
+ul li > .sideBarIcon:active {
+  color: var(--white) !important;
+  transition: ease-in-out 0.5s;
+}
+
 
 .userMenuList img {
   margin: 0.75rem;
   margin-right: 2rem;
-}
-
-
-
-.userMenuList li:last-child {
-  margin-top: 20rem;
 }
 
 
@@ -106,7 +99,7 @@ body {
 }
 
 .userDetails {
-  max-width: 100rem !important;
+  width: 65rem !important;
   margin-right: 3rem !important;
   margin-top: 0.5rem;
   margin-left: 16rem;
@@ -115,7 +108,7 @@ body {
 header.userHeader {
   display: flex;
   background-color: var(--white) !important;
-  width: 85rem !important;
+  width: 65rem !important;
   height: 4rem;
   border-radius: 1.25rem;
   justify-content: flex-end;
@@ -142,7 +135,10 @@ header.userHeader {
   font-weight: 400;
 }
 
-.userInfo {
+
+/*   User Info   */
+
+/* .userInfo {
   margin-left: 4rem;
 }
 
@@ -215,7 +211,6 @@ button.scrollButton {
   margin-top: 1.5rem;
   background-color: var(--white);
   text-align: center;
-  /* padding: 0 20.125rem; */
   padding-top: 8.2513rem;
   padding-bottom: 6.0938rem;
   border-radius: 0.625rem;
@@ -229,7 +224,7 @@ button.scrollButton {
 .orderHistoryInfo h4{
   margin-bottom: 1rem;
   font-weight: 500;
-}
+} */
 
 
 @media screen and (max-width: 767px) {
@@ -250,7 +245,7 @@ button.scrollButton {
     flex-direction: column;
   }
 
-  .userOrders {
+  /* .userOrders {
     width: 100%;
     display: flex;
     justify-content: center !important;
@@ -291,7 +286,7 @@ button.scrollButton {
     text-align: center !important;
     margin-left: 0;
     width: auto;
-  }
+  } */
 
   .mobileNav {
     position: fixed;
@@ -367,7 +362,7 @@ button.scrollButton {
     margin-right: 1rem;
   }
 
-  .userInfo {
+  /* .userInfo {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -381,7 +376,7 @@ button.scrollButton {
     align-items: center;
     margin-right: 0.5rem;
     margin-left: 0.5rem;
-  }
+  } */
 
   button.hamburgerBtn {
     background-color: var(--white);
