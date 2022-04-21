@@ -20,7 +20,7 @@ const Item = ({ ques, ans }) => {
 			</div>
 			<div
 				className={style.faqAns}
-				style={{ marginTop: `${show ? '1.5rem' : '0'}` }}>
+				style={{ marginTop: `${show ? '1.5rem' : '0'}`, lineHeight: '1.375rem', fontSize: '0.875rem' }}>
 				{' '}
 				{show && ans}{' '}
 			</div>

@@ -36,35 +36,54 @@ body {
   background-color: var(--white);
 }
 
-.userMenuList:active {
+.userMenuList li:active {
   background-color: var(--accent-main);
   color: var(--white);
-  cursor: pointer;
+  /* transition: ease-in-out 0.5s; */
+  /* cursor: pointer;
+  border: none !important;
+  outline: none !important; */
+}
+
+/* button {
   border: none !important;
   outline: none !important;
-}
-
-button {
-  border: none !important;
-  outline: none !important;
   cursor: pointer;
+} */
+
+.userMenuList li:focus {
+  background-color: var(--accent-main) !important;
+  color: var(--white) !important;
+  /* transition: ease-in-out 0.5s; */
 }
 
-.userMenuList:focus {
-  background-color: var(--accent-main);
-  color: var(--white);
-}
-
-.userMenuList {
-  width: 13rem;
+.userMenuList li {
+  width: 100%;
   height: 3rem;
   margin-left: 2rem;
+  margin-right: 2rem;
   margin-bottom: 1.5rem;
-  padding-right: 1.8125rem;
+  /* padding-right: 1.8125rem; */
   display: flex;
+  /* flex-direction: column; */
   justify-content: center;
   align-items: center;
   font-size: 1.0625rem;
+  list-style: none;
+  cursor: pointer;
+}
+
+.userMenuList {
+  display: flex;
+  flex-direction: column;
+  max-width: 13rem;
+}
+
+.sibeBarIcon {
+  width: 2rem;
+  height: 2rem;
+  color: #687380;
+  margin-right: 2rem;
 }
 
 
@@ -73,7 +92,9 @@ button {
   margin-right: 2rem;
 }
 
-.userMenuList:last-child {
+
+
+.userMenuList li:last-child {
   margin-top: 20rem;
 }
 

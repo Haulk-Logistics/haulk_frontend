@@ -10,8 +10,8 @@ const store = ConfigureStore();
 
 const haulk = (
 	<Provider store={store}>
-		{/* <App /> */}
-		<UserDashboard />
+		<App />
+		{/* <UserDashboard /> */}
 	</Provider>
 );
 

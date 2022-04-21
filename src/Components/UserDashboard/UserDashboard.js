@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import style from './UserDashboard.module.css';
 import { FaLessThan, FaGreaterThan } from 'react-icons/fa';
-import { BsGridFill } from 'react-icons/bs';
+// import { AiFillAppstore } from 'react-icons/ai';
 import { IoCube, IoGrid, IoNotifications } from 'react-icons/io5';
 import { VscMenu, VscChromeClose } from 'react-icons/vsc';
+import { HiViewGrid, HiTruck, HiCube } from 'react-icons/hi';
+import { RiAnticlockwise2Fill } from 'react-icons/ri';
+import { IoLogOut } from 'react-icons/io5';
 // import hamburgerIcon from '../../Asset/Icons/hamburgerIcon.svg';
 // import cancelIcon from '../../Asset/Icons/cancelIcon.svg';
 import webLogo from '../../Asset/Icons/webLogo.svg';
@@ -13,11 +16,11 @@ import activeOrder from '../../Asset/Icons/activeOrderIcon.svg';
 import completedOrder from '../../Asset/Icons/completedOrderIcon.svg';
 import pendingOrder from '../../Asset/Icons/pendingOrderIcon.svg';
 import noOrderImage from '../../Asset/Icons/noOrderImage.svg';
-import dashboardIcon2 from '../../Asset/Icons/dashboardIcon2.svg';
-import truckIcon1 from '../../Asset/Icons/truckIcon1.svg';
-import boxTickIcon from '../../Asset/Icons/box-tickIcon.svg';
-import boxRotateIcon from '../../Asset/Icons/3d-rotateIcon.svg';
-import logoutIcon from '../../Asset/Icons/logoutIcon.svg';
+// import dashboardIcon2 from '../../Asset/Icons/dashboardIcon2.svg';
+// import truckIcon1 from '../../Asset/Icons/truckIcon1.svg';
+// import boxTickIcon from '../../Asset/Icons/box-tickIcon.svg';
+// import boxRotateIcon from '../../Asset/Icons/3d-rotateIcon.svg';
+// import logoutIcon from '../../Asset/Icons/logoutIcon.svg';
 
 const UserDashboard = () => {
 	const [show, setShow] = useState(false);
@@ -42,9 +45,58 @@ const UserDashboard = () => {
 			<div className={style.userMenu}>
 				<img src={webLogo} alt='logo' />
 				<div className={style.menuItems}>
-					<button className={style.userMenuList}>
-						{/* <img src={dashboardIcon2} alt='icon' /> */}
-						<BsGridFill style={{ transition: 'ease-in-out 0.1s', marginRight: '2rem' }} />
+					<ul className={style.userMenuList}>
+						<li>
+							<HiViewGrid
+								className={style.sibeBarIcon}
+								// style={{ width: '2rem', height: '2rem', marginRight: '1rem' }}
+							/>
+							Dashboard
+						</li>
+						<li>
+							<HiTruck
+								className={style.sibeBarIcon}
+								// style={{ width: '2rem', height: '2rem', marginRight: '1rem' }}
+							/>
+							Truck Request
+						</li>
+						<li>
+							<HiCube
+								className={style.sibeBarIcon}
+								// style={{ width: '2rem', height: '2rem', marginRight: '1rem' }}
+							/>
+							Track Orders
+						</li>
+						<li>
+							<RiAnticlockwise2Fill
+								className={style.sibeBarIcon}
+								// style={{ width: '2rem', height: '2rem', marginRight: '1rem' }}
+							/>
+							Order History
+						</li>
+						<li>
+							<IoLogOut
+								className={style.sibeBarIcon}
+								// style={{
+								// 	width: '2rem',
+								// 	height: '2rem',
+								// 	marginRight: '1rem',
+								// 	color: '#687380',
+								// }}
+							/>
+							Log Out
+						</li>
+					</ul>
+					{/* <button className={style.userMenuList}>
+						<img src={dashboardIcon2} alt='icon' />
+						<AiFillAppstore
+							style={{
+								transition: 'ease-in-out 0.1s',
+								marginRight: '2rem',
+								width: '2rem',
+								height: '2rem',
+							}}
+						/>
 						Dashboard
 					</button>
 					<button className={style.userMenuList}>
@@ -62,7 +114,7 @@ const UserDashboard = () => {
 					<button className={style.userMenuList}>
 						<img src={logoutIcon} alt='icon' />
 						Log Out
-					</button>
+					</button> */}
 				</div>
 			</div>
 			<div className={style.userDetails}>
