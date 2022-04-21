@@ -48,6 +48,8 @@ const AppRoutes = () => {
           <Route path="" element={<ErrorPage />} />
           <Route exact path="/confirmemail" element={<ConfirmEmail />} />
           <Route exact path="/verified" element={<EmailVerified />} />
+          <Route path="/book-truck" element={<BookPage />} />
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>
     </Fragment>
