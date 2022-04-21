@@ -54,7 +54,7 @@ const ServicesSection = () => {
       <div className={styles.servicesDescription}>
         <div className={`${styles["servicesDescription-one"]}`}>
           <div className={`${styles["description-text"]}`}>
-            <h2>Reliable. Fast. Efficient.</h2>
+            <h3>Reliable. Fast. Efficient.</h3>
             <p>
               Leveraging on a logistics company with the above qualities in
               place already is a smart business move. You can count on us to
@@ -75,7 +75,7 @@ const ServicesSection = () => {
             <img src={image2} alt="" />
           </div>
           <div className={`${styles["description-text"]}`}>
-            <h2>Earn as a Transporter</h2>
+            <h3>Earn as a Transporter</h3>
             <p>
               You can add your truck to our fleet and get more market
               visibility, better paying customers and jobs. Free access to truck

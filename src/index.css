@@ -60,6 +60,8 @@ html, body{
    --cloud-normal:#EFF2F5;
    --cloud-darker:#BAC7D5;
    --cloud-lighter:  #FAFAFA;
+  --text-subdued: #6D7175;
+
 
 }
 
@@ -182,5 +184,9 @@ p {
   /* Media query rules for styles below 640px */
   html {
     font-size: 90%;
+  }
+
+  h2{
+    font-size: 1.5rem;
   }
 }
