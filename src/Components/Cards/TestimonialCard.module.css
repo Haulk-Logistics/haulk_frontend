@@ -3,6 +3,7 @@
   width: auto;
   display: flex;
   justify-content: space-between;
+  gap: 25px;
   background-color: var(--accent-20);
   border-radius: 20px;
   padding: 2.38rem;
@@ -35,7 +36,7 @@
 .testimonialText > p:last-child{
   color: var(--primary-main);
   align-self: flex-end;
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 500;
   line-height: 28.5px;
   letter-spacing: 0.15px;
