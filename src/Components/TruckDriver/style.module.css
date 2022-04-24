@@ -1,0 +1,185 @@
+/* SIDEBAR STYLING */
+.sidebar{
+    width :16vw;
+    height: 100vh;
+   background-color: var(--white);
+    padding: 2.9rem 0 2.9rem 2rem;
+    box-sizing: border-box;
+    position: relative;
+    box-shadow: 15px 0px 50px rgba(196, 196, 196, 0.16);
+
+}
+
+.sidebar__header{
+    margin-left: .8rem;
+    margin-bottom: 2.75rem;
+}
+
+
+.sidebar li {
+    height: 3rem;
+    background-color: var(--white);
+    color: var(--primary);
+    width: 100%;
+    text-align: left;
+    display: flex;
+    text-decoration: none;
+    padding: .8rem 0 1.6rem 1rem ;
+    border-radius: 0.25rem 0 0 0.25rem;
+    font-size: 1rem;
+    margin-bottom: .5rem;
+   
+}
+
+.sidebar__features li:hover,.sidebar__features li:active ,.sidebar__logout li:hover,.sidebar__logout li:active{
+    background: var(--accent-main);
+    color: var(--white);
+}
+
+
+.icon{
+   margin-right: 1.6rem;
+   margin-top: .2rem;
+}
+
+.sidebar__logout {
+    position:absolute;
+    bottom:1vh ;
+   width: 83%;
+}
+
+/* NAVBAR STYLING */
+.nav{
+    background: white;
+    width : 100%;
+    height: 4rem;
+    border-radius: 1.25rem;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 3.5rem;
+    margin-top: 1rem;
+    align-content: center;
+    z-index: 1;
+    box-sizing: border-box;
+}
+
+.profile {
+    display: flex;
+    margin: auto 0;
+    height: 1.85rem;
+}
+
+.profile img{
+    height:1.7rem ;
+    width: 1.7rem;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: auto 1rem;
+}
+
+.profile p{
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom:  -.5rem;
+    color: var(--text-color);
+}
+
+.profile small{
+    font-size: 10px;
+    color: #000000;
+    font-weight: 500;
+
+}
+
+.notification{
+    margin: auto 1.3rem;
+
+}
+
+.mobileview{
+    display: none;
+    margin: auto ;
+   width: 12rem;
+   height: 3rem;
+   justify-content: center;
+   padding: auto;
+   align-items: center;
+   
+}
+
+.mobileview img{
+    height: .875rem;  
+}
+
+.menu {
+    margin: 0 1.25rem;
+    color: #292D32;
+}
+
+
+@media screen and (max-width: 640px){
+    .nav{
+        justify-content: space-between;
+        width: 100vw;
+        border-radius: 0;
+        margin: 0;
+        padding-left: 0;
+        padding-right: 0;
+        height: 5.25rem;
+    }
+
+    .sidebar__header{
+        display: none;
+    }
+    .name{
+        display: none;
+    }
+
+    .sidebar{
+        display: none;
+     }  
+
+     .sidebar__mobile{
+        composes: sidebar;
+        display: block;
+        width: 100vw;
+        animation: slider .3s ease-in;
+
+     }
+
+     @keyframes slider {
+         0% {
+             transform: translateX(-100%);
+         }
+
+         50% {
+            transform: translateX(-10%);
+        }
+
+        100% {
+            transform: translateX(0);
+        }
+     }
+
+    .mobileview{
+        display: flex;
+        margin-left: 0;
+    }
+
+    .menu{
+        margin-left: .5rem;
+    }
+
+    
+
+
+
+    .mobileview img{
+        height: 1rem;
+        margin: auto 0;
+    }
+
+    .notification{
+      margin-top: 1.8rem;
+    }
+}

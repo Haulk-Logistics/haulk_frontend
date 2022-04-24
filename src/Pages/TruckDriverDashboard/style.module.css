@@ -1,0 +1,19 @@
+body{
+    background-color: var(--cloud-lighter);
+}
+.dashboard{
+    display: flex;
+    flex-direction: row;
+}
+.body{
+    padding-left: 1.25rem;
+}
+
+@media screen and (max-width:640px) {
+    .dashboard{
+        flex-direction: column-reverse;
+    }
+    .body{
+        padding-left: 0;
+    }
+}

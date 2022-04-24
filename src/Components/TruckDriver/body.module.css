@@ -1,0 +1,34 @@
+.container {
+    /* padding-left: 2rem; */
+    margin-top: 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.intro p{
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 1.2rem;
+    margin-left: 2rem;
+}
+
+.intro p span {
+    color: var(--accent-main);
+}
+
+.overview{
+    display: flex;
+    margin-bottom: 1.2rem;
+}
+
+.card{
+    margin-left:2rem ;
+}
+
+.activecard{
+    margin-bottom:1.2rem ;
+}
+
+.orderhistory{
+    margin-left:2rem;
+}
