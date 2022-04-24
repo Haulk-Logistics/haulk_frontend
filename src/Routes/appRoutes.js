@@ -14,6 +14,8 @@ import ErrorPage from "../Pages/ErrorPage";
 import ConfirmEmail from "../Pages/ConfirmEmail/ConfirmEmail";
 import BookPage from "../Pages/BookPage";
 import EmailVerified from "../Pages/signuppage/EmailVerified";
+import DriverDashboard from "../Pages/TruckDriverDashboard/DriverDashboard";
+import DriverHome from "../Components/TruckDriver/Home";
 
 const AppRoutes = () => {
   // useSelector connects us to the redux store
@@ -50,6 +52,8 @@ const AppRoutes = () => {
           <Route exact path="/verified" element={<EmailVerified />} />
           <Route path="/book-truck" element={<BookPage />} />
           <Route path="*" element={<ErrorPage />} />
+          <Route path="/driverdashboard" exact element={<DriverDashboard />} />
+          <Route path="/driverhome" exact element={<DriverHome />} />
         </Routes>
       </BrowserRouter>
     </Fragment>

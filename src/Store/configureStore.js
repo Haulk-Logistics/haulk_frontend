@@ -5,6 +5,7 @@ import stepper_reducer from "./Reducers/stepper_reducer";
 import ModalReducer from "./Reducers/ModalReducer";
 import page_reducer from "./Reducers/page_reducer";
 import alert_reducer from "./Reducers/alert_reducer";
+import Toggler from "./Reducers/Toggler";
 
 export default () => {
   const store = createStore(
@@ -15,6 +16,7 @@ export default () => {
       step: stepper_reducer,
       modalStatus: ModalReducer,
       page: page_reducer,
+      toggle: Toggler,
     })
   );
   return store;

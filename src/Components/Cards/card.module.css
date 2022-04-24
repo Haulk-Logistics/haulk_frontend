@@ -1,0 +1,164 @@
+.overview{
+    width: 31.5rem;
+    height: 7rem;
+    background-color: var(--white);
+    border-radius: .8rem;
+    display: flex;
+    padding: 1.5rem;
+    box-sizing: border-box;
+    margin-left: 2rem;
+}
+
+.icon{
+    width: 2.5rem;
+    height: 2.5rem;
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 2rem;
+}
+
+.body{
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin-top: auto;
+}
+
+.body h1{
+font-size: 1rem;
+color: var(--text-subdued);
+font-weight: 500;
+}
+
+.body p{
+    font-size: 1.5rem;
+    color: var(--text);
+
+}
+
+.body p span{
+    color: var(--text-subdued);
+    font-size: .8rem;
+    font-weight: 500;
+}
+
+.fullcard {
+    width: 97%;
+    height: 8rem;
+    background-color: var(--white);
+    margin-left: 2rem;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    padding: 1rem 1.5rem;
+  
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    color: var(--text);
+}
+
+.header h5{
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.header p {
+    font-size: .8rem;
+    font-weight: 400;
+    background-color: var(--surface-highlight);
+    border-radius: .8rem;
+    padding: 0 .4rem;
+}
+
+
+.fullcardbody {
+    width:100%;
+   display: flex;
+   justify-content: space-between;
+   margin-top: 1rem;
+}
+
+
+.column1,.column2,.column3,.column4{
+    background-color: white;
+}
+.column1{
+    width: 15%;
+}
+
+.column1 h5{
+    font-size:  .75rem;
+    color: var(--text);
+    font-weight: 500;
+    margin-bottom: .5rem;
+
+}
+
+.column1 small{
+    font-size: .75rem;
+    color: var(--text-subdued);
+}
+
+.column2{
+    width: 30%;
+    display: flex;
+    margin-left: -5rem;
+}
+
+.column3{
+    width: 15%;
+    margin-left: -2rem;
+}
+
+.column3 p{
+    font-size: .75rem;
+    font-weight:500;
+    margin-bottom: .7rem;
+}
+
+.column3 small{
+    font-size: .75rem;
+}
+
+.column4{
+    width: 25%;
+}
+
+.column4 p{
+   font-size: .75rem;
+    font-weight:500;
+    margin-bottom: .5rem;
+}
+
+.column4 small{
+    font-size: .75rem;
+}
+.date{
+    display: block;
+   
+    margin-right: 2.5rem;
+}
+
+.date p{
+    font-size: .625rem;
+    color: var(--text-subdued);
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.destination{
+    display: flex;
+}
+
+.destination p{
+font-size: .75rem;
+margin-bottom: 1rem;
+margin-left: .5rem;
+color: var(--text);
+font-weight: 500;
+}

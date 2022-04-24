@@ -27,6 +27,7 @@ html, body{
   --primary-60: #7c8789;
   --primary-40: #a8afb1;
   --primary-20: #d3d7d8;
+  --primary:#687380;
   --white: #ffffff;
   --text-black: #202223;
 
@@ -61,6 +62,9 @@ html, body{
    --cloud-darker:#BAC7D5;
    --cloud-lighter:  #FAFAFA;
   --text-subdued: #6D7175;
+  --dark-color: #252F40;
+  --surface-highlight: #A4E8F2
+  
 
 
 }
