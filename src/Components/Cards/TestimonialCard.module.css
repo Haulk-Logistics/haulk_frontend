@@ -55,4 +55,14 @@
   .testimonialText > p:first-child{
     line-height: 22px;
   }
+
+  /*Carousel*/
+  /* .testimonial{
+    height: 25rem;
+    width: 50%;
+  }
+
+  .testimonialText > p:first-child, .testimonialText > p:last-child{
+    font-size: 10px;
+  } */
 }
