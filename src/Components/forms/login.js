@@ -45,7 +45,7 @@ const Loginform = ({ user }) => {
           console.log("I no ran");
         } else {
           if (res.data.user_details.role === "cargoowner") {
-            navigate("/book-truck");
+            navigate("/cargodashboard");
           }
           if (res.data.user_details.role === "truckdriver") {
             dispatch({

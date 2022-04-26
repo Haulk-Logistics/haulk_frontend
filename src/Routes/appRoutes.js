@@ -12,6 +12,7 @@ import SignupPage from "../Pages/signuppage";
 import ResourcesPage from "../Pages/ResourcesPage";
 import ErrorPage from "../Pages/ErrorPage";
 import BookPage from "../Pages/BookPage";
+import UserDashboard from "../Components/UserDashboard/UserDashboard";
 
 const AppRoutes = () => {
   // useSelector connects us to the redux store
@@ -42,8 +43,9 @@ const AppRoutes = () => {
           <Route exact path="/resetpassword" element={<Resetpasswordpage />} />
           <Route exact path="/adminlogin" element={<Adminlogin />} />
           <Route path="/resources" element={<ResourcesPage />} />
-          <Route path = "/book-truck" element = {<BookPage/>}/>
+          <Route path="/book-truck" element={<BookPage />} />
           <Route path="" element={<ErrorPage />} />
+          <Route path="/cargodashboard" element={<UserDashboard />} />
         </Routes>
       </BrowserRouter>
     </Fragment>
