@@ -83,12 +83,12 @@
 /* User section */
 .usersection{
     background-color: var(--cloud-lighter);
-    padding: 1rem 2rem;
+    margin: 2rem 0;
     border-radius: .3rem;
 }
 
 .usersectionbutton, .focus{
-    height: 2.5rem;
+    height: 3rem;
     width: 50%;
     border-radius: .2rem;
     border: none;
@@ -100,22 +100,25 @@
 }
 
 .usersectionbutton{
-    background: none;
-    color: var(--text-color);
+    background: var(--white);
+    color: var(--primary-main);
+    border: .1rem solid #D3d7d8
 }
 
 /* focus ,agree , button , span , error*/
 
 .focus{
-    background: var(--white);
-    color: var(--accent-main);
+    background: var(--primary-main);
+    color: var(--white);
     outline: none;
+   
 }
 
 .agree{
-margin-top: .4rem ;
+margin-top: 1.2rem ;
     margin-right: .5rem ;
-  
+    width: 1.1rem;
+    height: 1.1rem;
    
 }
 

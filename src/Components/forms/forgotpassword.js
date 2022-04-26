@@ -6,6 +6,7 @@ import Formheader from "./formheader";
 import formstyle from "./style.module.css";
 import axios from "axios";
 import { useDispatch } from "react-redux";
+import { modalStatus } from "../../Store/Actions/ModalStatus";
 
 const Forgotpassword = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -25,14 +26,13 @@ const Forgotpassword = () => {
     await axios
       .post(Reset_URL, data)
       .then((res) => {
-        dispatch({
-          type: "success",
-          payload: {
-            title: "Successful!",
+        dispatch(
+          modalStatus({
+            status: "true",
             message: res.data.message,
-          },
-        });
-        console.log(res);
+            link: "/confirmemail",
+          })
+        );
       })
       .catch((error) => {
         dispatch({

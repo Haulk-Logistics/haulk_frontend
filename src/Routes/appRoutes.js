@@ -11,8 +11,10 @@ import RegisterTruck from "../Pages/Registertruck/RegisterTruck";
 import SignupPage from "../Pages/signuppage";
 import ResourcesPage from "../Pages/ResourcesPage";
 import ErrorPage from "../Pages/ErrorPage";
+import ConfirmEmail from "../Pages/ConfirmEmail/ConfirmEmail";
 import BookPage from "../Pages/BookPage";
 import UserDashboard from "../Components/UserDashboard/UserDashboard";
+import EmailVerified from "../Pages/signuppage/EmailVerified";
 
 const AppRoutes = () => {
   // useSelector connects us to the redux store
@@ -44,8 +46,10 @@ const AppRoutes = () => {
           <Route exact path="/adminlogin" element={<Adminlogin />} />
           <Route path="/resources" element={<ResourcesPage />} />
           <Route path="/book-truck" element={<BookPage />} />
-          <Route path="" element={<ErrorPage />} />
           <Route path="/cargodashboard" element={<UserDashboard />} />
+          <Route exact path="/confirmemail" element={<ConfirmEmail />} />
+          <Route exact path="/verified" element={<EmailVerified />} />
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>
     </Fragment>
