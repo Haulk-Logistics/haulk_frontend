@@ -1,0 +1,179 @@
+.Active_OrderSection{
+    display: flex;
+}
+
+.Active__OrderContainer{
+    width: 40%;
+}
+
+.Active__header h5{
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+
+.Active__OrderCard{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.Active__Card{
+    width: 95%;
+    margin-bottom: 16px;
+}
+
+.Active__0rderLine{
+    width: .5rem;
+    height: 8rem;
+    margin-left: 8px;
+    background-color: var(--accent-main);
+    border-radius: .5rem;
+    display: none;
+}
+
+.Open__0rder{
+    margin-top: 2rem;
+   
+}
+
+.Open__OrderCard{
+    overflow-y: scroll;
+    height: 30vh;
+}
+
+.Open__OrderCard::-webkit-scrollbar {
+    width: .3rem;
+  }
+
+  .Open__OrderCard::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+
+  .Open__OrderCard::-webkit-scrollbar-thumb{
+    background: var(--accent-main); 
+    border-radius: .625rem;
+  }
+
+  .OrderDetails{
+      max-width: 60%;
+      margin-left: 2.375rem;
+    
+  }
+
+  .DetailSection {
+      background-color: var(--white);
+      padding: 1rem 2rem 1.5rem 2rem;
+      border-radius: .625rem;
+      max-height: 75vh;
+    box-sizing: border-box;
+  }
+
+
+
+  .DetailSection__details div{
+      display: flex;
+      align-items: center;
+      margin-top: 1rem;
+    
+
+  }
+
+  .DetailSection__details div h5{
+    font-weight: 500;
+    font-size: .8rem;
+    width: 14rem;
+}
+
+.DetailSection__details div p{
+    font-weight: 400;
+    font-size: .8rem;
+    color: var(--text-subdued);
+    
+}
+
+  .StatusForm{
+      border-bottom: 1px dashed var( --secondary-gray);
+      margin-bottom: 1.25rem;
+  }
+
+  .StatusForm form {
+      width: 60%;
+      margin-bottom:  1.5rem;
+  }
+
+  .StatusForm form p{
+      color: var(--info-links);
+      font-size: .75rem;
+      margin-top: .1rem;
+      
+  }
+
+  .StatusForm label{
+      margin-bottom: -.3rem;
+      font-weight: 400;
+      font-size: .875rem;
+  }
+
+  .DetailSection__status{
+      border-radius: .625rem;
+      background-color: var(--surface-highlight);
+      width: 5rem;
+      text-align: center;
+  }
+
+  .DetailSection__button{
+      width: 9.125rem;
+      height: 2.8125rem;
+      border: none;
+      color: var(--white);
+      background-color: var(--primary-main);
+      border-radius: .25rem;
+      margin-top: 1.5625rem;
+      font-size: .9375rem;
+      font-weight: 500;
+  }
+
+  .hide{
+      display: none;
+  }
+
+  .EmptySection{
+      composes: DetailSection;
+      width: 45vw;
+      height:  60vh;
+      display: flex;
+      flex-direction:column;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .EmptySection h5{
+      font-size: 1.3rem;
+      font-weight: 500;
+  }
+
+  .EmptySection p{
+      font-size: .75rem;
+      font-weight: 400;
+      margin-top: 1rem;
+  }
+
+  .EmptyActive {
+      composes: Active__Card;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: var(--white);
+      padding: 2rem 1rem;
+      border-radius: .625rem;
+      height: 10rem;
+     margin-bottom: -1rem;
+  }
+
+  .EmptyActive p{
+      font-size: .875rem;
+  }

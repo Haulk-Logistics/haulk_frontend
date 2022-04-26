@@ -51,7 +51,7 @@
 /* NAVBAR STYLING */
 .nav{
     background: white;
-    width : 100%;
+    width : 80vw;
     height: 4rem;
     border-radius: 1.25rem;
     display: flex;
@@ -136,30 +136,44 @@
     }
 
     .sidebar{
-        display: none;
+       height: 5rem;
+        position: fixed;
+       bottom: 0;
+        width: 100vw;
+        padding: 0;
      }  
 
-     .sidebar__mobile{
-        composes: sidebar;
-        display: block;
-        width: 100vw;
-        animation: slider .3s ease-in;
+     .sidebar__features{
+         display: flex;
+         align-items: center;
+         justify-content: center;
+     }
+
+     .sidebar li{
+    background-color: var(--white);
+    width: 25%;
+    color: var(--primary);
+    margin-bottom: 0;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+     }
+
+     .sidebar li p {
+        font-size: .7rem;
+     }
+
+     .sidebar__logout{
+        display: none;
 
      }
 
-     @keyframes slider {
-         0% {
-             transform: translateX(-100%);
-         }
-
-         50% {
-            transform: translateX(-10%);
-        }
-
-        100% {
-            transform: translateX(0);
-        }
+     .icon{
+         margin: 0;
+         width: 1.875rem;
+         height: 1.875rem;
      }
+     
 
     .mobileview{
         display: flex;

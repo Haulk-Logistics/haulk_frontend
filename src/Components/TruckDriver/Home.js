@@ -28,7 +28,6 @@ const DriverHome = () => {
           heading="Wallet Balance"
           paragragh="100, 000 "
           currency="NGN"
-          className={style.card}
         />
       </div>
       <div className={style.activecard}>

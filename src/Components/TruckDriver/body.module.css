@@ -1,5 +1,4 @@
 .container {
-    /* padding-left: 2rem; */
     margin-top: 1.5rem;
     width: 100%;
     box-sizing: border-box;
@@ -21,14 +20,14 @@
     margin-bottom: 1.2rem;
 }
 
-.card{
-    margin-left:2rem ;
-}
-
 .activecard{
     margin-bottom:1.2rem ;
 }
 
 .orderhistory{
     margin-left:2rem;
+}
+
+@media screen and (max-width:640px) {
+   
 }

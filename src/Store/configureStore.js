@@ -6,6 +6,7 @@ import ModalReducer from "./Reducers/ModalReducer";
 import page_reducer from "./Reducers/page_reducer";
 import alert_reducer from "./Reducers/alert_reducer";
 import Toggler from "./Reducers/Toggler";
+import OrderDetailsReducer from "./Reducers/OrderDetailsReducer";
 
 export default () => {
   const store = createStore(
@@ -17,6 +18,7 @@ export default () => {
       modalStatus: ModalReducer,
       page: page_reducer,
       toggle: Toggler,
+      orderdetail: OrderDetailsReducer,
     })
   );
   return store;

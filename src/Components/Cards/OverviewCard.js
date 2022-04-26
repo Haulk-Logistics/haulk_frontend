@@ -4,8 +4,7 @@ import style from "./card.module.css";
 const OverviewCard = ({ icon, color, heading, paragragh, currency }) => {
   const line = (
     <svg
-      width="82"
-      height="59"
+      className={style.line}
       viewBox="0 0 82 59"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -26,11 +25,9 @@ const OverviewCard = ({ icon, color, heading, paragragh, currency }) => {
         {/* h1 for  card header and p for values*/}
         <div>
           <h1>{heading}</h1>
-          <p>
-            {paragragh} <span>{currency}</span>{" "}
-          </p>
+          <p>N{paragragh}</p>
         </div>
-        <div>{line}</div>
+        <div className={style.line}>{line}</div>
       </div>
     </div>
   );

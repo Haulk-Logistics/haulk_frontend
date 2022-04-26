@@ -9,9 +9,14 @@ body{
     padding-left: 1.25rem;
 }
 
+.body__content{
+    margin-left: 2rem ;
+    margin-top: 2rem;
+}
+
 @media screen and (max-width:640px) {
     .dashboard{
-        flex-direction: column-reverse;
+        display: column;
     }
     .body{
         padding-left: 0;

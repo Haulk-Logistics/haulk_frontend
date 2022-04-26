@@ -5,34 +5,32 @@ import { HiViewGrid, HiCube } from "react-icons/hi";
 import { IoLogOut } from "react-icons/io5";
 import { IoMdWallet } from "react-icons/io";
 import { RiAnticlockwise2Fill } from "react-icons/ri";
-import { useSelector } from "react-redux";
 
 const SideBar = () => {
-  const toggle = useSelector((state) => state.toggle);
-
   return (
     <React.Fragment>
-      <div className={toggle ? style.sidebar__mobile : `${style.sidebar}`}>
+      <div className={style.sidebar}>
         <div className={style.sidebar__header}>
           <img src={logo} alt="HAULK" />
         </div>
         <div className={style.sidebar__features}>
           <li>
             <HiViewGrid size="1.25rem" className={style.icon} />
-            Dashboard
+            <p> Home</p>
           </li>
           <li>
             {" "}
-            <IoMdWallet size="1.25rem" className={style.icon} /> Wallet
+            <IoMdWallet size="1.25rem" className={style.icon} /> <p>Wallet</p>
           </li>
           <li>
             {" "}
-            <HiCube size="1.25rem" className={style.icon} /> Active Order
+            <HiCube size="1.25rem" className={style.icon} />{" "}
+            <p>Active Orders</p>
           </li>
           <li>
             {" "}
-            <RiAnticlockwise2Fill size="1.25rem" className={style.icon} /> Order
-            History
+            <RiAnticlockwise2Fill size="1.25rem" className={style.icon} />
+            <p>History</p>
           </li>
         </div>
         <div className={style.sidebar__logout}>

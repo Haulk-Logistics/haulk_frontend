@@ -1,5 +1,6 @@
 import React from "react";
-import DriverHome from "../../Components/TruckDriver/Home";
+import ActiveOrder from "../../Components/TruckDriver/ActiveOrder";
+// import DriverHome from "../../Components/TruckDriver/Home";
 import NavBar from "../../Components/TruckDriver/NavBar";
 import SideBar from "../../Components/TruckDriver/SideBar";
 import style from "./style.module.css";
@@ -10,7 +11,9 @@ const DriverDashboard = () => {
       <SideBar />
       <div className={style.body}>
         <NavBar />
-        <DriverHome />
+        <div className={style.body__content}>
+          <ActiveOrder />
+        </div>
       </div>
     </div>
   );
