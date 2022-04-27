@@ -7,6 +7,7 @@ import page_reducer from "./Reducers/page_reducer";
 import alert_reducer from "./Reducers/alert_reducer";
 import Toggler from "./Reducers/Toggler";
 import OrderDetailsReducer from "./Reducers/OrderDetailsReducer";
+import DashboardRenderReducer from "./Reducers/DashboardRenderReducer";
 
 export default () => {
   const store = createStore(
@@ -19,6 +20,7 @@ export default () => {
       page: page_reducer,
       toggle: Toggler,
       orderdetail: OrderDetailsReducer,
+      dashboardRender: DashboardRenderReducer,
     })
   );
   return store;

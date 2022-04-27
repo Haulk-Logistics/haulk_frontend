@@ -21,11 +21,14 @@ const OverviewCard = ({ icon, color, heading, paragragh, currency }) => {
       <div className={style.icon} style={{ backgroundColor: `${color}` }}>
         {icon}
       </div>
-      <div className={style.body}>
+      <div className={style.OverviewCard__body}>
         {/* h1 for  card header and p for values*/}
         <div>
           <h1>{heading}</h1>
-          <p>N{paragragh}</p>
+          <p>
+            {" "}
+            {paragragh} <span>{currency}</span>
+          </p>
         </div>
         <div className={style.line}>{line}</div>
       </div>

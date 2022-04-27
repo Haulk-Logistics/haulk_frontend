@@ -28,8 +28,8 @@ const ActiveOrderCard = () => {
         </div>
         <div className={style.column2}>
           <div className={style.date}>
-            <p>23 Apr</p>
-            <p>25 Apr</p>
+            <p>Pick-up</p>
+            <p>Drop-off</p>
           </div>
           <div className={style.destination}>
             {step}

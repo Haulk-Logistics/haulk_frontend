@@ -10,13 +10,13 @@
 }
 
 .OrderCard__header h5{
-     font-size: 1rem;
+     font-size: .875rem;
      font-weight: 500;
 }
 
 .OrderCard__header h6{
     font-size: 13px;
-    font-weight: 500;
+    font-weight: 400;
     color: var(--text-subdued);
 }
 
@@ -34,9 +34,13 @@
     /* background-color: rgb(150, 150, 177); */
 }
 
+.OrderCard__date {
+    margin-top: -.2rem;
+}
+
 .OrderCard__date p{
     font-size: 10px;
-    font-weight: 500;
+    font-weight: 400;
     color: var(--text-subdued);
     margin-bottom: 1.0625rem;
 }
@@ -48,7 +52,7 @@
 
 .OrderCard__details p{
     font-size: 10px;
-    font-weight: 500;
+    font-weight: 400;
     margin-bottom: 1.0625rem;
     margin-left: 8px;
 }

@@ -26,8 +26,8 @@ const OrderCard = ({ status, details }) => {
       </header>
       <div className={style.OrderCard__body}>
         <div className={style.OrderCard__date}>
-          <p>{details.pickupDate}</p>
-          <p>{details.dropoffDate}</p>
+          <p>Pick-up</p>
+          <p>Drop-off</p>
         </div>
 
         <div className={style.OrderCard__details}>
