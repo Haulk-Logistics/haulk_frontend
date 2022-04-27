@@ -37,10 +37,12 @@
 @media screen and (max-width:640px) {
     .overview{
         justify-content: space-between;
+    
     }
     .Overview__card{
         margin-left: -1.5rem;
-        width: 45%;
+        width: 38%;
+        margin-right:2.1rem;  
     }
 
     .activecard{

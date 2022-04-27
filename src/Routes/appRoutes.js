@@ -16,6 +16,8 @@ import BookPage from "../Pages/BookPage";
 import EmailVerified from "../Pages/signuppage/EmailVerified";
 import DriverDashboard from "../Pages/TruckDriverDashboard/DriverDashboard";
 import DriverHome from "../Components/TruckDriver/Home";
+import UserDashboard from "../Components/UserDashboard/UserDashboard";
+import CargoOwnerDashboard from "../Pages/CargoOwnerDashboard/CargoOwnerDashboard";
 
 const AppRoutes = () => {
   // useSelector connects us to the redux store
@@ -54,6 +56,7 @@ const AppRoutes = () => {
           <Route path="*" element={<ErrorPage />} />
           <Route path="/driverdashboard" exact element={<DriverDashboard />} />
           <Route path="/driverhome" exact element={<DriverHome />} />
+          <Route path="/cargodashboard" exact element = {<CargoOwnerDashboard />} />
         </Routes>
       </BrowserRouter>
     </Fragment>
