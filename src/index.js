@@ -4,14 +4,12 @@ import './index.css';
 import ConfigureStore from './Store/configureStore';
 import { Provider } from 'react-redux';
 import App from './App';
-import UserDashboard from './Components/UserDashboard/UserDashboard';
 
 const store = ConfigureStore();
 
 const haulk = (
 	<Provider store={store}>
 		<App />
-		{/* <UserDashboard /> */}
 	</Provider>
 );
 

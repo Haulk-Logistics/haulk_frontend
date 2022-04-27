@@ -6,8 +6,8 @@ import PageRoutes from "./Components/UserDashboard/DashboardRoutes/PageRoutes";
 function App() {
   return (
     <div className="App">
-      {/* <AppRoutes /> */}
-      <PageRoutes />
+      <AppRoutes />
+      {/* <PageRoutes /> */}
     </div>
   );
 }
