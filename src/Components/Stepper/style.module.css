@@ -7,9 +7,9 @@
 
 .line
 {
-    margin-top: .8rem;
-    width: 3.5rem ;
-    height: .2rem;
+    margin-top: .7rem;
+    width: 4.25rem ;
+    height: .15rem;
     background-color:  #D1E1E1;
     border: none;
     outline: none;
@@ -18,8 +18,8 @@
 
 
 .circle{
-    width: 2rem ;
-    height: 2rem;
+    width: 1.5rem ;
+    height: 1.5rem;
     background-color:  #D1E1E1;
     border-radius: 50%;
     border: none;
@@ -27,29 +27,83 @@
 }
 
 .active{
-    width: 2rem ;
-    height: 2rem;
+    width: 1.5rem ;
+    height: 1.5rem;
     background-color:  #D1E1E1;
     border-radius: 50%;
     outline: none;
-    background: #1692AD;
-    border: 3px solid rgba(22, 146, 173, 0.3);
+    background: var(--primary-main);
+    border: 2px solid rgba(37, 55, 59, 0.3);
     color: white;
 }
 
 
 .activeline{
-    margin-top: .8rem;
-    width: 3.5rem ;
-    height: .2rem;
-    background-color:  #1692AD;
+    margin-top: .7rem;
+    width: 4.25rem ;
+    height: .15rem;
+    background-color:  var(--primary-main);
     border: none;
     outline: none;
 }
 
+.label{
+    color: var(--ink-light);
+    display: flex;
+    box-sizing: border-box;
+}
+
+.label p{
+    font-size: .8rem;
+    font-weight: 400;
+    width: 100%;
+    
+}
+
+.labelactive1{
+    justify-content: flex-end;
+    color: var(--ink-color);
+    display: flex;
+    width: 20px;
+}
+.labelactive2{
+    display: flex;
+    color: var(--ink-color);
+    padding: 0 30px;
+    justify-content: center;
+    
+}
+.labelactive3{
+    color: var(--ink-color);
+    padding: 0 30px;
+    justify-content: center;
+}
+
+.p2{
+    display: flex;
+    color: var(--ink-light);
+    padding: 0 30px;
+    justify-content: center;
+}
+
+.p3{
+    display: flex;
+    color: var(--ink-light);
+    justify-content: flex-start
+  
+}
 @media screen and (max-width:640px) {
     .line,.activeline{
-        width: 2rem;
+        width: 2.5rem;
     }
+
+    .labelactive2, .p2{
+       justify-content: flex-start;
+      
+        }
+        .labelactive3, .p3{
+            justify-content: flex-start;
+             }
+
 }
 

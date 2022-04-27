@@ -1,10 +1,12 @@
 .truckCard{
-    position: relative;
+    position: relative; 
 }
+
 
 .truck-img{
     width: 100%;
     height: auto;
+    background: transparent;
 }
 
 .truck-img > img{

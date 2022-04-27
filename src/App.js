@@ -1,13 +1,13 @@
 import "./App.css";
 import React from "react";
 import AppRoutes from "./Routes/appRoutes";
-import PageRoutes from "./Components/UserDashboard/DashboardRoutes/PageRoutes";
+import MessageModal from "./Components/Modal/MessageModal";
 
 function App() {
   return (
     <div className="App">
+      <MessageModal />
       <AppRoutes />
-      {/* <PageRoutes /> */}
     </div>
   );
 }

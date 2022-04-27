@@ -3,10 +3,10 @@
 import React from 'react';
 import BackgroundSlider from 'react-background-slider';
 import styles from './IntroSection.module.css';
-import image1 from '../../Asset/Images/bgImage1.jpg';
-import image2 from '../../Asset/Images/bgImage2.jpg';
-import image3 from '../../Asset/Images/bgImage3.jpg';
-import image4 from '../../Asset/Images/bgImage4.jpg';
+import image1 from '../../Asset/Images/bgImg1.webp';
+import image2 from '../../Asset/Images/bgImg2.webp';
+import image3 from '../../Asset/Images/bgImg3.webp';
+import image4 from '../../Asset/Images/bgImg4.webp';
 import { useNavigate } from 'react-router';
 import { useDispatch } from 'react-redux';
 import { usertype } from '../../Store/Actions/status';
