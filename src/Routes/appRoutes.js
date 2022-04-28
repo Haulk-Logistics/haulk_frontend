@@ -17,8 +17,6 @@ import EmailVerified from "../Pages/signuppage/EmailVerified";
 import DriverDashboard from "../Pages/TruckDriverDashboard/DriverDashboard";
 import DriverHome from "../Components/TruckDriver/Home";
 import CargoOwnerDashboard from "../Pages/CargoOwnerDashboard/CargoOwnerDashboard";
-import OrderHistoryDetails from "../Components/CargoOwner/OrderHistoryDetails";
-import TermsAndConditions from "../Components/TermsAndConditions/TermsAndConditions";
 import CargoHome from "../Components/CargoOwner/Home";
 import TruckRequest from "../Components/CargoOwner/TruckRequest";
 import TrackOrder from "../Components/CargoOwner/TrackOrder";
@@ -26,6 +24,8 @@ import CargoOrderHistory from "../Components/CargoOwner/OrderHistory";
 import BookingForm from "../Components/BookForm/BookingForm";
 import BookForm from "../Components/BookForm/BookForm";
 import Payment from "../Components/CargoOwner/Payment";
+import OrderHistoryDetails from "../Components/CargoOwner/OrderHistoryDetails";
+import TermsAndConditions from "../Components/TermsAndConditions/TermsAndConditions";
 
 const AppRoutes = () => {
   // useSelector connects us to the redux store
@@ -34,42 +34,47 @@ const AppRoutes = () => {
   // console.log({ state });
 
   return (
-		<Fragment>
-			{alertState.type && (
-				<Messagepop
-					head={alertState.title}
-					message={alertState.message}
-					err={alertState.type}
-				/>
-			)}
-			<BrowserRouter>
-				<Routes>
-					<Route exact path='/' element={<LandingPage />} />
-					<Route exact path='/signup' element={<SignupPage />} />
-					<Route exact path='/regtruck' element={<RegisterTruck />} />
-					<Route exact path='/login' element={<Loginpage />} />
-					<Route
-						exact
-						path='/forgotpassword'
-						element={<Forgotpasswordpage />}
-					/>
-					<Route exact path='/resetpassword' element={<Resetpasswordpage />} />
-					<Route exact path='/adminlogin' element={<Adminlogin />} />
-					<Route path='/resources' element={<ResourcesPage />} />
-					<Route path='/book-truck' element={<BookPage />} />
-					<Route path='' element={<ErrorPage />} />
-					<Route exact path='/confirmemail' element={<ConfirmEmail />} />
-					<Route exact path='/verified' element={<EmailVerified />} />
-					<Route path='/book-truck' element={<BookPage />} />
-					<Route path='*' element={<ErrorPage />} />
-					<Route path='/driverdashboard' exact element={<DriverDashboard />} />
-					<Route path='/driverhome' exact element={<DriverHome />} />
-					<Route
-						path='/cargodashboard'
-						exact
-						element={<CargoOwnerDashboard />}
-					/>
-					<Route
+    <Fragment>
+      {alertState.type && (
+        <Messagepop
+          head={alertState.title}
+          message={alertState.message}
+          err={alertState.type}
+        />
+      )}
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/" element={<LandingPage />} />
+          <Route exact path="/signup" element={<SignupPage />} />
+          <Route exact path="/regtruck" element={<RegisterTruck />} />
+          <Route exact path="/login" element={<Loginpage />} />
+          <Route
+            exact
+            path="/forgotpassword"
+            element={<Forgotpasswordpage />}
+          />
+          <Route exact path="/resetpassword" element={<Resetpasswordpage />} />
+          <Route exact path="/adminlogin" element={<Adminlogin />} />
+          <Route path="/resources" element={<ResourcesPage />} />
+          <Route path="/book-truck" element={<BookPage />} />
+          <Route path="" element={<ErrorPage />} />
+          <Route exact path="/confirmemail" element={<ConfirmEmail />} />
+          <Route exact path="/verified" element={<EmailVerified />} />
+          <Route path="*" element={<ErrorPage />} />
+          <Route path="/driverdashboard" exact element={<DriverDashboard />} />
+          <Route path="/driverhome" exact element={<DriverHome />} />
+          <Route exact path="/cargodashboard" element={<CargoOwnerDashboard />}>
+            <Route
+              index
+              exact
+              path="/cargodashboard/"
+              element={<CargoHome />}
+            />
+            <Route path="truck-request" element={<TruckRequest />} />
+            <Route path="track-order" element={<TrackOrder />} />
+            <Route path="order-history" element={<CargoOrderHistory />} />
+          </Route>
+          <Route
 						path='/orderhistorydetails'
 						exact
 						element={<OrderHistoryDetails />}
@@ -79,19 +84,10 @@ const AppRoutes = () => {
 						exact
 						element={<TermsAndConditions />}
 					/>
-          <Route
-              index
-              exact
-              path="/cargodashboard/"
-              element={<CargoHome />}
-            />
-            <Route path="truck-request" element={<TruckRequest />} />
-            <Route path="track-order" element={<TrackOrder />} />
-            <Route path="order-history" element={<CargoOrderHistory />} />
-				</Routes>
-			</BrowserRouter>
-		</Fragment>
-	);
+        </Routes>
+      </BrowserRouter>
+    </Fragment>
+  );
 };
 
 export default AppRoutes;
