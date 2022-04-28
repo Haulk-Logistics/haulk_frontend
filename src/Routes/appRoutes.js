@@ -19,6 +19,7 @@ import DriverHome from "../Components/TruckDriver/Home";
 import UserDashboard from "../Components/UserDashboard/UserDashboard";
 import CargoOwnerDashboard from "../Pages/CargoOwnerDashboard/CargoOwnerDashboard";
 import OrderHistoryDetails from "../Components/CargoOwner/OrderHistoryDetails";
+import TermsAndConditions from "../Components/TermsAndConditions/TermsAndConditions";
 
 const AppRoutes = () => {
   // useSelector connects us to the redux store
@@ -66,6 +67,11 @@ const AppRoutes = () => {
 						path='/orderhistorydetails'
 						exact
 						element={<OrderHistoryDetails />}
+					/>
+					<Route
+						path='/termsandconditions'
+						exact
+						element={<TermsAndConditions />}
 					/>
 				</Routes>
 			</BrowserRouter>
