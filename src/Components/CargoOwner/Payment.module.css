@@ -1,0 +1,80 @@
+.Payment__container {
+    margin-top: 1.5rem;
+        /* border: 1px solid #E0E2E7; */
+}
+
+.Payment__containerheader{
+    font-size: 1.25rem;
+    font-weight: 500;
+    border-bottom: 1px solid #E0E2E7;
+   padding-bottom: .5rem;
+}
+
+.Payment__OrderSummary {
+    margin-top: 1.5rem;
+    border-bottom: 1px solid #E0E2E7;
+}
+
+.Payment__OrderSummary div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+text-align: left;
+}
+
+.Payment__OrderSummary h5{
+font-size: .8rem;
+font-weight: 500;
+color: var(--text-subdued);
+
+
+}
+
+.Payment__OrderSummary p{
+    font-size: .8rem;
+    font-weight: 400;
+    text-align: left;    
+}
+
+.Payment__buttons{
+    margin:  2rem auto;
+    display: flex;
+    justify-content: center;
+}
+
+.Payment__buttons button{
+    margin: 0 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    height: 2rem;
+    outline: none;
+    border: 1px solid var(--primary-main);
+   
+    border-radius: .25rem;
+}
+
+.Payment__paybutton{
+    margin: 2rem auto;
+    border: none;
+    justify-content: center;
+    background-color: var(--primary-main) ;
+    color: var(--white);
+}
+.Payment__cancelbutton{
+    background-color: var(--white);
+    color: var(--primary-main);
+}
+
+@media screen and (max-width:640px) {
+    .Payment__buttons{
+        flex-direction: column;
+    }
+    .Payment__buttons button{
+        height: 2.8125rem;
+        width: 100%;
+        margin: 0;
+        margin-bottom: 1.5rem;
+    }
+}

@@ -1,60 +1,70 @@
-.body{
-    background-color: var(--white);
-    width: 100vw;
-    height: 90vh;
+.Book__Body{
+    /* background-color: var(--white); */
+    /* width: 100%; */
+  
+    
 }
 
-.bodyModal{
+.Book__BodyModal{
     width: 100vw;
     height: 90vh;
 }
 
 .main{
-    width: 40%;
+    width: 60%;
     margin: 0 auto;
-    margin-top: 3rem;
+    margin-top: 1.5rem;
+}
+.Book_Heading{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
 }
 
-.heading > h3{
-    font-size: 2.25rem;
+.Book_Heading > h3{
+    font-size: 1.5rem;
     font-weight: 500;
     line-height: 46px;
 }
 
-.heading > p{
+.Book_Heading > p{
     font-size: 0.875rem;
     font-weight: 400;
     line-height: 22.68px;
+    text-align: center;
+    width: 30rem;
+    margin: auto;
 }
 
 .stepper{
 
 }
 
-.form{
+.Book__form{
     width: 100%;
     height: 80%;
     margin-top: 1rem;
 }
 
-.form fieldset{
+.Book__form fieldset{
     width: 100%;
     border: none;
     margin-bottom: 1.5rem;
 }
 
-.form fieldset:first-of-type, .form fieldset:last-of-type{
+.Book__form fieldset:first-of-type, .Book__form fieldset:last-of-type{
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
 }
 
-.form fieldset:last-of-type{
+.Book__form fieldset:last-of-type{
     padding-top: 1.5rem;
 }
 
-.form fieldset:first-of-type > div, .form fieldset:last-of-type > div{
+.Book__form fieldset:first-of-type > div, .Book__form fieldset:last-of-type > div{
     width: 48%;
 }
 
@@ -63,9 +73,10 @@
     flex-direction: column;
 }
 
-label{
+.Book__form label{
     color: #252A31;
     margin-bottom: .5rem;
+    font-size: .875rem;
 }
 
 .select{
@@ -161,14 +172,18 @@ input[type="file" i]::-webkit-file-upload-button{
         width: 80%;
     }
 
-    .form fieldset:first-of-type > div, .form fieldset:last-of-type > div{
+    .Book__form fieldset:first-of-type > div, .Book__form fieldset:last-of-type > div{
         width: 100%;
         margin-top: 1rem;
     }
 
-    .form fieldset:first-of-type, .form fieldset:last-of-type{
+    .Book__form fieldset:first-of-type, .Book__form fieldset:last-of-type{
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
+    }
+
+    .Book_Heading > p{
+        width: 20rem;
     }
 }

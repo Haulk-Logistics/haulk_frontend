@@ -1,10 +1,14 @@
-import React from 'react'
-import style from "./TruckRequest.module.css"
+import React from "react";
+import BookForm from "../BookForm/BookForm";
+import Payment from "./Payment";
+import style from "./TruckRequest.module.css";
 
 const TruckRequest = () => {
   return (
-    <div>TruckRequest</div>
-  )
-}
+    <div className={style.Truck__Container}>
+      <BookForm />
+    </div>
+  );
+};
 
-export default TruckRequest
+export default TruckRequest;
