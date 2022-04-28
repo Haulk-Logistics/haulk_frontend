@@ -7,9 +7,9 @@ import { Link } from 'react-router-dom';
 import webLogo from '../../../Asset/Icons/webLogo.svg';
 
 const UserSideBar = () => {
-  return (
-		<div>
-			{/* <div
+  
+			{/*return (
+		<div> <div
 				className={style.mobileNav}
 				style={{ display: show ? 'flex' : 'none' }}>
 				<ul className={style.mobileNavItems}>
@@ -29,9 +29,7 @@ const UserSideBar = () => {
 						<li>Log Out</li>
 					</Link>
 				</ul>
-			</div> */}
-
-			<div className={style.userMenu}>
+			</div>	<div className={style.userMenu}>
 				<img src={webLogo} alt='logo' />
 				<div className={style.menuItems}>
 					<ul className={style.userMenuList}>
@@ -81,6 +79,8 @@ const UserSideBar = () => {
 			</div>
 		</div>
 	);
-}
+} */}
+
+		
 
 export default UserSideBar;

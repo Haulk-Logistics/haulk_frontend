@@ -16,10 +16,16 @@ import BookPage from "../Pages/BookPage";
 import EmailVerified from "../Pages/signuppage/EmailVerified";
 import DriverDashboard from "../Pages/TruckDriverDashboard/DriverDashboard";
 import DriverHome from "../Components/TruckDriver/Home";
-import UserDashboard from "../Components/UserDashboard/UserDashboard";
 import CargoOwnerDashboard from "../Pages/CargoOwnerDashboard/CargoOwnerDashboard";
 import OrderHistoryDetails from "../Components/CargoOwner/OrderHistoryDetails";
 import TermsAndConditions from "../Components/TermsAndConditions/TermsAndConditions";
+import CargoHome from "../Components/CargoOwner/Home";
+import TruckRequest from "../Components/CargoOwner/TruckRequest";
+import TrackOrder from "../Components/CargoOwner/TrackOrder";
+import CargoOrderHistory from "../Components/CargoOwner/OrderHistory";
+import BookingForm from "../Components/BookForm/BookingForm";
+import BookForm from "../Components/BookForm/BookForm";
+import Payment from "../Components/CargoOwner/Payment";
 
 const AppRoutes = () => {
   // useSelector connects us to the redux store
@@ -73,6 +79,15 @@ const AppRoutes = () => {
 						exact
 						element={<TermsAndConditions />}
 					/>
+          <Route
+              index
+              exact
+              path="/cargodashboard/"
+              element={<CargoHome />}
+            />
+            <Route path="truck-request" element={<TruckRequest />} />
+            <Route path="track-order" element={<TrackOrder />} />
+            <Route path="order-history" element={<CargoOrderHistory />} />
 				</Routes>
 			</BrowserRouter>
 		</Fragment>

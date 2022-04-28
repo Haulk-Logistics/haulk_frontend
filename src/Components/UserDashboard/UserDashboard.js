@@ -1,53 +1,53 @@
-import React, { useState } from 'react';
-import style from './UserDashboard.module.css';
-import { FaLessThan, FaGreaterThan } from 'react-icons/fa';
-import { IoNotifications } from 'react-icons/io5';
-import { VscMenu, VscChromeClose } from 'react-icons/vsc';
-import { HiViewGrid, HiTruck, HiCube } from 'react-icons/hi';
-import { RiAnticlockwise2Fill } from 'react-icons/ri';
-import { IoLogOut } from 'react-icons/io5';
-import webLogo from '../../Asset/Icons/webLogo.svg';
-import mobileLogo from '../../Asset/Icons/mobileLogo.svg';
-import userAvatar from '../../Asset/Icons/userDashboardAvatar.svg';
+import React, { useState } from "react";
+import style from "./UserDashboard.module.css";
+import { FaLessThan, FaGreaterThan } from "react-icons/fa";
+import { IoNotifications } from "react-icons/io5";
+import { VscMenu, VscChromeClose } from "react-icons/vsc";
+import { HiViewGrid, HiTruck, HiCube } from "react-icons/hi";
+import { RiAnticlockwise2Fill } from "react-icons/ri";
+import { IoLogOut } from "react-icons/io5";
+import webLogo from "../../Asset/Icons/webLogo.svg";
+import mobileLogo from "../../Asset/Icons/mobileLogo.svg";
+import userAvatar from "../../Asset/Icons/userDashboardAvatar.svg";
 // import activeOrder from '../../Asset/Icons/activeOrderIcon.svg';
 // import completedOrder from '../../Asset/Icons/completedOrderIcon.svg';
 // import pendingOrder from '../../Asset/Icons/pendingOrderIcon.svg';
 // import noOrderImage from '../../Asset/Icons/noOrderImage.svg';
-import { Link } from 'react-router-dom';
-import MainDashboard from './MainDashboard/MainDashboard';
-
+import { Link } from "react-router-dom";
+import MainDashboard from "./MainDashboard/MainDashboard";
 
 const UserDashboard = () => {
-	const [show, setShow] = useState(false);
-	const toggleSidebarVisibility = () => {
-		setShow(!show);
-	};
+  const [show, setShow] = useState(false);
+  const toggleSidebarVisibility = () => {
+    setShow(!show);
+  };
 
-	return (
-		<div className={style.dashboardContainer}>
-			<div
-				className={style.mobileNav}
-				style={{ display: show ? 'flex' : 'none' }}>
-				<ul className={style.mobileNavItems}>
-					<Link to='/'>
-						<li>Home</li>
-					</Link>
-					<Link to='/truck-request'>
-						<li>Truck Request</li>
-					</Link>
-					<Link to='/track-orders'>
-						<li>Track Orders</li>
-					</Link>
-					<Link to='/order-history'>
-						<li>Order History</li>
-					</Link>
-					<Link to='/landing-page'>
-						<li>Log Out</li>
-					</Link>
-				</ul>
-			</div>
+  return (
+    <div className={style.dashboardContainer}>
+      <div
+        className={style.mobileNav}
+        style={{ display: show ? "flex" : "none" }}
+      >
+        <ul className={style.mobileNavItems}>
+          <Link to="/">
+            <li>Home</li>
+          </Link>
+          <Link to="/truck-request">
+            <li>Truck Request</li>
+          </Link>
+          <Link to="/track-orders">
+            <li>Track Orders</li>
+          </Link>
+          <Link to="/order-history">
+            <li>Order History</li>
+          </Link>
+          <Link to="/landing-page">
+            <li>Log Out</li>
+          </Link>
+        </ul>
+      </div>
 
-			<div className={style.userMenu}>
+      {/*<div className={style.userMenu}>
 				<img src={webLogo} alt='logo' />
 				<div className={style.menuItems}>
 					<ul className={style.userMenuList}>
@@ -96,39 +96,40 @@ const UserDashboard = () => {
 						</Link>
 					</ul>
 				</div>
-			</div>
+	</div>*/}
 
-			{/* USER DETAILES */}
+      {/* USER DETAILES */}
 
-			{/* User Header */}
-			<div className={style.userDetails}>
-				<header className={style.userHeader}>
-					<div className={style.menuBtn}>
-						<div
-							className={style.menuIcon}
-							onClick={() => toggleSidebarVisibility()}>
-							{show ? (
-								<VscChromeClose style={{ width: '2rem' }} />
-							) : (
-								<VscMenu style={{ width: '2rem' }} />
-							)}
-						</div>
+      {/* User Header */}
+      <div className={style.userDetails}>
+        <header className={style.userHeader}>
+          <div className={style.menuBtn}>
+            <div
+              className={style.menuIcon}
+              onClick={() => toggleSidebarVisibility()}
+            >
+              {show ? (
+                <VscChromeClose style={{ width: "2rem" }} />
+              ) : (
+                <VscMenu style={{ width: "2rem" }} />
+              )}
+            </div>
 
-						<img src={mobileLogo} alt='menu' />
-					</div>
-					<div className={style.profileHeader}>
-						<IoNotifications className={style.bell} />
-						<img src={userAvatar} alt='profileImg' />
-						<div className={style.userTitle}>
-							<p>Nweze Chidera</p>
-							<span className={style.caption}>Cargo Owner</span>
-						</div>
-					</div>
-				</header>
+            <img src={mobileLogo} alt="menu" />
+          </div>
+          <div className={style.profileHeader}>
+            <IoNotifications className={style.bell} />
+            <img src={userAvatar} alt="profileImg" />
+            <div className={style.userTitle}>
+              <p>Nweze Chidera</p>
+              <span className={style.caption}>Cargo Owner</span>
+            </div>
+          </div>
+        </header>
 
-				{/* User Info */}
-				<MainDashboard />
-				{/* <div className={style.userInfo}>
+        {/* User Info */}
+        <MainDashboard />
+        {/* <div className={style.userInfo}>
 					<h4 className={style.welcome}>
 						Welcome <span className={style.userName}>Chidera</span>
 						<span class='wave'>👋</span>
@@ -181,9 +182,9 @@ const UserDashboard = () => {
 						</div>
 					</div>
 				</div> */}
-			</div>
-		</div>
-	);
+      </div>
+    </div>
+  );
 };
 
 export default UserDashboard;

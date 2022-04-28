@@ -86,7 +86,6 @@ const SideBar = () => {
               dispatch(DashboardRender("activeOrder"));
             }}
           >
-            {" "}
             <HiCube size="1.25rem" className={style.icon} /> <p>Orders</p>
           </li>
           <li

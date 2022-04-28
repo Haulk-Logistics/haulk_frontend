@@ -1,4 +1,4 @@
-.overview{
+.overview,.CargoOverview{
    width: 100%;
     height: 7rem;
     background-color: var(--white);
@@ -21,20 +21,20 @@
     padding: 1rem;
 }
 
-.OverviewCard__body{
+.OverviewCard__body,.CargoOverview{
     display: flex;
     justify-content: space-between;
     margin-top: auto;
     width: 100%;
 }
 
-.OverviewCard__body h1{
+.OverviewCard__body h1, .CargoOverviewCard__body h1{
 font-size: 1rem;
 color: var(--text-subdued);
 font-weight: 400;
 }
 
-.OverviewCard__body p{
+.OverviewCard__body p, .CargoOverviewCard__body p{
     font-size: 1.5rem;
     color: var(--text);
     font-weight: 500;
@@ -42,7 +42,7 @@ font-weight: 400;
 
 }
 
-.OverviewCard__body p span{
+.OverviewCard__body p span, .CargoOverviewCard__body p span{
     color: var(--text-subdued);
     font-size: .8rem;
     font-weight: 500;
@@ -177,10 +177,11 @@ font-weight: 400;
 
 @media screen and (max-width:640px) {
 .overview{
-    width: 100%;
+    width: 12rem;
     padding-right:.5rem ;
     padding-left:.5rem ;
     margin-left: 1.5rem;
+    
 }
 
 .fullcard{
@@ -197,24 +198,29 @@ font-weight: 400;
 .line{
     display: none;
 }
-.overview{
+
+.CargoOverview{
+    width: 100%;
+    padding-right:.5rem ;
+    padding-left:.5rem ;
+    margin-left: 1.5rem;
     height: 4.875rem;
     padding: 1rem ;
 }
-.OverviewCard__body{
+.OverviewCard__body, .CargoOverviewCard__body{
   margin-top: 0;
 }
 
-.OverviewCard__body h1{
+.OverviewCard__body h1, .CargoOverviewCard__body h1{
     font-size: 8px;
     margin-bottom: .5rem;
 }
 
-.OverviewCard__body p{
+.OverviewCard__body p, .CargoOverviewCard__body p{
     font-size: 13px;
 }
 
-.OverviewCard__body p span{
+.OverviewCard__body p span,.CargoOverviewCard__body p span{
     font-size: .55rem;
 }
 

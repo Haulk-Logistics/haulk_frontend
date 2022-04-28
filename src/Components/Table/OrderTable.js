@@ -1,10 +1,11 @@
 import React from "react";
 import MobileOrderCards from "../Cards/MobileOrderCards";
 import style from "./style.module.css";
+import ellipses from "../../Asset/Icons/ellipses.svg";
 
-const Tables = ({ title, header, content }) => {
+const OrderTable = ({ title, header, content }) => {
   return (
-    <div className={style.table__container}>
+    <div className={style.OrderTable__container}>
       <div className={style.table_head}>
         {" "}
         <h4>{title}</h4>
@@ -21,20 +22,22 @@ const Tables = ({ title, header, content }) => {
           {/* content of the table*/}
           {content.map((body, index) => (
             <tr>
-              <td>
+              <td className={style.OrderTable__td}>
                 <p>{body._id}</p>
               </td>
-              <td>
+              <td className={style.OrderTable__td}>
                 <p>{body.pick_up_date}</p>
               </td>
-              <td>
+              <td className={style.OrderTable__td}>
                 <p>{body.order_status}</p>
               </td>
-              <td>
+              <td className={style.OrderTable__td}>
                 <p>{body.truck_type}</p>
               </td>
-              <td>
-                <button>...</button>
+              <td className={style.OrderTable__td}>
+                <button className={style.OrderTable__button}>
+                  <img src={ellipses} alt="..." />
+                </button>
               </td>
             </tr>
           ))}
@@ -43,11 +46,11 @@ const Tables = ({ title, header, content }) => {
       {content.map((body, index) => (
         <div className={style.mobileTable}>
           <MobileOrderCards
-            Id={body[0]}
-            pickupdate={body[1]}
-            orderStatus={body[2]}
-            contentTitle1="Dropoff "
-            content1={body[3]}
+            Id={body._id}
+            pickupdate={body.pick_up_date}
+            orderStatus={body.order_status}
+            contentTitle1="Trucktype "
+            content1={body.truck_type}
           />
         </div>
       ))}
@@ -55,4 +58,4 @@ const Tables = ({ title, header, content }) => {
   );
 };
 
-export default Tables;
+export default OrderTable;

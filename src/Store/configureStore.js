@@ -8,6 +8,7 @@ import alert_reducer from "./Reducers/alert_reducer";
 import Toggler from "./Reducers/Toggler";
 import OrderDetailsReducer from "./Reducers/OrderDetailsReducer";
 import DashboardRenderReducer from "./Reducers/DashboardRenderReducer";
+import OrderSummaryReducer from "./Reducers/OrderSummaryReducer";
 
 export default () => {
   const store = createStore(
@@ -21,6 +22,7 @@ export default () => {
       toggle: Toggler,
       orderdetail: OrderDetailsReducer,
       dashboardRender: DashboardRenderReducer,
+      summary: OrderSummaryReducer,
     })
   );
   return store;
