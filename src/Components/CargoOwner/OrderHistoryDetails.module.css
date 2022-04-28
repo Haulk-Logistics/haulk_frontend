@@ -1,0 +1,39 @@
+.orderHistoryDetail__container {
+  background-color: var(--cloud-lighter);
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.orderHistoryDetail__section {
+  width: 100%;
+  margin-left: 17vw;
+  padding-top: 1rem;
+  box-sizing: border-box;
+}
+
+.orderHistoryDetail__subSection {
+  margin: 6rem 3rem 0rem 3rem;
+}
+
+.orderHistoryDetail__heading {
+  display: flex;
+}
+
+.orderHistoryDetail__heading > h4 {
+  font-weight: 500;
+}
+
+.orderDetail__table {
+  width: 66vw;
+  margin-top: 2.3125rem;
+  background-color: var(--white);
+  border-radius: 0.625rem;
+}
+
+.orderDetail__table > tbody > tr > td {
+  padding: 2rem;
+}
+
+.orderDetail__table > tbody > tr > td > h5 {
+  font-weight: 500;
+}
