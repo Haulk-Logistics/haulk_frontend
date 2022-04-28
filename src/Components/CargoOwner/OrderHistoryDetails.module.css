@@ -1,7 +1,9 @@
 .orderHistoryDetail__container {
   background-color: var(--cloud-lighter);
+  max-width: 90rem;
   height: 100vh;
   box-sizing: border-box;
+  margin: 0 auto;
 }
 
 .orderHistoryDetail__section {
@@ -24,16 +26,51 @@
 }
 
 .orderDetail__table {
-  width: 66vw;
+  width: 75vw;
   margin-top: 2.3125rem;
   background-color: var(--white);
   border-radius: 0.625rem;
 }
 
-.orderDetail__table > tbody > tr > td {
+.orderDetails__col1 {
+  padding-right: 3.75rem;
+}
+
+.orderDetails__col2 {
+  padding-left: 3.75rem;
+}
+
+.orderDetails__col1 > tr > td {
   padding: 2rem;
 }
 
-.orderDetail__table > tbody > tr > td > h5 {
+.orderDetails__col2 > tr > td {
+  padding: 2rem;
+}
+
+.orderDetails__col1 > tr > td > h5, .orderDetails__col2 > tr > td > h5 {
   font-weight: 500;
+}
+
+
+@media screen and (max-width: 640px) {
+  .orderHistoryDetail__section {
+    width: 90%;
+    margin: 0;
+  }
+
+  .orderHistoryDetail__subSection {
+    width: 90%;
+    margin: 7rem auto;
+  }
+
+  .orderDetail__table {
+    width: 100%;
+    margin: 1rem auto;
+  }
+
+  .orderDetail__table>tbody>tr>td {
+    padding: 0rem;
+    display: flex;
+  }
 }

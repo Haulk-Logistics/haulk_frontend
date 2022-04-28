@@ -5,9 +5,8 @@ import style from './OrderHistoryDetails.module.css';
 import NavBar from './NavBar';
 import OrderHistoryData from './OrderHistoryData';
 
-
 const OrderHistoryDetails = () => {
-  return (
+	return (
 		<div className={style.orderHistoryDetail__container}>
 			<SideBar />
 			<div className={style.orderHistoryDetail__section}>
@@ -22,77 +21,95 @@ const OrderHistoryDetails = () => {
 					{/* Order Details Table */}
 					<div className={style.orderDetail__table}>
 						<tbody>
-							<tr>
-								<td>
-									<h5>Truck Driver</h5>
-								</td>
-								<td>{OrderHistoryData.truckDriver}</td>
+							{/* Column One */}
+							<td className={style.orderDetails__col1}>
+								<tr>
+									<td>
+										<h5>Truck Driver</h5>
+									</td>
+									<td>{OrderHistoryData.truckDriver}</td>
+								</tr>
 
-								<td>
-									<h5>Order ID</h5>
-								</td>
-								<td>{OrderHistoryData.orderID}</td>
-							</tr>
+								<tr>
+									<td>
+										<h5>Phone Number</h5>
+									</td>
+									<td>{OrderHistoryData.phoneNo}</td>
+								</tr>
 
-							<tr>
-								<td>
-									<h5>Phone Number</h5>
-								</td>
-								<td>{OrderHistoryData.phoneNo}</td>
+								<tr>
+									<td>
+										<h5>License Number</h5>
+									</td>
+									<td>{OrderHistoryData.licenseNo}</td>
+								</tr>
 
-								<td>
-									<h5>Nature of Goods</h5>
-								</td>
-								<td>{OrderHistoryData.natureOfGoods}</td>
-							</tr>
+								<tr>
+									<td>
+										<h5>Date Requested</h5>
+									</td>
+									<td>{OrderHistoryData.dateRequested}</td>
+								</tr>
 
-							<tr>
-								<td>
-									<h5>License Number</h5>
-								</td>
-								<td>{OrderHistoryData.licenseNo}</td>
+								<tr>
+									<td>
+										<h5>Pick up Location</h5>
+									</td>
+									<td>{OrderHistoryData.pickUpLocation}</td>
+								</tr>
 
-								<td>
-									<h5>Truck Size</h5>
-								</td>
-								<td>{OrderHistoryData.truckSize}</td>
-							</tr>
+								<tr>
+									<td>
+										<h5>Drop off Location</h5>
+									</td>
+									<td>{OrderHistoryData.dropOffLocation}</td>
+								</tr>
+							</td>
 
-							<tr>
-								<td>
-									<h5>Date Requested</h5>
-								</td>
-								<td>{OrderHistoryData.dateRequested}</td>
+							{/* Column 2 */}
+							<td className={style.orderDetails__col2}>
+								<tr>
+									<td>
+										<h5>Order ID</h5>
+									</td>
+									<td>{OrderHistoryData.orderID}</td>
+								</tr>
 
-								<td>
-									<h5>Arrival Date</h5>
-								</td>
-								<td>{OrderHistoryData.arrivalDate}</td>
-							</tr>
+								<tr>
+									<td>
+										<h5>Nature of Goods</h5>
+									</td>
+									<td>{OrderHistoryData.natureOfGoods}</td>
+								</tr>
 
-							<tr>
-								<td>
-									<h5>Pick up Location</h5>
-								</td>
-								<td>{OrderHistoryData.pickUpLocation}</td>
+								<tr>
+									<td>
+										<h5>Truck Size</h5>
+									</td>
+									<td>{OrderHistoryData.truckSize}</td>
+								</tr>
 
-								<td>
-									<h5>Shipping Line</h5>
-								</td>
-								<td>{OrderHistoryData.shippingLine}</td>
-							</tr>
+								<tr>
+									<td>
+										<h5>Arrival Date</h5>
+									</td>
+									<td>{OrderHistoryData.arrivalDate}</td>
+								</tr>
 
-							<tr>
-								<td>
-									<h5>Drop off Location</h5>
-								</td>
-								<td>{OrderHistoryData.dropOffLocation}</td>
+								<tr>
+									<td>
+										<h5>Shipping Line</h5>
+									</td>
+									<td>{OrderHistoryData.shippingLine}</td>
+								</tr>
 
-								<td>
-									<h5>Container No.</h5>
-								</td>
-								<td>{OrderHistoryData.containerNo}</td>
-							</tr>
+								<tr>
+									<td>
+										<h5>Container No.</h5>
+									</td>
+									<td>{OrderHistoryData.containerNo}</td>
+								</tr>
+							</td>
 						</tbody>
 					</div>
 				</div>
