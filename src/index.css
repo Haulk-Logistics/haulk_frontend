@@ -66,10 +66,8 @@ html, body{
   --text-subdued: #6D7175;
   --dark-color: #252F40;
   --surface-highlight: #A4E8F2;
-  --default: #E4E5E7 
-  
-
-
+  --default: #E4E5E7;
+  --background-default: #E5E5E5;
 }
 
 @font-face {

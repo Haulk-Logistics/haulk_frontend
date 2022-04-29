@@ -26,6 +26,7 @@ import BookForm from "../Components/BookForm/BookForm";
 import Payment from "../Components/CargoOwner/Payment";
 import OrderHistoryDetails from "../Components/CargoOwner/OrderHistoryDetails";
 import TermsAndConditions from "../Components/TermsAndConditions/TermsAndConditions";
+import Wallet from "../Components/TruckDriver/Wallet";
 
 const AppRoutes = () => {
   // useSelector connects us to the redux store
@@ -84,6 +85,7 @@ const AppRoutes = () => {
 						exact
 						element={<TermsAndConditions />}
 					/>
+          <Route exact path="/wallet" element={<Wallet />}/>
         </Routes>
       </BrowserRouter>
     </Fragment>

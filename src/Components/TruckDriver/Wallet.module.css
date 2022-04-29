@@ -1,0 +1,89 @@
+.wallet__container {
+  max-width: 90rem;
+  height: 60rem;
+  background-color: var(--cloud-lighter);
+}
+
+.wallet__content {
+  margin-left: 17vw;
+  padding-top: 1rem;
+  height: 100vh;
+}
+
+.wallet__info {
+  margin-top: 7rem;
+  margin-left: 2rem;
+}
+
+.wallet__heading {
+  display: flex;
+  color: var(--accent-main);
+}
+
+.wallet__heading > h4 {
+  font-weight: 500;
+  padding-left: 1rem;
+}
+
+.wallet__withdraw {
+  width: 42.1875rem;
+  height: 7.9375rem;
+  display: flex;
+  background-color: var(--white);
+  border-radius: 10px;
+  margin-top: 3rem;
+  padding: 2rem;
+}
+
+.wallet__withdrawInfo {
+  margin-left: 1rem;
+}
+
+.wallet__withdrawTitle, .wallet__withdrawAmount {
+  font-weight: 500;
+  padding-bottom: 1rem;
+}
+
+.wallet__withdrawForm {
+  width: 42.1875rem;
+  height: 28rem;
+  background-color: var(--white);
+  border-radius: 10px;
+  margin-top: 3rem;
+}
+
+.wallet__withdrawForm > form {
+  width: 34.5rem;
+  padding: 1rem 4rem;
+  font-size: 0.875rem;
+}
+
+.wallet__withdrawForm>form>input {
+  width: 34.5rem;
+  margin-bottom: 1rem;
+}
+
+.wallet__withdrawForm>form>label>h5 {
+  font-weight: 500;
+}
+
+.wallet__withdrawForm>form>label {
+  padding-bottom: 1rem;
+}
+
+.wallet__withdrawForm>form>select {
+  width: 34.5rem;
+  margin-bottom: 1rem;
+  border: 0.5px solid var(--cloud-darker);
+}
+
+.wallet__withdrawForm > button {
+  margin: 0 4rem;
+  width: 34.5rem;
+  height: 2.8125rem;
+  background-color: var(--primary-main);
+  color: var(--white);
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 0.9375rem;
+}
