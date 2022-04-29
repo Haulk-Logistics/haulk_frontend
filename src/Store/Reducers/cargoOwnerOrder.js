@@ -1,0 +1,42 @@
+const initialState = {
+    loading: false,
+    orders: null,
+    error: null,
+    active: null,
+    pending: null,
+    completed: null,
+    orderHistory: null
+}
+
+export const cargoOwnerReducer = (state = initialState, action ) => {
+    switch (action.type) {
+        case "cargoOwnerOrderLoading":
+            return {
+                ...state,
+                loading: true
+            }
+        case "cargoOwnerOrders":
+            return {
+                ...state,
+                loading: false,
+                orders: action.payload,
+                active: action.payload.filter(x => x.order_status != ("dropped_off" && "pending" )),  
+                completed: action.payload.filter(x => x.order_status == "dropped_off"),
+                pending: action.payload.filter(x => x.order_status === "processing"),
+            }
+        case "cargoOwnerOrderHistory": 
+            return {
+                ...state,
+                loading: false,
+                orderHistory: action.payload,
+            }
+        case "cargoOwnerOrderError":
+            return {
+                ...state,
+                loading:false,
+                error: action.payload
+            }
+        default: 
+        return state
+    }
+}

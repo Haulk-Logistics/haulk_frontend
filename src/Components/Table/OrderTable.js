@@ -14,13 +14,13 @@ const OrderTable = ({ title, header, content }) => {
         <table>
           {/* header of the table*/}
           <tr>
-            {header.map((head, index) => (
+            {header && header.map((head, index) => (
               <th>{head}</th>
             ))}
           </tr>
 
           {/* content of the table*/}
-          {content.map((body, index) => (
+          {content &&  content.map((body, index) => (
             <tr>
               <td className={style.OrderTable__td}>
                 <p>{body._id}</p>
