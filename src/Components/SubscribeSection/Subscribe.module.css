@@ -86,7 +86,7 @@
   object-fit: cover;
 }
 
-@media only screen and (max-width: 40rem){
+@media only screen and (max-width: 640px){
   .subContainer {
     flex-direction: column;
   }
@@ -95,13 +95,38 @@
     width: 100%;
   }
 
-  .subscribeBtn{
+  .subInput > button.subscribeBtn{
+    position: absolute;
     margin-top: .3rem;
-    margin-left: 18rem;
+    margin-left: 54%;
   }
 
   .subscribeBtn > img{
     width: 2.4rem;
-    height: 2rem;
+    height: 2rem; 
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .subInput>button.subscribeBtn {
+    position: absolute;
+    margin-top: .3rem;
+    margin-left: 49%;
+  }
+}
+
+@media screen and (min-width: 820px) and (max-width: 1024px) {
+  .subInput>button.subscribeBtn {
+    position: absolute;
+    margin-top: .3rem;
+    margin-left: 27%;
+  }
+}
+
+@media screen and (min-width: 641px) and (max-width: 819px) {
+  .subInput>button.subscribeBtn {
+    position: absolute;
+    margin-top: .3rem;
+    margin-left: 26%;
   }
 }

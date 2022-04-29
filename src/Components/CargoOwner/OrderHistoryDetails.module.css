@@ -44,10 +44,6 @@
   padding: 2rem;
 }
 
-/* .orderDetails__col2 > tr > td {
-  padding: 2rem;
-} */
-
 .orderDetails__col1 > tr > td > h5, .orderDetails__col2 > tr > td > h5 {
   font-weight: 500;
 }
