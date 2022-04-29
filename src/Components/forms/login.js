@@ -33,26 +33,30 @@ const Loginform = ({ user }) => {
       .then((res) => {
         const userToken = res.data.token;
         localStorage.setItem("haulk-app-auth", JSON.stringify(userToken));
-        console.log(res);
-        if (res.data.user_details.role === "cargoowner") {
-          navigate("/book-truck");
-        }
-        if (res.data.user_details.role === "truckdriver") {
+        if (res.data.admin_details) {
+          // console.log("I ran");
           dispatch({
             type: "success",
             payload: {
               title: "Successful!",
-              message: "Your accout is still under review. Check back soon!!",
+              message: res.data.message,
             },
           });
+          // console.log("I no ran");
+        } else {
+          if (res.data.user_details.role === "cargoowner") {
+            navigate("/cargodashboard");
+          }
+          if (res.data.user_details.role === "truckdriver") {
+            dispatch({
+              type: "success",
+              payload: {
+                title: "Successful!",
+                message: "Your accout is still under review. Check back soon!!",
+              },
+            });
+          }
         }
-        dispatch({
-          type: "success",
-          payload: {
-            title: "Successful!",
-            message: res.data.message,
-          },
-        });
       })
       .catch((error) => {
         dispatch({

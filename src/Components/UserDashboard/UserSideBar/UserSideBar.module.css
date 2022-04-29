@@ -1,0 +1,85 @@
+.userMenu {
+  width: 15rem !important;
+  height: 100% !important;
+  background-color: var(--white) !important;
+  position: fixed;
+}
+
+.userMenu img {
+  margin-bottom: 4.4225rem;
+  margin-top: 3.1875rem;
+  margin-left: 2rem;
+}
+
+.userMenuList {
+  background-color: var(--white);
+}
+
+
+ul.userMenuList li:active {
+  background-color: var(--accent-main);
+  color: var(--white) !important;
+  transition: ease-in-out 0.5s;
+}
+
+ul.userMenuList li:focus {
+  background-color: var(--accent-main) !important;
+  color: var(--white) !important;
+  transition: ease-in-out 0.5s;
+}
+
+.userMenuList li {
+  width: 100%;
+  height: 3rem;
+  margin-left: 2rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.0625rem;
+  list-style: none;
+  cursor: pointer;
+}
+
+.userMenuList {
+  display: flex;
+  flex-direction: column;
+  max-width: 13rem;
+}
+
+.sibeBarIcon {
+  width: 2rem;
+  height: 2rem;
+  color: #687380;
+  margin-right: 2rem;
+}
+
+ul li.sibeBarIcon:focus {
+  color: var(--white) !important;
+  transition: ease-in-out 0.5s;
+}
+
+ul li>.sibeBarIcon:active {
+  color: var(--white) !important;
+  transition: ease-in-out 0.5s;
+}
+
+.userMenuList img {
+  margin: 0.75rem;
+  margin-right: 2rem;
+}
+
+
+/*    RESPONSIVENESS   */
+
+@media screen and (max-width: 767px) {
+  .userMenu> :first-child {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .userMenu {
+    display: none;
+  }
+}

@@ -1,0 +1,231 @@
+.overview,.CargoOverview{
+   width: 100%;
+    height: 7rem;
+    background-color: var(--white);
+    border-radius: .8rem;
+    display: flex;
+    padding: 1.5rem;
+    box-sizing: border-box;
+}
+
+.icon{
+    width: 3.5rem;
+    height: 3.5rem;
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 2rem;
+    background-color: pink;
+    padding: 1rem;
+}
+
+.OverviewCard__body,.CargoOverview{
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+    width: 100%;
+}
+
+.OverviewCard__body h1, .CargoOverviewCard__body h1{
+font-size: 1rem;
+color: var(--text-subdued);
+font-weight: 400;
+}
+
+.OverviewCard__body p, .CargoOverviewCard__body p{
+    font-size: 1.5rem;
+    color: var(--text);
+    font-weight: 500;
+    margin-top: .5rem;
+
+}
+
+.OverviewCard__body p span, .CargoOverviewCard__body p span{
+    color: var(--text-subdued);
+    font-size: .8rem;
+    font-weight: 500;
+}
+
+.fullcard {
+    width: 97%;
+    height: 8rem;
+    background-color: var(--white);
+    border-radius: 1rem;
+    box-sizing: border-box;
+    padding: 1rem 1.5rem;
+  
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    color: var(--text);
+}
+
+.header h5{
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.header p {
+    font-size: .8rem;
+    font-weight: 400;
+    background-color: var(--surface-highlight);
+    border-radius: .8rem;
+    padding: 0 .4rem;
+}
+
+
+.fullcardbody {
+    width:100%;
+   display: flex;
+   justify-content: space-between;
+   margin-top: 1rem;
+}
+
+
+.column1,.column2,.column3,.column4{
+    background-color: white;
+}
+.column1{
+    width: 15%;
+}
+
+.column1 h5{
+    font-size:  .75rem;
+    color: var(--text);
+    font-weight: 500;
+    margin-bottom: .5rem;
+
+}
+
+.column1 small{
+    font-size: .75rem;
+    color: var(--text-subdued);
+}
+
+.column2{
+    width: 30%;
+    display: flex;
+    margin-left: -5rem;
+   
+}
+
+.column3{
+    width: 15%;
+    margin-left: -2rem;
+}
+
+.column3 p{
+    font-size: .75rem;
+    font-weight:500;
+    margin-bottom: .7rem;
+}
+
+.column3 small{
+    font-size: .75rem;
+}
+
+.column4{
+    width: 25%;
+}
+
+.column4 p{
+   font-size: .75rem;
+    font-weight:500;
+    margin-bottom: .5rem;
+}
+
+.column4 small{
+    font-size: .75rem;
+}
+.date{
+    display: block;
+    margin-right: 2.5rem;
+    margin-top: .1rem;
+  
+}
+
+.date p{
+    font-size: .625rem;
+    color: var(--text-subdued);
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.destination{
+    display: flex;
+}
+
+.destination p{
+font-size: .75rem;
+margin-bottom: 1rem;
+margin-left: .5rem;
+color: var(--text);
+font-weight: 400;
+}
+
+.line{
+    width: 5.125rem;
+    height: 3.6875rem;
+    margin-left: -3rem;
+
+}
+
+
+@media screen and (max-width:640px) {
+.overview{
+    width: 12rem;
+    padding-right:.5rem ;
+    padding-left:.5rem ;
+    margin-left: 1.5rem;
+    
+}
+
+.fullcard{
+    display: none;
+}
+
+.icon{
+    width:2.5rem;
+    height:2.5rem;
+    margin-right: 1rem;
+    padding: 0.5rem;
+}
+
+.line{
+    display: none;
+}
+
+.CargoOverview{
+    width: 100%;
+    padding-right:.5rem ;
+    padding-left:.5rem ;
+    margin-left: 1.5rem;
+    height: 4.875rem;
+    padding: 1rem ;
+}
+.OverviewCard__body, .CargoOverviewCard__body{
+  margin-top: 0;
+}
+
+.OverviewCard__body h1, .CargoOverviewCard__body h1{
+    font-size: 8px;
+    margin-bottom: .5rem;
+}
+
+.OverviewCard__body p, .CargoOverviewCard__body p{
+    font-size: 13px;
+}
+
+.OverviewCard__body p span,.CargoOverviewCard__body p span{
+    font-size: .55rem;
+}
+
+.line{
+    width: 3rem;
+    height:3rem;
+}
+}

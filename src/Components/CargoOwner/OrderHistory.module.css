@@ -1,0 +1,12 @@
+.OrderHistory__container{
+    width: 75vw;
+    max-height: 75vh;
+}
+
+@media screen and (max-width:640px) {
+    .OrderHistory__container{
+        width: 95%;
+        margin-bottom: 18.5rem;
+    }
+    
+}

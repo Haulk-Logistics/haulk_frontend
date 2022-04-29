@@ -60,7 +60,6 @@ const Truckdetails = (props) => {
 
   const onsubmit = async (data) => {
     if (usertype === "truckdriver") {
-      console.log(details);
       dispatch(truckdetails(data));
       dispatch(formstep(2));
       dispatch(Pagecontrol(2));
@@ -113,6 +112,7 @@ const Truckdetails = (props) => {
             { value: "51ft5a", optionlabel: "51-Foot, Five-Axle Truck" },
           ]}
         />
+
         {errors.truckSize && (
           <p className={formstyle.error}>{errors.truckSize.message}</p>
         )}
