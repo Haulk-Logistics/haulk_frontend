@@ -40,13 +40,13 @@
   padding-left: 3.75rem;
 }
 
-.orderDetails__col1 > tr > td {
+.orderDetails__col1 > tr > td, .orderDetails__col2 > tr > td {
   padding: 2rem;
 }
 
-.orderDetails__col2 > tr > td {
+/* .orderDetails__col2 > tr > td {
   padding: 2rem;
-}
+} */
 
 .orderDetails__col1 > tr > td > h5, .orderDetails__col2 > tr > td > h5 {
   font-weight: 500;
@@ -65,12 +65,52 @@
   }
 
   .orderDetail__table {
-    width: 100%;
-    margin: 1rem auto;
+    width: 90vw;
   }
 
-  .orderDetail__table>tbody>tr>td {
-    padding: 0rem;
-    display: flex;
+  .orderDetail__table > tbody> td:last-child {
+    margin-bottom: 7rem;
   }
+
+  .orderDetail__table > tbody > td {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .orderDetail__table>tbody>td {
+    padding: 0rem;
+  }
+}
+
+@media screen and (max-width: 280px) {
+.orderDetails__col1 > tr > td {
+  padding-right: 0rem;
+  padding-left: 0.5rem;
+}
+
+.orderDetails__col2 > tr > td {
+  padding-left: 0.5rem;
+  padding-right: 0rem;
+}
+}
+
+@media screen and (max-width: 920px) {
+  .orderHistoryDetail__subSection {
+    margin: 6rem 1rem;
+  }
+
+  .orderDetail__table {
+    width: 82%;
+  }
+
+  .orderDetails__col1 {
+    padding-right: 0.75rem;
+  }
+  
+  .orderDetails__col2 {
+    padding-left: 0.75rem;
+  }
+
+ 
 }
