@@ -65,7 +65,8 @@
   }
 
   .orderDetail__table {
-    width: 90vw;
+    width: 100% !important;
+    margin: 1rem 1.5rem;
   }
 
   .orderDetail__table > tbody> td:last-child {
@@ -111,6 +112,4 @@
   .orderDetails__col2 {
     padding-left: 0.75rem;
   }
-
- 
 }

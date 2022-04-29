@@ -13,7 +13,7 @@ const OrderHistoryDetails = () => {
 				<NavBar />
 				<div className={style.orderHistoryDetail__subSection}>
 					<div className={style.orderHistoryDetail__heading}>
-						<HiArrowLeft style={{ color: '#1692AD', width: '1.2rem' }} />
+						<HiArrowLeft style={{ color: '#1692AD', width: '2rem', marginTop: '0.4rem' }} />
 						{'  '}
 						<h4>Order History</h4>
 					</div>
