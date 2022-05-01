@@ -8,9 +8,7 @@ const BookForm = (props) => {
   const stateOfPage = useSelector((state) => state.page);
   console.log(stateOfPage);
   const [header] = useState("Payment");
-  {
-    /*stateOfPage === "accepted"*/
-  }
+
   return (
     <div className={styles.Book__Body}>
       <div className={styles.main}>

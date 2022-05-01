@@ -38,6 +38,7 @@
 .uploadinput{
     margin-top: -1rem;
    opacity: 0;
+   display: none;
 }
 
 .input:focus{

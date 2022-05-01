@@ -1,0 +1,110 @@
+.BookOrder__Container{
+    width: 75vw;
+    margin-top: -1rem;
+}
+
+.BookOrder__button{
+    display: flex;
+    justify-content: end;
+}
+
+.BookOrder__button button {
+    border: none;
+    height: 2.8125rem;
+    color: white;
+    background-color: var(--primary-main);
+    padding: .75rem 1.25rem;
+    border-radius: .25rem;
+}
+
+.BookOrder__Driver{
+    width: 100%;
+    background-color: var(--white);
+    border-radius: .625rem;
+    max-height:13rem;
+    margin-bottom: 1.5625rem;
+    padding: 1rem;
+    box-sizing: border-box;
+  margin-top: 1rem;
+}
+
+.BookOrder__Driver  h5{
+font-size: 1rem;
+font-weight: 500;
+margin-bottom: .7rem;
+}
+
+.Booked__Driverdetail{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.Booked__Driverdetail div{
+    margin: 1rem ;
+}
+
+.Booked__Driverdetail div h5{
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.Booked__Driverdetail div p{
+    font-size: 1rem;
+    color: var(--text-subdued);
+    text-align: center;
+}
+
+.BookOrder__Order h5{
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: .7rem;
+}
+
+.BookOrder__Orderdetail{
+    width: 100%;
+    background-color: var(--white);
+    border-radius: .625rem;
+    max-height: 24rem;
+    margin-bottom: 1.5625rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem ;
+ 
+}
+
+.Booked__Orderdetail{
+    width: 45%;
+}
+
+.Booked__Orderdetail div{
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem;
+    text-align: left;
+}
+
+.Booked__Orderdetail div h5{
+    font-size: .75rem;
+    font-weight: 500;
+}
+
+.Booked__Orderdetail div p{
+    font-size: .75rem;
+    font-weight: 400;
+    color: var(--text-subdued);
+    text-align: left;
+}
+
+@media screen and (max-width:640px) {
+    .BookOrder__Container{
+        width: 95%;
+    }
+    .BookOrder__Driverdetail,.BookOrder__Orderdetail{
+       display: block;
+       
+    }
+
+    .Booked__Driverdetail,.Booked__Orderdetail {
+        width: 100%;
+    }
+}

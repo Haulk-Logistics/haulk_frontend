@@ -1,3 +1,14 @@
+.showup{
+animation: slideLeft;
+}
+
+@keyframes slideLeft {
+    0%{
+        transform: (120%) ;
+
+    }
+}
+
 .errorWrapper{
     height: 100vh;
     width: 100vw;
@@ -54,6 +65,7 @@
     top:3%;
     right:2rem;
     z-index: 1;
+    transition: ease-in .5s;
 }
 
 .popup .header{

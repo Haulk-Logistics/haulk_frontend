@@ -1,5 +1,5 @@
-import React, { Fragment } from "react";
-import { useSelector } from "react-redux";
+import React, { Fragment, useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Messagepop from "../Components/ErrorComponent/alert";
 import Adminlogin from "../Pages/Admin/login";
@@ -21,25 +21,24 @@ import CargoHome from "../Components/CargoOwner/Home";
 import TruckRequest from "../Components/CargoOwner/TruckRequest";
 import TrackOrder from "../Components/CargoOwner/TrackOrder";
 import CargoOrderHistory from "../Components/CargoOwner/OrderHistory";
-import BookingForm from "../Components/BookForm/BookingForm";
-import BookForm from "../Components/BookForm/BookForm";
-import Payment from "../Components/CargoOwner/Payment";
+import BookOrderDetails from "../Components/CargoOwner/BookOrderDetails";
 
 const AppRoutes = () => {
   // useSelector connects us to the redux store
   const alertState = useSelector((state) => state.alert);
 
-  // console.log({ state });
-
   return (
     <Fragment>
-      {alertState.type && (
-        <Messagepop
-          head={alertState.title}
-          message={alertState.message}
-          err={alertState.type}
-        />
-      )}
+      {
+        alertState.type && (
+          <Messagepop
+            head={alertState.title}
+            message={alertState.message}
+            err={alertState.type}
+          />
+        )
+      }
+
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<LandingPage />} />
@@ -68,7 +67,10 @@ const AppRoutes = () => {
               path="/cargodashboard/"
               element={<CargoHome />}
             />
-            <Route path="truck-request" element={<TruckRequest />} />
+            <Route path="truck-request">
+              <Route index element={<TruckRequest />} />
+              <Route path="bookorder-details" element={<BookOrderDetails />} />
+            </Route>
             <Route path="track-order" element={<TrackOrder />} />
             <Route path="order-history" element={<CargoOrderHistory />} />
           </Route>

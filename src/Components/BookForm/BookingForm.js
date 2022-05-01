@@ -7,9 +7,10 @@ import QuotationModal from "../../Components/Modal/QuotationModal";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { orderSummary } from "../../Store/Actions/OrderSummary";
+import { Upload } from "../Input";
 
 const BookingForm = () => {
-  const { register, handleSubmit, watch } = useForm({
+  const { register, handleSubmit, watch, formState: { errors } } = useForm({
     defaultValues: {
       cargoImage: null,
     },
@@ -58,10 +59,12 @@ const BookingForm = () => {
         <fieldset>
           <div className={styles.row}>
             <label htmlFor="natureOfGoods">Nature of Goods</label>
-            <div className={styles.select}>
+            <div className={errors.natureOfGoods ? styles.error : styles.select}>
               <select
                 name="natureOfGoods"
-                {...register("natureOfGoods")}
+                {...register("natureOfGoods", {
+                  required: ` Select an option`,
+                })}
                 className={styles.dropdown}
               >
                 <option
@@ -77,13 +80,20 @@ const BookingForm = () => {
                 <option value="non-perishable">Non-perishable</option>
               </select>
             </div>
+            {errors.natureOfGoods && (
+              <p className={styles.errorp}>{errors.natureOfGoods.message}</p>
+            )}
           </div>
+
+
           <div className={styles.row}>
             <label htmlFor="truckType">Truck Type</label>
-            <div className={styles.select}>
+            <div className={errors.truckType ? styles.error : styles.select}>
               <select
                 name="truckType"
-                {...register("truckType")}
+                {...register("truckType", {
+                  required: ` Select an option`
+                })}
                 className={styles.dropdown}
               >
                 <option
@@ -95,19 +105,24 @@ const BookingForm = () => {
                 >
                   Select
                 </option>
-                <option value="Mini Truck">Mini Truck</option>
+                <option value="Minitruck">Mini Truck</option>
                 <option value="Trailer">Trailer</option>
-                <option value="Truck Head">Truck Head</option>
-                <option value="Flat Bed">Flat Bed</option>
-                <option value="Box Truck">Box Truck</option>
+                <option value="Flatbed">Flat Bed</option>
+                <option value="Box">Box Truck</option>
               </select>
             </div>
+
+            {errors.truckType && (
+              <p className={styles.errorp}>{errors.truckType.message}</p>
+            )}
           </div>
         </fieldset>
         <fieldset className={styles.row}>
           <label htmlFor="pickUpLocation">Pick Up Location</label>
-          <div className={styles.select}>
-            <select name="pickUpLocation" {...register("pickUpLocation")}>
+          <div className={errors.pickUpLocation ? styles.error : styles.select}>
+            <select name="pickUpLocation" {...register("pickUpLocation", {
+              required: ` Select an option`,
+            })}>
               <option
                 value=""
                 disabled
@@ -125,11 +140,17 @@ const BookingForm = () => {
                 ))}
             </select>
           </div>
+
+          {errors.pickUpLocation && (
+            <p className={styles.errorp}>{errors.pickUpLocation.message}</p>
+          )}
         </fieldset>
         <fieldset className={styles.row}>
           <label htmlFor="dropOffLocation">Drop Off Location</label>
-          <div className={styles.select}>
-            <select name="dropOffLocation" {...register("dropOffLocation")}>
+          <div className={errors.dropOffLocation ? styles.error : styles.select}>
+            <select name="dropOffLocation" {...register("dropOffLocation", {
+              required: ` Select an option`,
+            })}>
               <option
                 value=""
                 disabled
@@ -147,19 +168,32 @@ const BookingForm = () => {
                 ))}
             </select>
           </div>
+
+          {errors.dropOffLocation && (
+            <p className={styles.errorp}>{errors.dropOffLocation.message}</p>
+          )}
         </fieldset>
         <fieldset className={styles.row}>
           <label htmlFor="pickUpDate">Pick Up Date</label>
-          <input
-            type="date"
-            name="pickUpDate"
-            {...register("pickUpDate", {})}
-          />
+          <div className={errors.pickUpDate ? styles.error : styles.rowdiv}>
+            <input
+              type="date"
+              name="pickUpDate"
+              {...register("pickUpDate", {
+                required: ` Select a date`,
+              })}
+            />
+          </div>
+          {errors.pickUpDate && (
+            <p className={styles.errorp}>{errors.pickUpDate.message}</p>
+          )}
         </fieldset>
         <fieldset className={styles.row}>
           <label htmlFor="containerSize">Container Size</label>
-          <div className={styles.select}>
-            <select name="containerSize" {...register("containerSize", {})}>
+          <div className={errors.containerSize ? styles.error : styles.select}>
+            <select name="containerSize" {...register("containerSize", {
+              required: ` Select an option`,
+            })}>
               <option
                 value=""
                 disabled
@@ -174,38 +208,63 @@ const BookingForm = () => {
               <option value="10 - 15">10 - 15 Tons</option>
             </select>
           </div>
+          {errors.containerSize && (
+            <p className={styles.errorp}>{errors.containerSize.message}</p>
+          )}
         </fieldset>
-        <fieldset className={styles.row}>
-          <label htmlFor="cargoImage">Proof of cargoImage</label>
-          <div className={styles.fileLabel}>
-            <label htmlFor="cargoImage">
-              {cargoImage ? cargoImage[0].name : "Browse to upload"}
-            </label>
-          </div>
-          <input
-            className={styles.file}
-            type="file"
-            {...register("cargoImage")}
+        <fieldset className={styles.row} style={{ color: "var(--info-links)" }}>
+          <Upload
+            labelname="Proof of cargoImage"
+            id="cargoImage"
+            name="cargoImage"
+            register={register}
+            filename={
+              !watch("cargoImage") ||
+                watch("cargoImage").length === 0
+                ? ""
+                : watch("cargoImage")[0].name
+            }
           />
+          {errors.cargoImage && (
+            <p className={styles.errorp}>{errors.cargoImage.message}</p>
+          )}
         </fieldset>
         <fieldset>
-          <div className={styles.row}>
+          <div className={styles.row} >
             <label htmlFor="containerNumber">Container Number</label>
-            <input
-              type="text"
-              name="containerNumber"
-              placeholder="Enter Number"
-              {...register("containerNumber")}
-            />
+            <div className={errors.containerNumber ? styles.error : styles.rowdiv}>
+              <input
+                type="text"
+                name="containerNumber"
+                placeholder="Enter Shipping Number"
+                {...register("containerNumber", {
+                  required: ` Container number is required`,
+                })}
+              />
+            </div>
+
+            {errors.containerNumber && (
+              <p className={styles.errorp}>{errors.containerNumber.message}</p>
+            )}
           </div>
           <div className={styles.row}>
             <label htmlFor="shippingLine">Shipping Line</label>
-            <input
-              type="text"
-              name="shippingLine"
-              placeholder="Enter Number"
-              {...register("shippingLine")}
-            />
+
+            <div className={errors.shippingLine ? styles.error : styles.rowdiv}  >
+              <input
+
+                type="text"
+                name="shippingLine"
+                placeholder="Enter Shipping Line"
+                {...register("shippingLine", {
+                  required: ` Shipping Line is required`,
+                })}
+              />
+            </div>
+
+            {errors.shippingLine && (
+              <p className={styles.errorp}>{errors.shippingLine.message}</p>
+            )}
           </div>
         </fieldset>
         <input type="submit" value="Submit" className={styles.submitBtn} />

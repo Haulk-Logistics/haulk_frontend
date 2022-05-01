@@ -41,7 +41,15 @@ const Payment = () => {
         window.addEventListener("redirect", window.open(paystack));
       })
       .catch((error) => {
-        console.log(error);
+        dispatch({
+          type: "error",
+          payload: {
+            title: "Error!",
+            message: error.response
+              ? error.response.data.message
+              : "Network Error",
+          },
+        });
       })
       .finally(() => setIsLoading(false));
   };
