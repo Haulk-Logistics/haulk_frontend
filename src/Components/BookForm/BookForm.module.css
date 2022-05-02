@@ -148,18 +148,22 @@
 }
 .rowdiv input{
     width: 100%;
+    background-color: white;
 }
 
 .dropdown{
     width: 96%;
+    background-color: white;
 }
 
 select::-ms-expand {
     display: none;
+    background-color: white;
 }
 
 input[type = "date"]{
     color: #697D95;
+    background-color: white;
 }
 
 ::placeholder{
@@ -167,6 +171,7 @@ input[type = "date"]{
     font-size: 0.875rem;
     font-weight: 400;
     line-height: 20px;
+    background-color: white;
 }
 
 .fileLabel{
