@@ -64,7 +64,7 @@ animation: slideLeft;
     position: absolute;
     top:3%;
     right:2rem;
-    z-index: 1;
+    z-index: 10000;
     transition: ease-in .5s;
 }
 
@@ -99,7 +99,7 @@ animation: slideLeft;
     position: absolute;
     top:.5rem;
     right:2rem;
-    z-index: 1;
+    z-index: 10000;
 }
 
 .container {

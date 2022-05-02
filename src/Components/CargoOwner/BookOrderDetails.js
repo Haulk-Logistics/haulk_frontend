@@ -4,14 +4,12 @@ import { useDispatch } from "react-redux";
 import { useLocation, useNavigate } from "react-router";
 import style from "./BookOrderDetails.module.css";
 import sucessbell from "../../Asset/Images/successbell.svg"
-import TruckRequest from "./TruckRequest";
 
 
 
 
 const BookOrderDetails = () => {
 
-  const [status, setStatus] = useState("")
   const dispatch = useDispatch()
   const token = localStorage.getItem("haulk-app-auth") && JSON.parse(localStorage.getItem("haulk-app-auth"));
   const navigate = useNavigate()
@@ -59,7 +57,7 @@ const BookOrderDetails = () => {
           <button onClick={() => { navigate(`/${path[1]}/track-order`) }} >Track Order</button></div>
         <div className={style.BookOrder__Driver}>
           <div className={style.Booked__Driverdetail}>
-            <img src={sucessbell} />
+            <img src={sucessbell} alt="Success" />
             <div>
               <h5>Booking Confirmed!</h5>
               <p>You'll be notified when a driver has been assigned to you.</p>

@@ -71,6 +71,38 @@
    
 }
 
+.navdropdown{
+display: none;
+ position: fixed;
+ top: 9.5vh;
+ right: 5vw;
+width: 12rem;
+ height: 4.5rem;
+ background-color: white;
+ padding: .5rem 1rem;
+ color:#252F40;
+ font-size: .875rem;
+ box-sizing: border-box;
+ word-break: break-all;
+}
+
+.navdropdownp{
+    font-size: .875rem;
+    margin-bottom: .5rem;
+}
+
+.logoutBtn{
+    border: none;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-size: 14px;
+    
+}
+.logoutBtn p{
+    margin-left: 1.625rem ;
+}
 
 
 /* NAVBAR STYLING */
@@ -97,9 +129,9 @@
 }
 
 .profile img{
-    height:1.7rem ;
-    width: 1.7rem;
-    object-fit: cover;
+    height: 2rem ;
+    width: 2rem;
+    object-fit: fit;
     border-radius: 50%;
     margin: auto 1rem;
 }
@@ -143,6 +175,13 @@
     color: #292D32;
 }
 
+.webImg{
+    display:block;
+}
+.mobileImg{
+    display: none;
+}
+
 
 @media screen and (max-width: 640px){
     .nav{
@@ -153,6 +192,17 @@
         padding-left: 0;
         padding-right: 0;
         height: 5.25rem;
+    }
+
+    .navdropdown{
+        display: block;
+    }
+
+    .webImg{
+        display: none;
+    }
+    .mobileImg{
+        display: block;
     }
 
     .sidebar__header{
@@ -226,6 +276,9 @@
         margin-left: .5rem;
     }
 
+    .profile{
+        margin-right: 1rem;
+    }
     
 
 

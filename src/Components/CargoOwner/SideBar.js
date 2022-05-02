@@ -3,12 +3,10 @@ import style from "./style.module.css";
 import { HiViewGrid, HiCube, HiTruck } from "react-icons/hi";
 import { IoLogOut } from "react-icons/io5";
 import { RiAnticlockwise2Fill } from "react-icons/ri";
-import { useDispatch } from "react-redux";
 import { useLocation, useNavigate } from "react-router";
 import { NavLink } from "react-router-dom";
 
 const SideBar = () => {
-    const dispatch = useDispatch();
     const navigate = useNavigate();
     const { pathname } = useLocation();
     const path = pathname.split("/")[2];

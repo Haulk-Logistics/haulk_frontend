@@ -5,7 +5,7 @@
 
 .BookOrder__button{
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
 }
 
 .BookOrder__button button {

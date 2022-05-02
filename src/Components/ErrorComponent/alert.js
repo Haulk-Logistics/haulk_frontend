@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import alert from "./ErrorComponent.module.css";
 import { FaInfoCircle } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
@@ -14,7 +14,7 @@ const Messagepop = ({ head, message, err }) => {
   useEffect(() => {
     setTimeout(() => {
       close()
-    }, 5000)
+    }, 7000)
   })
 
   return (

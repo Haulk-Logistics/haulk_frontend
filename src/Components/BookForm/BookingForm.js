@@ -21,7 +21,6 @@ const BookingForm = () => {
   const [size, setSize] = useState("");
   const [truck, setTruck] = useState("");
   const [amount, setAmount] = useState(0);
-  const { cargoImage } = watch();
   const [modal, setModal] = useState(false);
 
   const closeModal = () => {

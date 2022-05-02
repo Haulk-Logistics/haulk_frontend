@@ -84,131 +84,133 @@ const Signup = (props) => {
   };
 
   return (
-    <section className={formstyle.formsection}>
-      <Formheader
-        head="Create Account"
-        paragraph={
-          props.usertype === "truck_driver"
-            ? "Fill in personal information to continue registration. "
-            : "Fill in personal information to register."
-        }
-      />
-      <Selectuser />
-      <form onSubmit={handleSubmit(onsubmit)}>
-        {/*  First name section*/}
-        <InputDefault
-          labelname="First Name"
-          type="text"
-          placeholder="Enter First Name"
-          name="firstName"
-          register={register}
-          pattern={/^[A-Za-z]+$/i}
-          maxlength={parseInt("20")}
-          error={errors.firstName}
-        />
-        {errors.firstName && (
-          <p className={formstyle.error}>{errors.firstName.message}</p>
-        )}
+		<section className={formstyle.formsection}>
+			<Formheader
+				head='Create Account'
+				paragraph={
+					props.usertype === 'truck_driver'
+						? 'Fill in personal information to continue registration. '
+						: 'Fill in personal information to register.'
+				}
+			/>
+			<Selectuser />
+			<form onSubmit={handleSubmit(onsubmit)}>
+				{/*  First name section*/}
+				<InputDefault
+					labelname='First Name'
+					type='text'
+					placeholder='Enter First Name'
+					name='firstName'
+					register={register}
+					pattern={/^[A-Za-z]+$/i}
+					maxlength={parseInt('20')}
+					error={errors.firstName}
+				/>
+				{errors.firstName && (
+					<p className={formstyle.error}>{errors.firstName.message}</p>
+				)}
 
-        {/*  Last name section*/}
-        <InputDefault
-          labelname="Last Name"
-          type="text"
-          placeholder="Enter Last Name "
-          name="lastName"
-          register={register}
-          pattern={/^[A-Za-z]+$/i}
-          maxlength={parseInt("20")}
-          error={errors.lastName}
-        />
-        {errors.lastName && (
-          <p className={formstyle.error}>{errors.lastName.message}</p>
-        )}
+				{/*  Last name section*/}
+				<InputDefault
+					labelname='Last Name'
+					type='text'
+					placeholder='Enter Last Name '
+					name='lastName'
+					register={register}
+					pattern={/^[A-Za-z]+$/i}
+					maxlength={parseInt('20')}
+					error={errors.lastName}
+				/>
+				{errors.lastName && (
+					<p className={formstyle.error}>{errors.lastName.message}</p>
+				)}
 
-        {/*  Phone number section*/}
-        <Phonenumberinput
-          labelname="Phone Number"
-          type="text"
-          placeholder="Phone Number "
-          name="phoneNumber"
-          register={register}
-          required
-          pattern={/^[0-9]+$/i}
-          error={errors.phoneNumber}
-        />
-        {errors.phoneNumber && (
-          <p className={formstyle.error}>{errors.phoneNumber.message}</p>
-        )}
+				{/*  Phone number section*/}
+				<Phonenumberinput
+					labelname='Phone Number'
+					type='text'
+					placeholder='Phone Number '
+					name='phoneNumber'
+					register={register}
+					required
+					pattern={/^[0-9]+$/i}
+					error={errors.phoneNumber}
+				/>
+				{errors.phoneNumber && (
+					<p className={formstyle.error}>{errors.phoneNumber.message}</p>
+				)}
 
-        {/*  Email section*/}
-        <InputDefault
-          labelname="Email Address"
-          type="email"
-          placeholder="Enter Email Address "
-          name="email"
-          register={register}
-          required
-          pattern={
-            /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
-          }
-          error={errors.email}
-        />
-        {errors.email && (
-          <p className={formstyle.error}>{errors.email.message}</p>
-        )}
+				{/*  Email section*/}
+				<InputDefault
+					labelname='Email Address'
+					type='email'
+					placeholder='Enter Email Address '
+					name='email'
+					register={register}
+					required
+					pattern={
+						/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+					}
+					error={errors.email}
+				/>
+				{errors.email && (
+					<p className={formstyle.error}>{errors.email.message}</p>
+				)}
 
-        {/*  Password section*/}
-        <InputwithIcon
-          labelname="Password"
-          type="password"
-          placeholder="Enter Password "
-          name="password"
-          register={register}
-          pattern={/^(?=.*\d)(?=.*[a-z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,100}$/}
-          minlength={parseInt("8")}
-          error={errors.password}
-        />
-        {errors.password && (
-          <p className={formstyle.error}>{errors.password.message}</p>
-        )}
+				{/*  Password section*/}
+				<InputwithIcon
+					labelname='Password'
+					type='password'
+					placeholder='Enter Password '
+					name='password'
+					register={register}
+					pattern={/^(?=.*\d)(?=.*[a-z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,100}$/}
+					minlength={parseInt('8')}
+					error={errors.password}
+				/>
+				{errors.password && (
+					<p className={formstyle.error}>{errors.password.message}</p>
+				)}
 
-        {/*  Accept terms and condition section*/}
-        <div className={formstyle.utils}>
-          <input
-            className={formstyle.agree}
-            type="checkbox"
-            {...register("agree", {
-              required:
-                "Please click the check box to accept the term and conditions",
-            })}
-          />
-          <p style={{ marginTop: "1rem" }}>
-            I agree to the
-            <span className={formstyle.span}> Terms and Conditions </span>
-          </p>
-          {errors.agree && (
-            <p className={formstyle.error}>{errors.agree.message}</p>
-          )}
-        </div>
+				{/*  Accept terms and condition section*/}
+				<div className={formstyle.utils}>
+					<input
+						className={formstyle.agree}
+						type='checkbox'
+						{...register('agree', {
+							required:
+								'Please click the check box to accept the term and conditions',
+						})}
+					/>
+					<p style={{ marginTop: '1rem' }}>
+						I agree to the
+						<Link to='/termsandconditions' className={formstyle.TandC__link}>
+							<span className={formstyle.span}> Terms and Conditions </span>
+						</Link>
+					</p>
+					{errors.agree && (
+						<p className={formstyle.error}>{errors.agree.message}</p>
+					)}
+				</div>
 
-        {/*  Submit button*/}
-        <button className={formstyle.button}>
-          {usertype === "truckdriver"
-            ? "Save & Next"
-            : isLoading
-            ? "Register"
-            : "Loading...."}
-        </button>
-      </form>
-      <p className={formstyle.haveaccount}>
-        Already have an account?{" "}
-        <Link to="/login" className={formstyle.link}>
-          {" "}
-          Login
-        </Link>
-      </p>
-    </section>
-  );
+				{/*  Submit button*/}
+				<button className={formstyle.button}>
+					{usertype === 'truckdriver'
+						? 'Save & Next'
+						: isLoading
+						? 'Register'
+						: 'Loading....'}
+				</button>
+			</form>
+			<p className={formstyle.haveaccount}>
+				Already have an account?{' '}
+				<Link to='/login' className={formstyle.link}>
+					{' '}
+					Login
+				</Link>
+			</p>
+		</section>
+	);
 };
 
 const mapStateToProps = (state) => ({

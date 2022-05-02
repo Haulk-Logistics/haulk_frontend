@@ -1,5 +1,5 @@
-import React, { Fragment, useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { Fragment } from "react";
+import { useSelector } from "react-redux";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Messagepop from "../Components/ErrorComponent/alert";
 import Adminlogin from "../Pages/Admin/login";
@@ -22,6 +22,8 @@ import TruckRequest from "../Components/CargoOwner/TruckRequest";
 import TrackOrder from "../Components/CargoOwner/TrackOrder";
 import CargoOrderHistory from "../Components/CargoOwner/OrderHistory";
 import BookOrderDetails from "../Components/CargoOwner/BookOrderDetails";
+import OrderHistoryDetails from "../Components/CargoOwner/OrderHistoryDetails";
+import TermsAndConditions from "../Components/TermsAndConditions/TermsAndConditions";
 
 const AppRoutes = () => {
   // useSelector connects us to the redux store
@@ -74,6 +76,16 @@ const AppRoutes = () => {
             <Route path="track-order" element={<TrackOrder />} />
             <Route path="order-history" element={<CargoOrderHistory />} />
           </Route>
+          <Route
+            path='/orderhistorydetails'
+            exact
+            element={<OrderHistoryDetails />}
+          />
+          <Route
+            path='/termsandconditions'
+            exact
+            element={<TermsAndConditions />}
+          />
         </Routes>
       </BrowserRouter>
     </Fragment>
