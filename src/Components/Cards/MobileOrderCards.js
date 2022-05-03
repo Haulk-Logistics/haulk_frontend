@@ -15,9 +15,13 @@ const MobileOrderCards = ({
       <div className={style.MobileOrderCards__header}>
         <div className={style.MobileOrderCards__Id}>
           <h5>{Id}</h5>
-          <p>{pickupdate}</p>
+          <p
+            className={style.MobileOrderCards__status}
+            style={orderStatus ? { backgroundColor: `${orderStatus.color}` } : { backgroundColor: "none" }}>
+            {orderStatus && orderStatus.status}
+          </p>
         </div>
-        <p className={style.MobileOrderCards__status}>{orderStatus}</p>
+        <p style={{ fontSize: ".625rem" }}>{pickupdate}</p>
       </div>
       <div>
         <div className={style.MobileOrderCards__content}>

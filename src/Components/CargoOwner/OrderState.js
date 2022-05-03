@@ -43,7 +43,9 @@ const OrderState = () => {
               }
             </div>
             <div className={style.Order__Tracking}>
-              <VerticalStepper />
+              <VerticalStepper
+
+              />
             </div>
           </div>
           <div className={style.cargoDetailSection__details}>

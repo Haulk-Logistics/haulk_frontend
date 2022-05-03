@@ -69,6 +69,7 @@
     text-align: center;
     width: 30rem;
     margin: auto;
+    word-break: break-word;
 }
 
 
@@ -149,6 +150,7 @@
 .rowdiv input{
     width: 100%;
     background-color: white;
+    
 }
 
 .dropdown{
@@ -271,6 +273,6 @@ input[type="file" i]::-webkit-file-upload-button{
     }
 
     .Book_Heading > p{
-        width: 20rem;
+        width: 10rem;
     }
 }

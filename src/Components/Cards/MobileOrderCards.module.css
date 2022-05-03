@@ -12,21 +12,22 @@
     display: block;
 }
 
-.MobileOrderCards__header{
-    display: flex;
-    justify-content: space-between;
-}
+
 
 .MobileOrderCards__status{
-    background-color: var(--surface-highlight);
     border-radius: .625rem;
     text-align: center;
-    height: 1.5rem;
-    padding: 0 .5rem;
-}
+    max-height: 1rem;
+    padding: 0 .625rem;
 
+}
+.MobileOrderCards__Id{
+    display: flex;
+    justify-content: space-between;
+   
+}
 .MobileOrderCards__Id h5{
-font-size: 1rem;
+font-size: .75rem;
 font-weight: 500;
 color: var(--text-subdued);
 margin-bottom: .5rem;
@@ -47,7 +48,7 @@ margin-bottom: .5rem;
 }
 
 .MobileOrderCards__content h5{
-   font-size: .625rem;
+   font-size: .75rem;
    font-weight: 400;
    color: var(--text-subdued);
 }

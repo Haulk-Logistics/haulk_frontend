@@ -3,8 +3,8 @@ import { useSelector } from "react-redux";
 import stepper from "./style.module.css";
 
 const VerticalStepper = () => {
-  const vpage = useSelector((state) => state.page);
   const ordered = useSelector((state) => state.orderdetail.orderedDate)
+  const status = useSelector((state) => state.orderdetail.orderStatus)
   const orderedDate = ordered && ordered.split("T")[0]
 
   return (
@@ -13,49 +13,83 @@ const VerticalStepper = () => {
         <div className={stepper.Verticalcontainer__label}>
           <button
             type="button"
-            className={vpage >= 0 ? stepper.active : stepper.circle}
+            className={
+              status === "processing" ||
+                status === "pending" ||
+                status === "accepted" ||
+                status === "picked_up" ||
+                status === "in_transit" ||
+                status === "dropped_off"
+                ? stepper.active : stepper.circle}
           />
-          <div className={vpage >= 0 ? stepper.activep : stepper.activeword}>
+          <div className={
+            status === "processing" ||
+              status === "pending" ||
+              status === "accepted" ||
+              status === "picked_up" ||
+              status === "in_transit" ||
+              status === "dropped_off"
+              ? stepper.activep : stepper.activeword}>
             <p>Successfully Ordered</p>
             <small>{orderedDate}</small>
           </div>
         </div>
 
-        <div className={vpage >= 1 ? stepper.verticalActiveLine : stepper.verticalLine}></div>
+        <div className={
+          status === "picked_up" ||
+            status === "in_transit" ||
+            status === "dropped_off"
+            ? stepper.verticalActiveLine : stepper.verticalLine}></div>
         <div className={stepper.Verticalcontainer__label}>
           <button
             type="button"
-            className={vpage >= 1 ? stepper.active : stepper.circle}
+            className={
+              status === "picked_up" ||
+                status === "in_transit" ||
+                status === "dropped_off"
+                ? stepper.active : stepper.circle}
           />
-          <div className={vpage >= 1 ? stepper.activep : stepper.activeword}>
+          <div className={
+            status === "picked_up" ||
+              status === "in_transit" ||
+              status === "dropped_off"
+              ? stepper.activep : stepper.activeword}>
             <p>Items Picked</p>
-            <small>25/12/22</small>
+            <small>{true ? "no date yet" : ""}</small>
           </div>
         </div>
 
-        <div className={vpage >= 2 ? stepper.verticalActiveLine : stepper.verticalLine}></div>
+        <div className={status === "in_transit" ||
+          status === "dropped_off"
+          ? stepper.verticalActiveLine : stepper.verticalLine}></div>
 
         <div className={stepper.Verticalcontainer__label}>
           <button
             type="button"
-            className={vpage >= 2 ? stepper.active : stepper.circle}
+            className={
+              status === "in_transit" ||
+                status === "dropped_off"
+                ? stepper.active : stepper.circle}
           />
-          <div className={vpage >= 2 ? stepper.activep : stepper.activeword}>
+          <div className={
+            status === "in_transit" ||
+              status === "dropped_off"
+              ? stepper.activep : stepper.activeword}>
             <p>In transit</p>
-            <small>25/12/22</small>
+            <small>{true ? "no date yet" : ""}</small>
           </div>
         </div>
 
-        <div className={vpage >= 3 ? stepper.verticalActiveLine : stepper.verticalLine}></div>
+        <div className={status === "dropped_off" ? stepper.verticalActiveLine : stepper.verticalLine}></div>
 
         <div className={stepper.Verticalcontainer__label}>
           <button
             type="button"
-            className={vpage >= 3 ? stepper.active : stepper.circle}
+            className={status === "dropped_off" ? stepper.active : stepper.circle}
           />
-          <div className={vpage >= 3 ? stepper.activep : stepper.activeword}>
+          <div className={status === "dropped_off" ? stepper.activep : stepper.activeword}>
             <p>Arrives Drop Off Location</p>
-            <small>25/12/22</small>
+            <small>{true ? "no date yet" : ""}</small>
           </div>
         </div>
       </div>

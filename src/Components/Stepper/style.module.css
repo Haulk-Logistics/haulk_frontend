@@ -16,10 +16,12 @@
     margin-top: .7rem;
     width: 4.25rem ;
     height: .15rem;
-    background-color:  #D1E1E1;
+    background-color:    #D1E1E1;
     border: none;
     outline: none;
 }
+
+
 .verticalLine
 {
     margin-left: .7rem;
@@ -65,6 +67,15 @@
     outline: none;
 }
 
+.steppercircle{
+    width: 1.5rem ;
+    height: 1.5rem;
+    background-color:  #D1E1E1;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+}
+
 .active{
     width: 1.5rem ;
     height: 1.5rem;
@@ -72,6 +83,16 @@
     outline: none;
     border: none;
     background-color: var(--accent-main);
+    color: white;
+}
+
+.stepactive{
+    width: 1.5rem ;
+    height: 1.5rem;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    background-color: var(--primary-main);
     color: white;
 }
 
@@ -99,12 +120,15 @@
     color: var(--ink-light);
     display: flex;
     box-sizing: border-box;
+    padding: 0 1rem;
+    justify-content: center;
 }
 
 .label p{
     font-size: .8rem;
     font-weight: 400;
-    width: 100%;
+    width: 40%;
+    margin: 0 .1rem;
     
 }
 
@@ -122,9 +146,9 @@
     
 }
 .labelactive3{
-    color: var(--ink-color);
-    padding: 0 30px;
-    justify-content: center;
+    display: flex;
+    color: var(--ink-light);
+justify-content: center;
 }
 
 .p2{
@@ -137,7 +161,8 @@
 .p3{
     display: flex;
     color: var(--ink-light);
-    justify-content: flex-start
+justify-content: center;
+ 
   
 }
 @media screen and (max-width:640px) {
@@ -145,12 +170,22 @@
         width: 2.5rem;
     }
 
+    .label p{
+        width: 40%;
+    }
+
     .labelactive2, .p2{
-       justify-content: flex-start;
+        display: flex;
+       justify-content: center;
+       text-align: center;
+      width: 100%;
       
         }
         .labelactive3, .p3{
-            justify-content: flex-start;
+            /* padding: 0 10px ; */
+            text-align: center;
+           
+           width: 50%;
              }
              .Verticalcontainer__label{
                  margin-bottom: -1.3rem;
