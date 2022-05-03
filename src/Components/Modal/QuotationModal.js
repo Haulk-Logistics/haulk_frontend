@@ -1,10 +1,12 @@
 //Reusable component for Quotation Modal 
 
 import React from 'react';
+
 import styles from './QuotationModal.module.css';
 import {FiX} from "react-icons/fi";
 
 const Modal = (props) => {
+    
     
     return (
         <div className={styles.overlay}>
@@ -36,7 +38,7 @@ const Modal = (props) => {
             </div>
             <div className = {`${styles['modal-footing']}`}>
                 <button className = {`${styles['modal-footing-button']}`} onClick = {props.closeModal}>Cancel</button>
-                <button className = {`${styles['modal-footing-button']}`}>Accept</button>
+                <button className = {`${styles['modal-footing-button']}`} onClick = {props.accepted}>Accept</button>
             </div>
         </div>
         </div>

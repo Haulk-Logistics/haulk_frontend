@@ -1,0 +1,54 @@
+.container {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.intro p{
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 1.2rem;
+}
+
+.intro p span {
+    color: var(--accent-main);
+}
+
+.overview{
+    display: flex;
+    margin-bottom: 3.125rem;
+    width: 75vw;
+
+}
+
+.Overview__card{
+    width: 50%;
+    box-sizing: border-box;
+    margin-right: 1rem;
+}
+.activecard{
+    margin-bottom:2rem ;
+    width: 77vw;
+}
+
+.orderhistory{
+    width: 75vw;
+}
+
+@media screen and (max-width:640px) {
+    .overview{
+        justify-content: space-between;
+    }
+    .Overview__card{
+        margin-left: -1.5rem;
+        width: 45%;
+    }
+
+    .activecard{
+        width: 95%;
+    }
+
+    .orderhistory{
+        width: 95%;
+    }
+  
+}

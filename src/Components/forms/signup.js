@@ -11,6 +11,7 @@ import { truckdetails } from "../../Store/Actions/truckdetail";
 import { formstep } from "../../Store/Actions/stepper";
 import { Pagecontrol } from "../../Store/Actions/pagecontrol";
 import { useNavigate } from "react-router";
+import { modalStatus } from "../../Store/Actions/ModalStatus";
 
 const Register_URL = "https://haulk.herokuapp.com/api/auth/signupCargoOwner";
 
@@ -52,17 +53,18 @@ const Signup = (props) => {
 
     // If user is a cargo owner
     else {
+      dispatch(truckdetails(allData));
       await axios
         .post(Register_URL, allData)
         .then((res) => {
           navigate("/login");
-          dispatch({
-            type: "success",
-            payload: {
-              title: "Success!",
+          dispatch(
+            modalStatus({
+              status: "true",
               message: res.data.message,
-            },
-          });
+              link: "/confirmemail",
+            })
+          );
         })
         .catch((err) => {
           dispatch({
@@ -72,7 +74,7 @@ const Signup = (props) => {
               message: err.response
                 ? err.response.data.statusCode === 409
                   ? err.response.data.message
-                  : "Phone number is invalid"
+                  : err.response.data.message
                 : "Network error",
             },
           });
@@ -84,7 +86,7 @@ const Signup = (props) => {
   return (
     <section className={formstyle.formsection}>
       <Formheader
-        head="Create An Account"
+        head="Create Account"
         paragraph={
           props.usertype === "truck_driver"
             ? "Fill in personal information to continue registration. "
@@ -97,7 +99,7 @@ const Signup = (props) => {
         <InputDefault
           labelname="First Name"
           type="text"
-          placeholder="Enter  first name"
+          placeholder="Enter First Name"
           name="firstName"
           register={register}
           pattern={/^[A-Za-z]+$/i}
@@ -144,7 +146,6 @@ const Signup = (props) => {
           type="email"
           placeholder="Enter Email Address "
           name="email"
-          value={details.email}
           register={register}
           required
           pattern={
@@ -162,7 +163,6 @@ const Signup = (props) => {
           type="password"
           placeholder="Enter Password "
           name="password"
-          value={details.password}
           register={register}
           pattern={/^(?=.*\d)(?=.*[a-z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,100}$/}
           minlength={parseInt("8")}

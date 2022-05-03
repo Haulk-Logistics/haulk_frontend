@@ -11,9 +11,13 @@ import RegisterTruck from "../Pages/Registertruck/RegisterTruck";
 import SignupPage from "../Pages/signuppage";
 import ResourcesPage from "../Pages/ResourcesPage";
 import ErrorPage from "../Pages/ErrorPage";
+import ConfirmEmail from "../Pages/ConfirmEmail/ConfirmEmail";
 import BookPage from "../Pages/BookPage";
 import AdminHomePage from "../Pages/AdminHomePage";
 import AdminDriverPage from "../Pages/AdminDriverPage";
+import EmailVerified from "../Pages/signuppage/EmailVerified";
+import DriverDashboard from "../Pages/TruckDriverDashboard/DriverDashboard";
+import DriverHome from "../Components/TruckDriver/Home";
 
 const AppRoutes = () => {
   // useSelector connects us to the redux store
@@ -44,6 +48,15 @@ const AppRoutes = () => {
           <Route exact path="/admin-home" element={<AdminHomePage/>}/>
           <Route exact path="/admin-driver" element={<AdminDriverPage/>} />
           <Route exact path="*" element={<ErrorPage/>} />
+          <Route path="/resources" element={<ResourcesPage />} />
+          <Route path="/book-truck" element={<BookPage />} />
+          <Route path="" element={<ErrorPage />} />
+          <Route exact path="/confirmemail" element={<ConfirmEmail />} />
+          <Route exact path="/verified" element={<EmailVerified />} />
+          <Route path="/book-truck" element={<BookPage />} />
+          <Route path="*" element={<ErrorPage />} />
+          <Route path="/driverdashboard" exact element={<DriverDashboard />} />
+          <Route path="/driverhome" exact element={<DriverHome />} />
         </Routes>
       </BrowserRouter>
     </Fragment>

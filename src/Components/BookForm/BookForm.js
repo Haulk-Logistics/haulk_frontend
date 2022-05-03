@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import {useNavigate} from "react-router-dom";
 
 import styles from "./BookForm.module.css";
 import { locations } from "../../Utils/statesData";
@@ -20,6 +21,7 @@ const BookForm = (props) => {
   const [size, setSize] = useState("");
   const [truck, setTruck] = useState("");
   const [amount, setAmount] = useState(0);
+  const navigate = useNavigate();
   const { ownership } = watch();
 
   const submitted = async (data) => {
@@ -46,6 +48,11 @@ const BookForm = (props) => {
   const closeModal = () => {
     setModal(false);
   };
+
+  const acceptForm = () => {
+    navigate("/confirmemail")
+  }
+
 
   return (
     <div className={modal ? styles.bodyModal : styles.body}>
@@ -225,6 +232,7 @@ const BookForm = (props) => {
       {modal && (
         <QuotationModal
           closeModal={closeModal}
+          accepted = {acceptForm}
           source={source}
           destination={destination}
           truck={truck}
