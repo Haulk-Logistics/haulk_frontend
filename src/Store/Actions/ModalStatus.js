@@ -4,3 +4,13 @@ export const modalStatus = ({ status, message, link }) => ({
   message,
   link,
 });
+
+export const orderModalStatus = (status) => ({
+  type: "ordermodal",
+  status
+});
+
+export const loaderStatus = (status) => ({
+  type: "loaderStatus",
+  status
+});

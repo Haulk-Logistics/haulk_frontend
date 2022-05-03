@@ -23,9 +23,12 @@
 .OrderCard__header p{
     font-size: 12px;
     border-radius: .625rem;
-    width: 3.4375rem;
-    text-align: center;
-    height: 1.3125rem;
+    max-width:6rem;
+    height: 1.4rem;
+    padding:  0 .5rem;
+    display: flex;
+    justify-content: center;
+   
 }
 
 .OrderCard__body{

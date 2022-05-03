@@ -9,41 +9,61 @@
     font-weight: 500;
 }
 
-.table__container{
+.table__container, .OrderTable__container{
     
     width: 100%;
     
 }
 
-.table__container table{
+.table__container table, .OrderTable__container table{
     background-color: var(--white);
     width: 100%;
     padding: .5rem 2rem 1rem 2rem;
     border-radius: 1rem;
 }
 
-.table__container table tr{
+.table__container table tr,.OrderTable__container table tr{
     text-align: left;
     box-shadow: inset 0px -1px 0px #E0E2E7;
     height: 4rem;
     font-size: .875rem;
 }
 
-.table__container table th{
+.table__container table th,.OrderTable__container table th{
 font-size: .875rem;
 color: var(--text-subdued);
 font-weight: 400;
 }
 
-.table__container table td p{
+.table__container table td{
+   box-sizing: border-box;
+   width: 20%;
+}
+
+.OrderTable__container table td{
+    width: 25%
+}
+
+.table__container table td p ,.OrderTable__container table  td p{
     font-size: .875rem;
 }
-.table__container table td:nth-child(3) p{
+.table__container table td:nth-child(3) p, .OrderTable__container table td:nth-child(3) p{
     background-color: var(--surface-success);
    width: 5.2rem;
    font-size: .75rem;
    border-radius: 1rem;
    text-align: center;
+}
+
+.OrderTable__button{
+    background: none;
+    border: none;
+    margin-left: -2rem;
+  
+}
+
+.mobileTable{
+    display: none;
 }
 
 @media screen and (max-width: 640px) {
@@ -54,5 +74,6 @@ font-weight: 400;
     .mobileTable{
         width: 100%;
         border-bottom: 1px solid #E0E2E7 ;
+        display: block;
     }
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import alert from "./ErrorComponent.module.css";
 import { FaInfoCircle } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
@@ -6,9 +6,16 @@ import { useDispatch } from "react-redux";
 
 const Messagepop = ({ head, message, err }) => {
   const dispatch = useDispatch();
+
   const close = (e) => {
     dispatch({ type: "close_modal" });
   };
+
+  useEffect(() => {
+    setTimeout(() => {
+      close()
+    }, 7000)
+  })
 
   return (
     <div className={err === "error" ? alert.errpopup : alert.popup}>

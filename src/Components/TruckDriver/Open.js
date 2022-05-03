@@ -1,7 +1,6 @@
 import React from "react";
 import OrderCard from "../Cards/OrderCard";
 import style from "./ActiveOrder.module.css";
-import EmptyOpen from "./EmptyOpen";
 
 const Open = () => {
   const openStatus = {

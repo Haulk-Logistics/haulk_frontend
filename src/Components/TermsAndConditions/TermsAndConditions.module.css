@@ -1,0 +1,72 @@
+.TandC__container {
+  max-width: 80.875rem;
+  margin: 0 auto;
+  height: 90vh;
+  box-sizing: border-box;
+}
+
+.TandC__content {
+  margin: 3rem 1rem;
+  box-sizing: border-box;
+}
+
+.TandC__content > h2 {
+  padding-bottom: 2rem;
+}
+
+.TandC__btn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.TandC__btn > .TandC__btnLink1 > button, .TandC__btn > .TandC__btnLink2 > button {
+  margin: 0 1rem;
+  padding: 0.75rem;
+  width: 9.4375rem;
+  height: 2.8125rem;
+}
+
+.TandC__btn > .TandC__btnLink2 > button {
+  background-color: var(--primary-main);
+  color: var(--white) !important;
+  border: none;
+}
+
+.TandC__btn > .TandC__btnLink2 > button:hover {
+  background-color: var(--accent-main);
+  color: var(--white);
+  border: none;
+  transition: ease-in-out 0.3s;
+}
+
+.TandC__btn > .TandC__btnLink1 > button {
+  background-color: var(--white);
+  color: var(--primary-main);
+  border: 1px solid var(--primary-main);
+}
+
+.TandC__btn > .TandC__btnLink1 > button:hover {
+  color: var(--accent-main);
+  border: 1px solid var(--accent-main);
+}
+
+@media screen and (max-width: 640px) {
+  .TandC__btn {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .TandC__container {
+    height: 140vh;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .TandC__btn>.TandC__btnLink1>button,
+  .TandC__btn>.TandC__btnLink2>button {
+    margin: 0 0.5rem;
+    width: 8rem;
+  }
+}

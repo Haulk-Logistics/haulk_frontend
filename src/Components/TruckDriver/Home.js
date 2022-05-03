@@ -4,7 +4,6 @@ import { HiTruck } from "react-icons/hi";
 import { IoMdWallet } from "react-icons/io";
 import style from "./body.module.css";
 import ActiveOrderCard from "../Cards/ActiveOrderCard";
-import Tables from "../Table/Tables";
 import MobileOrderCards from "../Cards/MobileOrderCards";
 import OrderHistory from "./OrderHistory";
 

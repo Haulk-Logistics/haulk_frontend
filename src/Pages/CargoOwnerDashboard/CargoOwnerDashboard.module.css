@@ -1,0 +1,42 @@
+.cargodashboard {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--cloud-lighter);
+  height: 100vh;
+}
+
+.cargobody {
+  overflow-x: hidden;
+  width: 100%;
+  margin-left: 17vw;
+  margin-top: 1rem;
+}
+
+.Cargobody__content {
+  box-sizing: border-box;
+  padding-left: 1.25rem;
+  margin-left: 1.5vw;
+  margin-top: 6.5rem;
+  margin-bottom: 2.5rem;
+
+}
+
+@media screen and (max-width:640px) {
+  .cargodashboard {
+    display: column;
+  }
+
+  .cargobody {
+    padding-left: 0;
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+
+  .Cargobody__content {
+    margin-left: 0;
+    margin-top: 8.5rem;
+    margin-bottom: 8.5rem;
+
+  }
+}

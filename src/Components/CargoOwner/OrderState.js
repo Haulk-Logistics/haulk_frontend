@@ -1,64 +1,76 @@
 import React from "react";
 import style from "./ActiveOrder.module.css";
-import { useForm } from "react-hook-form";
-import { Dropdown } from "../Input";
+import { useSelector } from "react-redux"
+import dummy from "../../Asset/Images/contactUsImage.svg"
+import VerticalStepper from "../Stepper/VerticalStepper";
+import EmptyState from "./EmptyState";
+import OrderDetailModal from "../Modal/OrderDetailModal";
+import emptyImage from "../../Asset/Images/emptystate.svg"
+
+
 
 const OrderState = () => {
-  const { register, handleSubmit } = useForm({
-    mode: "onTouched",
-  });
+
+  const clickedOrder = useSelector((state) => state.orderdetail)
 
   return (
+
     <div>
       <header className={style.Active__header}>
         <h5>Order Details</h5>
       </header>
+      {!clickedOrder.natureOfGoods ? <div className={style.CargoDetailSection}><EmptyState /></div> :
+        <div className={style.cargoDetailSection}>
 
-      <div className={style.DetailSection}>
-        <p className={style.DetailSection__status}>Active</p>
-        <div className={style.StatusForm}>
-          <form onSubmit={handleSubmit}>
-            <label htmlFor="orderStatus">Order Status Update</label>
-            <Dropdown
-              className={style.label}
-              name="orderStatus"
-              id="orderStatus"
-              register={register}
-              option={[
-                { value: "itemsPicked", optionlabel: "Items Picked" },
-                { value: "inTransit", optionlabel: "In Transit" },
-                { value: "arrivesDropoff", optionlabel: "Arrived Dropoff" },
-              ]}
-            />
-            <p>Update the status of you order here</p>
-          </form>
-        </div>
-        <div className={style.DetailSection__details}>
-          <div>
-            <h5> Nature of goods</h5> <p> 200 pieces of glass (fragile) </p>
+          { /*<h5 className={style.cargoDetailSection__status}></h5> */}
+          <div className={style.StatusForm}>
+            <div className={style.DetailSection__Driver}>
+              {clickedOrder.driver ?
+                <div className={style.DetailSection__driversProfile}>
+                  <div className={style.driverprofile__img}>
+                    <img src={dummy} alt="driver " />
+                  </div>
+                  <div className={style.driverprofile__bio}>
+                    <h5>Ola Deji </h5>
+                    <p>Mobile No: <span>08149173943</span></p>
+                  </div>
+                </div>
+                :
+                <div className={style.noDriver}>
+                  <img src={emptyImage} alt="No Driver Yet" />
+                  <p>A driver will be assigned to you shortly</p>
+                </div>
+              }
+            </div>
+            <div className={style.Order__Tracking}>
+              <VerticalStepper />
+            </div>
           </div>
-          <div>
-            <h5> Pickup Location</h5> <p> 27, Jigamo str Oshodi Lagos</p>
+          <div className={style.cargoDetailSection__details}>
+            <div>
+              <h5> Nature of goods</h5> <p> {clickedOrder.natureOfGoods} </p>
+            </div>
+            <div>
+              <h5> Pickup Location</h5> <p> {clickedOrder.pickupLoc}</p>
+            </div>
+            <div>
+              <h5> Drop Off Location</h5> <p> {clickedOrder.dropoffLoc} </p>
+            </div>
+            <div>
+              <h5> Amount</h5> <p>{clickedOrder.amount}</p>
+            </div>
           </div>
-          <div>
-            <h5> Drop Off Location</h5> <p> Portharcout Port </p>
-          </div>
-          <div>
-            <h5> Pick Up Date</h5> <p> 24th Apr, 2022 </p>
-          </div>
-          <div>
-            <h5>Container No</h5> <p> 09-gt5688</p>
-          </div>
-          <div>
-            <h5> Shipping Line</h5> <p> GIGL </p>
-          </div>
-          <div>
-            <h5> Pay</h5> <p>N200,000</p>
-          </div>
-
-          <button className={style.DetailSection__button}>Accept Order</button>
-        </div>
+        </div>}
+      <div className={style.mobileModal}>
+        <OrderDetailModal
+          natureOfGoods={clickedOrder.natureOfGoods}
+          pickupLoc={clickedOrder.pickupLoc}
+          dropoffLoc={clickedOrder.dropoffLoc}
+          amount={clickedOrder.amount}
+          driver={clickedOrder.driver}
+        />
       </div>
+
     </div>
   );
 };

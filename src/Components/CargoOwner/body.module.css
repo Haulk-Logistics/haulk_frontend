@@ -1,53 +1,45 @@
-.container {
+.Cargocontainer {
     width: 100%;
     box-sizing: border-box;
 }
 
-.intro p{
+.Cargointro p{
     font-size: 1.2rem;
     font-weight: 500;
     margin-bottom: 1.2rem;
 }
 
-.intro p span {
+.Cargointro p span {
     color: var(--accent-main);
 }
 
-.overview{
+.CargoOverview{
     display: flex;
     margin-bottom: 3.125rem;
     width: 75vw;
-
 }
 
-.Overview__card{
+.CargoOverview__card{
     width: 50%;
     box-sizing: border-box;
     margin-right: 1rem;
 }
-.activecard{
-    margin-bottom:2rem ;
-    width: 77vw;
-}
 
-.orderhistory{
+.CargoHome__Table{
     width: 75vw;
 }
 
 @media screen and (max-width:640px) {
-    .overview{
+    .CargoOverview{
         justify-content: space-between;
     }
-    .Overview__card{
+    .CargoOverview__card{
         margin-left: -1.5rem;
-        width: 45%;
+        width: 38%;
+        margin-right:2.1rem;  
     }
 
-    .activecard{
-        width: 95%;
-    }
-
-    .orderhistory{
+    .CargoHome__Table{
         width: 95%;
     }
   
