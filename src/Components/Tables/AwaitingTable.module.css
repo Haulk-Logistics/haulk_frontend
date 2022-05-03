@@ -1,21 +1,24 @@
 table{
+    width: 100%;
     border-collapse: collapse;
     font-size: 1rem;
+    background-color: var(--white);
 }
 
-td{
-    padding: 20px;
+.pre-table td, .pre-body td{
+    padding: 15px;
 }
 
 tr{
     border-bottom: 1px solid var(--primary-20);
 }
 
-thead td{
+.pre-table td{
     text-align: left;
+    color: var(--text-subdued);
 }
 
-button{
+.pre-body button{
     width: 6.7rem;
     height: 2.8rem;
     border: none;
@@ -32,7 +35,7 @@ button{
     background-color: var(--accent-main);
 }
 
-.secondaryBtn{
+.pre-body .secondaryBtn{
     border: 1px solid var(--primary-main);
     color: var(--primary-main);
     background: transparent;
@@ -45,7 +48,7 @@ button{
 
 .dots{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     flex-direction: row;
     margin-top: 1rem;
@@ -53,8 +56,8 @@ button{
 }
 
 .dots > div{
-    width: 10px;
-    height: 10px;
+    width: 9px;
+    height: 9px;
     background-color:#979797;
     border-radius: 50%;
 }

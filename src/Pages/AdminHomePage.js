@@ -5,6 +5,7 @@ import AdminNavbar from "../Components/AdminNavbar/AdminNavbar";
 import AdminHome from "../Components/AdminHome/AdminHome";
 
 const AdminHomePage = () => {
+
     return (
         <div style={{display:'flex'}}>
             <AdminNavbar/>

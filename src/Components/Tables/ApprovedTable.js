@@ -1,9 +1,8 @@
 import React from "react";
 
-import styles from "./AwaitingTable.module.css";
+import styles from "./ApprovedTable.module.css";
 
-
-const AwaitingTable = (props) => {
+const ApprovedTable = () => {
     let arr = [
         {
             name: "Okafor Sunday",
@@ -28,29 +27,26 @@ const AwaitingTable = (props) => {
         }
     ]
 
-
     return (
         <table>
-            <thead className = {`${styles["pre-table"]}`}>
+            <thead className = {`${styles["post-table"]}`}>
                 <tr>
                     <td>Name</td>
                     <td>Email Address</td>
                     <td>Registered</td>
                     <td>Truck Type</td>
                     <td>Action</td>
-                    <td>&nbsp;</td>
                     <td>Details</td>
                 </tr>
             </thead>
             {arr.map((person, index) => (
-                <tr key = {index} className = {`${styles["pre-body"]}`}>
+                <tr key = {index} className = {`${styles["post-body"]}`}>
                     <td>{person.name}</td>
                     <td>{person.email}</td>
                     <td>{person.registered}</td>
                     <td>{person.truck}</td>
-                    <td><button className = {styles.primaryBtn} onClick = {props.approveModal}>Approve</button></td>
-                    <td><button className = {styles.secondaryBtn} onClick = {props.rejectModal}>Reject</button></td>
-                    <td className = {styles.dots}>
+                    <td><button className = {styles.deleteBtn}>Delete</button></td>
+                    <td className={styles.dots}>
                         <div></div>
                         <div></div>
                         <div></div>
@@ -61,4 +57,4 @@ const AwaitingTable = (props) => {
     );
 }
  
-export default AwaitingTable;
+export default ApprovedTable;

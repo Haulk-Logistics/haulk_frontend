@@ -6,6 +6,7 @@ import {FaTruckLoading} from "react-icons/fa"
 
 import styles from "./AdminHome.module.css";
 import AdminHeader from "../AdminHeader/AdminHeader";
+import AwaitingTable from "../Tables/AwaitingTable";
 
 const AdminHome = () => {
   return (
@@ -54,11 +55,35 @@ const AdminHome = () => {
           </div>
           <div className={`${styles["stat-item"]}`}>
               <p>Driver's Statistics</p>
-              <div ></div>
+              <div>
+                <div 
+                  className = {`${styles["pie-chart"]}`}
+                >
+                  {/* The Data that would be rendered as a pie chart would go in here. The circle here is a placeholder */}
+                </div>
+                <div className = {styles.legend}>
+                  <ul>
+                    <li>
+                      <div className = {styles.green}></div>
+                      <p>Approved</p>
+                    </li>
+                    <li>
+                      <div className = {styles.cyan}></div>
+                      <p>Declined</p>
+                    </li>
+                    <li>
+                      <div className = {styles.yellow}></div>
+                      <p>Awaiting Approval</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
           </div>
         </div>
         <h4>Recent Approval Request</h4>
-        <div className = {styles.requests}></div>
+        <div className = {styles.requests}>
+          <AwaitingTable/>
+        </div>
       </div>
     </div>
   );

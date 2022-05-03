@@ -31,10 +31,11 @@
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
     transition: none;
+    margin-bottom: .3rem;
+    color: var(--text-subdued);
 }
 
 .navbar-tabs > div > *{
-    color: var(--text-subdued);
     transition: none;
 }
 

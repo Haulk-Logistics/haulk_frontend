@@ -156,6 +156,15 @@ input[type="file" i]::-webkit-file-upload-button{
     background-color: var(--accent-main);
 }
 
+.error{
+    margin-top: .7rem;
+    color: var(--error);
+}
+
+.ownership{
+    margin-top: 2.5rem;
+}
+
 @media only screen and (max-width: 40rem){
     .main{
         width: 80%;

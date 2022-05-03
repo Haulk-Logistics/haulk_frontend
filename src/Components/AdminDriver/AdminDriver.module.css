@@ -29,7 +29,6 @@
 
 .approvals > button:first-of-type{
     margin-right: 1.3rem;
-    border-bottom: 4px solid var(--accent-main);
 }
 
 .table{
@@ -37,4 +36,6 @@
     height: auto;
     background-color: var(--white);
     border-radius: 10px;
+    padding: 1rem;
 }
+

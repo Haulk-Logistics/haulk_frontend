@@ -1,0 +1,51 @@
+table{
+    border-collapse: collapse;
+    font-size: 1rem;
+}
+
+.post-table td, .post-table td{
+    padding: 20px;
+}
+
+tr{
+    border-bottom: 1px solid var(--primary-20);
+}
+
+.post-table td{
+    color: var(--text-subdued);
+    text-align: left;
+}
+
+.post-table td:nth-of-type(5){ 
+    text-align: center;
+}
+
+.post-body td{
+    padding: 20px;
+}
+
+.post-body button{
+    width: 11.875rem;
+    height: 2.8rem;
+    background: transparent;
+    color: var(--error);
+    border: 1px solid var(--error);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.dots{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+.dots > div{
+    width: 9px;
+    height: 9px;
+    background-color:#979797;
+    border-radius: 50%;
+}

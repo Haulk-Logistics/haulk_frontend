@@ -8,7 +8,7 @@ import { getQuotation } from "./axios_call";
 import QuotationModal from "../../Components/Modal/QuotationModal";
 
 const BookForm = (props) => {
-  const { register, handleSubmit, watch } = useForm({
+  const { register, handleSubmit, watch, formState:{errors} } = useForm({
     defaultValues: {
       ownership: null,
     },
@@ -66,7 +66,7 @@ const BookForm = (props) => {
                 <div className={styles.select}>
                   <select
                     name="goods"
-                    {...register("goods")}
+                    {...register("goods", {required: true})}
                     className={styles.dropdown}
                   >
                     <option
@@ -82,13 +82,14 @@ const BookForm = (props) => {
                     <option value="non-perishable">Non-perishable</option>
                   </select>
                 </div>
+                {errors.goods && <p className = {styles.error}>Please fill in the Goods</p>}
               </div>
               <div className={styles.row}>
                 <label htmlFor="truck-types">Truck Type</label>
                 <div className={styles.select}>
                   <select
                     name="truck-types"
-                    {...register("truck_types")}
+                    {...register("truck_types", {required: true})}
                     className={styles.dropdown}
                   >
                     <option
@@ -107,12 +108,13 @@ const BookForm = (props) => {
                     <option value="Box Truck">Box Truck</option>
                   </select>
                 </div>
+                {errors.truck_types && <p className = {styles.error}>Please fill in the Truck Type</p>}
               </div>
             </fieldset>
             <fieldset className={styles.row}>
               <label htmlFor="pickup">Pick Up Location</label>
               <div className={styles.select}>
-                <select name="pickup" {...register("pickup")}>
+                <select name="pickup" {...register("pickup", {required: true})}>
                   <option
                     value=""
                     disabled
@@ -130,11 +132,12 @@ const BookForm = (props) => {
                     ))}
                 </select>
               </div>
+              {errors.pickup && <p className = {styles.error}>Please fill in the Pick Up location</p>}
             </fieldset>
             <fieldset className={styles.row}>
               <label htmlFor="drop_off">Drop Off Location</label>
               <div className={styles.select}>
-                <select name="drop_off" {...register("drop_off")}>
+                <select name="drop_off" {...register("drop_off", {required: true})}>
                   <option
                     value=""
                     disabled
@@ -152,15 +155,17 @@ const BookForm = (props) => {
                     ))}
                 </select>
               </div>
+              {errors.drop_off && <p className = {styles.error}>Please fill in the Drop Off location</p>}
             </fieldset>
             <fieldset className={styles.row}>
               <label htmlFor="date">Pick Up Date</label>
-              <input type="date" name="date" {...register("date", {})} />
+              <input type="date" name="date" {...register("date", {required: true})} />
+              {errors.date && <p className = {styles.error}>Please fill in the Date</p>}
             </fieldset>
             <fieldset className={styles.row}>
               <label htmlFor="container">Container Size</label>
               <div className={styles.select}>
-                <select name="container" {...register("container", {})}>
+                <select name="container" {...register("container", {required: true})}>
                   <option
                     value=""
                     disabled
@@ -175,6 +180,7 @@ const BookForm = (props) => {
                   <option value="10 - 15">10 - 15 Tons</option>
                 </select>
               </div>
+              {errors.container && <p className = {styles.error}>Please fill in the Container Size</p>}
             </fieldset>
             <fieldset className={styles.row}>
               <label htmlFor="ownership">Proof of Ownership</label>
@@ -186,9 +192,10 @@ const BookForm = (props) => {
               <input
                 className={styles.file}
                 type="file"
-                {...register("ownership")}
+                {...register("ownership", {required: true})}
               />
             </fieldset>
+            {errors.ownership && <p className = {`${styles.error} ${styles.ownership}`}>Please upload your Proof of Ownership</p>}
             <fieldset>
               <div className={styles.row}>
                 <label htmlFor="container-number">Container Number</label>
@@ -196,8 +203,9 @@ const BookForm = (props) => {
                   type="text"
                   name="container-number"
                   placeholder="Enter Number"
-                  {...register("container-number")}
+                  {...register("container_number", {required: true})}
                 />
+                {errors.container_number && <p className = {`${styles.error}`}>Please fill in the Container Number</p>}
               </div>
               <div className={styles.row}>
                 <label htmlFor="shipping-line">Shipping Line</label>
@@ -205,8 +213,9 @@ const BookForm = (props) => {
                   type="text"
                   name="shipping-line"
                   placeholder="Enter Number"
-                  {...register("shipping-line")}
+                  {...register("shipping_line", {required: true})}
                 />
+                {errors.shipping_line && <p className = {styles.error}>Please fill in the Shipping Line</p>}
               </div>
             </fieldset>
             <input type="submit" value="Submit" className={styles.submitBtn} />
