@@ -1,0 +1,29 @@
+/* Selection Cards Section */
+
+.selectCardDetail {
+  max-width: 50rem;
+  height: 10rem;
+  background-color: rgba(22, 146, 173, 0.05);
+  display: flex;
+  margin-top: 1rem;
+  align-items: center;
+}
+
+.selectCard {
+  max-width: 30rem;
+  height: 7.625rem;
+  background-color: var(--white);
+  border-radius: 0.8125rem;
+  display: flex;
+  align-items: center;
+  margin-left: 2rem;
+}
+
+.selectCardInfo {
+  margin-left: 1rem;
+}
+
+.selectCard input {
+  margin: 1rem;
+  background-color: var(--accent-main);
+}

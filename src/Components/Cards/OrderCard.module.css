@@ -1,0 +1,61 @@
+.OrderCard__container{
+    background-color: white;
+    border-radius: .625rem;
+    padding: 1rem;
+}
+
+.OrderCard__header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.OrderCard__header h5{
+     font-size: .875rem;
+     font-weight: 500;
+}
+
+.OrderCard__header h6{
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text-subdued);
+}
+
+.OrderCard__header p{
+    font-size: 12px;
+    border-radius: .625rem;
+    max-width:6rem;
+    height: 1.4rem;
+    padding:  0 .5rem;
+    display: flex;
+    justify-content: center;
+   
+}
+
+.OrderCard__body{
+    margin-top: 24px;
+    display: flex;
+    /* background-color: rgb(150, 150, 177); */
+}
+
+.OrderCard__date {
+    margin-top: -.2rem;
+}
+
+.OrderCard__date p{
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--text-subdued);
+    margin-bottom: 1.0625rem;
+}
+
+.OrderCard__details{
+    margin-left: 2.625rem;
+    display: flex;
+}
+
+.OrderCard__details p{
+    font-size: 10px;
+    font-weight: 400;
+    margin-bottom: 1.0625rem;
+    margin-left: 8px;
+}

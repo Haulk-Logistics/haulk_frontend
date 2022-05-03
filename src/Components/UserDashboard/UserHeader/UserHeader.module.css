@@ -1,0 +1,110 @@
+.mobileNav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  background-color: white;
+  width: 100vw !important;
+}
+
+.mobileNavItems li {
+  width: 100vw !important;
+  height: 3rem;
+  text-align: center !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center !important;
+  list-style: none;
+  margin: 0 !important;
+}
+
+.mobileNavItems li:last-child {
+  margin-top: 10rem !important;
+}
+
+.mobileNavItems li:active {
+  background-color: var(--accent-main);
+  color: var(--white);
+  cursor: pointer;
+  border: none !important;
+  outline: none !important;
+  transition: ease-in-out 0.3s;
+}
+
+.mobileNavItems:focus {
+  background-color: var(--accent-main);
+  color: var(--white);
+  transition: ease-in-out 0.3s;
+}
+
+header.userHeader {
+  display: flex;
+  background-color: var(--white) !important;
+  width: 65rem !important;
+  height: 4rem;
+  border-radius: 1.25rem;
+  justify-content: flex-end;
+  padding: 1rem 4.125rem;
+  position: sticky !important;
+  top: 0 !important;
+}
+
+.profileHeader {
+  display: flex;
+}
+
+.caption {
+  font-size: 0.625rem;
+  font-weight: 500;
+}
+
+.userTitle p {
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+.menuBtn,
+.bell {
+  display: none;
+}
+
+
+@media screen and (max-width: 767px) {
+  header.userHeader {
+    border-radius: 0;
+    width: 100% !important;
+    display: flex;
+    justify-content: space-between !important;
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  header.userHeader {
+    border-radius: 0;
+    width: 100% !important;
+    justify-content: space-between;
+    margin: 0;
+  }
+
+  .menuBtn {
+    display: flex;
+    margin-left: 0;
+    justify-content: flex-start;
+  }
+
+  .profileHeader {
+    display: flex;
+  }
+  
+  .bell {
+    display: flex;
+    margin-right: 1rem;
+  }
+
+  .menuIcon {
+    margin-right: 1rem;
+  }
+}

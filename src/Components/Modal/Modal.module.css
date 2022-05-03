@@ -66,6 +66,99 @@
     cursor: pointer;
 }
 
+
+.ReactModalPortal > div {
+    opacity: 25%;
+    background:black !important;
+}
+
+
+.ReactModalPortal .ReactModal__Overlay {
+transition: opacity 200ms ease-in-out;
+display: flex;
+align-items: center;
+justify-content: center;
+background-color: rgba(0, 0, 0, 0.25)!important;
+}
+  
+.ReactModalPortal .ReactModal__Overlay--after-open {
+/* opacity: ; */
+background-color: rgba(0, 0, 0, 0.25) !important
+}
+
+
+
+.overlay{
+    background-color: rgba(0, 0, 0,0.25);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: fixed;
+}
+
+.container{
+    padding: 1rem;
+    border-radius: .5rem;
+    background: var(--white);
+   max-width: 45rem;
+    height: 18rem;
+    margin:  auto;
+    color: var(--text-color);
+    padding:  1rem .2rem 2rem 2rem;
+    box-sizing: border-box;
+
+}
+
+.header {
+    display:  flex;
+    justify-content: space-between;
+}
+
+.header h5{} 
+  
+
+.header p{
+    font-size: .8rem;
+    text-align: center;
+}
+
+.header button{
+    background: none;
+    border:  none;
+    font-size: 1.5rem;
+    font-weight: 500;
+    width: 3rem;
+    height: 3rem;
+    margin-top: -.5rem;
+    color: #5C5F62
+}
+
+.body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.bodyp{
+    margin-top: 1.25rem;
+    font-size: .9rem;
+    width: 90%;
+    line-height: 1.3rem;
+}
+
+.body a {
+    text-decoration: none;
+    color: var(--accent-main);
+}
+
+.displayOrderModal{
+    display: none;
+}
+
+
+
 @media only screen and (max-width: 40rem){
     .modal{
         width: 75%;
@@ -74,5 +167,9 @@
 
     .modal-main-button{
         justify-content: center;
+    }
+   
+    .displayOrderModal{
+        display: block;
     }
 }

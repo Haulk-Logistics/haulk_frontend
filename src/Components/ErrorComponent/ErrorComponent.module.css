@@ -1,3 +1,14 @@
+.showup{
+animation: slideLeft;
+}
+
+@keyframes slideLeft {
+    0%{
+        transform: (120%) ;
+
+    }
+}
+
 .errorWrapper{
     height: 100vh;
     width: 100vw;
@@ -9,7 +20,14 @@
 }
 
 .errorWrapper-img{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.errorWrapper-img > img{
+    object-fit: contain;
 }
 
 .errorWrapper-text{
@@ -46,7 +64,8 @@
     position: absolute;
     top:3%;
     right:2rem;
-    z-index: 1;
+    z-index: 10000;
+    transition: ease-in .5s;
 }
 
 .popup .header{
@@ -80,8 +99,9 @@
     position: absolute;
     top:.5rem;
     right:2rem;
-    z-index: 1;
+    z-index: 10000;
 }
+
 .container {
     display: flex;
 
@@ -117,9 +137,13 @@
 }
 
 
-@media screen and (max-width:640px){
+@media screen and (max-width: 40rem){
     .errpopup, .popup{
         max-width: 100%;
         left: 1.5rem;
+    }
+
+    .errorWrapper-img > img{
+        width: 60%;
     }
 }

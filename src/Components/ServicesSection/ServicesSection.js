@@ -6,28 +6,28 @@ import ServiceCard from "../Cards/ServiceCard";
 import haulageIcon from "../../Asset/Icons/haulageIcon.svg";
 import promptDeliveryIcon from "../../Asset/Icons/promptDeliveryIcon.svg";
 import experienceIcon from "../../Asset/Icons/experienceIcon.svg";
-import image1 from "../../Asset/Images/image1.jpg";
-import image2 from "../../Asset/Images/image2.jpg";
+import image1 from "../../Asset/Images/serviceImg1.webp";
+import image2 from "../../Asset/Images/serviceImg2.webp";
 
 const ServicesSection = () => {
-  //Properties to be passed into the services cards
-  const properties = [
-    {
-      image: haulageIcon,
-      heading: "Haulage",
-      text: "Moving your goods wherever, whenever. Without hassle.",
-    },
-    {
-      image: promptDeliveryIcon,
-      heading: "Prompt Delivery",
-      text: "We deliver on time and with your goods in perfect shape.",
-    },
-    {
-      image: experienceIcon,
-      heading: "Experience",
-      text: "We provide a seamless experience at every step of the way.",
-    },
-  ];
+	//Properties to be passed into the services cards
+	const properties = [
+		{
+			image: haulageIcon,
+			heading: 'Haulage',
+			text: 'Moving your goods wherever, whenever. Without hassle.',
+		},
+		{
+			image: promptDeliveryIcon,
+			heading: 'Prompt Delivery',
+			text: 'We deliver on time and with your goods in perfect shape.',
+		},
+		{
+			image: experienceIcon,
+			heading: 'Experience',
+			text: 'We provide a seamless experience at every step of the way.',
+		},
+	];
 
   return (
     <div className={styles.services}>
@@ -54,13 +54,13 @@ const ServicesSection = () => {
       <div className={styles.servicesDescription}>
         <div className={`${styles["servicesDescription-one"]}`}>
           <div className={`${styles["description-text"]}`}>
-            <h2>Reliable. Fast. Efficient.</h2>
+            <h3>Reliable. Fast. Efficient.</h3>
             <p>
               Leveraging on a logistics company with the above qualities in
               place already is a smart business move. You can count on us to
               deliver, on time, nearly every time. Furthermore, we have
               contingencies in place in the event that something does go wrong,
-              something many businesses don’t consider. The safety of your
+              something many businesses don't consider. The safety of your
               consignment is on our mind for every second we have it in our
               care.
             </p>
@@ -75,7 +75,7 @@ const ServicesSection = () => {
             <img src={image2} alt="" />
           </div>
           <div className={`${styles["description-text"]}`}>
-            <h2>Earn as a Transporter</h2>
+            <h3>Earn as a Transporter</h3>
             <p>
               You can add your truck to our fleet and get more market
               visibility, better paying customers and jobs. Free access to truck

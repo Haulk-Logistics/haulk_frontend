@@ -31,11 +31,10 @@ const InputDefault = ({
           required: `${labelname} is required`,
           pattern: {
             value: pattern,
-            message: ` ${
-              type === "email"
+            message: ` ${type === "email"
                 ? "Enter a valid email"
                 : "Alphabetical characters only"
-            }`,
+              }`,
           },
           maxLength: { value: maxlength, message: "Maximum length is 20" },
         })}
@@ -84,7 +83,6 @@ const InputwithIcon = ({
   labelname,
   type,
   id,
-  value,
   name,
   placeholder,
   disabled,
@@ -105,7 +103,6 @@ const InputwithIcon = ({
           className={Inputstyle.input}
           type={state ? state : type}
           id={id}
-          value={value}
           name={name}
           placeholder={placeholder}
           disabled={disabled}

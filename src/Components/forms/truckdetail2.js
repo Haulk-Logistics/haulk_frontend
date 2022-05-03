@@ -10,6 +10,7 @@ import { Pagecontrol } from "../../Store/Actions/pagecontrol";
 import Selectuser from "./user";
 import axios from "axios";
 import { useNavigate } from "react-router";
+import { modalStatus } from "../../Store/Actions/ModalStatus";
 
 const schema = yup.object().shape({
   driverLicenseImage: yup
@@ -88,13 +89,13 @@ const Truckdetailcont = (props) => {
         .post(DriverReg_Url, formdata)
         .then((res) => {
           navigate("/login");
-          dispatch({
-            type: "success",
-            payload: {
-              title: "Success!",
+          dispatch(
+            modalStatus({
+              status: "true",
               message: res.data.message,
-            },
-          });
+              link: "/confirmemail",
+            })
+          );
         })
         .catch((error) =>
           dispatch({
