@@ -10,24 +10,24 @@ import image1 from "../../Asset/Images/serviceImg1.webp";
 import image2 from "../../Asset/Images/serviceImg2.webp";
 
 const ServicesSection = () => {
-  //Properties to be passed into the services cards
-  const properties = [
-    {
-      image: haulageIcon,
-      heading: "Haulage",
-      text: "Moving your goods wherever, whenever. Without hassle.",
-    },
-    {
-      image: promptDeliveryIcon,
-      heading: "Prompt Delivery",
-      text: "We deliver on time and with your goods in perfect shape.",
-    },
-    {
-      image: experienceIcon,
-      heading: "Experience",
-      text: "We provide a seamless experience at every step of the way.",
-    },
-  ];
+	//Properties to be passed into the services cards
+	const properties = [
+		{
+			image: haulageIcon,
+			heading: 'Haulage',
+			text: 'Moving your goods wherever, whenever. Without hassle.',
+		},
+		{
+			image: promptDeliveryIcon,
+			heading: 'Prompt Delivery',
+			text: 'We deliver on time and with your goods in perfect shape.',
+		},
+		{
+			image: experienceIcon,
+			heading: 'Experience',
+			text: 'We provide a seamless experience at every step of the way.',
+		},
+	];
 
   return (
     <div className={styles.services}>

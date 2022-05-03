@@ -1,0 +1,264 @@
+.Active_OrderSection{
+    display: flex;
+}
+
+.Active__OrderContainer{
+    width: 40%;
+
+}
+
+.Active__header h5{
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: .625rem;
+    color: var(--text);
+}
+
+
+.Active__OrderCard{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.Active__Card{
+    width: 95%;
+    margin-bottom: 16px;
+}
+
+.Active__0rderLine{
+    width: .5rem;
+    height: 8rem;
+    margin-left: 8px;
+    background-color: var(--accent-main);
+    border-radius: .5rem;
+    display: none;
+}
+
+.cargoOpen__OrderCard{
+    overflow-y: scroll;
+    max-height: 75vh;
+}
+
+.cargoOpen__OrderCard::-webkit-scrollbar{
+    width: .3rem;
+  }
+
+  .cargoOpen__OrderCard::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+
+  .cargoOpen__OrderCard::-webkit-scrollbar-thumb{
+    background: var(--accent-main); 
+    border-radius: .625rem;
+  }
+
+  .OrderDetails{
+      width: 50%;
+      margin-left: 2.375rem;
+    
+  }
+
+  .cargoDetailSection {
+      background-color: var(--white);
+      padding: 1rem 2rem 1.5rem 2rem;
+      border-radius: .625rem;
+      max-height: 75vh;
+     box-sizing: border-box;
+     overflow-y: scroll;
+  }
+
+
+  .cargoDetailSection::-webkit-scrollbar {
+    width: .3rem;
+  }
+
+  .cargoDetailSection::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+
+ .cargoDetailSection::-webkit-scrollbar-thumb{
+    background: var(--accent-main); 
+    border-radius: .625rem;
+  }
+
+  .cargoDetailSection__details div{
+      display: flex;
+      align-items: center;
+      margin-top: 2rem;
+  }
+
+  .cargoDetailSection__details div h5{
+    font-weight: 500;
+    font-size: .8rem;
+    width: 14rem;
+}
+
+.cargoDetailSection__details div p{
+    font-weight: 400;
+    font-size: .8rem;
+    color: var(--text-subdued);
+    
+}
+
+  .StatusForm{
+      border-bottom: 1px dashed var( --secondary-gray);
+      margin-bottom: 1.25rem;
+      box-sizing: content-box;
+      padding-bottom: 2rem;
+  }
+
+
+  .cargoDetailSection__status{
+     font-weight: 500;
+      text-align:left;
+      font-size: .875rem;
+  }
+
+  .DetailSection__status p{
+      margin: auto;
+  }
+
+  .hide{
+      display: none;
+  }
+
+  .EmptySection{
+      composes: cargoDetailSection;
+      height:  60vh;
+      display: flex;
+      flex-direction:column;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .EmptySection h5{
+      font-size: 1.3rem;
+      font-weight: 500;
+  }
+
+  .EmptySection p{
+      font-size: .75rem;
+      font-weight: 400;
+      margin-top: 1rem;
+  }
+
+  .EmptyActive {
+      composes: Active__Card;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: var(--white);
+      padding: 2rem 1rem;
+      border-radius: .625rem;
+      height: 10rem;
+     margin-bottom: -1rem;
+  }
+
+  .EmptyActive p{
+      font-size: .875rem;
+  }
+
+  .noDriver{
+      margin-bottom: 1rem;
+     display: flex;
+     align-items: center;
+  }
+
+  .noDriver p{
+      color: var(--text-subdued);
+      font-weight: 500;
+      font-size: 12px;
+      text-align: center;
+      margin-left: 2rem;
+  }
+  
+
+  .DetailSection__driversProfile{
+      display: flex;
+      margin-bottom: 1.5rem;
+      max-height: 5rem;
+      width: 100%;
+      box-sizing: border-box;
+      margin-top: 2rem;
+  }
+
+  .driverprofile__img{
+      width: 5rem;
+      height: 5rem;
+      border-radius: 50%;
+  }
+
+  .driverprofile__bio{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin-left: 1rem;
+      text-align: left;
+  }
+
+  .driverprofile__bio h5{
+    font-size:1.3rem;
+    font-weight: 500;
+  }
+  .driverprofile__bio p{
+      margin-top: .5rem;
+   
+  }
+
+  .driverprofile__bio p span{
+    color: var(--text-subdued);
+  }
+
+  .driverprofile__img img{
+    width: 5em;
+    height: 5rem;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .mobileModal{
+      display: none;
+  }
+  @media screen and (max-width:640px) {
+    .Active__OrderContainer{
+        width: 100%;
+    }
+    .OrderDetails{
+        display: none;
+    }
+    .cargoOpen__OrderCard{
+        overflow: hidden;
+      max-height: fit-content;
+    }
+
+    .orderdetail__p{
+        margin-top: .5rem;
+    }
+
+    .cargoDetailSection__details{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .cargoDetailSection__details h5{
+        text-align: left;
+    }
+    .mobileModal{
+        display: block;
+    }
+    
+    .noDriver img{
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .noDriver p{
+        text-align: left;
+        margin-left: 1rem;
+    }
+  }

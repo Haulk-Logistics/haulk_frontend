@@ -1,0 +1,15 @@
+.Truck__Container{
+    width: 75vw;
+    border-radius: .625rem;
+    background-color: white;
+    padding: .005rem 0;
+    margin-bottom: 2rem;
+}
+
+@media screen and (max-width:640px) {
+    .Truck__Container{
+        width: 95%;
+        margin-top: 6rem;
+        margin-bottom: 0;
+     }
+}

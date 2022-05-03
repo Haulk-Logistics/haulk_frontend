@@ -1,19 +1,19 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
-import ConfigureStore from "./Store/configureStore";
-import { Provider } from "react-redux";
-import App from "./App";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import ConfigureStore from './Store/configureStore';
+import { Provider } from 'react-redux';
+import App from './App';
 
 const store = ConfigureStore();
 
 const haulk = (
-  <Provider store={store}>
-    <App />
-  </Provider>
+	<Provider store={store}>
+		<App />
+	</Provider>
 );
 
-ReactDOM.render(haulk, document.getElementById("root"));
+ReactDOM.render(haulk, document.getElementById('root'));
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

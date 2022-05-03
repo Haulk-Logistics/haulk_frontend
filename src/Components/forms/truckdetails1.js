@@ -60,7 +60,6 @@ const Truckdetails = (props) => {
 
   const onsubmit = async (data) => {
     if (usertype === "truckdriver") {
-      console.log(details);
       dispatch(truckdetails(data));
       dispatch(formstep(2));
       dispatch(Pagecontrol(2));
@@ -84,7 +83,7 @@ const Truckdetails = (props) => {
           option={[
             { value: "", optionlabel: "Select" },
             { value: "Minitruck", optionlabel: "Mini Truck" },
-            { value: "Box", optionlabel: "Box" },
+            { value: "Box", optionlabel: "Box Truck" },
             { value: "Trailer", optionlabel: "Trailer" },
             { value: "Flatbed", optionlabel: "Flatbed" },
           ]}
@@ -113,6 +112,7 @@ const Truckdetails = (props) => {
             { value: "51ft5a", optionlabel: "51-Foot, Five-Axle Truck" },
           ]}
         />
+
         {errors.truckSize && (
           <p className={formstyle.error}>{errors.truckSize.message}</p>
         )}
@@ -136,7 +136,7 @@ const Truckdetails = (props) => {
           labelname="Vehicle Licence/Registration"
           filename={
             !watch("vehicleLicenseImage") ||
-            watch("vehicleLicenseImage").length === 0
+              watch("vehicleLicenseImage").length === 0
               ? ""
               : watch("vehicleLicenseImage")[0].name
           }
@@ -154,7 +154,7 @@ const Truckdetails = (props) => {
           labelname="Certificate of Road Worthiness"
           filename={
             !watch("certificateOfRoadWorthinessImage") ||
-            watch("certificateOfRoadWorthinessImage").length === 0
+              watch("certificateOfRoadWorthinessImage").length === 0
               ? ""
               : watch("certificateOfRoadWorthinessImage")[0].name
           }
@@ -171,7 +171,7 @@ const Truckdetails = (props) => {
           labelname="Certificate of Insurance"
           filename={
             !watch("certificateOfInsuranceImage") ||
-            watch("certificateOfInsuranceImage").length === 0
+              watch("certificateOfInsuranceImage").length === 0
               ? ""
               : watch("certificateOfInsuranceImage")[0].name
           }

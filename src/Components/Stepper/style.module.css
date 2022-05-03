@@ -2,8 +2,14 @@
     display: flex;
     width: 100%;
     margin-top:1.5rem;
-    
 }
+.Verticalcontainer{
+    display: flex;
+    width: 100%;
+    margin-top:1.5rem;
+    flex-direction: column;
+}
+
 
 .line
 {
@@ -14,13 +20,46 @@
     border: none;
     outline: none;
 }
+.verticalLine
+{
+    margin-left: .7rem;
+    height: 3.5rem ;
+    width: .05rem;
+    border: 1px dashed #D1E1E1;
+    outline: none;
+}
+
+.Verticalcontainer__label{
+    display: flex;
+    margin-bottom: -1.4rem;
+}
+
+.Verticalcontainer__label div{
+    margin-left: .5rem;
+    text-align: left;
+}
+
+.activeword p{
+    font-size: .8rem;
+    margin-bottom: .3rem;
+}
+.activep p{
+     font-weight: 500;
+     font-size: .8rem;
+    margin-bottom: .3rem;
+}
+.Verticalcontainer__label div small{
+    font-size: .625rem;
+    color: var(--text-subdued);
+   text-align: left;
+}
 
 
 
 .circle{
     width: 1.5rem ;
     height: 1.5rem;
-    background-color:  #D1E1E1;
+    background-color:  #8AC8D6;
     border-radius: 50%;
     border: none;
     outline: none;
@@ -29,11 +68,10 @@
 .active{
     width: 1.5rem ;
     height: 1.5rem;
-    background-color:  #D1E1E1;
     border-radius: 50%;
     outline: none;
-    background: var(--primary-main);
-    border: 2px solid rgba(37, 55, 59, 0.3);
+    border: none;
+    background-color: var(--accent-main);
     color: white;
 }
 
@@ -44,6 +82,16 @@
     height: .15rem;
     background-color:  var(--primary-main);
     border: none;
+    outline: none;
+   
+}
+
+.verticalActiveLine{
+  
+    height: 3.5rem ;
+    width: .15rem;
+    background-color:  var(--primary-main);
+    border: 1px dashed var(--primary-main);
     outline: none;
 }
 
@@ -104,6 +152,8 @@
         .labelactive3, .p3{
             justify-content: flex-start;
              }
-
+             .Verticalcontainer__label{
+                 margin-bottom: -1.3rem;
+             }
 }
 
