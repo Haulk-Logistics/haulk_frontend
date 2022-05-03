@@ -20,11 +20,11 @@ const OrderCard = ({ status, details }) => {
   return (
     <div className={style.OrderCard__container}>
       <header className={style.OrderCard__header}>
-        <div>
+        <div className={style.OrderCard__headertext} >
           <h5>ID {details._id}</h5>
-          <h6>consignment</h6>
+          <p style={{ backgroundColor: ` ${status.color}` }}>{status.status}</p>
         </div>
-        <p style={{ backgroundColor: ` ${status.color}` }}>{status.status}</p>
+        <h6>consignment</h6>
       </header>
       <div className={style.OrderCard__body}>
         <div className={style.OrderCard__date}>

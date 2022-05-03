@@ -1,0 +1,50 @@
+.OrderEmpty__container{
+    background-color: white;
+    width: 94%;
+    height: 70vh;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.OrderEmpty__content{
+    margin: auto;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.OrderEmpty__content img{
+    margin:auto;
+}
+
+.OrderEmpty__writeup{
+    margin-top: .5rem;
+}
+
+.OrderEmpty__writeup h5{
+    font-weight: 500;
+    margin-bottom: .5rem;
+}
+
+.OrderEmpty__writeup p{
+    font-size: 1rem;
+    margin-bottom: .5rem;
+}
+
+.OrderEmpty__button{
+    margin-top: .5rem;
+    padding: .75rem 1.25rem;
+    font-size: .9375rem;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    border-radius: .25rem;
+    color: white;
+    background-color: var(--primary-main);
+}

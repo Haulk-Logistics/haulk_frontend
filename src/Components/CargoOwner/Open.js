@@ -25,7 +25,7 @@ const Open = () => {
               {" "}
               <OrderCard
                 status={
-                  order.order_status === "processing" ? { color: "var(--default)", status: "Processing" } :
+                  order.order_status === "processing" ? { color: "var( --default)", status: "Processing" } :
                     order.order_status === "pending" ? { color: "var(--default)", status: "Pending" } :
                       order.order_status === "accepted" ? { color: "var( --warning)", status: "Accepted" } :
                         order.order_status === "picked_up" ? { color: "var(--info-links )", status: "Picked up" } :

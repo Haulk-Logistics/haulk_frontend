@@ -21,9 +21,15 @@
     padding: 1rem;
 }
 
-.OverviewCard__body,.CargoOverview{
+.OverviewCard__body{
     display: flex;
     justify-content: space-between;
+    margin-top: auto;
+    width: 100%;
+}
+
+.CargoOverview{
+    display: flex;
     margin-top: auto;
     width: 100%;
 }
@@ -191,8 +197,8 @@ font-weight: 400;
 .icon{
     width:2.5rem;
     height:2.5rem;
-    margin-right: 1rem;
     padding: 0.5rem;
+    margin: auto;
 }
 
 .line{
@@ -200,26 +206,39 @@ font-weight: 400;
 }
 
 .CargoOverview{
+    max-height: 7rem;
+    padding: 1rem .5rem;
+    flex-direction: column;
     width: 100%;
-    padding-right:.5rem ;
-    padding-left:.5rem ;
-    margin-left: 1.5rem;
-    height: 4.875rem;
-    padding: 1rem ;
 }
-.OverviewCard__body, .CargoOverviewCard__body{
+.OverviewCard__body{
   margin-top: 0;
 }
 
-.OverviewCard__body h1, .CargoOverviewCard__body h1{
+.CargoOverviewCard__body{
+margin: 0.5rem auto;
+text-align: center;
+
+}
+
+.OverviewCard__body h1{
     font-size: 8px;
     margin-bottom: .5rem;
 }
 
-.OverviewCard__body p, .CargoOverviewCard__body p{
+.CargoOverviewCard__body h1{
+    font-size: 8px;
+    margin-bottom: .2rem;
+}
+
+.OverviewCard__body p{
     font-size: 13px;
 }
 
+.CargoOverviewCard__body p{
+    font-size: 13px;
+    margin-top: 0;
+}
 .OverviewCard__body p span,.CargoOverviewCard__body p span{
     font-size: .55rem;
 }

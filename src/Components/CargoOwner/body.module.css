@@ -15,8 +15,8 @@
 
 .CargoOverview{
     display: flex;
-    margin-bottom: 3.125rem;
-    width: 75vw;
+    margin-bottom: 1.5rem;
+    max-width: 75vw;
 }
 
 .CargoOverview__card{
@@ -31,12 +31,15 @@
 
 @media screen and (max-width:640px) {
     .CargoOverview{
-        justify-content: space-between;
+        max-width: 90vw;
+        box-sizing: border-box;
+   
     }
     .CargoOverview__card{
-        margin-left: -1.5rem;
-        width: 38%;
-        margin-right:2.1rem;  
+        padding: 1rem .1rem; 
+    width: 100%;
+    box-sizing: border-box;
+    margin-right: 0.5rem;
     }
 
     .CargoHome__Table{

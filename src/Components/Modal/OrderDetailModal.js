@@ -31,7 +31,7 @@ const OrderDetailModal = ({ natureOfGoods, pickupLoc, dropoffLoc, amount, driver
                 content: {
                     background: "none",
                     border: "none",
-                    inset: "3rem 0"
+                    inset: "0"
                 }
             }}
         >
