@@ -6,28 +6,33 @@
 
 .OrderCard__header{
     display: flex;
+    flex-direction: column;
+}
+
+.OrderCard__headertext{
+    display: flex;
     justify-content: space-between;
 }
 
 .OrderCard__header h5{
-     font-size: .875rem;
+     font-size: .75rem;
      font-weight: 500;
 }
 
 .OrderCard__header h6{
-    font-size: 13px;
+    font-size: 0.625rem;
     font-weight: 400;
     color: var(--text-subdued);
 }
 
 .OrderCard__header p{
-    font-size: 12px;
+    font-size: 10px;
     border-radius: .625rem;
     max-width:6rem;
-    height: 1.4rem;
     padding:  0 .5rem;
     display: flex;
     justify-content: center;
+    align-items: center;
    
 }
 

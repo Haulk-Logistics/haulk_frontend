@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import style from "./style.module.css";
 import Dp from "../../Asset/Icons/profileIcon.svg";
-import { IoNotifications, IoLogOut } from "react-icons/io5";
+import { IoLogOut } from "react-icons/io5";
 import logo from "../../Asset/logo/MobileLogo.svg";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router"
@@ -20,7 +20,7 @@ const NavBar = ({ props }) => {
 
   const handleLogOut = () => {
     localStorage.clear();
-    navigate("/");
+    navigate("/login");
   }
 
   return props && (
@@ -31,9 +31,6 @@ const NavBar = ({ props }) => {
             <img src={logo} alt="Haulk" />
           </Link>
         </div>
-        <div className={style.notification}>
-          <IoNotifications size="24px" />
-        </div>
         <div className={style.profile}>
           <img src={Dp} alt="profile" className={style.webImg} />
           <img src={Dp} alt="profile" className={style.mobileImg} onClick={() => { setToggle("block") }} />
@@ -43,7 +40,7 @@ const NavBar = ({ props }) => {
           </div>
         </div>
       </nav>
-      <div className={style.navdropdown} style={{ display: `${toggle}` }} onMouseLeave={() => { setToggle("none") }}>
+      <div className={style.navdropdown} style={{ display: `${toggle}` }} onClick={() => { setToggle("none") }}>
         <p className={style.navdropdownp}>{firstName} {lastName}</p>
         <button className={style.logoutBtn} onClick={handleLogOut}><IoLogOut /> <p>Log Out </p></button>
       </div>

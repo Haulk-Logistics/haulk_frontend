@@ -6,6 +6,9 @@ import { FaBusinessTime } from "react-icons/fa";
 import OrderTable from "../Table/OrderTable";
 import CargoOverviewCard from "../Cards/CargoOverview";
 import { useSelector } from "react-redux";
+import EmptyTable from "../Table/EmptyTable"
+
+
 
 const CargoHome = () => {
   const { loading, orders, active, pending, completed, cargoOwner } = useSelector(
@@ -13,9 +16,6 @@ const CargoHome = () => {
   );
 
   const name = cargoOwner && cargoOwner[0].userDetails.firstName
-  // const pendings = orders && orders.filter(x => x.order_status != "dropped_off")
-  // console.log(pendings)
-
 
   const capitalizeFirstLetter = (string) => {
     const firstletter = string.slice(0, 1);
@@ -26,7 +26,7 @@ const CargoHome = () => {
 
   const firstName = name && capitalizeFirstLetter(name)
 
-  return (
+  return orders && (
     <div className={style.Cargocontainer}>
       <div className={style.Cargointro}>
         <p>
@@ -60,17 +60,29 @@ const CargoHome = () => {
           />
         </div>
       </div>
-      <div className={style.CargoHome__Table}>
+      {orders.length !== 0 ? <div className={style.CargoHome__Table}>
         {orders && !loading ? (
           <OrderTable
             title="Orders"
             header={["ID", "Date Requested", "Status", "Truck Type"]}
             content={orders && orders}
+
           />
         ) : (
-          <div> Loading... </div>
+          <div>Loading....</div>
         )}
-      </div>
+      </div> :
+
+        <div className={style.CargoHome__Table}>
+          <EmptyTable
+            title="Orders"
+            header="You've not made any orders yet"
+            content="Your orders will be displayed here."
+
+          />
+
+        </div>
+      }
     </div>
   );
 };

@@ -13,7 +13,7 @@ const Steps = () => {
         <div className={vpage >= 0 ? stepper.activeline : stepper.line}></div>
         <button
           type="button"
-          className={vpage >= 0 ? stepper.active : stepper.circle}
+          className={vpage >= 0 ? stepper.stepactive : stepper.steppercircle}
           onClick={() => {
             dispatch(formstep(0));
           }}
@@ -25,7 +25,7 @@ const Steps = () => {
         <button
           type="button"
           disabled={vpage < 1 ? true : false}
-          className={vpage >= 1 ? stepper.active : stepper.circle}
+          className={vpage >= 1 ? stepper.stepactive : stepper.steppercircle}
           onClick={() => {
             dispatch(formstep(1));
           }}
@@ -37,7 +37,7 @@ const Steps = () => {
         <button
           type="button"
           disabled={vpage < 2 ? true : false}
-          className={vpage >= 2 ? stepper.active : stepper.circle}
+          className={vpage >= 2 ? stepper.stepactive : stepper.steppercircle}
           onClick={() => {
             dispatch(formstep(2));
           }}
@@ -60,7 +60,7 @@ const Steps = () => {
           className={vpage >= 2 ? stepper.labelactive3 : stepper.p3}
         >
           {" "}
-          Truck Verification
+          Info Verification
         </p>
       </div>
     </div>
