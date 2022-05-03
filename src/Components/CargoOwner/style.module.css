@@ -39,7 +39,7 @@
 }
 
 .sidebar__featureslink:hover, .sidebar__logout a:hover{
-    background: var(--accent-main);
+    background: var(--accent-60);
     color: var(--white);
 }
 
@@ -89,6 +89,7 @@ width: 12rem;
 .navdropdownp{
     font-size: .875rem;
     margin-bottom: .5rem;
+    padding:.5rem 0;
 }
 
 .logoutBtn{
@@ -101,7 +102,7 @@ width: 12rem;
     
 }
 .logoutBtn p{
-    margin-left: 1.625rem ;
+    margin-left: 1rem ;
 }
 
 
@@ -138,15 +139,15 @@ width: 12rem;
 
 .profile p{
     font-size: 14px;
-    font-weight: 400;
-    margin-bottom:  -.5rem;
+    font-weight: 500;
+    margin-bottom:  -.3rem;
     color: var(--text-color);
 }
 
 .profile small{
     font-size: 10px;
-    color: #000000;
-    font-weight: 500;
+    font-weight: 400;
+    margin-top: 1rem;
 
 }
 
@@ -155,13 +156,13 @@ width: 12rem;
 
 }
 
+
 .mobileview{
     display: none;
     margin: auto ;
    width: 12rem;
    height: 3rem;
-   justify-content: center;
-   padding: auto;
+  padding-left: 1.5rem;
    align-items: center;
    
 }
