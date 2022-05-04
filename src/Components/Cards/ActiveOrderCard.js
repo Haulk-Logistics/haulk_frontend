@@ -1,7 +1,15 @@
-import React from "react";
+import React, {useEffect} from "react";
 import style from "./card.module.css";
+import { useSelector, useDispatch } from "react-redux";
+import { truckDriverActiveOrder } from "../../Store/Actions/truckDriverOrders";
 
 const ActiveOrderCard = () => {
+  useEffect(() => {
+    dispatch(truckDriverActiveOrder())
+  },[])
+  const dispatch = useDispatch();
+  const { activeOrder, loading } = useSelector(state => state.truckDriverOrders);
+  console.log(activeOrder)
   const step = (
     <svg
       width="10"
@@ -19,11 +27,11 @@ const ActiveOrderCard = () => {
     <div className={style.fullcard}>
       <div className={style.header}>
         <h5>Active Order</h5>
-        <p>In Transit</p>
+        <p>{ loading ? "..." : activeOrder && activeOrder.order_status}</p>
       </div>
       <div className={style.fullcardbody}>
         <div className={style.column1}>
-          <h5>ID 816495</h5>
+          <h5>ID {loading ? "..." : activeOrder && `${activeOrder._id.substr(0,4)}...${activeOrder._id.substr(activeOrder._id.length - 5, activeOrder._id.length - 1 )}`}</h5>
           <small> Consignment </small>
         </div>
         <div className={style.column2}>
@@ -34,8 +42,8 @@ const ActiveOrderCard = () => {
           <div className={style.destination}>
             {step}
             <section>
-              <p>831 Heather Parkway, Enugu.</p>
-              <p>Nigerian Port, Port-Harcourt</p>
+              <p>{ loading ? "..." : activeOrder && activeOrder.pick_off_location}</p>
+              <p>{ loading ? "..." : activeOrder && activeOrder.drop_off_location}</p>
             </section>
           </div>
         </div>
@@ -45,7 +53,7 @@ const ActiveOrderCard = () => {
         </div>
         <div className={style.column4}>
           <p>Request Date: </p>
-          <small> 23 Apr 2022 </small>
+          <small> { loading ? "..." : activeOrder && activeOrder.pick_up_date} </small>
         </div>
       </div>
     </div>

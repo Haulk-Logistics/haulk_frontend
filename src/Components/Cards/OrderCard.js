@@ -1,7 +1,21 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import style from "./OrderCard.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import { getOneOpenOrder } from "../../Store/Actions/truckDriverOrders";
 
-const OrderCard = ({ status, details }) => {
+const OrderCard = ({  status, details, index }) => {
+  const [id, setId] = useState(0);
+  const dispatch = useDispatch();
+  const { openOrders, loading } = useSelector(state => state.truckDriverOrders);
+  useEffect(() => {
+    dispatch(getOneOpenOrder(openOrders && openOrders[0]._id))
+  }, [openOrders]);
+
+  const setOrder = () => {
+    dispatch(getOneOpenOrder(openOrders && openOrders[index]._id))
+    setId(index);
+    console.log(id === index);
+  }
   const locationStepper = (
     <svg
       width="10"
@@ -19,10 +33,10 @@ const OrderCard = ({ status, details }) => {
     <div className={style.OrderCard__container}>
       <header className={style.OrderCard__header}>
         <div>
-          <h5>ID {details.Id}</h5>
+          <h5 className="h5" onClick={setOrder} >ID {details._id}</h5>
           <h6>consignment</h6>
         </div>
-        <p style={{ backgroundColor: ` ${status.color}` }}>{status.status}</p>
+        <p style={{ backgroundColor: ` ${status.color}` }}>{details.order_status}</p>
       </header>
       <div className={style.OrderCard__body}>
         <div className={style.OrderCard__date}>
@@ -34,8 +48,8 @@ const OrderCard = ({ status, details }) => {
           {locationStepper}
           <div>
             {" "}
-            <p>{details.pickupLocation}</p>
-            <p>{details.dropoffLocation}</p>
+            <p>{details.pick_off_location}</p>
+            <p>{details.drop_off_location}</p>
           </div>
         </div>
       </div>

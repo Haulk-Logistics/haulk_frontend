@@ -22,7 +22,7 @@ export const cargoOwnerReducer = (state = initialState, action ) => {
                 orders: action.payload,
                 active: action.payload.filter(x => x.order_status != ("dropped_off" && "pending" )),  
                 completed: action.payload.filter(x => x.order_status == "dropped_off"),
-                pending: action.payload.filter(x => x.order_status === "processing"),
+                pending: action.payload.filter(x => x.order_status === "pending"),
             }
         case "cargoOwnerOrderHistory": 
             return {

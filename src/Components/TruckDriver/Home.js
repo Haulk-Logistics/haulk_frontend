@@ -7,13 +7,15 @@ import ActiveOrderCard from "../Cards/ActiveOrderCard";
 import Tables from "../Table/Tables";
 import MobileOrderCards from "../Cards/MobileOrderCards";
 import OrderHistory from "./OrderHistory";
+import { useSelector } from "react-redux";
 
 const DriverHome = () => {
+  const { loading, profile } = useSelector((state) => state.truckDriverOrders);
   return (
     <div className={style.container}>
       <div className={style.intro}>
         <p>
-          Welcome <span>Chidera</span>
+          Welcome <span>{loading ? "..." : profile && profile.userDetails&& profile.userDetails.firstName}</span>
         </p>
       </div>
       <div className={style.overview}>
