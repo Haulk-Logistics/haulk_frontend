@@ -56,6 +56,12 @@
     width: 100%;
 }
 
+textarea{
+    height: 5rem;
+    width: 100%;
+    padding: .5rem;
+}
+
 .modal-footing{
     margin-top: 1.5rem;
     display: flex;

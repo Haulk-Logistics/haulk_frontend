@@ -6,7 +6,7 @@ import AdminDriver from "../Components/AdminDriver/AdminDriver";
 
 const AdminDriverPage = () => {
     return (
-        <div style = {{display:'flex'}}> 
+        <div style = {{display:'flex'}} className = "container"> 
             <AdminNavbar/>
             <AdminDriver/>
         </div>

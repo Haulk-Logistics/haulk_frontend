@@ -5,7 +5,7 @@ import adminImg from "../../Asset/Images/adminImage.webp";
 
 const AdminHeader = () => {
   return (
-    <div className={`${styles["dashboard-header"]}`}>
+    <div className={`${styles["dashboard-header"]} container`}>
         <div>
             <div>
                 <img src={adminImg} alt="Admin Avatar" />

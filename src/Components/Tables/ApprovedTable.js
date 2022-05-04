@@ -2,7 +2,7 @@ import React from "react";
 
 import styles from "./ApprovedTable.module.css";
 
-const ApprovedTable = () => {
+const ApprovedTable = (props) => {
     let arr = [
         {
             name: "Okafor Sunday",
@@ -45,7 +45,7 @@ const ApprovedTable = () => {
                     <td>{person.email}</td>
                     <td>{person.registered}</td>
                     <td>{person.truck}</td>
-                    <td><button className = {styles.deleteBtn}>Delete</button></td>
+                    <td><button className = {styles.deleteBtn} onClick = {props.deleteModal}>Delete</button></td>
                     <td className={styles.dots}>
                         <div></div>
                         <div></div>

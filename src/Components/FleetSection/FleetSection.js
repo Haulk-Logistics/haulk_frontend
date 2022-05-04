@@ -44,7 +44,7 @@ const FleetSection = () => {
   ];
 
   return (
-    <div className={styles.fleet}>
+    <div className={`${styles.fleet} container`}>
       <h2>Our Fleet</h2>
       <p>Varieties of trucks you could choose from</p>
       <div className={`${styles["fleet-grid"]}`}>

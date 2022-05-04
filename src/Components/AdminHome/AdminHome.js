@@ -10,7 +10,7 @@ import AwaitingTable from "../Tables/AwaitingTable";
 
 const AdminHome = () => {
   return (
-    <div className={styles.dashboard}>
+    <div className={`${styles.dashboard}`}>
       <AdminHeader/>
       <div className={`${styles["dashboard-main"]}`}>
         <h4>
@@ -80,7 +80,7 @@ const AdminHome = () => {
               </div>
           </div>
         </div>
-        <h4>Recent Approval Request</h4>
+        <h5>Recent Approval Request</h5>
         <div className = {styles.requests}>
           <AwaitingTable/>
         </div>

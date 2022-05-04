@@ -46,7 +46,6 @@
 
 .modal-heading-cancel > *{
     font-size: 2rem;
-    line-height: 28px;
 }
 
 .modal-heading-cancel:hover > *{
@@ -59,6 +58,7 @@
 
 .modal-main > *{
     margin-bottom: 1.5rem;
+    line-height: 28px;
 }
 
 .modal-footing{
@@ -84,7 +84,7 @@
 
 .modal-footing-button:last-of-type{
     color: var(--white);
-    background-color: var(--primary-main);
+    background-color: var(--error);
 }
 
 .modal-footing-button:hover:first-of-type{
@@ -93,5 +93,5 @@
 }
 
 .modal-footing-button:hover:last-of-type{
-    background-color: var(--accent-main);
+    background-color: #ffb0b0;
 }

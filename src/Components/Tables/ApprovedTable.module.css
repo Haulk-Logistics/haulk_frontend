@@ -12,6 +12,7 @@ tr{
 }
 
 .post-table td{
+    font-size: 0.875rem;
     color: var(--text-subdued);
     text-align: left;
 }
@@ -21,6 +22,7 @@ tr{
 }
 
 .post-body td{
+    font-size: 0.75rem;
     padding: 20px;
 }
 
@@ -32,6 +34,11 @@ tr{
     border: 1px solid var(--error);
     border-radius: 4px;
     cursor: pointer;
+}
+
+.post-body button:hover{
+    color: #ffb0b0;
+    border: 1px solid #ffb0b0;
 }
 
 .dots{

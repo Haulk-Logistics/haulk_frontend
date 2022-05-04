@@ -7,7 +7,7 @@ import AdminHome from "../Components/AdminHome/AdminHome";
 const AdminHomePage = () => {
 
     return (
-        <div style={{display:'flex'}}>
+        <div style={{display:'flex'}} className = "container">
             <AdminNavbar/>
             <AdminHome/>
         </div>

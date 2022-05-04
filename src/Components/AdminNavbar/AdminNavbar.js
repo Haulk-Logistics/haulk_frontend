@@ -16,7 +16,7 @@ const AdminNavbar = () => {
     const routeName = pathname.split("/")[1];
 
     return (
-        <div className={styles.adminNavbar}>
+        <div className={`${styles.adminNavbar}`}>
             <div className = {`${styles["adminNavbar-top"]}`}>
                 <div>
                     <Link to = "/">

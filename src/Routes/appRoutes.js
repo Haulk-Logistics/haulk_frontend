@@ -18,6 +18,7 @@ import AdminDriverPage from "../Pages/AdminDriverPage";
 import EmailVerified from "../Pages/signuppage/EmailVerified";
 import DriverDashboard from "../Pages/TruckDriverDashboard/DriverDashboard";
 import DriverHome from "../Components/TruckDriver/Home";
+import { LandingLayout } from "../Components/layout";
 
 const AppRoutes = () => {
   // useSelector connects us to the redux store
@@ -36,18 +37,22 @@ const AppRoutes = () => {
       )}
       <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<LandingPage />} />
-          <Route exact path="/resources" element={<ResourcesPage />} />
+          {/* <Route exact path="/" element={<LandingPage />} /> */}
+          <Route path="/" element={<LandingLayout />}>
+            <Route exact index element={<LandingPage />} />
+            <Route exact path="/resources" element={<ResourcesPage />} />
+          </Route>
+
           <Route exact path="/signup" element={<SignupPage />} />
           <Route exact path="/regtruck" element={<RegisterTruck />} />
           <Route exact path="/login" element={<Loginpage />} />
-          <Route exact path = "/book-truck" element = {<BookPage/>}/>
-          <Route exact path="/forgotpassword" element={<Forgotpasswordpage />}/>
+          <Route exact path="/book-truck" element={<BookPage />} />
+          <Route exact path="/forgotpassword" element={<Forgotpasswordpage />} />
           <Route exact path="/resetpassword" element={<Resetpasswordpage />} />
           <Route exact path="/adminlogin" element={<Adminlogin />} />
-          <Route exact path="/admin-home" element={<AdminHomePage/>}/>
-          <Route exact path="/admin-driver" element={<AdminDriverPage/>} />
-          <Route exact path="*" element={<ErrorPage/>} />
+          <Route exact path="/admin-home" element={<AdminHomePage />}/>
+          <Route exact path="/admin-driver" element={<AdminDriverPage />}/>
+          <Route exact path="*" element={<ErrorPage />} />
           <Route path="/resources" element={<ResourcesPage />} />
           <Route path="/book-truck" element={<BookPage />} />
           <Route path="" element={<ErrorPage />} />

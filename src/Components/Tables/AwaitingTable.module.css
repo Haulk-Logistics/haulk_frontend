@@ -14,8 +14,13 @@ tr{
 }
 
 .pre-table td{
+    font-size: 0.875rem;
     text-align: left;
     color: var(--text-subdued);
+}
+
+.pre-body td{
+    font-size: 0.75rem;
 }
 
 .pre-body button{
