@@ -3,7 +3,8 @@ html {
   font-size: 100%;
 }
 
-html, body{
+html,
+body {
   height: 100vh;
 }
 
@@ -27,8 +28,8 @@ html, body{
   --primary-60: #7c8789;
   --primary-40: #a8afb1;
   --primary-20: #d3d7d8;
-  --primary:#687380;
-  --secondary-gray : #E0E2E7;
+  --primary: #687380;
+  --secondary-gray: #e0e2e7;
   --white: #ffffff;
   --text-black: #202223;
 
@@ -47,27 +48,26 @@ html, body{
   --accent-20: #ecf6f8;
 
   /*Status Colours*/
-  --success:  #34D399;
+  --success: #34d399;
   --info-links: #60a5fa;
   --warning: #fbbf24;
   --error: #f87171;
-  --error-shadow: #FAEAEA;
-  --surface-success:#AEE9D1;
+  --error-shadow: #faeaea;
+  --surface-success: #aee9d1;
 
-
-   /*Other colours*/
-   --ink-color: #252A31;
-   --text-color: #202223;
-   --ink-lighter-color: #697D95;
-   --ink-light : #4F5E71;
-   --cloud-normal:#EFF2F5;
-   --cloud-darker:#BAC7D5;
-   --cloud-lighter:  #FAFAFA;
-  --text-subdued: #6D7175;
-  --dark-color: #252F40;
-  --surface-highlight: #A4E8F2;
-  --default: #E4E5E7;
-  --background-default: #E5E5E5;
+  /*Other colours*/
+  --ink-color: #252a31;
+  --text-color: #202223;
+  --ink-lighter-color: #697d95;
+  --ink-light: #4f5e71;
+  --cloud-normal: #eff2f5;
+  --cloud-darker: #bac7d5;
+  --cloud-lighter: #fafafa;
+  --text-subdued: #6d7175;
+  --dark-color: #252f40;
+  --surface-highlight: #a4e8f2;
+  --default: #e4e5e7;
+   --background-default: #e5e5e5;
 }
 
 @font-face {
@@ -191,7 +191,14 @@ p {
     font-size: 90%;
   }
 
-  h2{
+  h2 {
     font-size: 1.5rem;
   }
+}
+
+.container {
+  max-width: 1440px;
+  /* padding-left: 24px;
+  padding-right: 24px; */
+  margin: 0 auto;
 }

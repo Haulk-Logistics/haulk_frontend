@@ -1,0 +1,42 @@
+.dashboard{
+    width: 80vw;
+    height: 100vh;
+    background: #FAFAFA;
+    padding: 1rem;
+    overflow: scroll;
+}
+
+.dashboard-main{
+    height: 80vh;
+    margin-top: 3.125rem;
+    padding-left: 1.5rem;
+}
+
+.approvals{
+    width: max-content;
+    margin: 1.5rem 0;
+    border-bottom: 1.5px solid var(--primary-20);
+}
+
+.approvals > button{
+    background: transparent;
+    padding-bottom: 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 1px;
+    width: 9.5rem;
+    height: 3.25rem;
+}
+
+.approvals > button:first-of-type{
+    margin-right: 1.3rem;
+}
+
+.table{
+    width: 100%;
+    height: auto;
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 1rem;
+}
+

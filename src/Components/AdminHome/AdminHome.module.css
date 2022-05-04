@@ -1,0 +1,164 @@
+.dashboard{
+    width: 80vw;
+    height: 100vh;
+    background: #FAFAFA;
+    padding: 1rem;
+    overflow: scroll;
+}
+
+.dashboard-main{
+    padding: 0 3rem;
+    height: 85vh;
+}
+
+.dashboard-main h4{
+    margin: 1.5rem 0;
+}
+
+.dashboard-main h5{
+    color: var(--text-black);
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin: 1.5rem 0;
+    margin-top: 3.5rem;
+}
+
+.dashboard-main span{
+    color: var(--accent-main);
+}
+
+.dashboard-grid{
+    height: 45%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 31px;
+}
+
+.dashboard-grid > div{
+    width: auto;
+    height: auto;
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 1.5rem;
+}
+
+.item:nth-of-type(3){
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+}
+
+.item:nth-of-type(4){
+    grid-column: 2 /span 1;
+    grid-row: 2 / span 1;;
+}
+
+.item{
+    display: flex;
+    justify-content: space-between;
+}
+
+.stat-item{
+    grid-column: 3 / span 2;
+    grid-row: 1 / span 2;
+}
+
+.stat-item > div{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    padding: .5rem;
+}
+
+.item:first-of-type > .circle, .item:nth-of-type(2) > .circle{
+    background-color: var(--info-links);
+}
+
+.item:nth-of-type(3) > .circle{
+    background-color: var(--success);
+}
+
+.item:nth-of-type(4) > .circle{
+    background-color: var(--error);
+}
+
+.circle{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle > *{
+    color: var(--white);
+    font-size: 1.5rem;
+}
+
+.item > div > p{
+    color: var(--text-subdued);
+}
+
+.item > div > h3{
+    font-size: 2.25rem;
+    font-weight: 500;
+    line-height: 46px;
+}
+
+.stat-item > p{
+    color: var(--text-subdued);
+}
+
+.pie-chart{
+    width: 65%;
+    height: 100%;
+    background-color: tomato;
+    margin-right: 10px;
+}
+
+.legend ul{
+    list-style-type: none;
+}
+
+.legend li{
+    display: flex;
+}
+
+.legend div{
+    width: .7rem;
+    height: .7rem;
+    border-radius: 50%;
+    margin-right: .5rem;
+    align-self: center;
+}
+
+
+.legend li > p{
+    color: var(--text-subdued);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 19.95px;
+}
+
+.legend .green{
+    background-color: var(--success);
+}
+
+.legend .cyan{
+    background-color: var(--info-links);
+}
+
+.legend .yellow{
+    background-color: var(--warning);
+}
+
+.requests{
+    background-color: var(--white);
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    padding-bottom: 3rem;
+}
