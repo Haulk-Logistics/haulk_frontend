@@ -3,6 +3,7 @@
     height: 100vh;
     background: #FAFAFA;
     padding: 1rem;
+    overflow: scroll;
 }
 
 .dashboard-main{

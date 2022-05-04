@@ -12,6 +12,7 @@ import OrderSummaryReducer from "./Reducers/OrderSummaryReducer";
 import { cargoOwnerReducer } from "./Reducers/cargoOwnerOrder";
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from "redux-devtools-extension";
+import { AdminReducer } from "./Reducers/AdminReducer";
 
 export default () => {
   const store = createStore(
@@ -26,7 +27,8 @@ export default () => {
       orderdetail: OrderDetailsReducer,
       dashboardRender: DashboardRenderReducer,
       summary: OrderSummaryReducer,
-      cargoOwnerOrders: cargoOwnerReducer
+      cargoOwnerOrders: cargoOwnerReducer,
+      admin: AdminReducer
     }),
     composeWithDevTools(applyMiddleware(thunk))
   );
