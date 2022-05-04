@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { HiArrowLeft } from 'react-icons/hi';
 import SideBar from './SideBar';
 import style from './OrderHistoryDetails.module.css';

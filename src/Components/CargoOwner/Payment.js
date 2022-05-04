@@ -1,18 +1,36 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import style from "./Payment.module.css";
 import { Pagecontrol } from "../../Store/Actions/pagecontrol";
 import axios from "axios";
-import { useNavigate } from "react-router";
+import { loaderStatus } from "../../Store/Actions/ModalStatus";
 
 const Payment = () => {
   const orderSummary = useSelector((state) => state.summary);
-  const [isLoading, setIsLoading] = useState(false);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const handlePayment = async () => {
-    setIsLoading(true);
+    dispatch(loaderStatus(true));
+    setTimeout(() => {
+      dispatch({
+        type: "success",
+        payload: {
+          title: "Info",
+          message: " Ensure you have strong Internet connection."
+        }
+      })
+    }, 9000)
+
+    setTimeout(() => {
+      dispatch({
+        type: "success",
+        payload: {
+          title: "Info",
+          message: "Relax you're almost there."
+        }
+      })
+    }, 14000)
+
     const formData = new FormData();
     formData.append("natureOfGoods", orderSummary.natureOfGoods);
     formData.append("truckType", orderSummary.truckType);
@@ -37,13 +55,22 @@ const Payment = () => {
         },
       })
       .then((res) => {
+
         const paystack = res.data.authorization_url;
         window.addEventListener("redirect", window.open(paystack));
       })
       .catch((error) => {
-        console.log(error);
+        dispatch({
+          type: "error",
+          payload: {
+            title: "Error!",
+            message: error.response
+              ? error.response.data.message
+              : "Network Error",
+          },
+        });
       })
-      .finally(() => setIsLoading(false));
+      .finally(() => dispatch(loaderStatus(false)));
   };
 
   return (
@@ -86,12 +113,13 @@ const Payment = () => {
 
       <div className={style.Payment__buttons}>
         <button className={style.Payment__paybutton} onClick={handlePayment}>
-          {isLoading ? "Loading..." : "Pay"}
+          Pay
         </button>
         <button
           className={style.Payment__cancelbutton}
           onClick={() => {
             dispatch(Pagecontrol(""));
+
           }}
         >
           Cancel

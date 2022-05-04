@@ -21,9 +21,7 @@ import CargoHome from "../Components/CargoOwner/Home";
 import TruckRequest from "../Components/CargoOwner/TruckRequest";
 import TrackOrder from "../Components/CargoOwner/TrackOrder";
 import CargoOrderHistory from "../Components/CargoOwner/OrderHistory";
-import BookingForm from "../Components/BookForm/BookingForm";
-import BookForm from "../Components/BookForm/BookForm";
-import Payment from "../Components/CargoOwner/Payment";
+import BookOrderDetails from "../Components/CargoOwner/BookOrderDetails";
 import OrderHistoryDetails from "../Components/CargoOwner/OrderHistoryDetails";
 import TermsAndConditions from "../Components/TermsAndConditions/TermsAndConditions";
 
@@ -31,17 +29,18 @@ const AppRoutes = () => {
   // useSelector connects us to the redux store
   const alertState = useSelector((state) => state.alert);
 
-  // console.log({ state });
-
   return (
     <Fragment>
-      {alertState.type && (
-        <Messagepop
-          head={alertState.title}
-          message={alertState.message}
-          err={alertState.type}
-        />
-      )}
+      {
+        alertState.type && (
+          <Messagepop
+            head={alertState.title}
+            message={alertState.message}
+            err={alertState.type}
+          />
+        )
+      }
+
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<LandingPage />} />
@@ -70,20 +69,23 @@ const AppRoutes = () => {
               path="/cargodashboard/"
               element={<CargoHome />}
             />
-            <Route path="truck-request" element={<TruckRequest />} />
+            <Route path="truck-request">
+              <Route index element={<TruckRequest />} />
+              <Route path="bookorder-details" element={<BookOrderDetails />} />
+            </Route>
             <Route path="track-order" element={<TrackOrder />} />
             <Route path="order-history" element={<CargoOrderHistory />} />
           </Route>
           <Route
-						path='/orderhistorydetails'
-						exact
-						element={<OrderHistoryDetails />}
-					/>
-					<Route
-						path='/termsandconditions'
-						exact
-						element={<TermsAndConditions />}
-					/>
+            path='/orderhistorydetails'
+            exact
+            element={<OrderHistoryDetails />}
+          />
+          <Route
+            path='/termsandconditions'
+            exact
+            element={<TermsAndConditions />}
+          />
         </Routes>
       </BrowserRouter>
     </Fragment>

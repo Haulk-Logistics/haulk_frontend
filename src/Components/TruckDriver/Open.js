@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
-import OrderCard from "../Cards/OrderCard";
 import style from "./ActiveOrder.module.css";
 import EmptyOpen from "./EmptyOpen";
 import { useDispatch, useSelector } from "react-redux";
 import { getOneOpenOrder, truckDriverOpenOrders } from "../../Store/Actions/truckDriverOrders";
-import EmptyActive from "./EmptyActive";
+import TDOrderCard from "../../Components/Cards/OrderCard/TDOrderCard";
 
 const Open = () => {
-  const [id, setId] = useState(0)
   const { openOrders, loading } = useSelector(state => state.truckDriverOrders);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -38,11 +36,11 @@ const Open = () => {
             {" "}
             <div className={style.Active__Card}>
               {" "}
-              <OrderCard key={idx} click = { () => setOrder(idx) } index = {idx} status={openStatus} details={order} />
+              <TDOrderCard key={idx} click = { () => setOrder(idx) } index = {idx} status={openStatus} details={order} />
             </div>
             <div className={style.Active__0rderLine}></div>
           </div>
-        )) : <EmptyActive message="No open Orders" />}
+        )) : <EmptyOpen />}
       </div>
     </div>
   );

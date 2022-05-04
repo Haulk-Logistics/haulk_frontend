@@ -1,32 +1,36 @@
-import React, { useEffect, useState } from "react";
-import OverviewCard from "../Cards/OverviewCard";
+import React from "react";
 import { HiTruck } from "react-icons/hi";
 import style from "./body.module.css";
 import { SiSemanticweb } from "react-icons/si";
 import { FaBusinessTime } from "react-icons/fa";
 import OrderTable from "../Table/OrderTable";
 import CargoOverviewCard from "../Cards/CargoOverview";
-import { useDispatch, useSelector } from "react-redux";
-import { cargoOwnerOrder } from "../../Store/Actions/cargoOwnerOrders";
+import { useSelector } from "react-redux";
+import EmptyTable from "../Table/EmptyTable"
+
+
 
 const CargoHome = () => {
-  const dispatch = useDispatch();
-  const { loading, orders, error, active, pending, completed } = useSelector(
+  const { loading, orders, active, pending, completed, cargoOwner } = useSelector(
     (state) => state.cargoOwnerOrders
   );
-  // const pendings = orders && orders.filter(x => x.order_status != "dropped_off")
-  // console.log(pendings)
-  console.log( active, orders);
-  useEffect(() => {
-    dispatch(cargoOwnerOrder());
-  }, []);
 
+  const name = cargoOwner && cargoOwner[0].userDetails.firstName
 
-  return (
+  const capitalizeFirstLetter = (string) => {
+    const firstletter = string.slice(0, 1);
+    const newWord = firstletter.toUpperCase() + string.slice(1)
+    return newWord
+
+  }
+
+  const firstName = name && capitalizeFirstLetter(name)
+
+  return orders && (
     <div className={style.Cargocontainer}>
       <div className={style.Cargointro}>
         <p>
-          Welcome <span>Chidera</span>
+          Welcome <span>{firstName} </span>
         </p>
       </div>
       <div className={style.CargoOverview}>
@@ -35,7 +39,7 @@ const CargoHome = () => {
             icon={<HiTruck size="1.5rem" />}
             color="var(--info-links)"
             heading="Active Orders"
-            paragragh = {(active && active.length > 0) ? active.length : 0 }
+            paragragh={(active && active.length > 0) ? active.length : 0}
             className={style.Overview__card}
           />
         </div>
@@ -44,7 +48,7 @@ const CargoHome = () => {
             icon={<SiSemanticweb size="1.5rem" />}
             color="var(--success)"
             heading="Completed Orders"
-            paragragh={(completed && completed.length > 0) ? completed.length : 0 }
+            paragragh={(completed && completed.length > 0) ? completed.length : 0}
           />
         </div>
         <div className={style.CargoOverview__card} style={{ marginRight: 0 }}>
@@ -52,21 +56,33 @@ const CargoHome = () => {
             icon={<FaBusinessTime size="1.5rem" />}
             color="var(--error)"
             heading="Pending Orders"
-            paragragh={(pending && pending.length > 0) ? pending.length : 0 }
+            paragragh={(pending && pending.length > 0) ? pending.length : 0}
           />
         </div>
       </div>
-      <div className={style.CargoHome__Table}>
+      {orders.length !== 0 ? <div className={style.CargoHome__Table}>
         {orders && !loading ? (
           <OrderTable
             title="Orders"
             header={["ID", "Date Requested", "Status", "Truck Type"]}
             content={orders && orders}
+
           />
         ) : (
-          <div> Loading... </div>
+          <div>Loading....</div>
         )}
-      </div>
+      </div> :
+
+        <div className={style.CargoHome__Table}>
+          <EmptyTable
+            title="Orders"
+            header="You've not made any orders yet"
+            content="Your orders will be displayed here."
+
+          />
+
+        </div>
+      }
     </div>
   );
 };

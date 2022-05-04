@@ -17,9 +17,9 @@ const Tables = ({ title, header, content }) => {
           <tr>{header && header.map((head, index) => <th>{head}</th>)}</tr>
 
           {/* content of the table*/}
-          {console.log(content)}
-          { content.map((body, index) => (
-              <tr key={index}>
+          {/* {content && typeof content == "object" ? ( */}
+           { content.map((body, index) => (
+              <tr>
                 <td>
                   <p>{body._id}</p>
                 </td>
@@ -36,22 +36,21 @@ const Tables = ({ title, header, content }) => {
                   <button>...</button>
                 </td>
               </tr>
-            ))}
+             ) )}
         </table>
       ) : <div> <EmptyActive message={content} /> </div> }
       </div>
-        <div className={style.mobileTable}>
-          
-      {content && typeof content == "object" ? ( content.map((body, index) => (
+      <div className={style.mobileTable}>
+        {content && typeof content == "object" ? (content.map((body, index) => (
           <MobileOrderCards
-            Id={body[0]}
-            pickupdate={body[1]}
+            Id={body._id}
+            pickupdate={body.pick_up_date}
             orderStatus={body[2]}
-            contentTitle1="Dropoff "
-            content1={body[3]}
+            contentTitle1="Truck type"
+            content1={body.truck_type}
           />
-          ))): <div><EmptyActive message={content} /> </div>}
-        </div>
+        ))) : <div style={{ background: "white", padding: "1rem" }}>{content}</div>}
+      </div>
     </div>
   );
 };

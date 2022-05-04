@@ -1,5 +1,4 @@
 import React from "react";
-import EmptyState from "./EmptyState";
 import OrderState from "./OrderState";
 
 const OrderDetail = () => {
