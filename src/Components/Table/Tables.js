@@ -12,36 +12,45 @@ const Tables = ({ title, header, content }) => {
       <div className={style.table__main}>
         <table>
           {/* header of the table*/}
-          <tr>
-            {header.map((head, index) => (
-              <th>{head}</th>
-            ))}
-          </tr>
+          <tr>{header && header.map((head, index) => <th>{head}</th>)}</tr>
 
           {/* content of the table*/}
-          {content.map((body, index) => (
-            <tr>
-              {body.map((values, idx) => (
+          {content && typeof content == "object" ? (
+            content.map((body, index) => (
+              <tr>
                 <td>
-                  {" "}
-                  <p>{values}</p>
+                  <p>{body._id}</p>
                 </td>
-              ))}
-            </tr>
-          ))}
+                <td>
+                  <p>{body.pick_up_date}</p>
+                </td>
+                <td>
+                  <p>{body.order_status}</p>
+                </td>
+                <td>
+                  <p>{body.truck_type}</p>
+                </td>
+                <td>
+                  <button>...</button>
+                </td>
+              </tr>
+            ))
+          ) : (
+            <div>{content}</div>
+          )}
         </table>
       </div>
-      {content.map((body, index) => (
-        <div className={style.mobileTable}>
+      <div className={style.mobileTable}>
+        {content && typeof content == "object" ? (content.map((body, index) => (
           <MobileOrderCards
-            Id={body[0]}
-            pickupdate={body[1]}
+            Id={body._id}
+            pickupdate={body.pick_up_date}
             orderStatus={body[2]}
-            contentTitle1="Dropoff "
-            content1={body[3]}
+            contentTitle1="Truck type"
+            content1={body.truck_type}
           />
-        </div>
-      ))}
+        ))) : <div style={{ background: "white", padding: "1rem" }}>{content}</div>}
+      </div>
     </div>
   );
 };

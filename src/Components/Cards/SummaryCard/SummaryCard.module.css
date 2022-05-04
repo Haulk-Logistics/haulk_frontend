@@ -1,0 +1,55 @@
+/* Summary Cards Section */
+
+.sumCard {
+  max-width: 59.0625rem;
+  height: 12rem;
+  display: flex;
+  background-color: rgba(22, 146, 173, 0.05);
+  align-items: center;
+}
+
+.sumCard h5 {
+  font-size: 1.25rem;
+}
+
+.sumCard p {
+  font-size: 1rem;
+}
+
+.pendnOrders {
+  width: 20rem;
+  height: 8.5625rem;
+  display: flex;
+  align-items: center;
+  background-color: var(--white);
+  border-radius: 0.625rem;
+}
+
+.pendnOrderSum {
+  font-weight: 500;
+  margin-left: -2.5rem;
+}
+
+.totalTripSum {
+  font-weight: 500;
+  margin-left: -5rem;
+}
+
+.totalTrips {
+  display: flex;
+  width: 29.5rem;
+  height: 8.5625rem;
+  background-color: var(--white);
+  border-radius: 0.625rem;
+  align-items: center;
+  margin-left: 1.875rem;
+}
+
+.tripSumInfo {
+  display: flex;
+}
+
+.tripSumInfo p {
+  margin-top: 1rem;
+  margin-left: 2.125rem;
+}

@@ -7,9 +7,6 @@ import {HiViewGrid} from "react-icons/hi";
 import {HiTruck} from "react-icons/hi";
 import {IoLogOut} from "react-icons/io5";
 
-
-
-
 const AdminNavbar = () => {
     const navigate = useNavigate();
     const {pathname} = useLocation();
@@ -42,7 +39,10 @@ const AdminNavbar = () => {
             </div>
             <div className = {`${styles["adminNavbar-bottom"]}`}>
                 <div className = {`${styles["navbar-tabs"]}`}>
-                <div className = {`${styles["logOut"]}`}>
+                    <div 
+                        className = {`${styles["logOut"]}`}
+                        onClick = {() => {navigate("/adminlogin")}}
+                        >
                         <IoLogOut/>
                         <p>Log Out</p>
                     </div>

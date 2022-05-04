@@ -1,0 +1,426 @@
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; */
+  /* max-width: 90rem;
+  height: auto; */
+/* } */
+
+body {
+  background-color: #e5e5e5;
+}
+
+.dashboardContainer {
+  display: flex;
+  justify-content: space-between;
+  background-color: #e5e5e5;
+  position: relative;
+  width: 100%;
+}
+
+/* DASHBOARD MENU */
+
+.userMenu {
+  width: 15rem !important;
+  height: 100% !important;
+  background-color: var(--white) !important;
+  position: fixed;
+}
+
+.userMenu img {
+  margin-bottom: 4.4225rem;
+  margin-top: 3.1875rem;
+  margin-left: 2rem;
+}
+
+.userMenuList {
+  background-color: var(--white);
+}
+
+.userMenuList li:hover, .userMenuList li:active, .userMenuList li:focus {
+  background-color: var(--accent-main);
+  color: var(--white) !important;
+  transition: ease-in-out 0.5s;
+  }
+
+.userMenuList li {
+  width: 100%;
+  height: 3rem;
+  margin-left: 2rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.0625rem;
+  list-style: none;
+  cursor: pointer;
+}
+
+.userMenuList {
+  display: flex;
+  flex-direction: column;
+  max-width: 13rem;
+}
+
+.sideBarIcon {
+  width: 2rem;
+  height: 2rem;
+  color: #687380;
+  margin-right: 2rem;
+}
+
+ul li.sideBarIcon:focus {
+  color: var(--white) !important;
+  transition: ease-in-out 0.5s;
+}
+
+ul li > .sideBarIcon:active {
+  color: var(--white) !important;
+  transition: ease-in-out 0.5s;
+}
+
+
+.userMenuList img {
+  margin: 0.75rem;
+  margin-right: 2rem;
+}
+
+
+/* USER DETAILS */
+
+.menuBtn, .bell {
+  display: none;
+}
+
+.userDetails {
+  width: 65rem !important;
+  margin-right: 3rem !important;
+  margin-top: 0.5rem;
+  margin-left: 16rem;
+}
+
+header.userHeader {
+  display: flex;
+  background-color: var(--white) !important;
+  width: 65rem !important;
+  height: 4rem;
+  border-radius: 1.25rem;
+  justify-content: flex-end;
+  padding: 1rem 4.125rem;
+  position: sticky;
+  top: 0;
+}
+
+.profileHeader {
+  display: flex;
+}
+
+.userDetails img {
+  margin-right: 1rem;
+}
+
+.caption {
+  font-size: 0.625rem;
+  font-weight: 500;
+}
+
+.userTitle p {
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+
+/*   User Info   */
+
+/* .userInfo {
+  margin-left: 4rem;
+}
+
+.welcome {
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.userName {
+  color: var(--accent-main);
+}
+
+.userOrders {
+  display: flex;
+}
+
+.order {
+  width: 20.125rem;
+  height: 7.5rem; 
+  background-color: var(--white);
+  margin-right: 2rem;
+  padding: 1.5rem;
+  border-radius: 0.625rem;
+  display: flex;
+}
+
+.order h5 {
+  font-weight: 500;
+  padding-bottom: 1rem;
+}
+
+.order span {
+  font-weight: 500;
+  font-size: 2.25rem;
+  
+}
+
+.order img {
+  width: 3rem;
+  height: 3rem;
+}
+
+.orderHistory {
+  margin-top: 3.5rem;
+}
+
+.orderHistoryHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.orderHistoryHeader h4 {
+  font-weight: 500;
+}
+
+button.scrollButton {
+  width: 2rem;
+  height: 2rem;
+  padding-top: 0.15rem;
+  margin-right: 1.8125rem;
+  border: 1px solid var(--primary-main) !important;
+  outline: none;
+  border-radius: 0.25rem;
+}
+
+.orderHistoryBody {
+  width: 98%;
+  height: 30rem;
+  margin-top: 1.5rem;
+  background-color: var(--white);
+  text-align: center;
+  padding-top: 8.2513rem;
+  padding-bottom: 6.0938rem;
+  border-radius: 0.625rem;
+}
+
+.orderHistoryInfo {
+  margin: 2rem auto;
+  width: 28.8125rem;
+}
+
+.orderHistoryInfo h4{
+  margin-bottom: 1rem;
+  font-weight: 500;
+} */
+
+
+@media screen and (max-width: 767px) {
+  .userMenu > :first-child, .userTitle {
+    display: none;
+  }
+
+  header.userHeader {
+    border-radius: 0;
+    width: 100% !important;
+    display: flex;
+    justify-content: space-between !important;
+    padding: 1rem;
+  }
+
+  .menuItems {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* .userOrders {
+    width: 100%;
+    display: flex;
+    justify-content: center !important;
+    text-align: center;
+  }
+
+  .order {
+    width: 100% !important;
+    height: 12rem !important;
+    align-items: center !important;
+    margin-top: 1rem;
+    margin-right: 0.25rem !important;
+    margin-left: 0.25rem !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center !important;
+  }
+
+  .order img {
+    margin-left: 1rem;
+  }
+
+  .order h5 {
+    width: 100%;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .orderHistoryBody {
+    width: 100%;
+  }
+
+  button.scrollButton {
+    margin-right: 0.5rem;
+  }
+
+  .orderHistoryInfo {
+    text-align: center !important;
+    margin-left: 0;
+    width: auto;
+  } */
+
+  .mobileNav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    background-color: white;
+    width: 100vw !important;
+  }
+  
+  .mobileNavItems li {
+    width: 100vw !important;
+    height: 3rem;
+    text-align: center !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center !important;
+    list-style: none;
+    margin: 0 !important;
+  }
+  
+  .mobileNavItems li:last-child {
+    margin-top: 10rem !important;
+  }
+
+  .mobileNavItems li:active {
+    background-color: var(--accent-main);
+    color: var(--white);
+    cursor: pointer;
+    border: none !important;
+    outline: none !important;
+    transition: ease-in-out 0.3s;
+  }
+
+  .mobileNavItems:focus {
+    background-color: var(--accent-main);
+    color: var(--white);
+    transition: ease-in-out 0.3s;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .userMenu  {
+    display: none;
+  }
+
+  .userDetails {
+    margin: 0 !important;
+    width: 100%;
+  }
+
+  header.userHeader {
+    border-radius: 0;
+    width: 100% !important;
+    justify-content: space-between;
+    margin: 0;
+  }
+
+  .menuBtn {
+    display: flex;
+    margin-left: 0;
+    justify-content: flex-start;
+  }
+
+  .profileHeader {
+    display: flex;
+  }
+  
+  .bell {
+    display: flex;
+    margin-right: 1rem;
+  }
+
+  /* .userInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    width: 92.5%;
+  }
+
+  .order {
+    width: 100%;
+    height: 10rem;
+    align-items: center;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+  } */
+
+  button.hamburgerBtn {
+    background-color: var(--white);
+  }
+
+  .mobileNav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    background-color: white;
+    width: 20rem;
+  }
+  
+  .mobileNavItems li {
+    margin-top: 5rem !important;
+    margin-left: 4.5rem;
+    width: 100%;
+    height: 3rem;
+    text-align: center !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center !important;
+    list-style: none;
+    font-size: 1.0625rem !important;
+    font-weight: 500 !important;
+  }
+  
+  .mobileNavItems li:last-child {
+    margin-top: 10rem !important;
+  }
+
+  .mobileNavItems li:active {
+    background-color: var(--accent-main);
+    color: var(--white);
+    cursor: pointer;
+    border: none !important;
+    outline: none !important;
+    transition: ease-in-out 0.3s;
+  }
+  
+  .mobileNavItems:focus {
+    background-color: var(--accent-main);
+    color: var(--white);
+    transition: ease-in-out 0.3s;
+  }
+
+  .menuIcon {
+    margin-right: 1rem;
+  }
+}

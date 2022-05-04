@@ -9,39 +9,39 @@ import truckImage5 from "../../Asset/Images/truckImg5.webp";
 import truckImage6 from "../../Asset/Images/truckImg6.webp";
 
 const FleetSection = () => {
-  //Props to be passed into the fleet cards
-  const properties = [
-    {
-      class: "item1",
-      image: truckImage1,
-      type: "Mini Trucks",
-    },
-    {
-      class: "item2",
-      image: truckImage2,
-      type: "Trailers",
-    },
-    {
-      class: "item3",
-      image: truckImage3,
-      type: "Truck Heads",
-    },
-    {
-      class: "item4",
-      image: truckImage4,
-      type: "Flat Beds",
-    },
-    {
-      class: "item5",
-      image: truckImage5,
-      type: "Box Trucks",
-    },
-    {
-      class: "item6",
-      image: truckImage6,
-      type: "Refrigerated Trucks"
-    }
-  ];
+	//Props to be passed into the fleet cards
+	const properties = [
+		{
+			class: 'item1',
+			image: truckImage1,
+			type: 'Mini Trucks',
+		},
+		{
+			class: 'item2',
+			image: truckImage2,
+			type: 'Trailers',
+		},
+		{
+			class: 'item3',
+			image: truckImage3,
+			type: 'Truck Heads',
+		},
+		{
+			class: 'item4',
+			image: truckImage4,
+			type: 'Flat Beds',
+		},
+		{
+			class: 'item5',
+			image: truckImage5,
+			type: 'Box Trucks',
+		},
+		{
+			class: 'item6',
+			image: truckImage6,
+			type: 'Refrigerated Trucks',
+		},
+	];
 
   return (
     <div className={`${styles.fleet} container`}>

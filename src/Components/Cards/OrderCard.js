@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./OrderCard.module.css";
 
+
 const OrderCard = ({ status, details }) => {
   const locationStepper = (
     <svg
@@ -15,14 +16,15 @@ const OrderCard = ({ status, details }) => {
       <line x1="5" y1="35.0098" x2="5" y2="8.99054" stroke="#1692AD" />
     </svg>
   );
+
   return (
     <div className={style.OrderCard__container}>
       <header className={style.OrderCard__header}>
-        <div>
-          <h5>ID {details.Id}</h5>
-          <h6>consignment</h6>
+        <div className={style.OrderCard__headertext} >
+          <h5>ID {details._id}</h5>
+          <p style={{ backgroundColor: ` ${status.color}` }}>{status.status}</p>
         </div>
-        <p style={{ backgroundColor: ` ${status.color}` }}>{status.status}</p>
+        <h6>consignment</h6>
       </header>
       <div className={style.OrderCard__body}>
         <div className={style.OrderCard__date}>
@@ -34,8 +36,8 @@ const OrderCard = ({ status, details }) => {
           {locationStepper}
           <div>
             {" "}
-            <p>{details.pickupLocation}</p>
-            <p>{details.dropoffLocation}</p>
+            <p>{details.pick_off_location}</p>
+            <p>{details.drop_off_location}</p>
           </div>
         </div>
       </div>

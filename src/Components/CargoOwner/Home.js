@@ -1,57 +1,90 @@
 import React from "react";
-import OverviewCard from "../Cards/OverviewCard";
 import { HiTruck } from "react-icons/hi";
-import { IoMdWallet } from "react-icons/io";
 import style from "./body.module.css";
-import ActiveOrderCard from "../Cards/ActiveOrderCard";
-import Tables from "../Table/Tables";
-import MobileOrderCards from "../Cards/MobileOrderCards";
-import OrderHistory from "./OrderHistory";
+import { SiSemanticweb } from "react-icons/si";
+import { FaBusinessTime } from "react-icons/fa";
+import OrderTable from "../Table/OrderTable";
+import CargoOverviewCard from "../Cards/CargoOverview";
+import { useSelector } from "react-redux";
+import EmptyTable from "../Table/EmptyTable"
 
-const DriverHome = () => {
-  return (
-    <div className={style.container}>
-      <div className={style.intro}>
+
+
+const CargoHome = () => {
+  const { loading, orders, active, pending, completed, cargoOwner } = useSelector(
+    (state) => state.cargoOwnerOrders
+  );
+
+  const name = cargoOwner && cargoOwner[0].userDetails.firstName
+
+  const capitalizeFirstLetter = (string) => {
+    const firstletter = string.slice(0, 1);
+    const newWord = firstletter.toUpperCase() + string.slice(1)
+    return newWord
+
+  }
+
+  const firstName = name && capitalizeFirstLetter(name)
+
+  return orders && (
+    <div className={style.Cargocontainer}>
+      <div className={style.Cargointro}>
         <p>
-          Welcome <span>Chidera</span>
+          Welcome <span>{firstName} </span>
         </p>
       </div>
-      <div className={style.overview}>
-        <div className={style.Overview__card}>
-          <OverviewCard
+      <div className={style.CargoOverview}>
+        <div className={style.CargoOverview__card}>
+          <CargoOverviewCard
             icon={<HiTruck size="1.5rem" />}
-            color="var(--success)"
-            heading="Total Trips"
-            paragragh="10"
+            color="var(--info-links)"
+            heading="Active Orders"
+            paragragh={(active && active.length > 0) ? active.length : 0}
             className={style.Overview__card}
           />
         </div>
-        <div className={style.Overview__card} style={{ marginRight: 0 }}>
-          <OverviewCard
-            icon={<IoMdWallet size="1.5rem" />}
-            color="var(--accent-main)"
-            heading="Wallet Balance"
-            paragragh="100, 000 "
-            currency="NGN"
+        <div className={style.CargoOverview__card}>
+          <CargoOverviewCard
+            icon={<SiSemanticweb size="1.5rem" />}
+            color="var(--success)"
+            heading="Completed Orders"
+            paragragh={(completed && completed.length > 0) ? completed.length : 0}
+          />
+        </div>
+        <div className={style.CargoOverview__card} style={{ marginRight: 0 }}>
+          <CargoOverviewCard
+            icon={<FaBusinessTime size="1.5rem" />}
+            color="var(--error)"
+            heading="Pending Orders"
+            paragragh={(pending && pending.length > 0) ? pending.length : 0}
           />
         </div>
       </div>
-      <div className={style.activecard}>
-        <ActiveOrderCard />
-        <MobileOrderCards
-          Id="8164695"
-          pickupdate=" 23 Apr"
-          orderStatus="In Transit"
-          contentTitle1="Nature of goods"
-          contentTitle2="Cargo Owner Number"
-          content1="Consignment"
-          content2="0903 354 6898"
-        />
-      </div>
+      {orders.length !== 0 ? <div className={style.CargoHome__Table}>
+        {orders && !loading ? (
+          <OrderTable
+            title="Orders"
+            header={["ID", "Date Requested", "Status", "Truck Type"]}
+            content={orders && orders}
 
-      <OrderHistory />
+          />
+        ) : (
+          <div>Loading....</div>
+        )}
+      </div> :
+
+        <div className={style.CargoHome__Table}>
+          <EmptyTable
+            title="Orders"
+            header="You've not made any orders yet"
+            content="Your orders will be displayed here."
+
+          />
+
+        </div>
+      }
     </div>
   );
 };
 
-export default DriverHome;
+export default CargoHome;

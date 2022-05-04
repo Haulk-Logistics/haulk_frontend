@@ -3,7 +3,7 @@
     width: 100vw;
     height: 100vw;
     top: 0;
-    left: 0;
+    left: 10%;
     right: 0;
     bottom: 0;
     background-color: hsla(190, 87%, 12%, 0.5);
@@ -129,9 +129,16 @@
 }
 
 @media only screen and (max-width: 40rem){
+    
     /* Media Query rules for styles below 375px */
     .modal{
-        width: 75%;
+        width: 90vw;
         padding: 2.5rem 1.5rem;
+        margin-left: -5.8rem;
+    }
+
+    .overlay{
+        left: 0;
+        right: 10%;
     }
 }

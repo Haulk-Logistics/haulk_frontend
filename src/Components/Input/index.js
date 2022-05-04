@@ -31,11 +31,10 @@ const InputDefault = ({
           required: `${labelname} is required`,
           pattern: {
             value: pattern,
-            message: ` ${
-              type === "email"
+            message: ` ${type === "email"
                 ? "Enter a valid email"
                 : "Alphabetical characters only"
-            }`,
+              }`,
           },
           maxLength: { value: maxlength, message: "Maximum length is 20" },
         })}

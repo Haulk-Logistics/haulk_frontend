@@ -35,8 +35,8 @@ const MessageModal = () => {
         </div>
         <div className={modal.body}>
           <img src={envelope} alt="MESSAGE" />
-          <p>{status.message}</p>
-          <p>
+          <p className={modal.bodyp}>{status.message}</p>
+          <p className={modal.bodyp}>
             Didn't get a link? <a href={status.link}>Resend link</a>
           </p>
         </div>
