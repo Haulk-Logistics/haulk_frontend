@@ -31,7 +31,7 @@ const ActiveOrderCard = () => {
       </div>
       <div className={style.fullcardbody}>
         <div className={style.column1}>
-          <h5>ID {loading ? "..." : activeOrder && `${activeOrder._id.substr(0,4)}...${activeOrder._id.substr(activeOrder._id.length - 5, activeOrder._id.length - 1 )}`}</h5>
+          <h5>ID {loading ? "..." : activeOrder && `${activeOrder._id && activeOrder._id.substr(0,4)}...${activeOrder._id && activeOrder._id.substr(activeOrder._id.length - 5, activeOrder._id.length - 1 )}`}</h5>
           <small> Consignment </small>
         </div>
         <div className={style.column2}>

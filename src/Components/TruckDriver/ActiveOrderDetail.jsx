@@ -7,21 +7,12 @@ import { truckDriverAcceptOrder } from "../../Store/Actions/truckDriverOrders";
 
 const OrderState = () => {
   const dispatch = useDispatch();
-  const { loading, acceptOrder, error } = useSelector(state => state.truckDriverOrders);
-  const oneOpenOrder = useSelector((state) => state.orderdetail)
+  const { activeOrder, error } = useSelector(state => state.truckDriverOrders);
   const { register, handleSubmit } = useForm({
     mode: "onTouched",
   });
 
-  const orderAccept = (id) => {
-    console.log(id);
-    const ans = window.confirm("Are u sure u want to accept this order");
-    console.log(ans);
-    if(ans) {
-      dispatch(truckDriverAcceptOrder(id))
-    }
-    return
-  }
+  
 
   return (
     <div>
@@ -48,32 +39,29 @@ const OrderState = () => {
             <p>Update the status of you order here</p>
           </form>
         </div>
-        {acceptOrder && <span style={{color: "green"}}>{acceptOrder}</span>}
         {error && <span style={{color: "red"}} >{error}</span>}
         <div className={style.DetailSection__details}>
           <div>
-            <h5> Nature of goods</h5> <p>{oneOpenOrder && oneOpenOrder.natureOfGoods}</p>
+            <h5> Nature of goods</h5> <p>{oneOpenOrder && oneOpenOrder.nature_of_goods}</p>
           </div>
           <div>
-            <h5> Pickup Location</h5> <p>{oneOpenOrder && oneOpenOrder.pickupLoc}</p>
+            <h5> Pickup Location</h5> <p>{oneOpenOrder && oneOpenOrder.pick_off_location}</p>
           </div>
           <div>
-            <h5> Drop Off Location</h5> <p> {oneOpenOrder && oneOpenOrder.dropoffLoc} </p>
+            <h5> Drop Off Location</h5> <p> {oneOpenOrder && oneOpenOrder.drop_off_location} </p>
           </div>
           <div>
-            <h5> Pick Up Date</h5> <p> {oneOpenOrder && oneOpenOrder.pickupDate} </p>
+            <h5> Pick Up Date</h5> <p> {oneOpenOrder && oneOpenOrder.pick_up_date} </p>
           </div>
           <div>
-            <h5>Container No</h5> <p>{oneOpenOrder && oneOpenOrder.containerNo}</p>
+            <h5>Container No</h5> <p>{oneOpenOrder && oneOpenOrder.container_number}</p>
           </div>
           <div>
-            <h5> Shipping Line</h5> <p> {oneOpenOrder && oneOpenOrder.shippingLine} </p>
+            <h5> Shipping Line</h5> <p> {oneOpenOrder && oneOpenOrder.shipping_line} </p>
           </div>
           <div>
             <h5> Pay</h5> <p>{oneOpenOrder && oneOpenOrder.amount}</p>
           </div>
-
-          <button className={style.DetailSection__button} onClick = { () => orderAccept(oneOpenOrder._id) } >{ loading ? "Processing..." : "Accept Order" }</button>
         </div>
       </div>
     </div>

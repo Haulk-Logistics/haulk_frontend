@@ -6,9 +6,9 @@ import { getOneOpenOrder } from "../../../Store/Actions/truckDriverOrders";
 const TDOrderCard = ({  status, details, index }) => {
   const [id, setId] = useState(0);
   const dispatch = useDispatch();
-  const { openOrders, loading } = useSelector(state => state.truckDriverOrders);
+  const { openOrders} = useSelector(state => state.truckDriverOrders);
   useEffect(() => {
-    dispatch(getOneOpenOrder(openOrders && openOrders[0]._id))
+    dispatch(getOneOpenOrder(openOrders && openOrders[0]._id));
   }, [openOrders]);
 
   const setOrder = () => {

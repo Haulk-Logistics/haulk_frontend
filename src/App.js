@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useEffect} from "react";
+import React from "react";
 import AppRoutes from "./Routes/appRoutes";
 import MessageModal from "./Components/Modal/MessageModal";
 import PageLoader from "./Components/Spinner/PageLoader";
