@@ -12,7 +12,7 @@ let faqData = [
 	{
 		question: 'What type of Trucks does Haulk Logistics accept?',
 		answer:
-			'Haulk Logistics accepts the following types of trucks: ' + '\n' + 'Box Trucks, Flat Bed, Refridgerated Trucks, Trailers, Mini Truck, and Truck Heads.',
+			'Haulk Logistics accepts the following types of trucks:  "\n"  Box Trucks, Flat Bed, Refridgerated Trucks, Trailers, Mini Truck, and Truck Heads.',
 	},
 	{
 		question: 'Do I need Insurance?',

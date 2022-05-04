@@ -22,6 +22,41 @@
     border-radius: 1rem;
 }
 
+.Emptytable__main{
+    background-color: var(--white);
+    width: 100%;
+    padding: 2rem 4rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Empty_table{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.Empty_table img{
+    width: 10rem;
+    height: 10rem;
+    margin: auto;
+}
+
+.Empty_table h5{
+font-size: 1rem;
+font-weight: 500;
+margin: auto;
+}
+
+.Empty_table p{
+font-size: .7rem;
+font-weight: 400;
+padding: .5rem 0;
+}
+
 .table__container table tr,.OrderTable__container table tr{
     text-align: left;
     box-shadow: inset 0px -1px 0px #E0E2E7;
@@ -45,14 +80,17 @@ font-weight: 400;
 }
 
 .table__container table td p ,.OrderTable__container table  td p{
-    font-size: .875rem;
+    font-size: .75rem;
 }
 .table__container table td:nth-child(3) p, .OrderTable__container table td:nth-child(3) p{
-    background-color: var(--surface-success);
-   width: 5.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   max-width: 6rem;
    font-size: .75rem;
    border-radius: 1rem;
-   text-align: center;
+   margin: auto 0 0 0;
+   padding: 0;
 }
 
 .OrderTable__button{
@@ -62,6 +100,11 @@ font-weight: 400;
   
 }
 
+.mobileTable{
+    display: none;
+}
+
+
 @media screen and (max-width: 640px) {
     .table__main{
         display: none;
@@ -70,5 +113,6 @@ font-weight: 400;
     .mobileTable{
         width: 100%;
         border-bottom: 1px solid #E0E2E7 ;
+        display: block;
     }
 }

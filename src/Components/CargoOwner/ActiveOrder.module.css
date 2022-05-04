@@ -4,6 +4,7 @@
 
 .Active__OrderContainer{
     width: 40%;
+
 }
 
 .Active__header h5{
@@ -34,26 +35,21 @@
     display: none;
 }
 
-.Open__0rder{
-    margin-top: 2rem;
-   
-}
-
-.Open__OrderCard{
+.cargoOpen__OrderCard{
     overflow-y: scroll;
-    height: 45vh;
+    max-height: 75vh;
 }
 
-.Open__OrderCard::-webkit-scrollbar{
+.cargoOpen__OrderCard::-webkit-scrollbar{
     width: .3rem;
   }
 
-  .Open__OrderCard::-webkit-scrollbar-track {
+  .cargoOpen__OrderCard::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px grey; 
     border-radius: 10px;
   }
 
-  .Open__OrderCard::-webkit-scrollbar-thumb{
+  .cargoOpen__OrderCard::-webkit-scrollbar-thumb{
     background: var(--accent-main); 
     border-radius: .625rem;
   }
@@ -64,48 +60,43 @@
     
   }
 
-  .DetailSection {
+  .cargoDetailSection {
       background-color: var(--white);
       padding: 1rem 2rem 1.5rem 2rem;
       border-radius: .625rem;
       max-height: 75vh;
-    box-sizing: border-box;
-    
-   
+     box-sizing: border-box;
+     overflow-y: scroll;
   }
 
-  .DetailSection__details{
-    overflow-y: scroll;
-    max-height: 45vh;
-  }
 
-  .DetailSection__details::-webkit-scrollbar {
+  .cargoDetailSection::-webkit-scrollbar {
     width: .3rem;
   }
 
-  .DetailSection__details::-webkit-scrollbar {
+  .cargoDetailSection::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px grey; 
     border-radius: 10px;
   }
 
- .DetailSection__details::-webkit-scrollbar{
+ .cargoDetailSection::-webkit-scrollbar-thumb{
     background: var(--accent-main); 
     border-radius: .625rem;
   }
 
-  .DetailSection__details div{
+  .cargoDetailSection__details div{
       display: flex;
       align-items: center;
       margin-top: 2rem;
   }
 
-  .DetailSection__details div h5{
+  .cargoDetailSection__details div h5{
     font-weight: 500;
     font-size: .8rem;
     width: 14rem;
 }
 
-.DetailSection__details div p{
+.cargoDetailSection__details div p{
     font-weight: 400;
     font-size: .8rem;
     color: var(--text-subdued);
@@ -115,31 +106,14 @@
   .StatusForm{
       border-bottom: 1px dashed var( --secondary-gray);
       margin-bottom: 1.25rem;
+      box-sizing: content-box;
+      padding-bottom: 2rem;
   }
 
-  .StatusForm form {
-      width: 60%;
-      margin-bottom:  1.5rem;
-  }
 
-  .StatusForm form p{
-      color: var(--info-links);
-      font-size: .75rem;
-      margin-top: .1rem;
-      
-  }
-
-  .StatusForm label{
-      margin-bottom: -.3rem;
-      font-weight: 400;
-      font-size: .875rem;
-  }
-
-  .DetailSection__status{
-      border-radius: .625rem;
-      background-color: var(--surface-highlight);
-      width: 4rem;
-      text-align: center;
+  .cargoDetailSection__status{
+     font-weight: 500;
+      text-align:left;
       font-size: .875rem;
   }
 
@@ -147,25 +121,12 @@
       margin: auto;
   }
 
-  .DetailSection__button{
-      width: 9.125rem;
-      height: 2.8125rem;
-      border: none;
-      color: var(--white);
-      background-color: var(--primary-main);
-      border-radius: .25rem;
-      margin-top: 1.5625rem;
-      font-size: .9375rem;
-      font-weight: 500;
-  }
-
   .hide{
       display: none;
   }
 
   .EmptySection{
-      composes: DetailSection;
-      width: 45vw;
+      composes: cargoDetailSection;
       height:  60vh;
       display: flex;
       flex-direction:column;
@@ -201,11 +162,103 @@
       font-size: .875rem;
   }
 
+  .noDriver{
+      margin-bottom: 1rem;
+     display: flex;
+     align-items: center;
+  }
+
+  .noDriver p{
+      color: var(--text-subdued);
+      font-weight: 500;
+      font-size: 12px;
+      text-align: center;
+      margin-left: 2rem;
+  }
+  
+
+  .DetailSection__driversProfile{
+      display: flex;
+      margin-bottom: 1.5rem;
+      max-height: 5rem;
+      width: 100%;
+      box-sizing: border-box;
+      margin-top: 2rem;
+  }
+
+  .driverprofile__img{
+      width: 5rem;
+      height: 5rem;
+      border-radius: 50%;
+  }
+
+  .driverprofile__bio{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin-left: 1rem;
+      text-align: left;
+  }
+
+  .driverprofile__bio h5{
+    font-size:1.3rem;
+    font-weight: 500;
+  }
+  .driverprofile__bio p{
+      margin-top: .5rem;
+   
+  }
+
+  .driverprofile__bio p span{
+    color: var(--text-subdued);
+  }
+
+  .driverprofile__img img{
+    width: 5em;
+    height: 5rem;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .mobileModal{
+      display: none;
+  }
   @media screen and (max-width:640px) {
     .Active__OrderContainer{
         width: 100%;
     }
     .OrderDetails{
         display: none;
+    }
+    .cargoOpen__OrderCard{
+        overflow: hidden;
+      max-height: fit-content;
+    }
+
+    .orderdetail__p{
+        margin-top: .5rem;
+    }
+
+    .cargoDetailSection__details{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .cargoDetailSection__details h5{
+        text-align: left;
+    }
+    .mobileModal{
+        display: block;
+    }
+    
+    .noDriver img{
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .noDriver p{
+        text-align: left;
+        margin-left: 1rem;
     }
   }

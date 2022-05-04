@@ -53,6 +53,7 @@ const Modal = (props) => {
             className={`${styles["modal-footing-button"]}`}
             onClick={() => {
               dispatch(Pagecontrol("accepted"));
+
             }}
           >
             Accept

@@ -34,7 +34,6 @@ const Loginform = ({ user }) => {
         const userToken = res.data.token;
         localStorage.setItem("haulk-app-auth", JSON.stringify(userToken));
         if (res.data.admin_details) {
-          // console.log("I ran");
           dispatch({
             type: "success",
             payload: {
@@ -42,19 +41,12 @@ const Loginform = ({ user }) => {
               message: res.data.message,
             },
           });
-          // console.log("I no ran");
         } else {
           if (res.data.user_details.role === "cargoowner") {
             navigate("/cargodashboard");
           }
           if (res.data.user_details.role === "truckdriver") {
-            dispatch({
-              type: "success",
-              payload: {
-                title: "Successful!",
-                message: "Your accout is still under review. Check back soon!!",
-              },
-            });
+            navigate("/driverdashboard")
           }
         }
       })

@@ -4,6 +4,9 @@ import style from "./style.module.css";
 import ellipses from "../../Asset/Icons/ellipses.svg";
 
 const OrderTable = ({ title, header, content }) => {
+
+
+
   return (
     <div className={style.OrderTable__container}>
       <div className={style.table_head}>
@@ -14,13 +17,14 @@ const OrderTable = ({ title, header, content }) => {
         <table>
           {/* header of the table*/}
           <tr>
-            {header.map((head, index) => (
+            {header && header.map((head, index) => (
               <th>{head}</th>
             ))}
           </tr>
 
           {/* content of the table*/}
-          {content.map((body, index) => (
+          {content && content.map((body, index) => (
+
             <tr>
               <td className={style.OrderTable__td}>
                 <p>{body._id}</p>
@@ -29,7 +33,16 @@ const OrderTable = ({ title, header, content }) => {
                 <p>{body.pick_up_date}</p>
               </td>
               <td className={style.OrderTable__td}>
-                <p>{body.order_status}</p>
+                <p
+                  style={
+                    body.order_status === "processing" ? { background: "var( --default)" } :
+                      body.order_status === "pending" ? { background: "var( --default)" } :
+                        body.order_status === "accepted" ? { background: "var( --warning)" } :
+                          body.order_status === "picked_up" ? { background: "var(--info-links )" } :
+                            body.order_status === "in_transit" ? { background: "var(--surface-success)" } :
+                              body.order_status === "dropped_off" ? { background: "var( --success)" } : { background: "orange" }
+
+                  }>{body.order_status}</p>
               </td>
               <td className={style.OrderTable__td}>
                 <p>{body.truck_type}</p>
@@ -48,7 +61,13 @@ const OrderTable = ({ title, header, content }) => {
           <MobileOrderCards
             Id={body._id}
             pickupdate={body.pick_up_date}
-            orderStatus={body.order_status}
+            orderStatus={body.order_status === "processing" ? { color: "var( --default)", status: "Processing" } :
+              body.order_status === "pending" ? { color: "var(--default)", status: "Pending" } :
+                body.order_status === "accepted" ? { color: "var( --warning)", status: "Accepted" } :
+                  body.order_status === "picked_up" ? { color: "var(--info-links )", status: "Picked up" } :
+                    body.order_status === "in_transit" ? { color: "var(--surface-success)", status: "In Transit" } :
+                      body.order_status === "dropped_off" ? { color: "var( --success)", status: "Completed" } :
+                        { color: "white" }}
             contentTitle1="Trucktype "
             content1={body.truck_type}
           />

@@ -39,7 +39,7 @@
 }
 
 .sidebar__featureslink:hover, .sidebar__logout a:hover{
-    background: var(--accent-main);
+    background: var(--accent-60);
     color: var(--white);
 }
 
@@ -71,6 +71,39 @@
    
 }
 
+.navdropdown{
+display: none;
+ position: fixed;
+ top: 9.5vh;
+ right: 5vw;
+width: 12rem;
+ height: 4.5rem;
+ background-color: white;
+ padding: .5rem 1rem;
+ color:#252F40;
+ font-size: .875rem;
+ box-sizing: border-box;
+ word-break: break-all;
+}
+
+.navdropdownp{
+    font-size: .875rem;
+    margin-bottom: .5rem;
+    padding:.5rem 0;
+}
+
+.logoutBtn{
+    border: none;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-size: 14px;
+    
+}
+.logoutBtn p{
+    margin-left: 1rem ;
+}
 
 
 /* NAVBAR STYLING */
@@ -97,24 +130,24 @@
 }
 
 .profile img{
-    height:1.7rem ;
-    width: 1.7rem;
-    object-fit: cover;
+    height: 2rem ;
+    width: 2rem;
+    object-fit: fit;
     border-radius: 50%;
     margin: auto 1rem;
 }
 
 .profile p{
     font-size: 14px;
-    font-weight: 400;
-    margin-bottom:  -.5rem;
+    font-weight: 500;
+    margin-bottom:  -.3rem;
     color: var(--text-color);
 }
 
 .profile small{
     font-size: 10px;
-    color: #000000;
-    font-weight: 500;
+    font-weight: 400;
+    margin-top: 1rem;
 
 }
 
@@ -123,13 +156,13 @@
 
 }
 
+
 .mobileview{
     display: none;
     margin: auto ;
    width: 12rem;
    height: 3rem;
-   justify-content: center;
-   padding: auto;
+  padding-left: 1.5rem;
    align-items: center;
    
 }
@@ -143,6 +176,13 @@
     color: #292D32;
 }
 
+.webImg{
+    display:block;
+}
+.mobileImg{
+    display: none;
+}
+
 
 @media screen and (max-width: 640px){
     .nav{
@@ -153,6 +193,17 @@
         padding-left: 0;
         padding-right: 0;
         height: 5.25rem;
+    }
+
+    .navdropdown{
+        display: block;
+    }
+
+    .webImg{
+        display: none;
+    }
+    .mobileImg{
+        display: block;
     }
 
     .sidebar__header{
@@ -226,6 +277,9 @@
         margin-left: .5rem;
     }
 
+    .profile{
+        margin-right: 1rem;
+    }
     
 
 
