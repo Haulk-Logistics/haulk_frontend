@@ -33,12 +33,19 @@
 
 .fleet-grid > *:hover{
     transform: scale(1.03);
-    box-shadow: 1px 2px 25px 7px rgba(0, 0, 0, 0.15);
 }
 
 @media only screen and (max-width: 40rem){
     .fleet{
-        padding: 2rem 3rem;
+        padding: 0 3rem 2rem 3rem;
+    }
+
+    .fleet > h2{
+        margin-top: -2.5rem;
+    }
+
+    .fleet > p{
+        font-size: 0.875rem;
     }
 
     .fleet-grid{

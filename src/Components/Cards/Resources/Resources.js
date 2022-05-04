@@ -15,7 +15,7 @@ const Item = ({ ques, ans }) => {
 			<div className={style.faqQuestions}>
 				<p>{ques}</p>
 				<div onClick={toggle}>
-					{show ? <AiOutlineMinus /> : <AiOutlinePlus />}
+					{show ? <AiOutlineMinus style={{ cursor: 'pointer'}} /> : <AiOutlinePlus style={{ cursor: 'pointer'}} />}
 				</div>
 			</div>
 			<div
