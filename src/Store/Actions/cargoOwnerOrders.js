@@ -83,12 +83,11 @@ export const CargoOwnerActiveOrders = () => async (dispatch) => {
         setAuthToken(token);
     }
     try {
-        const { data } = await axios.get("https://haulk.herokuapp.com/api/cargoowner/active_orders",);
-        // console.log(data)
+        const { data } = await axios.get("https://haulk.herokuapp.com/api/cargoowner/active_orders");
         data && dispatch(loaderStatus(false))
         dispatch({
             type: "cargoOwnerActiveOrders",
-            payload: data && data.data
+            payload: data && data.message
         });
     } catch (error) {
         dispatch({

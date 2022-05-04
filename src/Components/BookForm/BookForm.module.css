@@ -273,6 +273,6 @@ input[type="file" i]::-webkit-file-upload-button{
     }
 
     .Book_Heading > p{
-        width: 10rem;
+        width: 20rem;
     }
 }

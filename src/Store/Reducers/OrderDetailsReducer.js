@@ -11,7 +11,6 @@ const defaultState = {
   cargoImage: "",
   shippingLine: "",
   transaction: "",
-  driver: null,
   truckType: "",
   id: "",
 };
@@ -27,14 +26,12 @@ export default (state = defaultState, action) => {
         pickupLoc: action.pick_off_location,
         dropoffLoc: action.drop_off_location,
         amount: action.amount,
-        driver: action.truck_driver,
+        driverImage: action.truck_driver_image,
+        driverName: action.truck_driver_name,
+        driverPhoneno: action.truck_driver_phone,
+        plateNo: action.truck_driver_truck_number,
         orderedDate: action.ordered_at
       };
-
-    case "cargoOwnerActiveOrders":
-      return {
-        ...state,
-      }
     default:
       return state;
   }
