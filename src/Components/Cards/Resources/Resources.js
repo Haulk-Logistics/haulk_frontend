@@ -15,12 +15,20 @@ const Item = ({ ques, ans }) => {
 			<div className={style.faqQuestions}>
 				<p>{ques}</p>
 				<div onClick={toggle}>
-					{show ? <AiOutlineMinus /> : <AiOutlinePlus />}
+					{show ? (
+						<AiOutlineMinus style={{ cursor: 'pointer' }} />
+					) : (
+						<AiOutlinePlus style={{ cursor: 'pointer' }} />
+					)}
 				</div>
 			</div>
 			<div
 				className={style.faqAns}
-				style={{ marginTop: `${show ? '1.5rem' : '0'}`, lineHeight: '1.375rem', fontSize: '0.875rem' }}>
+				style={{
+					marginTop: `${show ? '1.5rem' : '0'}`,
+					lineHeight: '1.375rem',
+					fontSize: '0.875rem',
+				}}>
 				{' '}
 				{show && ans}{' '}
 			</div>
