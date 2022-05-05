@@ -12,10 +12,10 @@ const Wallet = () => {
 			<div className={style.wallet__content}>
 				<NavBar />
 				<div className={style.wallet__info}>
-					<div className={style.wallet__heading}>
+					{/* <div className={style.wallet__heading}>
 						<HiArrowLeft style={{ marginTop: '0.35rem' }} />
 						<h4>Withdraw</h4>
-					</div>
+					</div> */}
 
 					{/* WITHDRAW INFO */}
 					<div className={style.wallet__withdraw}>
