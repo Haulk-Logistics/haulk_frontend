@@ -213,7 +213,7 @@ const BookingForm = () => {
         </fieldset>
         <fieldset className={styles.row} style={{ color: "var(--info-links)" }}>
           <Upload
-            labelname="Proof of  ownership"
+            labelname="Proof of  Ownership"
             id="cargoImage"
             name="cargoImage"
             register={register}

@@ -80,7 +80,7 @@ const AdminHome = () => {
               </div>
           </div>
         </div>
-        <h5>Recent Approval Request</h5>
+        <h5>Approval Request</h5>
         <div className = {styles.requests}>
           <AwaitingTable/>
         </div>
