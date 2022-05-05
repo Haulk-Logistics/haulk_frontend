@@ -30,7 +30,12 @@ export default (state = defaultState, action) => {
         driverName: action.truck_driver_name,
         driverPhoneno: action.truck_driver_phone,
         plateNo: action.truck_driver_truck_number,
-        orderedDate: action.ordered_at
+        orderedDate: action.ordered_at,
+        pickupDate: action.payload.pick_up_date,
+        containerNo: action.payload.container_number,
+        shippingLine: action.payload.shipping_line
+
+
       };
     default:
       return state;
