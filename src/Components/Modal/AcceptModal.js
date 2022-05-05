@@ -13,11 +13,13 @@ const AcceptModal = ({ closeModal }) => {
     if (id) {
       dispatch(acceptDriver(id));
     }
-    if (accepted) {
-      closeModal();
-      toast.success(accepted);
-    }
   };
+
+  if (accepted) {
+    closeModal();
+    toast.success(accepted);
+    window.location.reload();
+  }
 
   return (
     <div className={styles.overlay}>

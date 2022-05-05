@@ -7,7 +7,7 @@ import { rejectDriver } from "../../Store/Actions/Admin";
 import { toast } from "react-toastify";
 
 const RejectModal = (props) => {
-  const { id, rejected } = useSelector((state) => state.admin);
+  const { id, rejected, loading } = useSelector((state) => state.admin);
   const { register, handleSubmit } = useForm();
 
   const dispatch = useDispatch();
@@ -15,11 +15,13 @@ const RejectModal = (props) => {
     if (id) {
       dispatch(rejectDriver(data.textfield, id));
     }
-    if (rejected) {
-        props.closeModal();
-      toast.success(rejected);
-    }
   };
+  
+  if (rejected) {
+    props.closeModal();
+    toast.success(rejected);
+    window.location.reload();
+  }
 
   return (
     <div className={styles.overlay}>
@@ -55,7 +57,7 @@ const RejectModal = (props) => {
                 className={`${styles["modal-footing-button"]}`}
                 type="submit"
               >
-                Reject
+                {loading ? "Rejecting..." : "Reject"}
               </button>
             </div>
           </form>

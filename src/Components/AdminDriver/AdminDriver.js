@@ -13,23 +13,17 @@ import {
   getAllDrivers,
   getAllVerifiedDrivers,
 } from "../../Store/Actions/Admin";
-import { toast } from "react-toastify";
 
 const AdminDriver = () => {
-  const {
-    unverified_drivers,
-    verified_drivers,
-    loading,
-  } = useSelector((state) => state.admin);
+  const { unverified_drivers, verified_drivers, loading } = useSelector(
+    (state) => state.admin
+  );
   console.log(unverified_drivers, "vcccxc");
   const dispatch = useDispatch();
-  const [details, setDetails] = useState(true)
   const [click, setClick] = useState(true);
   const [approve, setApprove] = useState(false);
   const [reject, setReject] = useState(false);
   const [remove, setRemove] = useState(false);
-  const [user_id, setUserId] = useState("");
-
   useEffect(() => {
     dispatch(getAllDrivers());
     dispatch(getAllVerifiedDrivers());
@@ -42,21 +36,16 @@ const AdminDriver = () => {
   const approvedTab = () => {
     setClick(false);
   };
-  console.log(unverified_drivers, "vdbgrfhghd");
 
   const removeModal = () => {
     setRemove(true);
   };
 
-  const hideDetails = () => {
-    setDetails(!details)
-  }
-
   return (
     <>
       <div className={styles.dashboard}>
         <AdminHeader />
-        {!details && <div className={`${styles["dashboard-main"]}`}>
+        <div className={`${styles["dashboard-main"]}`}>
           <h4>Manage Drivers</h4>
           <div className={styles.approvals}>
             <button
@@ -76,6 +65,7 @@ const AdminDriver = () => {
           <div className={styles.table}>
             {click && (
               <AwaitingTable
+                display = {true}
                 approve={approve}
                 acceptDriver={acceptDriver}
                 drivers={unverified_drivers && unverified_drivers}
@@ -90,12 +80,9 @@ const AdminDriver = () => {
               />
             )}
           </div>
-        </div>}
-        {details && <DriverDetail hideDetails = {hideDetails}/>}
+        </div>
       </div>
-      {approve && (
-        <AcceptModal  closeModal={() => setApprove(false)} />
-      )}
+      {approve && <AcceptModal closeModal={() => setApprove(false)} />}
       {reject && <RejectModal closeModal={() => setReject(false)} />}
       {remove && <DeleteModal closeModal={() => setRemove(false)} />}
     </>

@@ -15,11 +15,11 @@ import {
   getAllVerifiedDrivers,
 } from "../../Store/Actions/Admin";
 import PieChart from "./Piechart";
+import EmptyActive from "../TruckDriver/EmptyActive";
 
 const AdminHome = () => {
   const {
     unverified_drivers,
-    loading,
     cargoowners_num,
     drivers_num,
     completedOrders,
@@ -42,7 +42,7 @@ const AdminHome = () => {
         <div className={`${styles["dashboard-grid"]}`}>
           <div className={styles.item}>
             <div className={styles.circle}>
-              <FaUsers/>
+              <FaUsers />
             </div>
             <div>
               <p>Total Users</p>
@@ -51,7 +51,7 @@ const AdminHome = () => {
           </div>
           <div className={styles.item}>
             <div className={styles.circle}>
-              <HiTruck/>
+              <HiTruck />
             </div>
             <div>
               <p>Total Drivers</p>
@@ -60,7 +60,7 @@ const AdminHome = () => {
           </div>
           <div className={styles.item}>
             <div className={styles.circle}>
-              <FaMoneyBill/>
+              <FaMoneyBill />
             </div>
             <div>
               <p>Total Revenue</p>
@@ -82,7 +82,7 @@ const AdminHome = () => {
             <p>Driver's Statistics</p>
             <div>
               <div className={`${styles["pie-chart"]}`}>
-                {drivers_num && (
+                {drivers_num ? (
                   <PieChart
                     declined={drivers_num && drivers_num.total_rejected_drivers}
                     awaiting={
@@ -90,31 +90,35 @@ const AdminHome = () => {
                     }
                     approved={drivers_num && drivers_num.total_verified_drivers}
                   />
+                ) : (
+                  <EmptyActive message="No truck driver details" />
                 )}
                 {/* The Data that would be rendered as a pie chart would go in here. The circle here is a placeholder */}
               </div>
-              <div className={styles.legend}>
-                <ul>
-                  <li>
-                    <div className={styles.green}></div>
-                    <p>Approved</p>
-                  </li>
-                  <li>
-                    <div className={styles.cyan}></div>
-                    <p>Declined</p>
-                  </li>
-                  <li>
-                    <div className={styles.yellow}></div>
-                    <p>Awaiting</p>
-                  </li>
-                </ul>
-              </div>
+              {drivers_num && (
+                <div className={styles.legend}>
+                  <ul>
+                    <li>
+                      <div className={styles.green}></div>
+                      <p>Approved</p>
+                    </li>
+                    <li>
+                      <div className={styles.cyan}></div>
+                      <p>Declined</p>
+                    </li>
+                    <li>
+                      <div className={styles.yellow}></div>
+                      <p>Awaiting</p>
+                    </li>
+                  </ul>
+                </div>
+              )}
             </div>
           </div>
         </div>
-        <h5>Recent Approval Request</h5>
+        <h5>Approval Request</h5>
         <div className={styles.requests}>
-          <AwaitingTable drivers={unverified_drivers && unverified_drivers} />
+          <AwaitingTable display={false} drivers={unverified_drivers && unverified_drivers} />
         </div>
       </div>
     </div>

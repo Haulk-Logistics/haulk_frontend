@@ -138,8 +138,8 @@ export const AllDrivers = () => async (dispatch) => {
   }
 };
 
-export const acceptDriver = id => async dispatch => {
-  console.log("Accept Driver .....")
+export const acceptDriver = (id) => async (dispatch) => {
+  console.log("Accept Driver .....");
   console.log(id);
   dispatch({
     type: "adminLoading",
@@ -166,41 +166,67 @@ export const acceptDriver = id => async dispatch => {
   }
 };
 
-
-export const rejectDriver = (message,id) => async dispatch => {
-  const info = {reason_for_rejection: message};
-  console.log(message, id);
-    console.log("Accept Driver .....")
-    console.log(id);
+export const getOneDriver = (id) => async (dispatch) => {
+  dispatch({
+    type: "adminLoading",
+  });
+  const token = JSON.parse(localStorage.getItem("haulk-app-auth"));
+  console.log(token);
+  if (token) {
+    setAuthToken(token);
+  }
+  try {
+    const { data } = await axios.get(
+      `https://haulk.herokuapp.com/admin/driver/total_drivers/${id}`
+    );
+    console.log(data, "data");
     dispatch({
-      type: "adminLoading",
+      type: "oneDriver",
+      payload: data && data.data,
     });
-    const token = JSON.parse(localStorage.getItem("haulk-app-auth"));
-    if (token) {
-      setAuthToken(token);
-    }
-    try {
-      const { data } = await axios.put(
-        `https://haulk.herokuapp.com/admin/driver/reject_driver/${id}`, info
-      );
-      console.log(data, "rejectedddd...........");
-      data && dispatch(loaderStatus(false));
-      dispatch({
-        type: "rejectDriver",
-        payload: data && data.message,
-      });
-    } catch (error) {
-      console.log(error, "error........")
-      dispatch({
-        type: "adminError",
-        payload: error.message,
-      });
-    }
+  } catch (error) {
+    dispatch({
+      type: "adminError",
+      payload: error.message,
+    });
+  }
 };
 
-export const setDriverId = (id) => async dispatch => {
+export const rejectDriver = (message, id) => async (dispatch) => {
+  const info = { reason_for_rejection: message };
+  console.log(message, id);
+  console.log("Accept Driver .....");
+  console.log(id);
+  dispatch({
+    type: "adminLoading",
+  });
+  const token = JSON.parse(localStorage.getItem("haulk-app-auth"));
+  if (token) {
+    setAuthToken(token);
+  }
+  try {
+    const { data } = await axios.put(
+      `https://haulk.herokuapp.com/admin/driver/reject_driver/${id}`,
+      info
+    );
+    console.log(data, "rejectedddd...........");
+    data && dispatch(loaderStatus(false));
+    dispatch({
+      type: "rejectDriver",
+      payload: data && data.message,
+    });
+  } catch (error) {
+    console.log(error, "error........");
+    dispatch({
+      type: "adminError",
+      payload: error.message,
+    });
+  }
+};
+
+export const setDriverId = (id) => async (dispatch) => {
   dispatch({
     type: "driverId",
-    payload: id
-  })
-}
+    payload: id,
+  });
+};
