@@ -3,6 +3,7 @@ import styles from "./AdminDriver.module.css";
 import AdminHeader from "../AdminHeader/AdminHeader";
 import AwaitingTable from "../Tables/AwaitingTable";
 import ApprovedTable from "../Tables/ApprovedTable";
+import DriverDetail from "../DriverDetail/DriverDetail";
 import AcceptModal from "../Modal/AcceptModal";
 import RejectModal from "../Modal/RejectModal";
 import DeleteModal from "../Modal/DeleteModal";
@@ -12,6 +13,7 @@ import { getAllDrivers } from "../../Store/Actions/Admin";
 const AdminDriver = () => {
   const { unverified_drivers, loading } = useSelector(state => state.admin);
   const dispatch = useDispatch();
+  const [details, setDetails] = useState(true)
   const [click, setClick] = useState(true);
   const [approve, setApprove] = useState(false);
   const [reject, setReject] = useState(false);
@@ -42,11 +44,15 @@ const AdminDriver = () => {
     setRemove(true)
   }
 
+  const hideDetails = () => {
+    setDetails(!details)
+  }
+
   return (
     <>
       <div className={styles.dashboard}>
         <AdminHeader />
-        <div className={`${styles["dashboard-main"]}`}>
+        {!details && <div className={`${styles["dashboard-main"]}`}>
           <h4>Manage Drivers</h4>
           <div className={styles.approvals}>
             <button
@@ -66,7 +72,8 @@ const AdminDriver = () => {
             {click && <AwaitingTable drivers={unverified_drivers && unverified_drivers} approveModal={acceptModal} rejectModal={rejectModal} />}
             {!click && <ApprovedTable deleteModal={removeModal} />}
           </div>
-        </div>
+        </div>}
+        {details && <DriverDetail hideDetails = {hideDetails}/>}
       </div>
       {approve && <AcceptModal id= {user_id} closeModal={() => setApprove(false)} />}
       {reject && <RejectModal closeModal={() => setReject(false)} />}

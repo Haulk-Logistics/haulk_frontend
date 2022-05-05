@@ -96,11 +96,12 @@
     font-size: 1.5rem;
 }
 
-.item > div > p{
+.item > div:last-child > p{
     color: var(--text-subdued);
+    margin-bottom: .5rem;
 }
 
-.item > div > h3{
+.item > div:last-child > h3{
     font-size: 2.25rem;
     font-weight: 500;
     line-height: 46px;

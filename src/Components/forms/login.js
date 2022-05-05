@@ -34,13 +34,7 @@ const Loginform = ({ user }) => {
         const userToken = res.data.token;
         localStorage.setItem("haulk-app-auth", JSON.stringify(userToken));
         if (res.data.admin_details) {
-          dispatch({
-            type: "success",
-            payload: {
-              title: "Successful!",
-              message: res.data.message,
-            },
-          });
+          navigate("/admin-home")
         } else {
           if (res.data.user_details.role === "cargoowner") {
             navigate("/cargodashboard");
@@ -66,7 +60,7 @@ const Loginform = ({ user }) => {
   };
 
   return (
-    <div className={loginstyle.login} style={{ paddingTop: "3rem" }}>
+    <div className={loginstyle.login} style={{ paddingTop: "10rem" }}>
       <Formheader
         head="Login to your Account"
         paragraph=" Kindly fill in login details to continue."
@@ -118,7 +112,7 @@ const Loginform = ({ user }) => {
             Forgot Password?
           </Link>
         </div>
-        <Button name="Log In" status={isLoading} />
+        <Button name="Log In" status={isLoading}  />
       </form>
       <p className={loginstyle.haveaccount}>
         Don't have an Account?
