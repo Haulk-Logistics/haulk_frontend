@@ -6,7 +6,7 @@ import { HiArrowLeft } from 'react-icons/hi';
 import withdrawableWallet from '../../Asset/Icons/withdrawableWallet.svg';
 
 const Wallet = () => {
-  return (
+	return (
 		<div className={style.wallet__container}>
 			<SideBar />
 			<div className={style.wallet__content}>
@@ -58,6 +58,6 @@ const Wallet = () => {
 			</div>
 		</div>
 	);
-}
+};
 
-export default Wallet
+export default Wallet;
