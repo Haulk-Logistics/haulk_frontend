@@ -36,4 +36,13 @@
         grid-template-columns: 1fr;
         grid-template-rows: repeat(4, 1fr);
     }
+
+    /* Carousel for Mobile */
+    /* .testimonialGrid{
+        display: flex;
+        height: auto;
+        width: auto;
+        overflow-x: scroll;
+        overflow-y: hidden;
+    } */
 }

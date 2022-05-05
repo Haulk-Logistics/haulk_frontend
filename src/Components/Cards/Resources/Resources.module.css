@@ -1,4 +1,4 @@
-* {
+.resourceSection {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -6,15 +6,15 @@
 }
 
 body {
+  /* max-width: 90rem; */
   background-color: var(--white) !important;
 }
-
 
 .resourceHeader {
   display: flex;
   background-color: var(--primary-main);
   color: var(--white);
-  max-width: 86.25rem;
+  max-width: 90rem;
   margin: 0;
   height: 11.5rem;
   justify-content: center;
@@ -26,7 +26,6 @@ body {
 .resourceContainer {
   max-width: 76rem;
   margin: 6.9375rem 5.125rem;
-
 }
 
 .faqSection {

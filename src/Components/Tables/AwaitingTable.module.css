@@ -1,0 +1,68 @@
+.Atable{
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1rem;
+    background-color: var(--white);
+}
+
+.pre-table td, .pre-body td{
+    padding: 15px;
+}
+
+.pre-body tr,.pre-table tr {
+    border-bottom: 1px solid var(--primary-20);
+}
+
+.pre-table td{
+    font-size: 0.875rem;
+    text-align: left;
+    color: var(--text-subdued);
+}
+
+.pre-body td{
+    font-size: 0.75rem;
+}
+
+.pre-body button{
+    width: 6.7rem;
+    height: 2.8rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.primaryBtn{
+    color: var(--white);
+    background-color: var(--primary-main);
+}
+
+.primaryBtn:hover{
+    background-color: var(--accent-main);
+}
+
+.pre-body .secondaryBtn{
+    border: 1px solid var(--primary-main);
+    color: var(--primary-main);
+    background: transparent;
+}
+
+.secondaryBtn:hover{
+    border: 1px solid var(--accent-main);
+    color: var(--accent-main);
+}
+
+.dots{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+.dots > div{
+    width: 9px;
+    height: 9px;
+    background-color:#979797;
+    border-radius: 50%;
+}

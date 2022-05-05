@@ -1,8 +1,9 @@
 .overlay{
     position: fixed;
     width: 100vw;
+    height: 100vw;
     top: 0;
-    left: 10%;
+    left: 0;
     right: 0;
     bottom: 0;
     background-color: hsla(190, 87%, 12%, 0.5);
@@ -12,13 +13,13 @@
 .modal{
     background-color: var(--white);
     margin: 0 auto;
-    width: 45%;
+    width: 40%;
     border-radius: 8px;
     padding: 3rem;
     padding-top: 2rem;
     position: absolute; 
     top: 10rem;
-    left: 27%;
+    left: 30%;
     transform: (-50%, -50%);
     z-index: 1000;
 }
@@ -30,9 +31,8 @@
     margin-bottom: 2rem;
 }
 
-.modal-heading-text{
+.modal-heading h5{
     color: var(--text-black);
-    font-weight: 600;
 }
 
 .modal-heading-cancel{
@@ -53,43 +53,12 @@
 }
 
 .modal-main{
-    width: 92%;
-    margin: 0 auto;
+    color: var(--text-black);
 }
 
 .modal-main > *{
     margin-bottom: 1.5rem;
-}
-
-.modal-content{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: 400;
-}
-
-.modal-content > p:first-child{
-    color: var(--primary-40);
-}
-
-.modal-content > p:last-child{
-    color: var(--primary-main);
-}
-
-.modal-content:last-of-type > p:first-child{
-    color: var(--text-black);
-    font-weight: 600;
-}
-
-.modal-content:last-of-type > P:last-child{
-    color: var(--accent-main);
-    letter-spacing: 2px;
-}
-
-.divider{
-    width: 100%;
-    border: none;
-    border-top: 2px dashed var(--primary-20);
+    line-height: 28px;
 }
 
 .modal-footing{
@@ -115,7 +84,7 @@
 
 .modal-footing-button:last-of-type{
     color: var(--white);
-    background-color: var(--primary-main);
+    background-color: var(--error);
 }
 
 .modal-footing-button:hover:first-of-type{
@@ -124,20 +93,5 @@
 }
 
 .modal-footing-button:hover:last-of-type{
-    background-color: var(--accent-main);
-}
-
-@media only screen and (max-width: 40rem){
-    
-    /* Media Query rules for styles below 375px */
-    .modal{
-        width: 90vw;
-        padding: 2.5rem 1.5rem;
-        margin-left: -5.8rem;
-    }
-
-    .overlay{
-        left: 0;
-        right: 10%;
-    }
+    background-color: #ffb0b0;
 }

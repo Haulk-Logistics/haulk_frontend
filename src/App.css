@@ -8,3 +8,16 @@
 .activeNav {
   color: var(--accent-main) !important;
 }
+
+.blue{
+  color: var(--white) !important;
+  background-color: var(--accent-main) !important;
+}
+
+.removeBorder{
+  border: none !important;
+}
+
+.addBorder{
+  border-bottom: 4px solid var(--accent-main) !important;
+}

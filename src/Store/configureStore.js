@@ -13,6 +13,7 @@ import { cargoOwnerReducer } from "./Reducers/cargoOwnerOrder";
 import { truckDriverReducer } from "./Reducers/TruckDriverOrder";
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from "redux-devtools-extension";
+import { AdminReducer } from "./Reducers/AdminReducer";
 
 export default () => {
   const store = createStore(
@@ -28,7 +29,8 @@ export default () => {
       dashboardRender: DashboardRenderReducer,
       summary: OrderSummaryReducer,
       cargoOwnerOrders: cargoOwnerReducer,
-      truckDriverOrders: truckDriverReducer
+      truckDriverOrders: truckDriverReducer,
+      admin: AdminReducer
     }),
     composeWithDevTools(applyMiddleware(thunk))
   );
