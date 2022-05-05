@@ -6,11 +6,21 @@ import ApprovedTable from "../Tables/ApprovedTable";
 import AcceptModal from "../Modal/AcceptModal";
 import RejectModal from "../Modal/RejectModal";
 import DeleteModal from "../Modal/DeleteModal";
-import { useDispatch, useSelector } from 'react-redux';
-import { getAllDrivers } from "../../Store/Actions/Admin";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  acceptDriver,
+  getAllDrivers,
+  getAllVerifiedDrivers,
+} from "../../Store/Actions/Admin";
+import { toast } from "react-toastify";
 
 const AdminDriver = () => {
-  const { unverified_drivers, loading } = useSelector(state => state.admin);
+  const {
+    unverified_drivers,
+    verified_drivers,
+    loading,
+  } = useSelector((state) => state.admin);
+  console.log(unverified_drivers, "vcccxc");
   const dispatch = useDispatch();
   const [click, setClick] = useState(true);
   const [approve, setApprove] = useState(false);
@@ -19,28 +29,22 @@ const AdminDriver = () => {
   const [user_id, setUserId] = useState("");
 
   useEffect(() => {
-    dispatch(getAllDrivers())
-  }, [])
+    dispatch(getAllDrivers());
+    dispatch(getAllVerifiedDrivers());
+  }, []);
 
+  console.log(verified_drivers, "...............");
   const awaitingTab = () => {
     setClick(true);
   };
   const approvedTab = () => {
     setClick(false);
   };
-
-  const acceptModal = (id) => {
-    setApprove(true);
-    setUserId(id);
-  };
-
-  const rejectModal = () => {
-    setReject(true)
-  }
+  console.log(unverified_drivers, "vdbgrfhghd");
 
   const removeModal = () => {
-    setRemove(true)
-  }
+    setRemove(true);
+  };
 
   return (
     <>
@@ -53,22 +57,38 @@ const AdminDriver = () => {
               onClick={awaitingTab}
               className={`${click ? "addBorder" : "removeBorder"}`}
             >
-              Awaiting Approval ({unverified_drivers && unverified_drivers.length})
+              Awaiting Approval (
+              {unverified_drivers ? unverified_drivers.length : "0"})
             </button>
             <button
               onClick={approvedTab}
               className={!click ? "addBorder" : "removeBorder"}
             >
-              Approved
+              Approved ({verified_drivers ? verified_drivers.length : "0"})
             </button>
           </div>
           <div className={styles.table}>
-            {click && <AwaitingTable drivers={unverified_drivers && unverified_drivers} approveModal={acceptModal} rejectModal={rejectModal} />}
-            {!click && <ApprovedTable deleteModal={removeModal} />}
+            {click && (
+              <AwaitingTable
+                approve={approve}
+                acceptDriver={acceptDriver}
+                drivers={unverified_drivers && unverified_drivers}
+                approveModal={setApprove}
+                rejectModal={setReject}
+              />
+            )}
+            {!click && (
+              <ApprovedTable
+                drivers={verified_drivers && verified_drivers}
+                deleteModal={removeModal}
+              />
+            )}
           </div>
         </div>
       </div>
-      {approve && <AcceptModal id= {user_id} closeModal={() => setApprove(false)} />}
+      {approve && (
+        <AcceptModal  closeModal={() => setApprove(false)} />
+      )}
       {reject && <RejectModal closeModal={() => setReject(false)} />}
       {remove && <DeleteModal closeModal={() => setRemove(false)} />}
     </>
