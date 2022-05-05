@@ -58,9 +58,12 @@
   font-size: 0.875rem;
 }
 
-.wallet__withdrawForm>form>input {
+.wallet__withdrawForm>form>input, .wallet__withdrawForm>form>select {
   width: 34.5rem;
+  height: 2.75rem;
   margin-bottom: 1rem;
+  border: 0.5px solid var(--cloud-darker);
+  padding-left: 1rem;
 }
 
 .wallet__withdrawForm>form>label>h5 {
@@ -69,12 +72,6 @@
 
 .wallet__withdrawForm>form>label {
   padding-bottom: 1rem;
-}
-
-.wallet__withdrawForm>form>select {
-  width: 34.5rem;
-  margin-bottom: 1rem;
-  border: 0.5px solid var(--cloud-darker);
 }
 
 .wallet__withdrawForm > button {
@@ -116,6 +113,7 @@
 
   .wallet__withdrawForm>form>input, .wallet__withdrawForm>form>select {
     width: 100%;
+    height: 100%;
   }
 
   .wallet__withdrawForm>button {
@@ -137,6 +135,7 @@
   .wallet__withdrawForm>form>input, .wallet__withdrawForm>form>select {
     padding: 1rem 2rem;
     width: 100%;
+    height: 100%;
   }
 
   .wallet__withdrawForm>button {

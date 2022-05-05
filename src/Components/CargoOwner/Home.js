@@ -15,7 +15,7 @@ const CargoHome = () => {
     (state) => state.cargoOwnerOrders
   );
 
-  const name = cargoOwner && cargoOwner[0].userDetails.firstName
+  const name = cargoOwner && cargoOwner[0] && cargoOwner[0].userDetails.firstName
 
   const capitalizeFirstLetter = (string) => {
     const firstletter = string.slice(0, 1);
