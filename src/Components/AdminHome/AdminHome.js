@@ -19,7 +19,7 @@ const AdminHome = () => {
         <div className={`${styles["dashboard-grid"]}`}>
           <div className={styles.item}>
             <div className={styles.circle}>
-                <FaUsers/>
+              <FaUsers/>
             </div>
             <div>
               <p>Total Users</p>
@@ -28,7 +28,7 @@ const AdminHome = () => {
           </div>
           <div className={styles.item}>
             <div className={styles.circle}>
-                <HiTruck/>
+              <HiTruck/>
             </div>
             <div>
               <p>Total Drivers</p>
@@ -37,7 +37,7 @@ const AdminHome = () => {
           </div>
           <div className={styles.item}>
             <div className={styles.circle}>
-                <FaMoneyBill/>
+              <FaMoneyBill/>
             </div>
             <div>
               <p>Total Revenue</p>
@@ -80,7 +80,7 @@ const AdminHome = () => {
               </div>
           </div>
         </div>
-        <h5>Recent Approval Request</h5>
+        <h5>Approval Request</h5>
         <div className = {styles.requests}>
           <AwaitingTable/>
         </div>

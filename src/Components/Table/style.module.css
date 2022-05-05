@@ -105,6 +105,11 @@ font-weight: 400;
 }
 
 
+.orderTR{
+    padding: 20px;
+}
+
+
 @media screen and (max-width: 640px) {
     .table__main{
         display: none;
