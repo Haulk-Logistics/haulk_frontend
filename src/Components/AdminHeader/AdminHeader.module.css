@@ -17,6 +17,18 @@
     color: var(--text-black);
 }
 
+.dashboard-header-img{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+}
+
+.dashboard-header-img > img{
+    width: 100%;
+    heigh: 100%;
+    border-radius: 50%;
+}
+
 .dashboard-header-text{
     
 }
@@ -24,7 +36,7 @@
 .dashboard-header-text > p:first-of-type{
     font-size: 0.875rem;
     font-weight: 400;
-    margin-bottom: .3rem;
+    margin-bottom: .5rem;
 }
 
 .dashboard-header-text > p:last-of-type {
