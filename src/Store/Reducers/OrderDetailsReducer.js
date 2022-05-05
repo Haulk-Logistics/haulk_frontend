@@ -28,7 +28,12 @@ export default (state = defaultState, action) => {
         dropoffLoc: action.drop_off_location,
         amount: action.amount,
         driver: action.truck_driver,
-        orderedDate: action.ordered_at
+        orderedDate: action.ordered_at,
+        pickupDate: action.payload.pick_up_date,
+        containerNo: action.payload.container_number,
+        shippingLine: action.payload.shipping_line
+    
+
       };
 
     case "cargoOwnerActiveOrders":

@@ -15,6 +15,10 @@
     
 }
 
+.mobileTable {
+     display: none;
+}
+
 .table__container table, .OrderTable__container table{
     background-color: var(--white);
     width: 100%;
@@ -116,6 +120,7 @@ font-weight: 400;
     }
 
     .mobileTable{
+        display: block;
         width: 100%;
         border-bottom: 1px solid #E0E2E7 ;
         display: block;

@@ -1,5 +1,6 @@
 import React from "react";
 import MobileOrderCards from "../Cards/MobileOrderCards";
+import EmptyActive from "../TruckDriver/EmptyActive";
 import style from "./style.module.css";
 
 const Tables = ({ title, header, content }) => {
@@ -10,13 +11,14 @@ const Tables = ({ title, header, content }) => {
         <h4>{title}</h4>
       </div>
       <div className={style.table__main}>
+      {content && typeof content == "object" ? (
         <table>
           {/* header of the table*/}
           <tr>{header && header.map((head, index) => <th>{head}</th>)}</tr>
 
           {/* content of the table*/}
-          {content && typeof content == "object" ? (
-            content.map((body, index) => (
+          {/* {content && typeof content == "object" ? ( */}
+           { content.map((body, index) => (
               <tr>
                 <td>
                   <p>{body._id}</p>
@@ -34,11 +36,9 @@ const Tables = ({ title, header, content }) => {
                   <button>...</button>
                 </td>
               </tr>
-            ))
-          ) : (
-            <div>{content}</div>
-          )}
+             ) )}
         </table>
+      ) : <div> <EmptyActive message={content} /> </div> }
       </div>
       <div className={style.mobileTable}>
         {content && typeof content == "object" ? (content.map((body, index) => (

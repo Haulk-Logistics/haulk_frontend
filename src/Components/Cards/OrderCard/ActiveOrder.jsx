@@ -1,7 +1,9 @@
 import React from "react";
-import style from "./OrderCard.module.css";
+import style from "../OrderCard.module.css";
 
-const OrderCard = ({ status, details }) => {
+
+
+const TDActiveOrderCard = ({activeOrder}) => {
   const locationStepper = (
     <svg
       width="10"
@@ -17,11 +19,11 @@ const OrderCard = ({ status, details }) => {
   );
 
   return (
-    <div className={style.OrderCard__container}>
+    <div className={style.OrderCard__container}  >
       <header className={style.OrderCard__header}>
         <div className={style.OrderCard__headertext} >
-          <h5>ID {details._id}</h5>
-          <p style={{ backgroundColor: ` ${status.color}` }}>{status.status}</p>
+          <h5>ID {activeOrder && activeOrder._id}</h5>
+          <p>{activeOrder && activeOrder.order_status}</p>
         </div>
         <h6>consignment</h6>
       </header>
@@ -35,8 +37,8 @@ const OrderCard = ({ status, details }) => {
           {locationStepper}
           <div>
             {" "}
-            <p>{details.pick_off_location}</p>
-            <p>{details.drop_off_location}</p>
+            <p>{activeOrder && activeOrder.pick_off_location}</p>
+            <p>{activeOrder && activeOrder.drop_off_location}</p>
           </div>
         </div>
       </div>
@@ -44,4 +46,4 @@ const OrderCard = ({ status, details }) => {
   );
 };
 
-export default OrderCard;
+export default TDActiveOrderCard;

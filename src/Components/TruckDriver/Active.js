@@ -10,7 +10,7 @@ const Active = () => {
         <h5>Active Order</h5>
       </header>
       <div className={style.Active__OrderCard}>
-        <EmptyActive />
+        <EmptyActive message="No active order" />
       </div>
     </div>
   );

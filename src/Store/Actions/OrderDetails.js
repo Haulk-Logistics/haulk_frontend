@@ -6,7 +6,7 @@ export const OrderDetails = ({
   _id,
   truck_driver,
   ordered_at,
-  order_status,
+  order_status,...payload
 }) => ({
   type: "orderdetails",
   _id,
@@ -16,5 +16,6 @@ export const OrderDetails = ({
   amount,
   truck_driver,
   ordered_at,
-  order_status
+  order_status,
+  payload,
 });

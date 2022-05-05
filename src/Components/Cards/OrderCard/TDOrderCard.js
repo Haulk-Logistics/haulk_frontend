@@ -1,7 +1,21 @@
-import React from "react";
-import style from "./OrderCard.module.css";
+import React, {useState, useEffect} from "react";
+import style from "../OrderCard.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import { getOneOpenOrder } from "../../../Store/Actions/truckDriverOrders";
 
-const OrderCard = ({ status, details }) => {
+const TDOrderCard = ({  status, details, index }) => {
+  const [id, setId] = useState(0);
+  const dispatch = useDispatch();
+  const { openOrders} = useSelector(state => state.truckDriverOrders);
+  useEffect(() => {
+    dispatch(getOneOpenOrder(openOrders && openOrders[0]._id));
+  }, [openOrders]);
+
+  const setOrder = () => {
+    dispatch(getOneOpenOrder(openOrders && openOrders[index]._id))
+    setId(index);
+    console.log(id === index);
+  }
   const locationStepper = (
     <svg
       width="10"
@@ -20,7 +34,7 @@ const OrderCard = ({ status, details }) => {
     <div className={style.OrderCard__container}>
       <header className={style.OrderCard__header}>
         <div className={style.OrderCard__headertext} >
-          <h5>ID {details._id}</h5>
+          <h5 onClick={setOrder} >ID {details._id}</h5>
           <p style={{ backgroundColor: ` ${status.color}` }}>{status.status}</p>
         </div>
         <h6>consignment</h6>
@@ -44,4 +58,4 @@ const OrderCard = ({ status, details }) => {
   );
 };
 
-export default OrderCard;
+export default TDOrderCard;
