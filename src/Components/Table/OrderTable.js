@@ -25,7 +25,7 @@ const OrderTable = ({ title, header, content }) => {
           {/* content of the table*/}
           {content && content.map((body, index) => (
 
-            <tr>
+            <tr >
               <td className={style.OrderTable__td}>
                 <p>{body._id}</p>
               </td>

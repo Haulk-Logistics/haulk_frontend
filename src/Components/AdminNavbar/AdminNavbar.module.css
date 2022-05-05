@@ -40,7 +40,7 @@
 }
 
 .navbar-tabs > div:hover{
-    background: var(--accent-main);
+    background: var(--accent-40);
 }
 
 .navbar-tabs > div:hover > *{

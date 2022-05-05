@@ -1,0 +1,68 @@
+.request{
+    margin-top: 1.5rem;
+}
+
+.request-heading{
+    display: flex;
+    align-items: center;
+    padding-left: 3rem;
+}
+
+.request-heading > :first-child {
+    cursor: pointer;
+    color: var(--accent-main);
+    font-size: 1.5rem;
+}
+
+.request-heading h4{
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 34.2px;
+    margin-left: 1.5rem;
+}
+
+.request-main{
+    border-radius: 10px;
+    background: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.5rem 2rem;
+    margin: 0 2.5rem;
+    margin-top: 1.5rem;
+}
+
+.request-main > ul{
+    width: 49%;
+}
+
+.request-main li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.request-main li > :first-child{
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--text-color);
+    line-height: 25.92px;
+}
+
+.request-main li > :last-child{
+    font-size: 1rem;
+    font-weight: 400;
+    color:#6D7175;
+    text-align: right;
+    line-height: 25.92px;
+}
+
+.link{
+    color: var(--info-links);
+    text-decoration: none;
+}
+
+.link:hover{
+    color: #004ead;
+}

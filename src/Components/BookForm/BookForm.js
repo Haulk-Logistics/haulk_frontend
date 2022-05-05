@@ -7,7 +7,6 @@ import BookingForm from "./BookingForm";
 const BookForm = (props) => {
   const stateOfPage = useSelector((state) => state.page);
 
-
   return (
     <div className={styles.Book__Body}>
       <div className={styles.main}>

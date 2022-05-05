@@ -3,6 +3,7 @@ import styles from "./AdminDriver.module.css";
 import AdminHeader from "../AdminHeader/AdminHeader";
 import AwaitingTable from "../Tables/AwaitingTable";
 import ApprovedTable from "../Tables/ApprovedTable";
+import DriverDetail from "../DriverDetail/DriverDetail";
 import AcceptModal from "../Modal/AcceptModal";
 import RejectModal from "../Modal/RejectModal";
 import DeleteModal from "../Modal/DeleteModal";
@@ -22,6 +23,7 @@ const AdminDriver = () => {
   } = useSelector((state) => state.admin);
   console.log(unverified_drivers, "vcccxc");
   const dispatch = useDispatch();
+  const [details, setDetails] = useState(true)
   const [click, setClick] = useState(true);
   const [approve, setApprove] = useState(false);
   const [reject, setReject] = useState(false);
@@ -46,11 +48,15 @@ const AdminDriver = () => {
     setRemove(true);
   };
 
+  const hideDetails = () => {
+    setDetails(!details)
+  }
+
   return (
     <>
       <div className={styles.dashboard}>
         <AdminHeader />
-        <div className={`${styles["dashboard-main"]}`}>
+        {!details && <div className={`${styles["dashboard-main"]}`}>
           <h4>Manage Drivers</h4>
           <div className={styles.approvals}>
             <button
@@ -84,7 +90,8 @@ const AdminDriver = () => {
               />
             )}
           </div>
-        </div>
+        </div>}
+        {details && <DriverDetail hideDetails = {hideDetails}/>}
       </div>
       {approve && (
         <AcceptModal  closeModal={() => setApprove(false)} />
