@@ -8,6 +8,7 @@ const initialState = {
     orderHistory: null
 }
 
+
 export const cargoOwnerReducer = (state = initialState, action) => {
     switch (action.type) {
         case "cargoOwnerOrderLoading":
@@ -52,3 +53,4 @@ export const cargoOwnerReducer = (state = initialState, action) => {
             return state
     }
 }
+

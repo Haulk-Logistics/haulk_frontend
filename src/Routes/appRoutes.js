@@ -28,6 +28,8 @@ import BookOrderDetails from "../Components/CargoOwner/BookOrderDetails";
 import OrderHistoryDetails from "../Components/CargoOwner/OrderHistoryDetails";
 import TermsAndConditions from "../Components/TermsAndConditions/TermsAndConditions";
 import DriverDetail from "../Components/DriverDetail/DriverDetail";
+import ActiveOrder from "../Components/TruckDriver/ActiveOrder";
+import OrderHistory from "../Components/TruckDriver/OrderHistory";
 
 const AppRoutes = () => {
   // useSelector connects us to the redux store
@@ -69,8 +71,11 @@ const AppRoutes = () => {
           <Route exact path="/confirmemail" element={<ConfirmEmail />} />
           <Route exact path="/verified" element={<EmailVerified />} />
           <Route path="*" element={<ErrorPage />} />
-          <Route path="/driverdashboard" exact element={<DriverDashboard />} />
-          <Route path="/driverhome" exact element={<DriverHome />} />
+          <Route path="/driverdashboard" exact element={<DriverDashboard />}>
+            <Route index exact path="/driverdashboard/" element={<DriverHome />} />
+            <Route path="orders" exact element={<ActiveOrder />} />
+            <Route path="orderhistory" exact element={<OrderHistory />} />
+          </Route>
           <Route exact path="/cargodashboard" element={<CargoOwnerDashboard />}>
             <Route
               index

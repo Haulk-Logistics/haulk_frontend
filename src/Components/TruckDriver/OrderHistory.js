@@ -1,33 +1,38 @@
-import React, {useEffect} from "react";
+import React from "react";
 import Tables from "../Table/Tables";
 import style from "./OrderHistory.module.css";
-import { useDispatch, useSelector } from "react-redux";
-import { truckDriverOrderHistory } from "../../Store/Actions/truckDriverOrders";
+import { useSelector } from "react-redux";
+import EmptyTable from "../Table/EmptyTable"
 
 const OrderHistory = () => {
-  const {loading , orderHistory } = useSelector(state => state.truckDriverOrders);
-  const dispatch = useDispatch();
-  useEffect(()=> {
-    dispatch(truckDriverOrderHistory());
-  },[])
+  const { orderHistory } = useSelector(state => state.truckDriverOrders);
+
   return (
+
+
     <div className={style.OrderHistory__container}>
-        {
-       ( !loading && orderHistory ) ?
-       <Tables
-       title="Order History"
-       header={[
-         "ID",
-         "Date Requested",
-         "Status",
-         "Truck Type",
-         "Arrival Date",
-         "",
-       ]}
-       content={orderHistory && orderHistory}
-     /> : <div> Loading.... </div>
+      {
+        (orderHistory && orderHistory.length !== 0) ?
+          <Tables
+            title="Order History"
+            header={[
+              "ID",
+              "Date Requested",
+              "Status",
+              "Truck Type",
+              "Drop Off",
+              "",
+            ]}
+            content={orderHistory && orderHistory}
+          /> : <div> <EmptyTable
+            title="Orders"
+            header="You've not made any orders yet"
+            content="Your orders will be displayed here."
+
+          /></div>
       }
     </div>
+
   );
 };
 

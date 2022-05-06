@@ -34,27 +34,25 @@ export const truckDriverReducer = (state = initialState, action) => {
         loading: false,
         orderHistory: action.payload,
       };
-    case "truckDriverOneOpenOrder": 
-    return {
-      ...state,
-      loading: false,
-      oneOpenOrder: state.openOrders && state.openOrders.find(x => x._id === action.payload),      
-    }
+    case "truckDriverOneOpenOrder":
+      return {
+        ...state,
+        loading: false,
+        oneOpenOrder: state.openOrders && state.openOrders.find(x => x._id === action.payload),
+      }
     case "truckDriverOrderAccept":
-    console.log("Accept Order...........") 
-    console.log(action.payload);
-    return {
-      ...state,
-      loading: false,
-      acceptOrder: action.payload
-    }
-    case "truckDriverActiveOrder": 
+      return {
+        ...state,
+        loading: false,
+        acceptOrder: action.payload
+      }
+    case "truckDriverActiveOrder":
       return {
         ...state,
         loading: false,
         activeOrder: action.payload
       }
-    
+
     case "truckDriverOrderError":
       console.log(action.payload, "erorrr")
       return {

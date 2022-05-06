@@ -57,7 +57,7 @@ const Payment = () => {
       .then((res) => {
 
         const paystack = res.data.authorization_url;
-        window.addEventListener("redirect", window.open(paystack));
+        window.location.href = paystack;
       })
       .catch((error) => {
         dispatch({

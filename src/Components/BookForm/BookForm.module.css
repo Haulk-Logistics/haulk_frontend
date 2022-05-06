@@ -1,280 +1,298 @@
-
-.default input:hover, .default Select:hover {
-    border: 1px solid var(  --accent-main);
-    color: var(--text-color);
+.default input:hover,
+.default select:hover {
+  border: 1px solid var(--accent-main);
+  color: var(--text-color);
 }
 
-.default{
-    display:flex;
-    flex-direction: column;
-    width: 100%;
-    border-right: none;
+.default {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-right: none;
 }
 
-.default p{
-    color: var(--ink-lighter-color);
+.default p {
+  color: var(--ink-lighter-color);
 }
 
-.default input,.default select{
-    border: 1px solid var(  --primary-20);
-
+.default input,
+.default select {
+  border: 1px solid var(--primary-20);
 }
 
-
-.bookerror input,.bookerror select, .bookerror input:hover,.bookerror select:hover{
-    border: 1px solid var(--error  );
-    box-shadow: -2px -2px 0 var(--error-shadow),-2px 2px 0 var(--error-shadow),2px -2px 0 var(--error-shadow),2px 2px 0 var(--error-shadow);
-    color: #697D95;
-    width: 100%;
+.bookerror input,
+.bookerror select,
+.bookerror input:hover,
+.bookerror select:hover {
+  border: 1px solid var(--error);
+  box-shadow: -2px -2px 0 var(--error-shadow), -2px 2px 0 var(--error-shadow),
+    2px -2px 0 var(--error-shadow), 2px 2px 0 var(--error-shadow);
+  color: #697d95;
+  width: 100%;
 }
 
-.bookerror p, .err {
-    color: var(--error);
+.bookerror p,
+.err {
+  color: var(--error);
 }
 
-.bookerror input:focus, .bookerror select:focus{
-    border: 1px solid var(  --error);
-    color: var(--text-color);
-    outline: none;
-    box-shadow: -2px -2px 0px var(--error-shadow), -2px 2px 0px var(--error-shadow), 2px -2px 0px var(--error-shadow), 2px 2px 0px var(--error-shadow);
+.bookerror input:focus,
+.bookerror select:focus {
+  border: 1px solid var(--error);
+  color: var(--text-color);
+  outline: none;
+  box-shadow: -2px -2px 0px var(--error-shadow),
+    -2px 2px 0px var(--error-shadow), 2px -2px 0px var(--error-shadow),
+    2px 2px 0px var(--error-shadow);
 }
 
-.Book__BodyModal{
-    width: 100vw;
-    height: 90vh;
+.Book__BodyModal {
+  width: 100vw;
+  height: 90vh;
 }
 
-.main{
-    width: 60%;
-    margin: 0 auto;
-    margin-top: 1.5rem;
+.main {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 1.5rem;
 }
-.Book_Heading{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-}
-
-.Book_Heading > h3{
-    font-size: 1.5rem;
-    font-weight: 500;
-    line-height: 46px;
+.Book_Heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
 
-.Book_Heading > p{
-    font-size: 0.875rem;
-    font-weight: 400;
-    line-height: 22.68px;
-    text-align: center;
-    width: 30rem;
-    margin: auto;
-    word-break: break-word;
+.Book_Heading > h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 46px;
 }
 
-
-.Book__form{
-    width: 100%;
-    height: 80%;
-    margin-top: 1rem;
+.Book_Heading > p {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 22.68px;
+  text-align: center;
+  width: 30rem;
+  margin: auto;
+  word-break: break-word;
 }
 
-.Book__form fieldset{
-    width: 100%;
-    border: none;
-    margin-bottom: 1.5rem;
+.Book__form {
+  width: 100%;
+  height: 80%;
+  margin-top: 1rem;
 }
 
-.Book__form fieldset:first-of-type, .Book__form fieldset:last-of-type{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+.Book__form fieldset {
+  width: 100%;
+  border: none;
+  margin-bottom: 1.5rem;
 }
 
-.Book__form fieldset:last-of-type{
-    padding-top: 1.5rem;
+.Book__form fieldset:first-of-type,
+.Book__form fieldset:last-of-type {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
-.Book__form fieldset:first-of-type > div, .Book__form fieldset:last-of-type > div{
-    width: 48%;
+.Book__form fieldset:last-of-type {
+  padding-top: 1.5rem;
 }
 
-.row{
-    display: flex;
-    flex-direction: column;
-    max-height: 5rem;
-    margin-bottom: 1rem;
+.Book__form fieldset:first-of-type > div,
+.Book__form fieldset:last-of-type > div {
+  width: 48%;
 }
 
-.Book__form label{
-    margin-bottom: .5rem;
-    font-size: .875rem;
+.row {
+  display: flex;
+  flex-direction: column;
+  max-height: 5rem;
+  margin-bottom: 1rem;
 }
 
-.select{
-    width: 100%;
-    border: 1px solid #BAC7D5;
-    border-radius: 3px;
- 
+.Book__form label {
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
 }
 
-.select:hover, .row input:hover{
-    border: 1px solid var(  --accent-main);
+.select {
+  width: 100%;
+  border: 1px solid #bac7d5;
+  border-radius: 3px;
 }
 
-.select:focus, .row input:focus{
-    box-shadow: -2px -2px 0px #E8F4FD, -2px 2px 0px #E8F4FD, 2px -2px 0px #E8F4FD, 2px 2px 0px #E8F4FD}
-
-
-.row select, .row input{
-    height: 2.75rem;
-    padding: 6px 12px;
-    border-radius: 3px;
-    border: 1px solid #BAC7D5;
-    outline: none;
+.select:hover,
+.row input:hover {
+  border: 1px solid var(--accent-main);
 }
 
-.row select{
-    border: none;
-    border-radius: none;
-    width: 98%;
-    color: #697D95;
-    background-color: white;
+.select:focus,
+.row input:focus {
+  box-shadow: -2px -2px 0px #e8f4fd, -2px 2px 0px #e8f4fd, 2px -2px 0px #e8f4fd,
+    2px 2px 0px #e8f4fd;
 }
 
-.rowdiv{
-    width: 100%;
-   
-}
-.rowdiv input{
-    width: 100%;
-    background-color: white;
-    
+.row select,
+.row input {
+  height: 2.75rem;
+  padding: 6px 12px;
+  border-radius: 3px;
+  border: 1px solid #bac7d5;
+  outline: none;
 }
 
-.dropdown{
-    width: 96%;
-    background-color: white;
+.row select {
+  border: none;
+  border-radius: none;
+  width: 98%;
+  color: #697d95;
+  background-color: white;
+}
+
+.rowdiv {
+  width: 100%;
+}
+.rowdiv input {
+  width: 100%;
+  background-color: white;
+}
+
+.dropdown {
+  width: 96%;
+  background-color: white;
 }
 
 select::-ms-expand {
-    display: none;
-    background-color: white;
+  display: none;
+  background-color: white;
 }
 
-input[type = "date"]{
-    color: #697D95;
-    background-color: white;
+input[type="date"] {
+  color: #697d95;
+  background-color: white;
 }
 
-::placeholder{
-    color: #697D95;
-    font-size: 0.875rem;
-    font-weight: 400;
-    line-height: 20px;
-    background-color: white;
+::placeholder {
+  color: #697d95;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 20px;
+  background-color: white;
 }
 
-.fileLabel{
+.fileLabel {
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 1px dashed #bac7d5;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+}
+
+.fileLabel label {
+  color: var(--info-links);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.file {
+  /* margin-top: -4.5rem; */
+  display: none;
+  cursor: pointer;
+  z-index: 0;
+  margin: 0;
+}
+
+input[type="file" i]::-webkit-file-upload-button {
+  width: 100%;
+  /* height: 4rem; */
+  cursor: pointer;
+  background-color: white;
+}
+
+.bookerror {
+  font-size: 0.8rem;
+  color: var(--error);
+  font-weight: 500;
+  margin: 0.3rem 0.2rem;
+}
+
+.submitBtn {
+  border: none;
+  width: 100%;
+  height: 2.8125rem;
+  color: var(--white);
+  background-color: var(--primary-main);
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 3rem;
+}
+
+.submitBtn:hover {
+  background-color: var(--accent-main);
+}
+
+.error input,
+.error select,
+.error input:hover,
+.error select:hover {
+  border: 1px solid var(--error);
+  box-shadow: -2px -2px 0 var(--error-shadow), -2px 2px 0 var(--error-shadow),
+    2px -2px 0 var(--error-shadow), 2px 2px 0 var(--error-shadow);
+  width: 100%;
+}
+
+.errorp,
+.err {
+  font-size: 12px;
+  margin-top: 0.5rem;
+  color: var(--error);
+}
+
+.erru {
+  color: var(--error);
+  margin-top: -2rem;
+}
+
+.error input:focus,
+.error select:focus {
+  border: 1px solid var(--error);
+  color: var(--text-color);
+  outline: none;
+  box-shadow: -2px -2px 0px var(--error-shadow),
+    -2px 2px 0px var(--error-shadow), 2px -2px 0px var(--error-shadow),
+    2px 2px 0px var(--error-shadow);
+}
+
+@media only screen and (max-width: 40rem) {
+  .main {
+    width: 80%;
+  }
+
+  .Book__form fieldset:first-of-type > div,
+  .Book__form fieldset:last-of-type > div {
     width: 100%;
-    height: 4rem;
-    display: flex;
-    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .Book__form fieldset:first-of-type,
+  .Book__form fieldset:last-of-type {
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    text-align: center;
-    border: 1px dashed #BAC7D5;
-    background-color: #f5f5f5;
-    border-radius: 4px;
-    position: relative;
-    cursor: pointer;
-}
+  }
 
-.fileLabel label{
-    color: var(--info-links);
-    text-decoration: underline;
-    cursor: pointer;
-}
-
-.file{
-    /* margin-top: -4.5rem; */
-   display: none;
-    cursor: pointer;
-    z-index: 0;
-    margin: 0
-}
-
-input[type="file" i]::-webkit-file-upload-button{
-    width: 100%;
-    /* height: 4rem; */
-    cursor: pointer;
-    background-color: white;
-}
-
-.bookerror{
-    font-size: .8rem;
-    color: var(--error);
-    font-weight: 500;
-    margin: .3rem .2rem;
-}
-
-.submitBtn{
-    border: none;
-    width: 100%;
-    height: 2.8125rem;
-    color: var(--white);
-    background-color: var(--primary-main);
-    border-radius: 4px;
-    cursor: pointer;
-    margin-bottom: 3rem;
-}
-
-.submitBtn:hover{
-    background-color: var(--accent-main);
-}
-
-.error input,.error select, .error input:hover,.error select:hover{
-    border: 1px solid var(--error  );
-    box-shadow: -2px -2px 0 var(--error-shadow),-2px 2px 0 var(--error-shadow),2px -2px 0 var(--error-shadow),2px 2px 0 var(--error-shadow);
-    width: 100%;
-  
-  
-}
-
-.errorp, .err {
-    font-size: 12px;
-    margin-top: .5rem;
-    color: var(--error);
-}
-
-.erru{
-    color: var(--error);
-    margin-top: -2rem;
-}
-.error input:focus, .error select:focus{
-    border: 1px solid var(  --error);
-    color: var(--text-color);
-    outline: none;
-    box-shadow: -2px -2px 0px var(--error-shadow), -2px 2px 0px var(--error-shadow), 2px -2px 0px var(--error-shadow), 2px 2px 0px var(--error-shadow);
-} 
-
-@media only screen and (max-width: 40rem){
-    .main{
-        width: 80%;
-    }
-
-    .Book__form fieldset:first-of-type > div, .Book__form fieldset:last-of-type > div{
-        width: 100%;
-        margin-top: 1rem;
-    }
-
-    .Book__form fieldset:first-of-type, .Book__form fieldset:last-of-type{
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .Book_Heading > p{
-        width: 10rem;
-    }
+  .Book_Heading > p {
+    width: 20rem;
+  }
 }

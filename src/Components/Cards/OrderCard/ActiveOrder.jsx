@@ -3,7 +3,7 @@ import style from "../OrderCard.module.css";
 
 
 
-const TDActiveOrderCard = ({activeOrder}) => {
+const TDActiveOrderCard = ({ activeOrder }) => {
   const locationStepper = (
     <svg
       width="10"
@@ -23,7 +23,20 @@ const TDActiveOrderCard = ({activeOrder}) => {
       <header className={style.OrderCard__header}>
         <div className={style.OrderCard__headertext} >
           <h5>ID {activeOrder && activeOrder._id}</h5>
-          <p>{activeOrder && activeOrder.order_status}</p>
+          <p style={
+            activeOrder.order_status === "processing" ? { background: "var( --default)" } :
+              activeOrder.order_status === "pending" ? { background: "var( --default)" } :
+                activeOrder.order_status === "accepted" ? { background: "var( --warning)" } :
+                  activeOrder.order_status === "picked_up" ? { background: "var(--info-links )" } :
+                    activeOrder.order_status === "in_transit" ? { background: "var(--surface-success)" } :
+                      activeOrder.order_status === "dropped_off" ? { background: "var( --success)" } : { background: "orange" }
+
+          }>{activeOrder && activeOrder.order_status === "processing" ? "Processing" :
+            activeOrder.order_status === "pending" ? "Pending" :
+              activeOrder.order_status === "accepted" ? "Accepted" :
+                activeOrder.order_status === "picked_up" ? "Picked up" :
+                  activeOrder.order_status === "in_transit" ? "In transit" :
+                    activeOrder.order_status === "dropped_off" ? "Completed" : ""}</p>
         </div>
         <h6>consignment</h6>
       </header>

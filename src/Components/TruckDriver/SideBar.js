@@ -4,15 +4,14 @@ import { HiViewGrid, HiCube } from "react-icons/hi";
 import { IoLogOut } from "react-icons/io5";
 import { IoMdWallet } from "react-icons/io";
 import { RiAnticlockwise2Fill } from "react-icons/ri";
-import { useDispatch, useSelector } from "react-redux";
-import { DashboardRender } from "../../Store/Actions/DashboardRender";
-import { useNavigate } from "react-router";
+import { useLocation, useNavigate } from "react-router";
+import { NavLink } from "react-router-dom";
+
 
 const SideBar = () => {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
-  const activePage = useSelector((state) => state.dashboardRender);
-  // console.log(activePage);
+  const { pathname } = useLocation();
+  const path = pathname.split("/")[2];
 
   const logo = (
     <svg
@@ -49,62 +48,64 @@ const SideBar = () => {
     </svg>
   );
 
+  const logout = () => {
+    localStorage.clear();
+    navigate("/login");
+  };
+
+
   return (
     <React.Fragment>
       <div className={style.sidebar}>
         <div className={style.sidebar__header}> {logo}</div>
         <div className={style.sidebar__features}>
-          <li
+          <NavLink
+            to="/driverdashboard/"
+
             className={
-              activePage === ""
+              !path
                 ? style.sidebar__featuresActive
                 : style.sidebar__featureslink
             }
-            onClick={() => {
-              dispatch(DashboardRender(""));
-            }}
           >
             <HiViewGrid size="1.25rem" className={style.icon} />
             <p> Home</p>
-          </li>
-          <li
+          </NavLink>
+          {/* <NavLink
+            to=" /driverdashboard/driverhome"
             className={
-              activePage === "wallet"
-                ? style.sidebar__featuresActive
-                : style.sidebar__featureslink
-            }
+              path === ""
+                  ? style.sidebar__featuresActive
+                  : style.sidebar__featureslink
+          }
           >
             <IoMdWallet size="1.25rem" className={style.icon} /> <p>Wallet</p>
-          </li>
-          <li
+        </NavLink> */}
+          <NavLink
+            to="orders"
             className={
-              activePage === "activeOrder"
+              path === "orders"
                 ? style.sidebar__featuresActive
                 : style.sidebar__featureslink
             }
-            onClick={() => {
-              dispatch(DashboardRender("activeOrder"));
-            }}
           >
             <HiCube size="1.25rem" className={style.icon} /> <p>Orders</p>
-          </li>
-          <li
+          </NavLink>
+          <NavLink
+            to="orderhistory"
             className={
-              activePage === "orderHistory"
+              path === "orderhistory"
                 ? style.sidebar__featuresActive
                 : style.sidebar__featureslink
             }
-            onClick={() => {
-              dispatch(DashboardRender("orderHistory"));
-            }}
           >
             {" "}
             <RiAnticlockwise2Fill size="1.25rem" className={style.icon} />
-            <p>Order History</p>
-          </li>
+            <p>History</p>
+          </NavLink>
         </div>
         <div className={style.sidebar__logout}>
-          <li onClick={() => navigate("/")}>
+          <li onClick={logout}>
             <IoLogOut size="1.25rem" className={style.icon} /> <p>Log Out</p>
           </li>
         </div>

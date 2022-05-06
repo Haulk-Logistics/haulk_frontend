@@ -4,6 +4,10 @@
     padding: 1rem;
 }
 
+.OrderCard__container:hover{
+    cursor: pointer;
+}
+
 .OrderCard__header{
     display: flex;
     flex-direction: column;

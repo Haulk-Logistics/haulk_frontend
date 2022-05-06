@@ -1,16 +1,18 @@
 import axios from 'axios';
 import setAuthToken from '../../Utils/setAuthToken';
+import { loaderStatus } from './ModalStatus';
 
 export const truckDriverOrderHistory = () => async (dispatch) => {
     dispatch({
         type: "truckDriverOrderLoading",
     });
     const token = JSON.parse(localStorage.getItem('haulk-app-auth'));
-    if(token) {
+    if (token) {
         setAuthToken(token);
     }
     try {
-        const  {data}  = await axios.get('https://haulk.herokuapp.com/api/driver/order_history');
+        const { data } = await axios.get('https://haulk.herokuapp.com/api/driver/order_history');
+        data && dispatch(loaderStatus(false))
         dispatch({
             type: "truckDriverOrderHistory",
             payload: data && data.message
@@ -28,11 +30,12 @@ export const truckDriverProfile = () => async (dispatch) => {
         type: "truckDriverOrderLoading",
     });
     const token = JSON.parse(localStorage.getItem('haulk-app-auth'));
-    if(token) {
+    if (token) {
         setAuthToken(token);
     }
     try {
-        const  {data}  = await axios.get('https://haulk.herokuapp.com/api/driver/view_profile');
+        const { data } = await axios.get('https://haulk.herokuapp.com/api/driver/view_profile');
+        data && dispatch(loaderStatus(false))
         dispatch({
             type: "truckDriverProfile",
             payload: data && data.message
@@ -50,13 +53,12 @@ export const truckDriverActiveOrder = () => async (dispatch) => {
         type: "truckDriverOrderLoading",
     });
     const token = JSON.parse(localStorage.getItem('haulk-app-auth'));
-    if(token) {
+    if (token) {
         setAuthToken(token);
     }
     try {
-        const  {data}  = await axios.get('https://haulk.herokuapp.com/api/driver/active_order');
-        console.log('idd')
-        console.log(data, "Active................")
+        const { data } = await axios.get('https://haulk.herokuapp.com/api/driver/active_order');
+        data && dispatch(loaderStatus(false))
         dispatch({
             type: "truckDriverActiveOrder",
             payload: data && data.message
@@ -75,11 +77,12 @@ export const truckDriverOpenOrders = () => async (dispatch) => {
         type: "truckDriverOrderLoading",
     });
     const token = JSON.parse(localStorage.getItem('haulk-app-auth'));
-    if(token) {
+    if (token) {
         setAuthToken(token);
     }
     try {
-        const  {data}  = await axios.get('https://haulk.herokuapp.com/api/driver/seeopenorders');
+        const { data } = await axios.get('https://haulk.herokuapp.com/api/driver/seeopenorders');
+        data && dispatch(loaderStatus(false))
         dispatch({
             type: "truckDriverOrders",
             payload: data && data.message
@@ -92,7 +95,8 @@ export const truckDriverOpenOrders = () => async (dispatch) => {
     }
 }
 
-export const getOneOpenOrder = (id) => async (dispatch) =>  {
+
+export const getOneOpenOrder = (id) => async (dispatch) => {
     dispatch({
         type: "truckDriverOrderLoading"
     });
@@ -107,12 +111,12 @@ export const truckDriverAcceptOrder = (id) => async (dispatch) => {
         type: "truckDriverOrderLoading",
     });
     const token = JSON.parse(localStorage.getItem('haulk-app-auth'));
-    if(token) {
+    if (token) {
         setAuthToken(token);
     }
     try {
-        const  {data}  = await axios.put(`https://haulk.herokuapp.com/api/driver/acceptorder/${id}`);
-        console.log(data, "data......");
+        const { data } = await axios.put(`https://haulk.herokuapp.com/api/driver/acceptorder/${id}`);
+        data && dispatch(loaderStatus(false))
         dispatch({
             type: "truckDriverOrderAccept",
             payload: data && data.message
@@ -125,3 +129,27 @@ export const truckDriverAcceptOrder = (id) => async (dispatch) => {
         })
     }
 }
+
+// export const updateOrderStatus = (id) => async (dispatch) => {
+//     dispatch({
+//         type: "updateOrderStatus",
+//     });
+//     const token = JSON.parse(localStorage.getItem('haulk-app-auth'));
+//     if (token) {
+//         setAuthToken(token);
+//     }
+//     try {
+//         const { data } = await axios.put(`https://haulk.herokuapp.com/api/driver/update_order_status/62693d2f9f699da12dcae1a8`);
+//         data && dispatch(loaderStatus(false))
+//         dispatch({
+//             type: "truckDriverOrderAccept",
+//             payload: data && data.message
+//         });
+//     } catch (error) {
+//         console.log(error.message, "error.....")
+//         dispatch({
+//             type: "truckDriverOrderError",
+//             payload: error.message
+//         })
+//     }
+// }

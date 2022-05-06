@@ -1,6 +1,8 @@
 .App {
   height: 100vh;
   position: relative;
+  max-width: 2160px;
+  margin: 0 auto;
 }
 
 .activeNav {

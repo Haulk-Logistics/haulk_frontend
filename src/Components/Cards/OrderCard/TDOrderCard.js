@@ -1,15 +1,18 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import style from "../OrderCard.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { getOneOpenOrder } from "../../../Store/Actions/truckDriverOrders";
 
-const TDOrderCard = ({  status, details, index }) => {
+const TDOrderCard = ({ status, details, index }) => {
   const [id, setId] = useState(0);
   const dispatch = useDispatch();
-  const { openOrders} = useSelector(state => state.truckDriverOrders);
+
+  const { openOrders } = useSelector(state => state.truckDriverOrders);
+
+
   useEffect(() => {
-    dispatch(getOneOpenOrder(openOrders && openOrders[0]._id));
-  }, [openOrders]);
+    openOrders && dispatch(getOneOpenOrder(openOrders && openOrders[0]._id));
+  }, [openOrders.length !== 0]);
 
   const setOrder = () => {
     dispatch(getOneOpenOrder(openOrders && openOrders[index]._id))
@@ -30,7 +33,7 @@ const TDOrderCard = ({  status, details, index }) => {
     </svg>
   );
 
-  return (
+  return openOrders.length !== 0 && (
     <div className={style.OrderCard__container}>
       <header className={style.OrderCard__header}>
         <div className={style.OrderCard__headertext} >
