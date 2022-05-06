@@ -7,8 +7,10 @@ import { OrderDetails } from "../../Store/Actions/OrderDetails";
 import { orderModalStatus } from "../../Store/Actions/ModalStatus"
 
 const Open = () => {
-  const orderDetail = useSelector((state) => state.cargoOwnerOrders.orders)
+  const orderDetail = useSelector((state) => state.cargoOwnerOrders.OrderDetails)
   const dispatch = useDispatch()
+
+  console.log(orderDetail)
 
 
 

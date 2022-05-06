@@ -9,7 +9,6 @@ import { useSelector } from "react-redux";
 import EmptyTable from "../Table/EmptyTable"
 
 
-
 const CargoHome = () => {
   const { loading, orders, active, pending, completed, cargoOwner } = useSelector(
     (state) => state.cargoOwnerOrders
@@ -64,7 +63,7 @@ const CargoHome = () => {
         {orders && !loading ? (
           <OrderTable
             title="Orders"
-            header={["ID", "Date Requested", "Status", "Truck Type"]}
+            header={["ID", "Date Requested", "Status", "Truck Type", "Drop Off"]}
             content={orders && orders}
 
           />

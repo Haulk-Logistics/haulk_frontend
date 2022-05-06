@@ -21,14 +21,14 @@ const CargoOrderHistory = () => {
               "Date Requested",
               "Status",
               "Truck Type",
-              "Arrival Date",
+              "Drop Off",
               "",
             ]}
             content={orderHistory && orderHistory}
           /> :
           <EmptyTable
             title="Order History"
-            header="You've not made any orders yet"
+            header="You don't have any completed orders"
             content="Your Order history will be displayed here."
           />
       }

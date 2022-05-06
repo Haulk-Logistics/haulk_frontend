@@ -1,15 +1,26 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import ActiveOrder from "../../Components/TruckDriver/ActiveOrder";
-import DriverHome from "../../Components/TruckDriver/Home";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { Outlet } from "react-router";
 import NavBar from "../../Components/TruckDriver/NavBar";
-import OrderHistory from "../../Components/TruckDriver/OrderHistory";
 import SideBar from "../../Components/TruckDriver/SideBar";
+import { truckDriverActiveOrder, truckDriverOpenOrders, truckDriverOrderHistory, truckDriverProfile } from "../../Store/Actions/truckDriverOrders";
 import style from "./style.module.css";
+import { loaderStatus } from "../../Store/Actions/ModalStatus";
+
+
 
 const DriverDashboard = () => {
-  const pageToRender = useSelector((state) => state.dashboardRender);
-  console.log(pageToRender);
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(loaderStatus(true))
+    dispatch(truckDriverOpenOrders())
+    dispatch(truckDriverOrderHistory())
+    dispatch(truckDriverProfile())
+    dispatch(truckDriverActiveOrder())
+  }, []);
+
+
 
   return (
     <div className={style.dashboard}>
@@ -17,13 +28,7 @@ const DriverDashboard = () => {
       <div className={style.body}>
         <NavBar />
         <div className={style.body__content}>
-          {pageToRender === "" ? (
-            <DriverHome />
-          ) : pageToRender === "activeOrder" ? (
-            <ActiveOrder />
-          ) : (
-            <OrderHistory />
-          )}
+          <Outlet />
         </div>
       </div>
     </div>

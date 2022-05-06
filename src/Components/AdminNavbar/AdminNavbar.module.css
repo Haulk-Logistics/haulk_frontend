@@ -1,0 +1,56 @@
+.adminNavbar{
+    height: 100vh;
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3.2rem 0;
+    padding-left: 2.8rem;
+    background: var(--white);
+    /* box-shadow: 1px 2px 25px 7px rgba(0, 0, 0, 0.2); */
+}
+
+.adminNavbar-top{
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.navbar-tabs{
+
+}
+
+.navbar-tabs > div{
+    text-decoration: none;
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    cursor: pointer;
+    background: transparent;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    transition: none;
+    margin-bottom: .3rem;
+    color: var(--text-subdued);
+}
+
+.navbar-tabs > div > *{
+    transition: none;
+}
+
+.navbar-tabs > div:hover{
+    background: var(--accent-40);
+}
+
+.navbar-tabs > div:hover > *{
+    color: var(--white);
+}
+
+.navbar-tabs > div > p{
+    margin-left: 2.5rem;
+}
+
+.adminNavbar-bottom{
+
+}

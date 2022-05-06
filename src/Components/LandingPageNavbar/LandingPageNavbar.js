@@ -11,9 +11,11 @@ import {useNavigate} from "react-router";
 
 const LandingPageNavbar = (props) => {
   const {pathname} = useLocation();
+  
   let name = pathname.split("/")[1];
 
   const [active, setActive] = useState(false);
+
   const openSideNav = () => {
     setActive(!active);
   };

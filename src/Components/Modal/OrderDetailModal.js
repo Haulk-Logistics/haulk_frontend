@@ -1,6 +1,5 @@
 import React from 'react'
 import style from "../../Components/CargoOwner/ActiveOrder.module.css";
-import dummy from "../../Asset/Images/contactUsImage.svg"
 import VerticalStepper from "../Stepper/VerticalStepper";
 import Modal from 'react-modal';
 import modal from "./Modal.module.css";
@@ -12,7 +11,7 @@ import emptyImage from "../../Asset/Images/emptystate.svg"
 const OrderDetailModal = ({ natureOfGoods, pickupLoc, dropoffLoc, amount, driver }) => {
     const status = useSelector((state) => state.modalStatus);
     const dispatch = useDispatch();
-
+    console.log(driver && driver, "her")
     const CloseModal = () => {
         dispatch(orderModalStatus({ status: false }));
     };
@@ -47,14 +46,15 @@ const OrderDetailModal = ({ natureOfGoods, pickupLoc, dropoffLoc, amount, driver
                         {   /* <h5 className={style.cargoDetailSection__status}></h5>*/}
                         <div className={style.StatusForm}>
                             <div className={style.DetailSection__Driver}>
-                                {driver ?
+                                {driver !== undefined ?
                                     <div className={style.DetailSection__driversProfile}>
                                         <div className={style.driverprofile__img}>
-                                            <img src={dummy} alt=" of Driver " />
+                                            <img src={driver && driver.driverImage} alt="driver " />
                                         </div>
                                         <div className={style.driverprofile__bio}>
-                                            <h5>Ola Deji </h5>
-                                            <p className={style.orderdetail__p}>Mobile No: <span>08149173943</span></p>
+                                            <h5>{driver && driver.driverName}</h5>
+                                            <p>Mobile No: <span>{driver && driver.driverPhoneno}</span></p>
+                                            <p>Plate No: <span>{driver && driver.plateNo}</span></p>
                                         </div>
                                     </div>
                                     :

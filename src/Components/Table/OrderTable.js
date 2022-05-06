@@ -25,7 +25,7 @@ const OrderTable = ({ title, header, content }) => {
           {/* content of the table*/}
           {content && content.map((body, index) => (
 
-            <tr>
+            <tr >
               <td className={style.OrderTable__td}>
                 <p>{body._id}</p>
               </td>
@@ -42,15 +42,18 @@ const OrderTable = ({ title, header, content }) => {
                             body.order_status === "in_transit" ? { background: "var(--surface-success)" } :
                               body.order_status === "dropped_off" ? { background: "var( --success)" } : { background: "orange" }
 
-                  }>{body.order_status}</p>
+                  }>{body.order_status === "processing" ? "Processing" :
+                    body.order_status === "pending" ? "Pending" :
+                      body.order_status === "accepted" ? "Accepted" :
+                        body.order_status === "picked_up" ? "Picked up" :
+                          body.order_status === "in_transit" ? "In transit" :
+                            body.order_status === "dropped_off" ? "Completed" : ""}</p>
               </td>
               <td className={style.OrderTable__td}>
                 <p>{body.truck_type}</p>
               </td>
               <td className={style.OrderTable__td}>
-                <button className={style.OrderTable__button}>
-                  <img src={ellipses} alt="..." />
-                </button>
+                <p>{body.drop_off_location}</p>
               </td>
             </tr>
           ))}
