@@ -21,7 +21,7 @@ const CargoOrderHistory = () => {
               "Date Requested",
               "Status",
               "Truck Type",
-              "Arrival Date",
+              "Drop Off",
               "",
             ]}
             content={orderHistory && orderHistory}

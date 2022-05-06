@@ -10,7 +10,7 @@ const MobileOrderCards = ({
   content1,
   content2,
 }) => {
-  return (
+  return Id !== undefined && (
     <div className={style.MobileOrderCards__container}>
       <div className={style.MobileOrderCards__header}>
         <div className={style.MobileOrderCards__Id}>

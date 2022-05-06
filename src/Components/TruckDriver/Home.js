@@ -40,7 +40,7 @@ const DriverHome = () => {
       </div>
       <div className={style.activecard}>
         <ActiveOrderCard />
-        {activeOrder && <MobileOrderCards
+        {typeof activeOrder === "string" && <MobileOrderCards
           Id={activeOrder._id}
           pickupdate={activeOrder.pick_up_date}
           orderStatus={
@@ -55,7 +55,7 @@ const DriverHome = () => {
           contentTitle1="Nature of goods"
           contentTitle2="Cargo Owner Number"
           content1={activeOrder.nature_of_goods}
-          content2={activeOrder.ordered_by.phoneNumber}
+          content2={typeof activeOrder !== "string" && activeOrder.ordered_by.phoneNumber}
         />}
       </div>
 

@@ -68,7 +68,7 @@
       background-color: var(--white);
       padding: 1rem 2rem 1.5rem 2rem;
       border-radius: .625rem;
-      max-height: 75vh;
+      max-height: 85vh;
     box-sizing: border-box;
     
    
@@ -208,5 +208,13 @@
     }
     .OrderDetails{
         display: none;
+    }
+
+    .DetailSection{
+       padding:  1rem 1rem 1.5rem 1rem;
+    }
+
+    .DetailSection__details div h5{
+       text-align: left;
     }
   }

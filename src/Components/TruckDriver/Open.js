@@ -4,6 +4,9 @@ import EmptyOpen from "./EmptyOpen";
 import { useDispatch, useSelector } from "react-redux";
 import TDOrderCard from "../../Components/Cards/OrderCard/TDOrderCard";
 import { OrderDetails } from "../../Store/Actions/OrderDetails"
+import { orderModalStatus } from "../../Store/Actions/ModalStatus";
+
+
 
 const Open = () => {
 
@@ -25,7 +28,7 @@ const Open = () => {
         {openOrders.length !== 0 ? openOrders.map((order, idx) => (
           <div className={style.Active__OrderCard}>
             {" "}
-            <div className={style.Active__Card} onClick={() => dispatch(OrderDetails(order))} >
+            <div className={style.Active__Card} onClick={() => { dispatch(OrderDetails(order)); dispatch(orderModalStatus({ status: true })) }} >
               {" "}
               <TDOrderCard key={idx} status={openStatus} index={idx} details={order} />
             </div>

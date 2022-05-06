@@ -48,9 +48,7 @@ const OrderTable = ({ title, header, content }) => {
                 <p>{body.truck_type}</p>
               </td>
               <td className={style.OrderTable__td}>
-                <button className={style.OrderTable__button}>
-                  <img src={ellipses} alt="..." />
-                </button>
+                <p>{body.drop_off_location}</p>
               </td>
             </tr>
           ))}
