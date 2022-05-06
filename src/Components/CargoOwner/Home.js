@@ -9,7 +9,6 @@ import { useSelector } from "react-redux";
 import EmptyTable from "../Table/EmptyTable"
 
 
-
 const CargoHome = () => {
   const { loading, orders, active, pending, completed, cargoOwner } = useSelector(
     (state) => state.cargoOwnerOrders

@@ -242,6 +242,8 @@ input[type="file" i]::-webkit-file-upload-button{
 }
 
 .errorp, .err {
+    font-size: 12px;
+    margin-top: .5rem;
     color: var(--error);
 }
 
@@ -273,6 +275,6 @@ input[type="file" i]::-webkit-file-upload-button{
     }
 
     .Book_Heading > p{
-        width: 10rem;
+        width: 20rem;
     }
 }

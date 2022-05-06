@@ -76,7 +76,7 @@ font-weight: 400;
 }
 
 .header p {
-    font-size: .8rem;
+    font-size: .75rem;
     font-weight: 400;
     background-color: var(--surface-highlight);
     border-radius: .8rem;
@@ -180,13 +180,16 @@ font-weight: 400;
 
 }
 
+.activeEmpty{
+    width: 97%;
+}
 
 @media screen and (max-width:640px) {
 .overview{
-    width: 12rem;
     padding-right:.5rem ;
     padding-left:.5rem ;
-    margin-left: 1.5rem;
+    justify-content: center;
+    align-items: center;
     
 }
 
@@ -205,6 +208,7 @@ font-weight: 400;
     display: none;
 }
 
+
 .CargoOverview{
     max-height: 7rem;
     padding: 1rem .5rem;
@@ -213,6 +217,7 @@ font-weight: 400;
 }
 .OverviewCard__body{
   margin-top: 0;
+  margin-left: .5rem;
 }
 
 .CargoOverviewCard__body{
@@ -247,4 +252,6 @@ text-align: center;
     width: 3rem;
     height:3rem;
 }
+
+
 }

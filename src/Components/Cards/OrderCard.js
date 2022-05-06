@@ -1,7 +1,6 @@
 import React from "react";
 import style from "./OrderCard.module.css";
 
-
 const OrderCard = ({ status, details }) => {
   const locationStepper = (
     <svg

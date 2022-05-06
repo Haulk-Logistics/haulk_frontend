@@ -1,7 +1,6 @@
 import React from "react";
 import style from "./ActiveOrder.module.css";
 import { useSelector } from "react-redux"
-import dummy from "../../Asset/Images/contactUsImage.svg"
 import VerticalStepper from "../Stepper/VerticalStepper";
 import EmptyState from "./EmptyState";
 import OrderDetailModal from "../Modal/OrderDetailModal";
@@ -25,14 +24,15 @@ const OrderState = () => {
           { /*<h5 className={style.cargoDetailSection__status}></h5> */}
           <div className={style.StatusForm}>
             <div className={style.DetailSection__Driver}>
-              {clickedOrder.driver ?
+              {clickedOrder.driverImage !== "non" ?
                 <div className={style.DetailSection__driversProfile}>
                   <div className={style.driverprofile__img}>
-                    <img src={dummy} alt="driver " />
+                    <img src={clickedOrder.driverImage} alt="driver " />
                   </div>
                   <div className={style.driverprofile__bio}>
-                    <h5>Ola Deji </h5>
-                    <p>Mobile No: <span>08149173943</span></p>
+                    <h5>{clickedOrder.driverName}</h5>
+                    <p>Mobile No: <span>{clickedOrder.driverPhoneno}</span></p>
+                    <p>Plate No: <span>{clickedOrder.plateNo}</span></p>
                   </div>
                 </div>
                 :

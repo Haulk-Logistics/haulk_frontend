@@ -4,6 +4,10 @@
     padding: 1rem;
 }
 
+.OrderCard__container:hover{
+    cursor: pointer;
+}
+
 .OrderCard__header{
     display: flex;
     flex-direction: column;
@@ -14,9 +18,15 @@
     justify-content: space-between;
 }
 
+
+
 .OrderCard__header h5{
      font-size: .75rem;
      font-weight: 500;
+}
+
+.OrderCard__header h5:hover {
+    cursor: pointer;
 }
 
 .OrderCard__header h6{

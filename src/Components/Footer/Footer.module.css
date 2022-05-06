@@ -50,12 +50,15 @@
 }
 
 .footer-bottom > p:first-child{
+    font-size: 1rem;
     font-weight: 400;
     line-height: 18.52px;
     margin-bottom: 1rem;
+    color: var(--text-subdued);
 }
 
 .footer-bottom > p:nth-child(2){
+    font-size: 1rem;
     color: var(--info-links);
 }
 
@@ -91,6 +94,10 @@
 
     .footer-bottom{
         width: 100%;
+    }
+
+    .footer-bottom > p:first-child, .footer-bottom > p:nth-child(2){
+        font-size: .875rem;
     }
 
     .footer-bottom > p:first-child{
