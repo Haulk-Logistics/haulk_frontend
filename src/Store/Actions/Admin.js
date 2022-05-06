@@ -167,6 +167,7 @@ export const acceptDriver = (id) => async (dispatch) => {
 };
 
 export const getOneDriver = (id) => async (dispatch) => {
+  console.log(id, ".....")
   dispatch({
     type: "adminLoading",
   });
@@ -177,14 +178,44 @@ export const getOneDriver = (id) => async (dispatch) => {
   }
   try {
     const { data } = await axios.get(
-      `https://haulk.herokuapp.com/admin/driver/total_drivers/${id}`
+      `https://haulk.herokuapp.com/admin/driver/${id}`
     );
-    console.log(data, "data");
+    console.log(data, "data......");
     dispatch({
       type: "oneDriver",
+      payload: data && data.truck_driver,
+    });
+  } catch (error) {
+    console.log(error)
+    dispatch({
+      type: "adminError",
+      payload: error.message,
+    });
+  }
+};
+
+
+export const getTotalRevenue = (id) => async (dispatch) => {
+  console.log(id, ".....")
+  dispatch({
+    type: "adminLoading",
+  });
+  const token = JSON.parse(localStorage.getItem("haulk-app-auth"));
+  console.log(token);
+  if (token) {
+    setAuthToken(token);
+  }
+  try {
+    const { data } = await axios.get(
+      `https://haulk.herokuapp.com/admin/haulk_revenue`
+    );
+    console.log(data, "data......REVENUE");
+    dispatch({
+      type: "getRevenue",
       payload: data && data.data,
     });
   } catch (error) {
+    console.log(error)
     dispatch({
       type: "adminError",
       payload: error.message,
