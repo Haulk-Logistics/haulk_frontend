@@ -6,10 +6,12 @@ import { IoMdWallet } from "react-icons/io";
 import { RiAnticlockwise2Fill } from "react-icons/ri";
 import { useLocation, useNavigate } from "react-router";
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 
 const SideBar = () => {
   const navigate = useNavigate();
+  const { loading, profile, orderHistory, activeOrder } = useSelector((state) => state.truckDriverOrders);
   const { pathname } = useLocation();
   const path = pathname.split("/")[2];
 
@@ -81,28 +83,34 @@ const SideBar = () => {
           >
             <IoMdWallet size="1.25rem" className={style.icon} /> <p>Wallet</p>
         </NavLink> */}
-          <NavLink
-            to="orders"
-            className={
-              path === "orders"
-                ? style.sidebar__featuresActive
-                : style.sidebar__featureslink
-            }
-          >
-            <HiCube size="1.25rem" className={style.icon} /> <p>Orders</p>
-          </NavLink>
-          <NavLink
-            to="orderhistory"
-            className={
-              path === "orderhistory"
-                ? style.sidebar__featuresActive
-                : style.sidebar__featureslink
-            }
-          >
-            {" "}
-            <RiAnticlockwise2Fill size="1.25rem" className={style.icon} />
-            <p>History</p>
-          </NavLink>
+
+
+          {profile && profile.accepted === "verified" &&
+            <div>
+              <NavLink
+                to="orders"
+                className={
+                  path === "orders"
+                    ? style.sidebar__featuresActive
+                    : style.sidebar__featureslink
+                }
+              >
+                <HiCube size="1.25rem" className={style.icon} /> <p>Orders</p>
+              </NavLink>
+              <NavLink
+                to="orderhistory"
+                className={
+                  path === "orderhistory"
+                    ? style.sidebar__featuresActive
+                    : style.sidebar__featureslink
+                }
+              >
+                {" "}
+                <RiAnticlockwise2Fill size="1.25rem" className={style.icon} />
+                <p>History</p>
+              </NavLink>
+            </div>
+          }
         </div>
         <div className={style.sidebar__logout}>
           <li onClick={logout}>

@@ -63,7 +63,7 @@ const CargoHome = () => {
         {orders && !loading ? (
           <OrderTable
             title="Orders"
-            header={["ID", "Date Requested", "Status", "Truck Type"]}
+            header={["ID", "Date Requested", "Status", "Truck Type", "Drop Off"]}
             content={orders && orders}
 
           />
