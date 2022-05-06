@@ -1,4 +1,4 @@
-table{
+.table{
     border-collapse: collapse;
     font-size: 1rem;
 }
@@ -7,7 +7,7 @@ table{
     padding: 20px;
 }
 
-tr{
+.post-table tr, .post-body tr{
     border-bottom: 1px solid var(--primary-20);
 }
 

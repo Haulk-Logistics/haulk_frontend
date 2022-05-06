@@ -9,12 +9,12 @@ const ApprovedTable = (props) => {
             email: "okaforsun@gmail.com",
             registered: "22 Dec., 2021.",
             truck: "Mini Truck"
-        },{
+        }, {
             name: "Edozie Anadi",
             email: "phynnedo@gmail.com",
             registered: "21 Jan., 2022.",
             truck: "Refrigerated Truck"
-        },{
+        }, {
             name: "Jack Harlow",
             email: "harlow@gmail.com",
             registered: "23 Apr., 2022.",
@@ -28,8 +28,8 @@ const ApprovedTable = (props) => {
     ]
 
     return (
-        <table>
-            <thead className = {`${styles["post-table"]}`}>
+        <table className={styles.table}>
+            <thead className={`${styles["post-table"]}`}>
                 <tr>
                     <td>Name</td>
                     <td>Email Address</td>
@@ -40,12 +40,12 @@ const ApprovedTable = (props) => {
                 </tr>
             </thead>
             {arr.map((person, index) => (
-                <tr key = {index} className = {`${styles["post-body"]}`}>
+                <tr key={index} className={`${styles["post-body"]}`}>
                     <td>{person.name}</td>
                     <td>{person.email}</td>
                     <td>{person.registered}</td>
                     <td>{person.truck}</td>
-                    <td><button className = {styles.deleteBtn} onClick = {props.deleteModal}>Delete</button></td>
+                    <td><button className={styles.deleteBtn} onClick={props.deleteModal}>Delete</button></td>
                     <td className={styles.dots}>
                         <div></div>
                         <div></div>
@@ -56,5 +56,5 @@ const ApprovedTable = (props) => {
         </table>
     );
 }
- 
+
 export default ApprovedTable;

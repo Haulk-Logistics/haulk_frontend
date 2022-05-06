@@ -198,14 +198,16 @@
       width: 100%;
       margin-left: 1rem;
       text-align: left;
+      margin-bottom: 1rem;
   }
 
   .driverprofile__bio h5{
-    font-size:1.3rem;
+    font-size:1rem;
     font-weight: 500;
   }
   .driverprofile__bio p{
       margin-top: .5rem;
+      font-size: 10px;
    
   }
 

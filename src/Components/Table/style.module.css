@@ -15,11 +15,16 @@
     
 }
 
+.mobileTable {
+     display: none;
+}
+
 .table__container table, .OrderTable__container table{
     background-color: var(--white);
     width: 100%;
     padding: .5rem 2rem 1rem 2rem;
     border-radius: 1rem;
+
 }
 
 .Emptytable__main{
@@ -116,8 +121,13 @@ font-weight: 400;
     }
 
     .mobileTable{
+        display: block;
         width: 100%;
         border-bottom: 1px solid #E0E2E7 ;
         display: block;
     }
+
+    /* .table__container{
+        padding-right: 1rem;
+    } */
 }

@@ -26,8 +26,6 @@ const CargoOwnerDashboard = () => {
     (state) => state.cargoOwnerOrders.cargoOwner
   );
 
-
-
   return (
     <div className={style.cargodashboard}>
       <SideBar />

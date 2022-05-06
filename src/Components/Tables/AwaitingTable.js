@@ -5,7 +5,7 @@ import styles from "./AwaitingTable.module.css";
 
 const AwaitingTable = ({ approveModal, rejectModal, drivers }) => {
     return (
-        <table>
+        <table className={styles.Atable}>
             <thead className={`${styles["pre-table"]}`}>
                 <tr>
                     <td>Name</td>

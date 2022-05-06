@@ -1,4 +1,4 @@
-table{
+.Atable{
     width: 100%;
     border-collapse: collapse;
     font-size: 1rem;
@@ -9,7 +9,7 @@ table{
     padding: 15px;
 }
 
-tr{
+.pre-body tr,.pre-table tr {
     border-bottom: 1px solid var(--primary-20);
 }
 
