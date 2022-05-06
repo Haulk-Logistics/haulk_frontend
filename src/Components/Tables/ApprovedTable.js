@@ -1,60 +1,39 @@
 import React from "react";
-
+import EmptyActive from "../TruckDriver/EmptyActive";
 import styles from "./ApprovedTable.module.css";
+import { useNavigate } from 'react-router-dom';
 
-const ApprovedTable = (props) => {
-    let arr = [
-        {
-            name: "Okafor Sunday",
-            email: "okaforsun@gmail.com",
-            registered: "22 Dec., 2021.",
-            truck: "Mini Truck"
-        }, {
-            name: "Edozie Anadi",
-            email: "phynnedo@gmail.com",
-            registered: "21 Jan., 2022.",
-            truck: "Refrigerated Truck"
-        }, {
-            name: "Jack Harlow",
-            email: "harlow@gmail.com",
-            registered: "23 Apr., 2022.",
-            truck: "Truck Head"
-        }, {
-            name: "Nweze Chidera",
-            email: "nwezechidera@gmail.com",
-            registered: "23 Apr., 2022.",
-            truck: "Flat Bed"
-        }
-    ]
-
-    return (
-        <table className={styles.table}>
-            <thead className={`${styles["post-table"]}`}>
-                <tr>
-                    <td>Name</td>
-                    <td>Email Address</td>
-                    <td>Registered</td>
-                    <td>Truck Type</td>
-                    <td>Action</td>
-                    <td>Details</td>
-                </tr>
-            </thead>
-            {arr.map((person, index) => (
-                <tr key={index} className={`${styles["post-body"]}`}>
-                    <td>{person.name}</td>
-                    <td>{person.email}</td>
-                    <td>{person.registered}</td>
-                    <td>{person.truck}</td>
-                    <td><button className={styles.deleteBtn} onClick={props.deleteModal}>Delete</button></td>
-                    <td className={styles.dots}>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </td>
-                </tr>
-            ))}
-        </table>
-    );
-}
+const ApprovedTable = ({ drivers }) => {
+  const navigate = useNavigate();
+  return (drivers && drivers.length !== 0 ) ? (
+    <table>
+      <thead className={`${styles["post-table"]}`}>
+        <tr>
+          <td>Name</td>
+          <td>Email Address</td>
+          <td>Registered</td>
+          <td>Truck Type</td>
+          <td>Details</td>
+        </tr>
+      </thead>
+      {drivers &&
+        drivers.map(({ userDetails, truckDetails, _id }, index) => (
+          <tr key={index} className={`${styles["post-body"]}`}>
+            <td>{userDetails.firstName + " " + userDetails.lastName}</td>
+            <td>{userDetails.email}</td>
+            <td>{truckDetails.created_at.split(":")[0]}</td>
+            <td>{truckDetails.truck_type}</td>
+            <td className={styles.dots} onClick={() => navigate(`/admin-driver/${_id}`)}>
+              <div></div>
+              <div></div>
+              <div></div>
+            </td>
+          </tr>
+        ))}
+    </table>
+  ) : (
+    <EmptyActive message="No Verified Drivers" />
+  );
+};
 
 export default ApprovedTable;

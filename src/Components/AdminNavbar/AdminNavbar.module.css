@@ -7,7 +7,7 @@
     padding: 3.2rem 0;
     padding-left: 2.8rem;
     background: var(--white);
-    box-shadow: 1px 2px 25px 7px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 1px 2px 25px 7px rgba(0, 0, 0, 0.2); */
 }
 
 .adminNavbar-top{
