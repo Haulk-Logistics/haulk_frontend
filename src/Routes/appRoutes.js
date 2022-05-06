@@ -27,6 +27,7 @@ import CargoOrderHistory from "../Components/CargoOwner/OrderHistory";
 import BookOrderDetails from "../Components/CargoOwner/BookOrderDetails";
 import OrderHistoryDetails from "../Components/CargoOwner/OrderHistoryDetails";
 import TermsAndConditions from "../Components/TermsAndConditions/TermsAndConditions";
+import DriverDetail from "../Components/DriverDetail/DriverDetail";
 import ActiveOrder from "../Components/TruckDriver/ActiveOrder";
 import OrderHistory from "../Components/TruckDriver/OrderHistory";
 
@@ -62,6 +63,7 @@ const AppRoutes = () => {
           <Route exact path="/adminlogin" element={<Adminlogin />} />
           <Route exact path="/admin-home" element={<AdminHomePage />}/>
           <Route exact path="/admin-driver" element={<AdminDriverPage />}/>
+          <Route exact path="/admin-driver/:id" element={<DriverDetail />} />
           <Route exact path="*" element={<ErrorPage />} />
           <Route path="/resources" element={<ResourcesPage />} />
           <Route path="/book-truck" element={<BookPage />} />

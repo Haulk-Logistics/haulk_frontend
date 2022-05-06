@@ -34,6 +34,31 @@
     width: 75vw;
 }
 
+.notVerified__container{
+    background-color: white;
+    width: 95%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 65vh;
+}
+
+.notverified__padlock img{
+    width: 15rem;
+    height: 15rem;
+    object-fit: cover;
+}
+
+.notverified__content {
+    text-align: center;
+}
+
+.notverified__content h5{
+    margin-bottom: 1rem;
+}
+
 @media screen and (max-width:640px) {
     .overview{
         max-width: 90vw;
