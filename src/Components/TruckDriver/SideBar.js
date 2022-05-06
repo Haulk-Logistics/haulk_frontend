@@ -85,32 +85,29 @@ const SideBar = () => {
         </NavLink> */}
 
 
-          {profile && profile.accepted === "verified" &&
-            <div>
-              <NavLink
-                to="orders"
-                className={
-                  path === "orders"
-                    ? style.sidebar__featuresActive
-                    : style.sidebar__featureslink
-                }
-              >
-                <HiCube size="1.25rem" className={style.icon} /> <p>Orders</p>
-              </NavLink>
-              <NavLink
-                to="orderhistory"
-                className={
-                  path === "orderhistory"
-                    ? style.sidebar__featuresActive
-                    : style.sidebar__featureslink
-                }
-              >
-                {" "}
-                <RiAnticlockwise2Fill size="1.25rem" className={style.icon} />
-                <p>History</p>
-              </NavLink>
-            </div>
-          }
+          <NavLink
+            to="orders"
+            className={
+              path === "orders"
+                ? style.sidebar__featuresActive
+                : style.sidebar__featureslink
+            }
+          >
+            <HiCube size="1.25rem" className={style.icon} /> <p>Orders</p>
+          </NavLink>
+          <NavLink
+            to="orderhistory"
+            className={
+              path === "orderhistory"
+                ? style.sidebar__featuresActive
+                : style.sidebar__featureslink
+            }
+          >
+            {" "}
+            <RiAnticlockwise2Fill size="1.25rem" className={style.icon} />
+            <p>History</p>
+          </NavLink>
+
         </div>
         <div className={style.sidebar__logout}>
           <li onClick={logout}>
