@@ -3,7 +3,6 @@ import styles from "./AdminDriver.module.css";
 import AdminHeader from "../AdminHeader/AdminHeader";
 import AwaitingTable from "../Tables/AwaitingTable";
 import ApprovedTable from "../Tables/ApprovedTable";
-import DriverDetail from "../DriverDetail/DriverDetail";
 import AcceptModal from "../Modal/AcceptModal";
 import RejectModal from "../Modal/RejectModal";
 import DeleteModal from "../Modal/DeleteModal";
