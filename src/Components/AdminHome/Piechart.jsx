@@ -22,7 +22,7 @@ function PieChart({approved, declined, awaiting}) {
   return (
      <div>
       <Doughnut data={data} options= {{
-            cornerRadius: 8,
+            cornerRadius: 5,
             plugins: {
                 legend: {
                     display:false 

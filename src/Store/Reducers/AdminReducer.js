@@ -10,6 +10,7 @@ const intialState = {
   rejected: "",
   oneDriver: null,
   error: null,
+  revenue: 0,
   id: "",
 };
 
@@ -69,11 +70,17 @@ export const AdminReducer = (state = intialState, action) => {
         completedOrders: action.payload,
       };
     case "oneDriver":
-       return {
-           ...state,
-           loading: false,
-           oneDriver: action.payload
-       };
+      return {
+        ...state,
+        loading: false,
+        oneDriver: action.payload,
+      };
+    case "getRevenue":
+      return {
+        ...state,
+        loading: false,
+        revenue: action.payload,
+      };
     case "adminError":
       return {
         ...state,

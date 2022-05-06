@@ -13,6 +13,7 @@ import {
   getAllCompletedOrders,
   getAllDrivers,
   getAllVerifiedDrivers,
+  getTotalRevenue,
 } from "../../Store/Actions/Admin";
 import PieChart from "./Piechart";
 import EmptyActive from "../TruckDriver/EmptyActive";
@@ -22,12 +23,14 @@ const AdminHome = () => {
     unverified_drivers,
     cargoowners_num,
     drivers_num,
+    revenue,
     completedOrders,
   } = useSelector((state) => state.admin);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getAllDrivers());
     dispatch(getAllVerifiedDrivers());
+    dispatch(getTotalRevenue())
     dispatch(AllDrivers());
     dispatch(getAllCargoowners());
     dispatch(getAllCompletedOrders());
@@ -64,7 +67,7 @@ const AdminHome = () => {
             </div>
             <div>
               <p>Total Revenue</p>
-              <h3>5</h3>
+              <h3 style={{fontSize: "28px"}}>{revenue && revenue.total_revenue}</h3>
             </div>
           </div>
           <div className={styles.item}>

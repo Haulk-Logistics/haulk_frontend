@@ -16,6 +16,7 @@ const DriverDetail = () => {
     const location = useLocation();
     const id = location.pathname.split("/")[2]
     useEffect(() => {
+        console.log(id)
         dispatch(getOneDriver(id))
     }, [id])
     return (
