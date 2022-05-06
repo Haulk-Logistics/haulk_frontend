@@ -1,205 +1,208 @@
-.Active_OrderSection{
-    display: flex;
+.Active_OrderSection {
+  display: flex;
 }
 
-.Active__OrderContainer{
-    width: 40%;
+.Active__OrderContainer {
+  width: 40%;
 }
 
-.Active__header h5{
-    font-size: 1rem;
-    font-weight: 500;
-    margin-bottom: .625rem;
-    color: var(--text);
+.Active__header h5 {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.625rem;
+  color: var(--text);
 }
 
-
-.Active__OrderCard{
-    display: flex;
-    align-items: center;
-    width: 100%;
+.Active__OrderCard {
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
 
-.Active__Card{
-    width: 95%;
-    margin-bottom: 16px;
+.Active__Card {
+  width: 95%;
+  margin-bottom: 16px;
 }
 
-.Active__0rderLine{
-    width: .5rem;
-    height: 8rem;
-    margin-left: 8px;
-    background-color: var(--accent-main);
-    border-radius: .5rem;
-    display: none;
+.Active__0rderLine {
+  width: 0.5rem;
+  height: 8rem;
+  margin-left: 8px;
+  background-color: var(--accent-main);
+  border-radius: 0.5rem;
+  display: none;
 }
 
-.Open__0rder{
-    margin-top: 2rem;
-   
+.Open__0rder {
+  margin-top: 2rem;
 }
 
-.Open__OrderCard{
-    overflow-y: scroll;
-    height: 45vh;
+.Open__OrderCard {
+  overflow-y: scroll;
+  height: 45vh;
 }
 
-.Open__OrderCard::-webkit-scrollbar{
-    width: .3rem;
-  }
+.Open__OrderCard::-webkit-scrollbar {
+  width: 0.3rem;
+}
 
-  .Open__OrderCard::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px grey; 
-    border-radius: 10px;
-  }
+.Open__OrderCard::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
 
-  .Open__OrderCard::-webkit-scrollbar-thumb{
-    background: var(--accent-main); 
-    border-radius: .625rem;
-  }
+.Open__OrderCard::-webkit-scrollbar-thumb {
+  background: var(--accent-main);
+  border-radius: 0.625rem;
+}
 
-  .OrderDetails{
-      width: 50%;
-      margin-left: 2.375rem;
-    
-  }
+.OrderDetails {
+  width: 50%;
+  margin-left: 2.375rem;
+}
+
+.DetailSection {
+  background-color: var(--white);
+  padding: 1rem 2rem 1.5rem 2rem;
+  border-radius: 0.625rem;
+  max-height: 75vh;
+  box-sizing: border-box;
+}
 
   .DetailSection {
       background-color: var(--white);
       padding: 1rem 2rem 1.5rem 2rem;
       border-radius: .625rem;
-      max-height: 75vh;
+      max-height: 85vh;
     box-sizing: border-box;
     
    
   }
 
-  .DetailSection__details{
-    overflow-y: scroll;
-    max-height: 65vh;
-  }
-
-  .DetailSection__details::-webkit-scrollbar {
-    width: .3rem;
-  }
-
-  .DetailSection__details::-webkit-scrollbar {
-    box-shadow: inset 0 0 5px grey; 
-    border-radius: 10px;
-  }
-
- .DetailSection__details::-webkit-scrollbar{
-    background: var(--accent-main); 
-    border-radius: .625rem;
-  }
-
-  .DetailSection__details div{
-      display: flex;
-      align-items: center;
-      margin-top: 2rem;
-  }
-
-  .DetailSection__details div h5{
-    font-weight: 500;
-    font-size: .8rem;
-    width: 14rem;
+.DetailSection__details::-webkit-scrollbar {
+  width: 0.3rem;
 }
 
-.DetailSection__details div p{
-    font-weight: 400;
-    font-size: .8rem;
-    color: var(--text-subdued);
-    
+.DetailSection__details::-webkit-scrollbar {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
 }
 
-  .StatusForm{
-      border-bottom: 1px dashed var( --secondary-gray);
-      margin-bottom: 1.25rem;
-  }
+.DetailSection__details::-webkit-scrollbar {
+  background: var(--accent-main);
+  border-radius: 0.625rem;
+}
 
-  .StatusForm form {
-      width: 60%;
-      margin-bottom:  1.5rem;
-  }
+.DetailSection__details div {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+}
 
-  .StatusForm form p{
-      color: var(--info-links);
-      font-size: .75rem;
-      margin-top: .1rem;
-      
-  }
+.DetailSection__details div h5 {
+  font-weight: 500;
+  font-size: 0.8rem;
+  width: 14rem;
+}
 
-  .StatusForm label{
-      margin-bottom: -.3rem;
-      font-weight: 400;
-      font-size: .875rem;
-  }
+.DetailSection__details div p {
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: var(--text-subdued);
+}
 
-  .DetailSection__status{
-      border-radius: .625rem;
-      background-color: var(--surface-highlight);
-      width: 4rem;
-      text-align: center;
-      font-size: .875rem;
-  }
+.StatusForm {
+  border-bottom: 1px dashed var(--secondary-gray);
+  margin-bottom: 1.25rem;
+}
 
-  .DetailSection__status p{
-      margin: auto;
-  }
+.StatusForm form {
+  width: 60%;
+  margin-bottom: 1.5rem;
+}
 
-  .DetailSection__button{
-      width: 9.125rem;
-      height: 2.8125rem;
-      border: none;
-      color: var(--white);
-      background-color: var(--primary-main);
-      border-radius: .25rem;
-      margin-top: 1.5625rem;
-      font-size: .9375rem;
-      font-weight: 500;
-  }
+.StatusForm form p {
+  color: var(--info-links);
+  font-size: 0.75rem;
+  margin-top: 0.1rem;
+}
 
-  .hide{
-      display: none;
-  }
+.StatusForm label {
+  margin-bottom: -0.3rem;
+  font-weight: 400;
+  font-size: 0.875rem;
+}
 
-  .EmptySection{
-      composes: DetailSection;
-      width: 45vw;
-      height:  60vh;
-      display: flex;
-      flex-direction:column;
-      justify-content: center;
-      align-items: center;
-  }
+.DetailSection__status {
+  border-radius: 0.625rem;
+  background-color: var(--surface-highlight);
+  width: 4rem;
+  text-align: center;
+  font-size: 0.875rem;
+}
 
-  .EmptySection h5{
-      font-size: 1.3rem;
-      font-weight: 500;
-  }
+.DetailSection__status p {
+  margin: auto;
+}
 
-  .EmptySection p{
-      font-size: .75rem;
-      font-weight: 400;
-      margin-top: 1rem;
-  }
+.DetailSection__button {
+  width: 9.125rem;
+  height: 2.8125rem;
+  border: none;
+  color: var(--white);
+  background-color: var(--primary-main);
+  border-radius: 0.25rem;
+  margin-top: 1.5625rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
 
-  .EmptyActive {
-      composes: Active__Card;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background: var(--white);
-      padding: 2rem 1rem;
-      border-radius: .625rem;
-      height: 10rem;
-     margin-bottom: -1rem;
-     width: 100%;
-  }
+.hide {
+  display: none;
+}
 
-  .EmptyActive p{
-      font-size: .875rem;
+.EmptySection {
+  composes: DetailSection;
+  width: 45vw;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.EmptySection h5 {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.EmptySection p {
+  font-size: 0.75rem;
+  font-weight: 400;
+  margin-top: 1rem;
+}
+
+.EmptyActive {
+  composes: Active__Card;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--white);
+  padding: 2rem 1rem;
+  border-radius: 0.625rem;
+  height: 10rem;
+  margin-bottom: -1rem;
+  width: 100%;
+}
+
+.EmptyActive p {
+  font-size: 0.875rem;
+}
+
+@media screen and (max-width: 640px) {
+  .Active__OrderContainer {
+    width: 100%;
   }
 
   @media screen and (max-width:640px) {
@@ -209,4 +212,13 @@
     .OrderDetails{
         display: none;
     }
+
+    .DetailSection{
+       padding:  1rem 1rem 1.5rem 1rem;
+    }
+
+    .DetailSection__details div h5{
+       text-align: left;
+    }
   }
+}

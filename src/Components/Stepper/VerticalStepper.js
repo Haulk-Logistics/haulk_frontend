@@ -7,6 +7,10 @@ const VerticalStepper = () => {
   const status = useSelector((state) => state.orderdetail.orderStatus)
   const orderedDate = ordered && ordered.split("T")[0]
 
+  const thedate = useSelector((state) => state.orderdetail)
+
+  console.log(thedate && thedate)
+
   return (
     <div>
       <div className={stepper.Verticalcontainer}>
