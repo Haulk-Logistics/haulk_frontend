@@ -46,19 +46,19 @@ const DriverDetail = () => {
                             <li>
                                 <p>Driver's Image</p>
                                 <p>
-                                    <a href={oneDriver && oneDriver.truckDetails.driver_image} className={styles.link}>Click to view</a>
+                                    <a target="_blank" href={oneDriver && oneDriver.truckDetails.driver_image} className={styles.link}>Click to view</a>
                                 </p>
                             </li>
                             <li>
                                 <p>Driver's License</p>
                                 <p>
-                                    <a href={oneDriver && oneDriver.truckDetails.driver_license_image} className={styles.link}>Click to view</a>
+                                    <a target="_blank" href={oneDriver && oneDriver.truckDetails.driver_license_image} className={styles.link}>Click to view</a>
                                 </p>
                             </li>
                             <li>
                                 <p>Vehicle's License</p>
                                 <p>
-                                    <a href={oneDriver && oneDriver.truckDetails.vehicle_license_image} className={styles.link}>Click to view</a>
+                                    <a target="_blank" href={oneDriver && oneDriver.truckDetails.vehicle_license_image} className={styles.link}>Click to view</a>
                                 </p>
                             </li>
                             <li>
@@ -69,7 +69,7 @@ const DriverDetail = () => {
                         <ul>
                             <li>
                                 <p>Truck Type</p>
-                                <p>{oneDriver && oneDriver.truckDetails.truck_type}</p>
+                                <p>{oneDriver && oneDriver.truckDetails.truck_type.charAt(0).toUpperCase() + oneDriver.truckDetails.truck_type.slice(1)}</p>
                             </li>
                             <li>
                                 <p>Truck Size</p>
@@ -77,23 +77,23 @@ const DriverDetail = () => {
                             </li>
                             <li>
                                 <p>Truck Image</p>
-                                <p><a href={oneDriver && oneDriver.truckDetails.truck_image} className={styles.link}>Click to view</a></p>
+                                <p><a target="_blank" href={oneDriver && oneDriver.truckDetails.truck_image} className={styles.link}>Click to view</a></p>
                             </li>
                             <li>
                                 <p>Transit Goods License</p>
-                                <p><a href={oneDriver && oneDriver.truckDetails.transit_goods_license_image} className={styles.link}>Click to view</a></p>
+                                <p><a target="_blank" href={oneDriver && oneDriver.truckDetails.transit_goods_license_image} className={styles.link}>Click to view</a></p>
                             </li>
                             <li>
                                 <p>Port Pass</p>
-                                <p><a href={oneDriver && oneDriver.truckDetails.port_passes_image} className={styles.link}>Click to view</a></p>
+                                <p><a target="_blank" href={oneDriver && oneDriver.truckDetails.port_passes_image} className={styles.link}>Click to view</a></p>
                             </li>
                             <li>
                                 <p>Certificate of Insurance</p>
-                                <p><a href={oneDriver && oneDriver.truckDetails.certificate_of_insurance_image} className={styles.link}>Click to view</a></p>
+                                <p><a target="_blank" href={oneDriver && oneDriver.truckDetails.certificate_of_insurance_image} className={styles.link}>Click to view</a></p>
                             </li>
                             <li>
                                 <p>Certificate of Road Worthiness</p>
-                                <p><a href={oneDriver && oneDriver.truckDetails.certificate_of_road_worthiness_image} className={styles.link}>Click to view</a></p>
+                                <p><a target="_blank" href={oneDriver && oneDriver.truckDetails.certificate_of_road_worthiness_image} className={styles.link}>Click to view</a></p>
                             </li>
                         </ul>
                     </div>

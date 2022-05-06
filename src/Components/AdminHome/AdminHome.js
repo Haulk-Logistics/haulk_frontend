@@ -66,7 +66,7 @@ const AdminHome = () => {
               <FaMoneyBill />
             </div>
             <div>
-              <p>Total Revenue</p>
+              <p>Revenue</p>
               <h3 style={{fontSize: "28px"}}>{revenue && revenue.total_revenue}</h3>
             </div>
           </div>
