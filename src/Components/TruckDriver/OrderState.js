@@ -8,6 +8,7 @@ import EmptyState from "../CargoOwner/EmptyState";
 import axios from "axios";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import TruckDetailsmodal from "../Modal/TruckDetailsmodal";
 
 
 const OrderState = () => {
@@ -75,7 +76,7 @@ const OrderState = () => {
 
   }
 
-  return activeOrder && typeof activeOrder !== "string" && oneOpenOrder.id !== undefined ? (
+  return activeOrder && typeof activeOrder !== "string" || oneOpenOrder.id !== undefined ? (
     <div>
       <header className={style.Active__header}>
         <h5>Order Details</h5>
@@ -132,6 +133,18 @@ const OrderState = () => {
 
           {activeOrder && typeof activeOrder === "string" ? <button className={style.DetailSection__button} onClick={() => orderAccept(oneOpenOrder.id)} >{loading ? "Processing..." : "Accept Order"}</button> : ""}
         </div>
+      </div>
+
+      <div className={style.mobileModal}>
+        <TruckDetailsmodal
+          natureOfGoods={oneOpenOrder.natureOfGoods}
+          pickupLoc={oneOpenOrder.pickupLoc}
+          dropoffLoc={oneOpenOrder.dropoffLoc}
+          amount={oneOpenOrder.amount}
+          shippingLine={oneOpenOrder.shippingLine}
+          containerNo={oneOpenOrder.containerNo}
+          pickupDate={oneOpenOrder.pickupDate}
+        />
       </div>
     </div>
   ) : <div>

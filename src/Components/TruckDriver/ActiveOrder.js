@@ -6,6 +6,8 @@ import Open from "./Open";
 import OrderDetail from "./OrderDetail";
 import { useDispatch, useSelector } from "react-redux";
 import { OrderDetails } from "../../Store/Actions/OrderDetails";
+import { orderModalStatus } from "../../Store/Actions/ModalStatus";
+
 
 const ActiveOrder = () => {
   const dispatch = useDispatch();
@@ -25,7 +27,7 @@ const ActiveOrder = () => {
           <h5>Active Order</h5>
         </header>
         {
-          activeOrder && typeof activeOrder !== "string" ? <div onClick={() => activeOrder && dispatch(OrderDetails(activeOrder))}>
+          activeOrder && typeof activeOrder !== "string" ? <div onClick={() => { activeOrder && dispatch(OrderDetails(activeOrder)); dispatch(orderModalStatus({ status: true })) }}>
 
             <TDActiveOrderCard activeOrder={activeOrder} />
 
