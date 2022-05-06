@@ -93,7 +93,6 @@ const AdminHome = () => {
                 ) : (
                   <EmptyActive message="No truck driver details" />
                 )}
-                {/* The Data that would be rendered as a pie chart would go in here. The circle here is a placeholder */}
               </div>
               {drivers_num && (
                 <div className={styles.legend}>
