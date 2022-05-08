@@ -11,7 +11,7 @@ import emptyImage from "../../Asset/Images/emptystate.svg"
 const OrderDetailModal = ({ natureOfGoods, pickupLoc, dropoffLoc, amount, driver }) => {
     const status = useSelector((state) => state.modalStatus);
     const dispatch = useDispatch();
-
+    console.log(driver && driver, "her")
     const CloseModal = () => {
         dispatch(orderModalStatus({ status: false }));
     };
@@ -46,15 +46,15 @@ const OrderDetailModal = ({ natureOfGoods, pickupLoc, dropoffLoc, amount, driver
                         {   /* <h5 className={style.cargoDetailSection__status}></h5>*/}
                         <div className={style.StatusForm}>
                             <div className={style.DetailSection__Driver}>
-                                {driver.driverImage !== "non" ?
+                                {driver !== undefined ?
                                     <div className={style.DetailSection__driversProfile}>
                                         <div className={style.driverprofile__img}>
-                                            <img src={driver.driverImage} alt="driver " />
+                                            <img src={driver && driver.driverImage} alt="driver " />
                                         </div>
                                         <div className={style.driverprofile__bio}>
-                                            <h5>{driver.driverName}</h5>
-                                            <p>Mobile No: <span>{driver.driverPhoneno}</span></p>
-                                            <p>Plate No: <span>{driver.plateNo}</span></p>
+                                            <h5>{driver && driver.driverName}</h5>
+                                            <p>Mobile No: <span>{driver && driver.driverPhoneno}</span></p>
+                                            <p>Plate No: <span>{driver && driver.plateNo}</span></p>
                                         </div>
                                     </div>
                                     :
