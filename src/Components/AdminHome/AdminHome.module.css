@@ -111,9 +111,12 @@
     color: var(--text-subdued);
 }
 
+.stat-item > div{
+    height: 100%;
+}
+
 .pie-chart{
-    width: 60%;
-    height: 80%;
+    width: 55%;
     background-color: transparent;
     margin-right: 10px;
 }

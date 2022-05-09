@@ -118,7 +118,7 @@ const AdminHome = () => {
             </div>
           </div>
         </div>
-        <h5>Approval Request</h5>
+        <h5>Approval Requests</h5>
         <div className={styles.requests}>
           <AwaitingTable display={false} drivers={unverified_drivers && unverified_drivers} />
         </div>
