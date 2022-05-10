@@ -96,7 +96,6 @@ const AdminHome = () => {
                 ) : (
                   <EmptyActive message="No truck driver details" />
                 )}
-                {/* The Data that would be rendered as a pie chart would go in here. The circle here is a placeholder */}
               </div>
               {drivers_num && (
                 <div className={styles.legend}>
@@ -119,7 +118,7 @@ const AdminHome = () => {
             </div>
           </div>
         </div>
-        <h5>Approval Request</h5>
+        <h5>Approval Requests</h5>
         <div className={styles.requests}>
           <AwaitingTable display={false} drivers={unverified_drivers && unverified_drivers} />
         </div>
