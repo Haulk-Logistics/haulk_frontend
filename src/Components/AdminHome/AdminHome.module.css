@@ -111,10 +111,12 @@
     color: var(--text-subdued);
 }
 
-.pie-chart{
-    width: 60%;
-    margin-top: 1rem;
+.stat-item > div{
     height: 100%;
+}
+
+.pie-chart{
+    width: 55%;
     background-color: transparent;
     margin-right: 10px;
 }
@@ -126,7 +128,6 @@
     flex-direction: column;
     justify-content: center;
     padding-left: 1rem;
-   
 }
 
 .legend li{

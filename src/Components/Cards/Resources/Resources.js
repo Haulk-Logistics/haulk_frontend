@@ -13,14 +13,14 @@ const Item = ({ ques, ans }) => {
 	return (
 		<div className={style.faqLog} style={{ width: '38.125rem ' }}>
 			<div className={style.faqQuestions}>
-				<p>{ques}</p>
+				<p style = {{fontSize:'1.25rem', fontWeight: '300'}}>{ques}</p>
 				<div onClick={toggle}>
 					{show ? <AiOutlineMinus style={{ cursor: 'pointer'}} /> : <AiOutlinePlus style={{ cursor: 'pointer'}} />}
 				</div>
 			</div>
 			<div
 				className={style.faqAns}
-				style={{ marginTop: `${show ? '1.5rem' : '0'}`, lineHeight: '1.375rem', fontSize: '0.875rem' }}>
+				style={{ marginTop: `${show ? '1.5rem' : '0'}`, lineHeight: '1.375rem', fontSize: '0.875rem', fontWeight: '300' }}>
 				{' '}
 				{show && ans}{' '}
 			</div>
