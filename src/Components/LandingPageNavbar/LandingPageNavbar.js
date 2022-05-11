@@ -20,6 +20,10 @@ const LandingPageNavbar = (props) => {
     setActive(!active);
   };
 
+  const closeSideNav = () => {
+    setActive(false)
+  }
+
   const navigate = useNavigate();
 
   return (
@@ -41,12 +45,13 @@ const LandingPageNavbar = (props) => {
         }`}
       >
         <div className={`${styles["navbar-links"]}`}>
-          <Link to="/" className={name === "" ? "activeNav" : null}>
+          <Link to="/" className={name === "" ? "activeNav" : null} onClick = {() => closeSideNav()}>
             Home
           </Link>
           <Link
             to="/resources"
-            className={name === "resources" ? "activeNav" : null}>
+            className={name === "resources" ? "activeNav" : null}
+            onClick = {() => closeSideNav()}>
             Resources
           </Link>
           <Link to="">About</Link>
