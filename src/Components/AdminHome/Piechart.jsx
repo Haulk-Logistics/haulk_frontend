@@ -9,7 +9,8 @@ function PieChart({ approved, declined, awaiting }) {
       {
         label: 'Driver Verification',
         data: [approved, declined, awaiting],
-        backgroundColor: ['#34D399', '#60A5FA', '#FBBF24']
+        backgroundColor: ['#34D399', '#60A5FA', '#FBBF24'],
+       
       }
     ],
   };

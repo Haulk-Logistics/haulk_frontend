@@ -5,6 +5,10 @@
     background-color: var(--white);
 }
 
+.awaitingTable{
+    width: inherit;
+}
+
 .pre-table td, .pre-body td{
     padding: 15px;
 }
@@ -14,13 +18,13 @@
 }
 
 .pre-table td{
-    font-size: 0.875rem;
+    font-size: 1rem;
     text-align: left;
     color: var(--text-subdued);
 }
 
 .pre-body td{
-    font-size: 0.75rem;
+    font-size: 0.875rem;
 }
 
 .pre-body button{
