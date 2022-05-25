@@ -17,8 +17,9 @@ const AwaitingTable = ({ approveModal, display, rejectModal, drivers }) => {
     rejectModal(true);
     dispatch(setDriverId(id));
   };
+
   return drivers && drivers.length !== 0 ? (
-    <table>
+    <table className = {styles.awaitingTable}>
       <thead className={`${styles["pre-table"]}`}>
         <tr>
           <td>Name</td>
@@ -35,7 +36,7 @@ const AwaitingTable = ({ approveModal, display, rejectModal, drivers }) => {
           <tr key={index} className={`${styles["pre-body"]}`}>
             <td>{userDetails.firstName + " " + userDetails.lastName}</td>
             <td>{userDetails.email}</td>
-            <td>{truckDetails.created_at.split(":")[0]}</td>
+            <td>{truckDetails.created_at.split("T")[0]}</td>
             <td>{truckDetails.truck_type}</td>
             {display && (
               <td>
